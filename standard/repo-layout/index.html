@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://provenancecode.github.io/ProvenanceCode/standard/repo-layout/">
+        <link rel="canonical" href="https://provenancecode.github.io/provenancecode/standard/repo-layout/">
       
       
         <link rel="prev" href="../enforcement/">
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#repository-layout" class="md-skip">
+        <a href="#repository-layout-specification" class="md-skip">
           Skip to content
         </a>
       
@@ -248,6 +248,33 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../../implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -266,10 +293,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -287,8 +314,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -398,6 +425,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Repository Layout
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -414,6 +459,724 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#root-directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Root Directory Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Root Directory Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimal-conformance-level-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimal Conformance (Level 1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-conformance-level-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard Conformance (Level 2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-conformance-level-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Conformance (Level 3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provenance-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provenance Directory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Provenance Directory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Location
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subdirectories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subdirectories
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Decision Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directory-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directory Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decision-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-requirements-by-conformance-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Requirements by Conformance Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Risk Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directory-pattern_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directory Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-layout_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-fields-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Fields Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mistake-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mistake Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directory-pattern_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directory Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-layout_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-fields-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake Fields Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specification-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specification Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specification Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directory-pattern_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directory Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spec-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spec Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-layout_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spec-fields-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spec Fields Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#policy-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Policy Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Policy Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#location_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Location
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-files-level-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Files (Level 2+)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-purposes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Purposes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Content
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supporting-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supporting Directories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supporting Directories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#drafts-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drafts Directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#links-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links Directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indexes-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indexes Directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-naming-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Naming Conventions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Naming Conventions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#id-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ID Formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directory-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directory Names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Names
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conformance-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conformance Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conformance Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#level-1-decision-records-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1: Decision Records Only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#level-2-standard-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2: Standard Compliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#level-3-full-provenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3: Full Provenance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migration-and-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration and Growth
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Migration and Growth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-small" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Starting Small
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-adoption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Adoption
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform-specific-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform-Specific Notes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform-Specific Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitLab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitbucket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bitbucket
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -475,17 +1238,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Implementation
+    Implementation Guides
   
 
     
@@ -496,12 +1259,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Implementation
+    Implementation Guides
   
 
           </label>
@@ -521,7 +1284,7 @@
   <span class="md-ellipsis">
     
   
-    GitHub Action
+    GitHub Actions
   
 
     
@@ -563,6 +1326,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building-implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building Your Own
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -590,6 +1381,713 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#root-directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Root Directory Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Root Directory Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimal-conformance-level-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimal Conformance (Level 1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-conformance-level-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard Conformance (Level 2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-conformance-level-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Conformance (Level 3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provenance-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provenance Directory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Provenance Directory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Location
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subdirectories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subdirectories
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Decision Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directory-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directory Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decision-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-requirements-by-conformance-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Requirements by Conformance Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Risk Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directory-pattern_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directory Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-layout_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-fields-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Fields Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mistake-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mistake Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directory-pattern_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directory Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-layout_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-fields-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake Fields Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specification-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specification Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specification Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directory-pattern_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directory Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spec-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spec Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-layout_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spec-fields-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spec Fields Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#policy-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Policy Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Policy Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#location_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Location
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-files-level-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Files (Level 2+)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-purposes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Purposes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Content
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supporting-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supporting Directories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supporting Directories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#drafts-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drafts Directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#links-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links Directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indexes-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indexes Directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-naming-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Naming Conventions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Naming Conventions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#id-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ID Formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directory-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directory Names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Names
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conformance-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conformance Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conformance Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#level-1-decision-records-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1: Decision Records Only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#level-2-standard-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2: Standard Compliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#level-3-full-provenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3: Full Provenance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migration-and-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration and Growth
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Migration and Growth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-small" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Starting Small
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-adoption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Adoption
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform-specific-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform-Specific Notes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform-Specific Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitLab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitbucket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bitbucket
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -608,12 +2106,654 @@
   
 
 
-<h1 id="repository-layout">Repository Layout<a class="headerlink" href="#repository-layout" title="Permanent link">&para;</a></h1>
-<p>Recommended:
-- /provenance/decisions/DEC-000001.md
-- /provenance/policies/enforcement.yml
-- /.github/workflows/provenancecode.yml
-- /scripts/provenancecode/validate.js</p>
+<h1 id="repository-layout-specification">Repository Layout Specification<a class="headerlink" href="#repository-layout-specification" title="Permanent link">&para;</a></h1>
+<p><strong>Version:</strong> 1.0.0<br />
+<strong>Status:</strong> Draft<br />
+<strong>Part of:</strong> ProvenanceCode Open Standard</p>
+<h2 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
+<p>This document defines the required directory structure, file naming conventions, and organization patterns for ProvenanceCode-compliant repositories.</p>
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#root-directory-structure">Root Directory Structure</a></li>
+<li><a href="#provenance-directory">Provenance Directory</a></li>
+<li><a href="#decision-structure">Decision Structure</a></li>
+<li><a href="#risk-structure">Risk Structure</a></li>
+<li><a href="#mistake-structure">Mistake Structure</a></li>
+<li><a href="#specification-structure">Specification Structure</a></li>
+<li><a href="#policy-files">Policy Files</a></li>
+<li><a href="#supporting-directories">Supporting Directories</a></li>
+<li><a href="#file-naming-conventions">File Naming Conventions</a></li>
+<li><a href="#conformance-requirements">Conformance Requirements</a></li>
+</ol>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>ProvenanceCode uses a standardized directory structure to ensure:
+- <strong>Predictability</strong> - Tools know where to find artifacts
+- <strong>Separation</strong> - Different artifact types in dedicated directories
+- <strong>Scalability</strong> - Structure works from 1 to 10,000+ decisions
+- <strong>Git-friendly</strong> - Merge conflicts minimized through directory separation</p>
+<h2 id="root-directory-structure">Root Directory Structure<a class="headerlink" href="#root-directory-structure" title="Permanent link">&para;</a></h2>
+<h3 id="minimal-conformance-level-1">Minimal Conformance (Level 1)<a class="headerlink" href="#minimal-conformance-level-1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>repository-root/
+├── provenance/
+│   ├── config.json          (REQUIRED)
+│   └── decisions/           (REQUIRED)
+│       └── DEC-000001/
+│           └── decision.json
+└── (your project files)
+</code></pre></div>
+<h3 id="standard-conformance-level-2">Standard Conformance (Level 2)<a class="headerlink" href="#standard-conformance-level-2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>repository-root/
+├── .provenancecode/
+│   └── ai-rules.md          (RECOMMENDED)
+├── provenance/
+│   ├── config.json          (REQUIRED)
+│   ├── decisions/           (REQUIRED)
+│   ├── risks/               (REQUIRED - directory exists)
+│   ├── mistakes/            (REQUIRED - directory exists)
+│   ├── specs/               (REQUIRED - directory exists)
+│   ├── policies/            (REQUIRED)
+│   │   ├── enforcement.yml
+│   │   └── constitution.md
+│   ├── drafts/              (RECOMMENDED)
+│   └── links/               (OPTIONAL)
+└── (your project files)
+</code></pre></div>
+<h3 id="full-conformance-level-3">Full Conformance (Level 3)<a class="headerlink" href="#full-conformance-level-3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>repository-root/
+├── .provenancecode/
+│   ├── ai-rules.md          (REQUIRED)
+│   └── validation-config.json
+├── .github/                  or .gitlab/
+│   ├── workflows/
+│   │   └── provenance-check.yml
+│   └── pull_request_template.md
+├── provenance/
+│   ├── config.json
+│   ├── decisions/
+│   │   ├── DEC-000001/
+│   │   │   ├── decision.json
+│   │   │   ├── decision.md
+│   │   │   ├── acceptance.receipt.json
+│   │   │   ├── prov.jsonld
+│   │   │   └── c2pa.manifest.json
+│   │   └── DEC-000002/
+│   ├── risks/
+│   │   ├── RA-000001/
+│   │   │   ├── risk.json
+│   │   │   └── risk.md
+│   │   └── RA-000002/
+│   ├── mistakes/
+│   │   ├── MR-000001/
+│   │   │   ├── mistake.json
+│   │   │   └── mistake.md
+│   │   └── MR-000002/
+│   ├── specs/
+│   │   ├── SPEC-000001/
+│   │   │   ├── spec.json
+│   │   │   └── spec.md
+│   │   └── SPEC-000002/
+│   ├── policies/
+│   │   ├── constitution.md
+│   │   ├── enforcement.yml
+│   │   └── mistakes-enforcement.json
+│   ├── drafts/
+│   │   ├── DEC-000003-draft.md
+│   │   ├── SPEC-000003-draft.md
+│   │   └── README.md
+│   ├── links/
+│   │   ├── .gitkeep
+│   │   └── external-references.json
+│   ├── indexes/
+│   │   ├── learnings.index.json
+│   │   └── tags.index.json
+│   └── schema/              (OPTIONAL - for custom schemas)
+│       ├── decision.schema.json
+│       └── risk.schema.json
+└── (your project files)
+</code></pre></div>
+<h2 id="provenance-directory">Provenance Directory<a class="headerlink" href="#provenance-directory" title="Permanent link">&para;</a></h2>
+<h3 id="location">Location<a class="headerlink" href="#location" title="Permanent link">&para;</a></h3>
+<p>The provenance directory MUST be at the repository root:</p>
+<div class="highlight"><pre><span></span><code>/provenance/
+</code></pre></div>
+<p>Alternative locations are NOT supported for Level 1 or Level 2 conformance.</p>
+<h3 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h3>
+<p>Central location for all decision evidence, risks, mistakes, and specifications.</p>
+<h3 id="subdirectories">Subdirectories<a class="headerlink" href="#subdirectories" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Directory</th>
+<th>Required</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>decisions/</code></td>
+<td>Level 1+</td>
+<td>Decision Evidence Objects</td>
+</tr>
+<tr>
+<td><code>risks/</code></td>
+<td>Level 2+</td>
+<td>Risk acceptance records</td>
+</tr>
+<tr>
+<td><code>mistakes/</code></td>
+<td>Level 2+</td>
+<td>Mistake records and guardrails</td>
+</tr>
+<tr>
+<td><code>specs/</code></td>
+<td>Level 2+</td>
+<td>Specification documents</td>
+</tr>
+<tr>
+<td><code>policies/</code></td>
+<td>Level 2+</td>
+<td>Enforcement and governance rules</td>
+</tr>
+<tr>
+<td><code>drafts/</code></td>
+<td>Recommended</td>
+<td>Work-in-progress artifacts</td>
+</tr>
+<tr>
+<td><code>links/</code></td>
+<td>Optional</td>
+<td>Cross-reference indexes</td>
+</tr>
+<tr>
+<td><code>indexes/</code></td>
+<td>Optional</td>
+<td>Searchable indexes (tags, learnings)</td>
+</tr>
+<tr>
+<td><code>schema/</code></td>
+<td>Optional</td>
+<td>Custom JSON schemas</td>
+</tr>
+</tbody>
+</table>
+<h2 id="decision-structure">Decision Structure<a class="headerlink" href="#decision-structure" title="Permanent link">&para;</a></h2>
+<h3 id="directory-pattern">Directory Pattern<a class="headerlink" href="#directory-pattern" title="Permanent link">&para;</a></h3>
+<p>Each decision MUST have its own directory:</p>
+<div class="highlight"><pre><span></span><code>provenance/decisions/DEC-XXXXXX/
+</code></pre></div>
+<p>Where <code>XXXXXX</code> is a zero-padded 6-digit number (000001–999999).</p>
+<h3 id="decision-files">Decision Files<a class="headerlink" href="#decision-files" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>provenance/decisions/DEC-000042/
+├── decision.json               (REQUIRED - source of truth)
+├── decision.md                 (RECOMMENDED - human narrative)
+├── acceptance.receipt.json     (OPTIONAL - cryptographic proof)
+├── prov.jsonld                 (OPTIONAL - W3C PROV format)
+├── c2pa.manifest.json          (OPTIONAL - C2PA credentials)
+└── evidence/                   (OPTIONAL - supporting files)
+    ├── diagram.png
+    ├── benchmark-results.csv
+    └── meeting-notes.md
+</code></pre></div>
+<h3 id="file-requirements-by-conformance-level">File Requirements by Conformance Level<a class="headerlink" href="#file-requirements-by-conformance-level" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Level 1</th>
+<th>Level 2</th>
+<th>Level 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>decision.json</code></td>
+<td>✅ Required</td>
+<td>✅ Required</td>
+<td>✅ Required</td>
+</tr>
+<tr>
+<td><code>decision.md</code></td>
+<td>⚠️ Recommended</td>
+<td>⚠️ Recommended</td>
+<td>✅ Required</td>
+</tr>
+<tr>
+<td><code>acceptance.receipt.json</code></td>
+<td>⬜ Optional</td>
+<td>⬜ Optional</td>
+<td>✅ Required</td>
+</tr>
+<tr>
+<td><code>prov.jsonld</code></td>
+<td>⬜ Optional</td>
+<td>⬜ Optional</td>
+<td>⬜ Optional</td>
+</tr>
+<tr>
+<td><code>c2pa.manifest.json</code></td>
+<td>⬜ Optional</td>
+<td>⬜ Optional</td>
+<td>⬜ Optional</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-layout">Example Layout<a class="headerlink" href="#example-layout" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>provenance/decisions/
+├── DEC-000001/
+│   ├── decision.json
+│   └── decision.md
+├── DEC-000002/
+│   ├── decision.json
+│   ├── decision.md
+│   ├── acceptance.receipt.json
+│   └── evidence/
+│       └── architecture-diagram.png
+├── DEC-000003/
+│   ├── decision.json
+│   └── decision.md
+└── README.md                  (Optional - index of decisions)
+</code></pre></div>
+<h2 id="risk-structure">Risk Structure<a class="headerlink" href="#risk-structure" title="Permanent link">&para;</a></h2>
+<h3 id="directory-pattern_1">Directory Pattern<a class="headerlink" href="#directory-pattern_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>provenance/risks/RA-XXXXXX/
+</code></pre></div>
+<h3 id="risk-files">Risk Files<a class="headerlink" href="#risk-files" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>provenance/risks/RA-000015/
+├── risk.json                  (REQUIRED - source of truth)
+├── risk.md                    (RECOMMENDED - human description)
+└── evidence/                  (OPTIONAL - supporting files)
+    ├── vulnerability-scan.pdf
+    └── risk-analysis.xlsx
+</code></pre></div>
+<h3 id="example-layout_1">Example Layout<a class="headerlink" href="#example-layout_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>provenance/risks/
+├── RA-000001/
+│   ├── risk.json
+│   └── risk.md
+├── RA-000002/
+│   ├── risk.json
+│   ├── risk.md
+│   └── evidence/
+│       └── threat-model.pdf
+└── README.md                  (Optional)
+</code></pre></div>
+<h3 id="risk-fields-reference">Risk Fields Reference<a class="headerlink" href="#risk-fields-reference" title="Permanent link">&para;</a></h3>
+<p>The <code>risk.json</code> file MUST include:
+- <code>ra_id</code> - Risk acceptance ID (RA-XXXXXX)
+- <code>title</code> - Brief description
+- <code>status</code> - Current state (active, expired, mitigated, rejected)
+- <code>risk_statement</code> - Clear description of the risk
+- <code>severity</code> - Risk level (low, medium, high, critical)
+- <code>likelihood</code> - Probability (low, medium, high)
+- <code>acceptance</code> - Who accepted and when
+- <code>mitigations</code> - Risk reduction strategies
+- <code>links.decisions</code> - Decisions that reference this risk</p>
+<h2 id="mistake-structure">Mistake Structure<a class="headerlink" href="#mistake-structure" title="Permanent link">&para;</a></h2>
+<h3 id="directory-pattern_2">Directory Pattern<a class="headerlink" href="#directory-pattern_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>provenance/mistakes/MR-XXXXXX/
+</code></pre></div>
+<h3 id="mistake-files">Mistake Files<a class="headerlink" href="#mistake-files" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>provenance/mistakes/MR-000003/
+├── mistake.json               (REQUIRED - source of truth)
+├── mistake.md                 (RECOMMENDED - post-mortem)
+└── evidence/                  (OPTIONAL - incident artifacts)
+    ├── logs.txt
+    ├── timeline.md
+    └── root-cause-analysis.pdf
+</code></pre></div>
+<h3 id="example-layout_2">Example Layout<a class="headerlink" href="#example-layout_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>provenance/mistakes/
+├── MR-000001/
+│   ├── mistake.json
+│   └── mistake.md
+├── MR-000002/
+│   ├── mistake.json
+│   ├── mistake.md
+│   └── evidence/
+│       ├── incident-logs.txt
+│       └── postmortem-slides.pdf
+└── README.md                  (Optional)
+</code></pre></div>
+<h3 id="mistake-fields-reference">Mistake Fields Reference<a class="headerlink" href="#mistake-fields-reference" title="Permanent link">&para;</a></h3>
+<p>The <code>mistake.json</code> file MUST include:
+- <code>mr_id</code> - Mistake record ID (MR-XXXXXX)
+- <code>title</code> - Brief description
+- <code>status</code> - Current state (open, mitigated, closed)
+- <code>severity</code> - Impact level (low, medium, high, critical)
+- <code>failure_type</code> - Category (bug, security, compliance, process)
+- <code>root_cause</code> - What went wrong and why
+- <code>fix</code> - How it was resolved
+- <code>prevent_rule</code> - Guardrail to prevent recurrence
+- <code>links.decisions</code> - Decisions created in response</p>
+<h2 id="specification-structure">Specification Structure<a class="headerlink" href="#specification-structure" title="Permanent link">&para;</a></h2>
+<h3 id="directory-pattern_3">Directory Pattern<a class="headerlink" href="#directory-pattern_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>provenance/specs/SPEC-XXXXXX/
+</code></pre></div>
+<h3 id="spec-files">Spec Files<a class="headerlink" href="#spec-files" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>provenance/specs/SPEC-000028/
+├── spec.json                  (REQUIRED - source of truth)
+├── spec.md                    (RECOMMENDED - detailed requirements)
+└── artifacts/                 (OPTIONAL - mockups, diagrams)
+    ├── wireframes.fig
+    ├── api-schema.yml
+    └── acceptance-tests.md
+</code></pre></div>
+<h3 id="example-layout_3">Example Layout<a class="headerlink" href="#example-layout_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>provenance/specs/
+├── SPEC-000001/
+│   ├── spec.json
+│   └── spec.md
+├── SPEC-000002/
+│   ├── spec.json
+│   ├── spec.md
+│   └── artifacts/
+│       ├── user-flows.png
+│       └── api-spec.yml
+└── README.md                  (Optional)
+</code></pre></div>
+<h3 id="spec-fields-reference">Spec Fields Reference<a class="headerlink" href="#spec-fields-reference" title="Permanent link">&para;</a></h3>
+<p>The <code>spec.json</code> file MUST include:
+- <code>id</code> - Specification ID (SPEC-XXXXXX)
+- <code>title</code> - Brief description
+- <code>status</code> - Current state (draft, review, approved, implemented, rejected)
+- <code>risk</code> - Risk level associated with implementation
+- <code>acceptanceCriteria</code> - List of requirements for completion
+- <code>affectedPaths</code> - Code paths this spec impacts
+- <code>relatedDecisions</code> - Implementing decision IDs</p>
+<h2 id="policy-files">Policy Files<a class="headerlink" href="#policy-files" title="Permanent link">&para;</a></h2>
+<h3 id="location_1">Location<a class="headerlink" href="#location_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>provenance/policies/
+</code></pre></div>
+<h3 id="required-files-level-2">Required Files (Level 2+)<a class="headerlink" href="#required-files-level-2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>provenance/policies/
+├── constitution.md            (REQUIRED - human-readable governance)
+├── enforcement.yml            (REQUIRED - validation rules)
+└── mistakes-enforcement.json  (RECOMMENDED - guardrail policy)
+</code></pre></div>
+<h3 id="file-purposes">File Purposes<a class="headerlink" href="#file-purposes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>constitution.md</code></td>
+<td>Documents the three presets (Light, Standard, Regulated) and team philosophy</td>
+</tr>
+<tr>
+<td><code>enforcement.yml</code></td>
+<td>Machine-readable enforcement rules and thresholds</td>
+</tr>
+<tr>
+<td><code>mistakes-enforcement.json</code></td>
+<td>Rules for validating mistake record references</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-content">Example Content<a class="headerlink" href="#example-content" title="Permanent link">&para;</a></h3>
+<p><strong>constitution.md:</strong>
+<div class="highlight"><pre><span></span><code><span class="gh"># Enforcement Philosophy</span>
+
+We use the <span class="gs">**Standard**</span> preset because...
+
+<span class="gu">## When Decisions Required</span>
+<span class="k">-</span><span class="w"> </span>Security changes
+<span class="k">-</span><span class="w"> </span>Architecture changes
+<span class="k">-</span><span class="w"> </span>Breaking changes
+
+<span class="gu">## When Specs Required</span>
+<span class="k">-</span><span class="w"> </span>New features
+<span class="k">-</span><span class="w"> </span>API changes
+<span class="k">-</span><span class="w"> </span>Database migrations
+</code></pre></div></p>
+<p><strong>enforcement.yml:</strong>
+<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="nt">preset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">standard</span>
+<span class="nt">blocking</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">selective</span>
+<span class="nt">decisions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">requireOnLabels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">security</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">breaking-change</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">requireOnPaths</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">src/api/</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">auth/</span><span class="p p-Indicator">]</span>
+</code></pre></div></p>
+<h2 id="supporting-directories">Supporting Directories<a class="headerlink" href="#supporting-directories" title="Permanent link">&para;</a></h2>
+<h3 id="drafts-directory">Drafts Directory<a class="headerlink" href="#drafts-directory" title="Permanent link">&para;</a></h3>
+<p><strong>Location:</strong> <code>provenance/drafts/</code></p>
+<p><strong>Purpose:</strong> Work-in-progress artifacts not yet finalized</p>
+<p><strong>Contents:</strong>
+<div class="highlight"><pre><span></span><code>provenance/drafts/
+├── DEC-000005-draft.md
+├── SPEC-000010-draft.md
+├── RA-000003-draft.json
+└── README.md              (Template instructions)
+</code></pre></div></p>
+<p><strong>Rules:</strong>
+- Draft files are NOT enforced by validation
+- File naming: <code>{TYPE}-{ID}-draft.{ext}</code>
+- Move to proper directory when finalized</p>
+<h3 id="links-directory">Links Directory<a class="headerlink" href="#links-directory" title="Permanent link">&para;</a></h3>
+<p><strong>Location:</strong> <code>provenance/links/</code></p>
+<p><strong>Purpose:</strong> Cross-references to external systems (Jira, Linear, Slack, etc.)</p>
+<p><strong>Contents:</strong>
+<div class="highlight"><pre><span></span><code>provenance/links/
+├── .gitkeep
+├── jira-mapping.json      (Decision ID → Jira key)
+├── slack-threads.json     (Decision ID → Slack URL)
+└── external-refs.json     (Generic external links)
+</code></pre></div></p>
+<h3 id="indexes-directory">Indexes Directory<a class="headerlink" href="#indexes-directory" title="Permanent link">&para;</a></h3>
+<p><strong>Location:</strong> <code>provenance/indexes/</code></p>
+<p><strong>Purpose:</strong> Searchable indexes for fast lookups</p>
+<p><strong>Contents:</strong>
+<div class="highlight"><pre><span></span><code>provenance/indexes/
+├── learnings.index.json   (Lessons learned from mistakes)
+├── tags.index.json        (All tags across artifacts)
+├── by-author.index.json   (Artifacts by author)
+└── by-date.index.json     (Chronological index)
+</code></pre></div></p>
+<p><strong>Example learnings.index.json:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;updated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-12T10:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;learnings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;mr_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MR-000001&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Missing input validation&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;category&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;security&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;prevent_rule&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;All user input must be validated&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;linked_decisions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;DEC-000025&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="file-naming-conventions">File Naming Conventions<a class="headerlink" href="#file-naming-conventions" title="Permanent link">&para;</a></h2>
+<h3 id="id-formats">ID Formats<a class="headerlink" href="#id-formats" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Artifact Type</th>
+<th>ID Format</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Decision</td>
+<td><code>DEC-XXXXXX</code></td>
+<td><code>DEC-000042</code></td>
+</tr>
+<tr>
+<td>Risk</td>
+<td><code>RA-XXXXXX</code></td>
+<td><code>RA-000015</code></td>
+</tr>
+<tr>
+<td>Mistake</td>
+<td><code>MR-XXXXXX</code></td>
+<td><code>MR-000003</code></td>
+</tr>
+<tr>
+<td>Specification</td>
+<td><code>SPEC-XXXXXX</code></td>
+<td><code>SPEC-000028</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="directory-names">Directory Names<a class="headerlink" href="#directory-names" title="Permanent link">&para;</a></h3>
+<ul>
+<li>MUST match the ID exactly</li>
+<li>MUST be uppercase</li>
+<li>MUST include leading zeros</li>
+</ul>
+<p>✅ Good:
+<div class="highlight"><pre><span></span><code>provenance/decisions/DEC-000001/
+provenance/risks/RA-000042/
+</code></pre></div></p>
+<p>❌ Bad:
+<div class="highlight"><pre><span></span><code>provenance/decisions/dec-1/           # Wrong case, missing zeros
+provenance/decisions/DEC-000001-foo/  # Extra suffix
+</code></pre></div></p>
+<h3 id="file-names">File Names<a class="headerlink" href="#file-names" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>File Purpose</th>
+<th>Naming Pattern</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary artifact</td>
+<td><code>{type}.json</code></td>
+<td><code>decision.json</code>, <code>risk.json</code></td>
+</tr>
+<tr>
+<td>Markdown narrative</td>
+<td><code>{type}.md</code></td>
+<td><code>decision.md</code>, <code>spec.md</code></td>
+</tr>
+<tr>
+<td>Acceptance receipt</td>
+<td><code>acceptance.receipt.json</code></td>
+<td>(exact name)</td>
+</tr>
+<tr>
+<td>W3C PROV</td>
+<td><code>prov.jsonld</code></td>
+<td>(exact name)</td>
+</tr>
+<tr>
+<td>C2PA manifest</td>
+<td><code>c2pa.manifest.json</code></td>
+<td>(exact name)</td>
+</tr>
+<tr>
+<td>Draft</td>
+<td><code>{ID}-draft.{ext}</code></td>
+<td><code>DEC-000005-draft.md</code></td>
+</tr>
+<tr>
+<td>Evidence</td>
+<td>(any)</td>
+<td><code>diagram.png</code>, <code>logs.txt</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="conformance-requirements">Conformance Requirements<a class="headerlink" href="#conformance-requirements" title="Permanent link">&para;</a></h2>
+<h3 id="level-1-decision-records-only">Level 1: Decision Records Only<a class="headerlink" href="#level-1-decision-records-only" title="Permanent link">&para;</a></h3>
+<p><strong>MUST have:</strong>
+- <code>/provenance/</code> directory at root
+- <code>/provenance/config.json</code> file
+- <code>/provenance/decisions/</code> directory
+- At least one valid decision: <code>/provenance/decisions/DEC-000001/decision.json</code></p>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code>repo-root/
+├── provenance/
+│   ├── config.json
+│   └── decisions/
+│       └── DEC-000001/
+│           └── decision.json
+└── src/
+</code></pre></div></p>
+<h3 id="level-2-standard-compliance">Level 2: Standard Compliance<a class="headerlink" href="#level-2-standard-compliance" title="Permanent link">&para;</a></h3>
+<p><strong>MUST have all Level 1 requirements, plus:</strong>
+- <code>/provenance/risks/</code> directory (may be empty)
+- <code>/provenance/mistakes/</code> directory (may be empty)
+- <code>/provenance/specs/</code> directory (may be empty)
+- <code>/provenance/policies/enforcement.yml</code>
+- <code>/provenance/policies/constitution.md</code></p>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code>repo-root/
+├── provenance/
+│   ├── config.json
+│   ├── decisions/
+│   ├── risks/
+│   ├── mistakes/
+│   ├── specs/
+│   └── policies/
+│       ├── enforcement.yml
+│       └── constitution.md
+└── src/
+</code></pre></div></p>
+<h3 id="level-3-full-provenance">Level 3: Full Provenance<a class="headerlink" href="#level-3-full-provenance" title="Permanent link">&para;</a></h3>
+<p><strong>MUST have all Level 2 requirements, plus:</strong>
+- <code>/.provenancecode/ai-rules.md</code>
+- At least one decision with <code>acceptance.receipt.json</code>
+- At least one mistake record
+- At least one risk acceptance
+- <code>/provenance/drafts/</code> directory
+- <code>/provenance/indexes/</code> directory with at least <code>learnings.index.json</code></p>
+<h2 id="migration-and-growth">Migration and Growth<a class="headerlink" href="#migration-and-growth" title="Permanent link">&para;</a></h2>
+<h3 id="starting-small">Starting Small<a class="headerlink" href="#starting-small" title="Permanent link">&para;</a></h3>
+<p>Begin with Level 1:
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>provenance/decisions
+touch<span class="w"> </span>provenance/config.json
+</code></pre></div></p>
+<h3 id="adding-structure">Adding Structure<a class="headerlink" href="#adding-structure" title="Permanent link">&para;</a></h3>
+<p>Grow to Level 2:
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>provenance/<span class="o">{</span>risks,mistakes,specs,policies,drafts<span class="o">}</span>
+touch<span class="w"> </span>provenance/policies/enforcement.yml
+touch<span class="w"> </span>provenance/policies/constitution.md
+</code></pre></div></p>
+<h3 id="full-adoption">Full Adoption<a class="headerlink" href="#full-adoption" title="Permanent link">&para;</a></h3>
+<p>Reach Level 3:
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>.provenancecode
+mkdir<span class="w"> </span>-p<span class="w"> </span>provenance/indexes
+touch<span class="w"> </span>.provenancecode/ai-rules.md
+touch<span class="w"> </span>provenance/indexes/learnings.index.json
+</code></pre></div></p>
+<h2 id="platform-specific-notes">Platform-Specific Notes<a class="headerlink" href="#platform-specific-notes" title="Permanent link">&para;</a></h2>
+<h3 id="github">GitHub<a class="headerlink" href="#github" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use <code>.github/workflows/</code> for validation actions</li>
+<li>Use <code>.github/pull_request_template.md</code> for PR template</li>
+</ul>
+<h3 id="gitlab">GitLab<a class="headerlink" href="#gitlab" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use <code>.gitlab-ci.yml</code> for validation pipeline</li>
+<li>Use <code>.gitlab/merge_request_templates/</code> for MR template</li>
+</ul>
+<h3 id="bitbucket">Bitbucket<a class="headerlink" href="#bitbucket" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use <code>bitbucket-pipelines.yml</code> for validation</li>
+<li>Use pull request description template feature</li>
+</ul>
+<p>All platforms work with the same <code>/provenance/</code> structure.</p>
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Keep flat</strong> - Don't nest subdirectories within decision folders (except <code>/evidence/</code>)</li>
+<li><strong>One artifact per directory</strong> - Don't combine multiple decisions in one folder</li>
+<li><strong>Sequential IDs</strong> - Assign IDs in order for easier browsing</li>
+<li><strong>README files</strong> - Add optional README.md files to directories for navigation</li>
+<li><strong>Gitignore evidence</strong> - Optionally exclude large binary files from <code>/evidence/</code></li>
+</ol>
+<hr />
+<p><strong>Next:</strong> <a href="../versioning/">Versioning and Lifecycle</a> - Managing artifact states<br />
+<strong>See Also:</strong> <a href="../deo/">Decision Evidence Objects (DEO)</a> - Decision file formats</p>
 
 
 

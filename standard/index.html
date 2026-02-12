@@ -10,10 +10,10 @@
       
       
       
-        <link rel="canonical" href="https://provenancecode.github.io/ProvenanceCode/standard/">
+        <link rel="canonical" href="https://provenancecode.github.io/provenancecode/standard/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../implementations/">
       
       
         <link rel="next" href="deo/">
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#provenancecode-standard-v10-draft" class="md-skip">
+        <a href="#provenancecode-open-standard-specification" class="md-skip">
           Skip to content
         </a>
       
@@ -248,6 +248,33 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -266,10 +293,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -287,8 +314,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -365,6 +392,150 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Principles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-git-native" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Git-Native
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-human-and-machine-readable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Human and Machine Readable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-non-invasive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Non-Invasive
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-ai-friendly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. AI-Friendly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-enforcement-flexibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Enforcement Flexibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-auditable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Auditable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#scope" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -372,6 +543,340 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Scope">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out of Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specification-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specification Documents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specification Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Specifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extended-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extended Specifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-normative-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-Normative Documents
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conformance-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conformance Levels
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conformance Levels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#level-1-decision-records-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1: Decision Records Only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#level-2-standard-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2: Standard Compliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#level-3-full-provenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3: Full Provenance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminology
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Terminology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#normative-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normative References
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#informative-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Informative References
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version History
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contributing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contributing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-contribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Contribute
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license-intellectual-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License &amp; Intellectual Property
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="License &amp; Intellectual Property">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard Specification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-apache-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Apache 2.0?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-freedom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Freedom
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Governance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Governance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stewardship" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stewardship
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decision-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#future-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -523,17 +1028,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Implementation
+    Implementation Guides
   
 
     
@@ -544,12 +1049,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Implementation
+    Implementation Guides
   
 
           </label>
@@ -569,7 +1074,7 @@
   <span class="md-ellipsis">
     
   
-    GitHub Action
+    GitHub Actions
   
 
     
@@ -598,6 +1103,34 @@
     
   
     GitHub App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../building-implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building Your Own
   
 
     
@@ -645,6 +1178,150 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Principles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-git-native" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Git-Native
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-human-and-machine-readable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Human and Machine Readable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-non-invasive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Non-Invasive
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-ai-friendly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. AI-Friendly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-enforcement-flexibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Enforcement Flexibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-auditable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Auditable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#scope" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -652,6 +1329,340 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Scope">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out of Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specification-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specification Documents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specification Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Specifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extended-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extended Specifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-normative-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-Normative Documents
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conformance-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conformance Levels
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conformance Levels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#level-1-decision-records-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1: Decision Records Only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#level-2-standard-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2: Standard Compliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#level-3-full-provenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3: Full Provenance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminology
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Terminology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#normative-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normative References
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#informative-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Informative References
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version History
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contributing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contributing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-contribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Contribute
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license-intellectual-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License &amp; Intellectual Property
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="License &amp; Intellectual Property">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard Specification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-apache-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Apache 2.0?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-freedom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Freedom
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Governance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Governance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stewardship" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stewardship
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decision-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#future-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -675,16 +1686,212 @@
   
 
 
-<h1 id="provenancecode-standard-v10-draft">ProvenanceCode Standard (v1.0 Draft)<a class="headerlink" href="#provenancecode-standard-v10-draft" title="Permanent link">&para;</a></h1>
-<p>This standard defines the minimal artifacts and rules required to make AI-assisted development auditable.</p>
+<h1 id="provenancecode-open-standard-specification">ProvenanceCode Open Standard Specification<a class="headerlink" href="#provenancecode-open-standard-specification" title="Permanent link">&para;</a></h1>
+<p><strong>Version:</strong> 1.0.0<br />
+<strong>Status:</strong> Draft<br />
+<strong>Last Updated:</strong> February 2026</p>
+<h2 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
+<p>ProvenanceCode is an open standard for creating auditable trails of technical decisions, risk acceptances, mistake records, and specifications in software development projects. This standard defines file formats, directory structures, enforcement policies, and integration patterns that enable teams to maintain institutional knowledge and governance without heavy process overhead.</p>
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#core-principles">Core Principles</a></li>
+<li><a href="#scope">Scope</a></li>
+<li><a href="#specification-documents">Specification Documents</a></li>
+<li><a href="#conformance-levels">Conformance Levels</a></li>
+<li><a href="#terminology">Terminology</a></li>
+<li><a href="#references">References</a></li>
+</ol>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<h3 id="problem-statement">Problem Statement<a class="headerlink" href="#problem-statement" title="Permanent link">&para;</a></h3>
+<p>Software projects accumulate technical decisions, accepted risks, and learned mistakes, but this knowledge is often:
+- Scattered across PR comments, Slack messages, and tribal knowledge
+- Lost when team members leave
+- Inaccessible to new team members and AI assistants
+- Unauditable for compliance purposes
+- Difficult to link between requirements, decisions, and implementation</p>
+<h3 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h3>
+<p>ProvenanceCode provides a structured, version-controlled format for capturing:
+- <strong>Decision Evidence Objects (DEOs)</strong> - Why technical choices were made
+- <strong>Risk Acceptances</strong> - Formal acknowledgment of known risks with mitigation plans
+- <strong>Mistake Records</strong> - Post-mortems that create prevention rules
+- <strong>Specifications</strong> - Requirements linked to implementing decisions</p>
+<h2 id="core-principles">Core Principles<a class="headerlink" href="#core-principles" title="Permanent link">&para;</a></h2>
+<h3 id="1-git-native">1. Git-Native<a class="headerlink" href="#1-git-native" title="Permanent link">&para;</a></h3>
+<p>All provenance artifacts live in the same repository as the code they describe, versioned together.</p>
+<h3 id="2-human-and-machine-readable">2. Human and Machine Readable<a class="headerlink" href="#2-human-and-machine-readable" title="Permanent link">&para;</a></h3>
+<p>JSON for structured data, Markdown for human narrative. Both are first-class citizens.</p>
+<h3 id="3-non-invasive">3. Non-Invasive<a class="headerlink" href="#3-non-invasive" title="Permanent link">&para;</a></h3>
+<p>Adoption is incremental. Start with decisions only, add specs and risks as needed.</p>
+<h3 id="4-ai-friendly">4. AI-Friendly<a class="headerlink" href="#4-ai-friendly" title="Permanent link">&para;</a></h3>
+<p>Clear rules guide AI assistants to create drafts before implementing changes, but humans always approve.</p>
+<h3 id="5-enforcement-flexibility">5. Enforcement Flexibility<a class="headerlink" href="#5-enforcement-flexibility" title="Permanent link">&para;</a></h3>
+<p>Three presets (Light, Standard, Regulated) allow teams to choose appropriate governance levels.</p>
+<h3 id="6-auditable">6. Auditable<a class="headerlink" href="#6-auditable" title="Permanent link">&para;</a></h3>
+<p>Timestamps, actors, and optional cryptographic receipts create tamper-evident trails.</p>
 <h2 id="scope">Scope<a class="headerlink" href="#scope" title="Permanent link">&para;</a></h2>
+<h3 id="in-scope">In Scope<a class="headerlink" href="#in-scope" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Decision Evidence Objects (DEOs)</li>
-<li>Enforcement presets</li>
-<li>Repo layout conventions</li>
-<li>Versioning</li>
+<li>File formats for decisions, risks, mistakes, and specs</li>
+<li>Directory structure conventions</li>
+<li>Enforcement policy configuration</li>
+<li>Lifecycle state management</li>
+<li>Linking and traceability patterns</li>
+<li>AI assistant integration guidelines</li>
 </ul>
-<p>Next: read <strong>Decision Evidence Objects</strong>.</p>
+<h3 id="out-of-scope">Out of Scope<a class="headerlink" href="#out-of-scope" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Specific CI/CD implementation details (examples provided)</li>
+<li>Git hosting platform requirements (works with GitHub, GitLab, Bitbucket)</li>
+<li>Programming language or framework restrictions</li>
+<li>Team size or organizational structure</li>
+<li>Cryptographic signature implementations (optional extensions)</li>
+</ul>
+<h2 id="specification-documents">Specification Documents<a class="headerlink" href="#specification-documents" title="Permanent link">&para;</a></h2>
+<p>This standard consists of the following normative documents:</p>
+<h3 id="core-specifications">Core Specifications<a class="headerlink" href="#core-specifications" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong><a href="repo-layout/">Repository Layout</a></strong> - Directory structure and file organization</li>
+<li><strong><a href="deo/">Decision Evidence Objects (DEO)</a></strong> - Decision record format and lifecycle</li>
+<li><strong><a href="enforcement/">Enforcement Policies</a></strong> - Validation rules and presets</li>
+<li><strong><a href="versioning/">Versioning and Lifecycle</a></strong> - State management and supersession</li>
+</ol>
+<h3 id="extended-specifications">Extended Specifications<a class="headerlink" href="#extended-specifications" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Risk Acceptance Format</strong> - Risk record structure (see schemas)</li>
+<li><strong>Mistake Record Format</strong> - Post-mortem and prevention rules (see schemas)</li>
+<li><strong>Specification Format</strong> - Requirements and acceptance criteria (see schemas)</li>
+<li><strong>Indexes and Linking</strong> - Cross-reference patterns (see schemas)</li>
+</ol>
+<h3 id="non-normative-documents">Non-Normative Documents<a class="headerlink" href="#non-normative-documents" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Implementation guides (in <code>/guides/</code>)</li>
+<li>Examples (in <code>/examples/</code>)</li>
+<li>Integration patterns</li>
+<li>Best practices</li>
+</ul>
+<h2 id="conformance-levels">Conformance Levels<a class="headerlink" href="#conformance-levels" title="Permanent link">&para;</a></h2>
+<h3 id="level-1-decision-records-only">Level 1: Decision Records Only<a class="headerlink" href="#level-1-decision-records-only" title="Permanent link">&para;</a></h3>
+<p><strong>Requirements:</strong>
+- Directory structure: <code>/provenance/decisions/</code>
+- Config file: <code>provenance/config.json</code>
+- At least one decision record in valid format
+- Decision IDs follow format: <code>DEC-XXXXXX</code> (6 digits)</p>
+<p><strong>Suitable for:</strong> Teams starting with lightweight decision tracking</p>
+<h3 id="level-2-standard-compliance">Level 2: Standard Compliance<a class="headerlink" href="#level-2-standard-compliance" title="Permanent link">&para;</a></h3>
+<p><strong>Requirements:</strong>
+- All Level 1 requirements
+- Enforcement policy: <code>provenance/policies/enforcement.yml</code>
+- Support for risks and specs (directories created)
+- PR template integration
+- Decision lifecycle management (draft → accepted → superseded)</p>
+<p><strong>Suitable for:</strong> Production teams requiring governance</p>
+<h3 id="level-3-full-provenance">Level 3: Full Provenance<a class="headerlink" href="#level-3-full-provenance" title="Permanent link">&para;</a></h3>
+<p><strong>Requirements:</strong>
+- All Level 2 requirements
+- Mistake records with prevention rules
+- Acceptance receipts with cryptographic verification
+- Learnings indexes
+- Cross-linking between decisions, risks, specs, and mistakes
+- AI assistant rules: <code>.provenancecode/ai-rules.md</code></p>
+<p><strong>Suitable for:</strong> Regulated industries, safety-critical systems</p>
+<h2 id="terminology">Terminology<a class="headerlink" href="#terminology" title="Permanent link">&para;</a></h2>
+<p><strong>MUST</strong>, <strong>MUST NOT</strong>, <strong>REQUIRED</strong>, <strong>SHALL</strong>, <strong>SHALL NOT</strong>, <strong>SHOULD</strong>, <strong>SHOULD NOT</strong>, <strong>RECOMMENDED</strong>, <strong>MAY</strong>, and <strong>OPTIONAL</strong> in this document are to be interpreted as described in RFC 2119.</p>
+<h3 id="key-terms">Key Terms<a class="headerlink" href="#key-terms" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Decision Evidence Object (DEO)</strong> - A structured record of a technical decision including context, options, outcome, and rationale</li>
+<li><strong>Decision ID</strong> - Unique identifier following format <code>DEC-XXXXXX</code> where X is a digit</li>
+<li><strong>Risk Acceptance (RA)</strong> - Formal acknowledgment of a known risk with severity, mitigations, and expiration</li>
+<li><strong>Mistake Record (MR)</strong> - Post-mortem documenting an error, root cause, and prevention rule</li>
+<li><strong>Specification (SPEC)</strong> - Requirements document with acceptance criteria</li>
+<li><strong>Lifecycle State</strong> - Current status of a record (draft, proposed, accepted, rejected, superseded)</li>
+<li><strong>Enforcement Preset</strong> - Pre-configured policy level (light, standard, regulated)</li>
+<li><strong>Provenance Path</strong> - Root directory containing all provenance artifacts (<code>/provenance/</code>)</li>
+<li><strong>Acceptance Receipt</strong> - Cryptographic proof of decision approval (optional)</li>
+<li><strong>Guardrail</strong> - Prevention rule derived from a mistake record</li>
+</ul>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<h3 id="normative-references">Normative References<a class="headerlink" href="#normative-references" title="Permanent link">&para;</a></h3>
+<ul>
+<li>RFC 2119: Key words for use in RFCs to Indicate Requirement Levels</li>
+<li>JSON Schema Draft 2020-12</li>
+<li>YAML 1.2.2</li>
+<li>ISO 8601: Date and time format</li>
+<li>Semantic Versioning 2.0.0</li>
+</ul>
+<h3 id="informative-references">Informative References<a class="headerlink" href="#informative-references" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Architecture Decision Records (ADR) by Michael Nygard</li>
+<li>C2PA Content Credentials (optional extension)</li>
+<li>W3C PROV Data Model (optional extension)</li>
+<li>Git commit conventions (Conventional Commits)</li>
+</ul>
+<h2 id="version-history">Version History<a class="headerlink" href="#version-history" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0.0</td>
+<td>2026-02-12</td>
+<td>Initial draft specification</td>
+</tr>
+</tbody>
+</table>
+<h2 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h2>
+<p>ProvenanceCode is an <strong>open standard</strong>. We welcome:</p>
+<ul>
+<li><strong>Specification improvements</strong> - Suggest changes via GitHub Issues</li>
+<li><strong>Implementation feedback</strong> - Share what works and what doesn't</li>
+<li><strong>New implementations</strong> - Build tools, plugins, and services</li>
+<li><strong>Documentation</strong> - Help clarify and expand the standard</li>
+</ul>
+<p>All contributions to the specification are reviewed by the core team with community input.</p>
+<h3 id="how-to-contribute">How to Contribute<a class="headerlink" href="#how-to-contribute" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Discuss:</strong> Open an issue describing your proposal</li>
+<li><strong>Draft:</strong> Fork the repo and make changes</li>
+<li><strong>Submit:</strong> Create a pull request with clear rationale</li>
+<li><strong>Collaborate:</strong> Iterate based on feedback</li>
+<li><strong>Adopt:</strong> Once accepted, changes are incorporated</li>
+</ol>
+<h2 id="license-intellectual-property">License &amp; Intellectual Property<a class="headerlink" href="#license-intellectual-property" title="Permanent link">&para;</a></h2>
+<h3 id="standard-specification">Standard Specification<a class="headerlink" href="#standard-specification" title="Permanent link">&para;</a></h3>
+<p>The ProvenanceCode specification (this documentation) is licensed under <strong>Apache License 2.0</strong>.</p>
+<p>This means you can:
+- ✅ Use it commercially
+- ✅ Modify it for your needs
+- ✅ Distribute it
+- ✅ Use it privately
+- ✅ Use patent claims in the specification</p>
+<h3 id="why-apache-20">Why Apache 2.0?<a class="headerlink" href="#why-apache-20" title="Permanent link">&para;</a></h3>
+<p>Apache 2.0 provides:
+- <strong>Maximum permissiveness</strong> for adoption
+- <strong>Patent protection</strong> for implementers
+- <strong>Commercial-friendly</strong> licensing
+- <strong>Clear liability</strong> limitations
+- <strong>Industry standard</strong> recognition</p>
+<h3 id="implementation-freedom">Implementation Freedom<a class="headerlink" href="#implementation-freedom" title="Permanent link">&para;</a></h3>
+<p>You are <strong>free to build</strong> commercial or open-source implementations without restriction. The standard itself remains open; implementations can be any license.</p>
+<h2 id="governance">Governance<a class="headerlink" href="#governance" title="Permanent link">&para;</a></h2>
+<h3 id="stewardship">Stewardship<a class="headerlink" href="#stewardship" title="Permanent link">&para;</a></h3>
+<p>ProvenanceCode is currently stewarded by <strong><a href="https://embank.ai">EmbankAI</a></strong> as the initial developer and maintainer.</p>
+<h3 id="decision-process">Decision Process<a class="headerlink" href="#decision-process" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Specification changes</strong> require consensus from core maintainers</li>
+<li><strong>Breaking changes</strong> trigger new major version</li>
+<li><strong>Community input</strong> is considered for all changes</li>
+<li><strong>Transparency</strong> - all decisions documented in this repository</li>
+</ul>
+<h3 id="future-governance">Future Governance<a class="headerlink" href="#future-governance" title="Permanent link">&para;</a></h3>
+<p>As the standard matures, we may transition to a foundation model or community governance structure to ensure long-term independence and neutrality.</p>
+<hr />
+<p><strong>Next:</strong> Read the <a href="repo-layout/">Repository Layout</a> specification to understand the required directory structure.</p>
 
 
 

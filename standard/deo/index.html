@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://provenancecode.github.io/ProvenanceCode/standard/deo/">
+        <link rel="canonical" href="https://provenancecode.github.io/provenancecode/standard/deo/">
       
       
         <link rel="prev" href="../">
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#decision-evidence-objects-deos" class="md-skip">
+        <a href="#decision-evidence-objects-deo-specification" class="md-skip">
           Skip to content
         </a>
       
@@ -248,6 +248,33 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../../implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -266,10 +293,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -287,8 +314,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -393,13 +420,402 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#minimum-fields-draft" class="md-nav__link">
+  <a href="#abstract" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Minimum fields (draft)
+        Abstract
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-purposes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Purposes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-id-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision ID Format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Decision ID Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#id-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ID Assignment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON Schema
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON Schema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimal-required-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimal Required Decision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-decision-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Decision Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#field-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Field Definitions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Field Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#markdown-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Markdown Format
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lifecycle-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lifecycle States
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lifecycle States">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Definitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-transition-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Transition Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supersession" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supersession
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Extensions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional Extensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acceptance-receipts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance Receipts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#w3c-prov-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        W3C PROV Format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c2pa-content-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C2PA Content Credentials
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structural-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structural Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantic-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Link Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#non-normative-guidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-Normative Guidance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Non-Normative Guidance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-to-create-a-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Create a Decision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-not-to-create-a-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When NOT to Create a Decision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -523,17 +939,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Implementation
+    Implementation Guides
   
 
     
@@ -544,12 +960,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Implementation
+    Implementation Guides
   
 
           </label>
@@ -569,7 +985,7 @@
   <span class="md-ellipsis">
     
   
-    GitHub Action
+    GitHub Actions
   
 
     
@@ -598,6 +1014,34 @@
     
   
     GitHub App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building-implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building Your Own
   
 
     
@@ -645,13 +1089,402 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#minimum-fields-draft" class="md-nav__link">
+  <a href="#abstract" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Minimum fields (draft)
+        Abstract
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-purposes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Purposes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-id-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision ID Format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Decision ID Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#id-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ID Assignment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON Schema
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON Schema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimal-required-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimal Required Decision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-decision-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Decision Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#field-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Field Definitions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Field Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#markdown-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Markdown Format
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lifecycle-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lifecycle States
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lifecycle States">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Definitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-transition-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Transition Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supersession" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supersession
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Extensions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional Extensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acceptance-receipts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance Receipts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#w3c-prov-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        W3C PROV Format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c2pa-content-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C2PA Content Credentials
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structural-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structural Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantic-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Link Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#non-normative-guidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-Normative Guidance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Non-Normative Guidance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-to-create-a-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Create a Decision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-not-to-create-a-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When NOT to Create a Decision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -675,20 +1508,599 @@
   
 
 
-<h1 id="decision-evidence-objects-deos">Decision Evidence Objects (DEOs)<a class="headerlink" href="#decision-evidence-objects-deos" title="Permanent link">&para;</a></h1>
-<p>A DEO is a structured record of intent, context, tradeoffs, risk, and approval.</p>
-<h2 id="minimum-fields-draft">Minimum fields (draft)<a class="headerlink" href="#minimum-fields-draft" title="Permanent link">&para;</a></h2>
+<h1 id="decision-evidence-objects-deo-specification">Decision Evidence Objects (DEO) Specification<a class="headerlink" href="#decision-evidence-objects-deo-specification" title="Permanent link">&para;</a></h1>
+<p><strong>Version:</strong> 1.0.0<br />
+<strong>Status:</strong> Draft<br />
+<strong>Part of:</strong> ProvenanceCode Open Standard</p>
+<h2 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
+<p>This document defines the Decision Evidence Object (DEO) format, a structured way to capture technical decisions in software projects. DEOs provide auditable evidence of why decisions were made, what options were considered, and what risks were accepted.</p>
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#file-structure">File Structure</a></li>
+<li><a href="#decision-id-format">Decision ID Format</a></li>
+<li><a href="#json-schema">JSON Schema</a></li>
+<li><a href="#markdown-format">Markdown Format</a></li>
+<li><a href="#lifecycle-states">Lifecycle States</a></li>
+<li><a href="#required-fields">Required Fields</a></li>
+<li><a href="#optional-extensions">Optional Extensions</a></li>
+<li><a href="#examples">Examples</a></li>
+<li><a href="#validation-rules">Validation Rules</a></li>
+</ol>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>A Decision Evidence Object (DEO) is a structured record that captures:
+- <strong>Context:</strong> Why the decision was needed
+- <strong>Options:</strong> Alternatives that were considered
+- <strong>Outcome:</strong> What was chosen
+- <strong>Rationale:</strong> Why this option was selected
+- <strong>Risk:</strong> Associated risks and their acceptance
+- <strong>Links:</strong> Connections to specs, PRs, issues, and other decisions</p>
+<h2 id="file-structure">File Structure<a class="headerlink" href="#file-structure" title="Permanent link">&para;</a></h2>
+<p>Each decision MUST be stored in its own directory:</p>
+<div class="highlight"><pre><span></span><code>/provenance/decisions/DEC-XXXXXX/
+  decision.json          (REQUIRED - source of truth)
+  decision.md            (RECOMMENDED - human narrative)
+  acceptance.receipt.json (OPTIONAL - cryptographic proof)
+  prov.jsonld            (OPTIONAL - W3C PROV format)
+  c2pa.manifest.json     (OPTIONAL - C2PA credentials)
+  /evidence/             (OPTIONAL - supporting artifacts)
+</code></pre></div>
+<h3 id="file-purposes">File Purposes<a class="headerlink" href="#file-purposes" title="Permanent link">&para;</a></h3>
 <ul>
-<li>id</li>
-<li>title</li>
-<li>status (draft | review | approved | rejected)</li>
-<li>context</li>
-<li>decision</li>
-<li>consequences</li>
-<li>risk (low | medium | high)</li>
-<li>approvals (who/when)</li>
+<li><strong>decision.json</strong> - Structured data, machine-readable, validates against schema</li>
+<li><strong>decision.md</strong> - Human-friendly narrative, context, and discussion</li>
+<li><strong>acceptance.receipt.json</strong> - Cryptographic proof of approval (timestamps, signatures)</li>
+<li><strong>prov.jsonld</strong> - W3C PROV format for provenance chains</li>
+<li><strong>c2pa.manifest.json</strong> - Content Credentials for tamper detection</li>
+<li><strong>/evidence/</strong> - Screenshots, diagrams, logs, or other supporting files</li>
 </ul>
-<p>(You can later lock this to JSON Schema.)</p>
+<h2 id="decision-id-format">Decision ID Format<a class="headerlink" href="#decision-id-format" title="Permanent link">&para;</a></h2>
+<p>Decision IDs MUST follow this format:</p>
+<div class="highlight"><pre><span></span><code>DEC-XXXXXX
+</code></pre></div>
+<p>Where:
+- <code>DEC-</code> is the required prefix
+- <code>XXXXXX</code> is a 6-digit zero-padded number (000001 through 999999)</p>
+<p><strong>Examples:</strong>
+- ✅ <code>DEC-000001</code>
+- ✅ <code>DEC-042815</code>
+- ❌ <code>DEC-1</code> (must be zero-padded)
+- ❌ <code>DECISION-000001</code> (wrong prefix)
+- ❌ <code>DEC-0000001</code> (too many digits)</p>
+<h3 id="id-assignment">ID Assignment<a class="headerlink" href="#id-assignment" title="Permanent link">&para;</a></h3>
+<p>Decision IDs SHOULD be assigned sequentially. The folder name MUST match the <code>id</code> field in <code>decision.json</code>.</p>
+<div class="highlight"><pre><span></span><code>/provenance/decisions/DEC-000042/decision.json
+</code></pre></div>
+<p>Contains:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="err">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="json-schema">JSON Schema<a class="headerlink" href="#json-schema" title="Permanent link">&para;</a></h2>
+<h3 id="minimal-required-decision">Minimal Required Decision<a class="headerlink" href="#minimal-required-decision" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenancecode.decision.v1&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000001&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Brief decision title&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accepted&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;timestamps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-12T10:30:00Z&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;actors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;username&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;outcome&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;What was decided&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;rationale&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Why this was chosen&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;risk&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;low&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="complete-decision-schema">Complete Decision Schema<a class="headerlink" href="#complete-decision-schema" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenancecode.decision.v1&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Migrate from REST to GraphQL for API layer&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+
+<span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accepted&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;supersedes&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;superseded_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">  </span><span class="p">},</span>
+
+<span class="w">  </span><span class="nt">&quot;timestamps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-10T14:30:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;accepted_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-12T09:15:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;updated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;expires_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">  </span><span class="p">},</span>
+
+<span class="w">  </span><span class="nt">&quot;actors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user:alice&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;approver&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user:bob&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cursor-ai&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;reviewers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;user:carol&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;user:dave&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+
+<span class="w">  </span><span class="nt">&quot;context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jira_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ARCH-425&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;repo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;backend-api&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;component&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;api-layer&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;https://company.atlassian.net/browse/ARCH-425&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;https://github.com/org/repo/pull/142&quot;</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+
+<span class="w">  </span><span class="nt">&quot;problem&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;REST API has grown complex with multiple endpoints, inconsistent patterns, and overfetching issues affecting mobile clients.&quot;</span><span class="p">,</span>
+
+<span class="w">  </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;Continue with REST and refactor endpoints&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Migrate to GraphQL with gradual rollout&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Adopt gRPC for internal services&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+
+<span class="w">  </span><span class="nt">&quot;outcome&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Migrate to GraphQL with gradual rollout starting with mobile endpoints.&quot;</span><span class="p">,</span>
+
+<span class="w">  </span><span class="nt">&quot;rationale&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GraphQL provides better mobile experience, type safety, and eliminates overfetching. Gradual rollout minimizes risk.&quot;</span><span class="p">,</span>
+
+<span class="w">  </span><span class="nt">&quot;risk&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;medium&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Learning curve and potential performance issues with complex queries&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;acceptance&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RA-000015&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;mitigations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;Team training on GraphQL best practices&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;Query complexity limits enforced&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;Performance monitoring dashboard&quot;</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+
+<span class="w">  </span><span class="nt">&quot;scope&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;api&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;mobile&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;architecture&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+
+<span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;graphql&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;rest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;migration&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;architecture&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+
+<span class="w">  </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;pr&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;142&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;issues&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;https://github.com/org/repo/issues/98&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;specs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;SPEC-000028&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;decisions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;DEC-000015&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;risks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;RA-000015&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+
+<span class="w">  </span><span class="nt">&quot;integrity&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;receipt_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenance/decisions/DEC-000042/acceptance.receipt.json&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;commit_sha&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a1b2c3d4e5f6&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;prov_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenance/decisions/DEC-000042/prov.jsonld&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+
+<span class="w">  </span><span class="nt">&quot;attestations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c2pa&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;manifest_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenance/decisions/DEC-000042/c2pa.manifest.json&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+
+<span class="w">  </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;review_duration_hours&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;stakeholder_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;impact_score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="field-definitions">Field Definitions<a class="headerlink" href="#field-definitions" title="Permanent link">&para;</a></h2>
+<h3 id="required-fields">Required Fields<a class="headerlink" href="#required-fields" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>schema</code></td>
+<td>string</td>
+<td>MUST be <code>"provenancecode.decision.v1"</code></td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>string</td>
+<td>Decision ID in format <code>DEC-XXXXXX</code></td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>Brief, descriptive title (max 120 chars recommended)</td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td>integer</td>
+<td>Version number (starts at 1, increments on updates)</td>
+</tr>
+<tr>
+<td><code>lifecycle.state</code></td>
+<td>string</td>
+<td>Current state: <code>draft</code>, <code>proposed</code>, <code>accepted</code>, <code>rejected</code>, <code>superseded</code></td>
+</tr>
+<tr>
+<td><code>timestamps.created_at</code></td>
+<td>string</td>
+<td>ISO 8601 timestamp of creation</td>
+</tr>
+<tr>
+<td><code>actors.author</code></td>
+<td>string</td>
+<td>Username or identifier of decision author</td>
+</tr>
+<tr>
+<td><code>outcome</code></td>
+<td>string</td>
+<td>What was decided</td>
+</tr>
+<tr>
+<td><code>rationale</code></td>
+<td>string</td>
+<td>Why this outcome was chosen</td>
+</tr>
+<tr>
+<td><code>risk.level</code></td>
+<td>string</td>
+<td>Risk level: <code>low</code>, <code>medium</code>, <code>high</code>, <code>critical</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="recommended-fields">Recommended Fields<a class="headerlink" href="#recommended-fields" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>decision.md</code></td>
+<td>file</td>
+<td>Human-readable narrative</td>
+</tr>
+<tr>
+<td><code>timestamps.accepted_at</code></td>
+<td>string</td>
+<td>When decision was approved</td>
+</tr>
+<tr>
+<td><code>actors.approver</code></td>
+<td>string</td>
+<td>Who approved the decision</td>
+</tr>
+<tr>
+<td><code>options</code></td>
+<td>array</td>
+<td>List of alternatives considered</td>
+</tr>
+<tr>
+<td><code>problem</code></td>
+<td>string</td>
+<td>Context and motivation</td>
+</tr>
+<tr>
+<td><code>links.pr</code></td>
+<td>array</td>
+<td>Pull request numbers or URLs</td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td>array</td>
+<td>Affected areas: <code>security</code>, <code>architecture</code>, <code>data</code>, etc.</td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td>array</td>
+<td>Searchable keywords</td>
+</tr>
+</tbody>
+</table>
+<h3 id="optional-fields">Optional Fields<a class="headerlink" href="#optional-fields" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>lifecycle.supersedes</code></td>
+<td>string</td>
+<td>Previous decision ID this replaces</td>
+</tr>
+<tr>
+<td><code>lifecycle.superseded_by</code></td>
+<td>string</td>
+<td>New decision ID that replaces this</td>
+</tr>
+<tr>
+<td><code>timestamps.updated_at</code></td>
+<td>string</td>
+<td>Last update timestamp</td>
+</tr>
+<tr>
+<td><code>timestamps.expires_at</code></td>
+<td>string</td>
+<td>Expiration for temporary decisions</td>
+</tr>
+<tr>
+<td><code>actors.bot</code></td>
+<td>string</td>
+<td>AI assistant that created draft</td>
+</tr>
+<tr>
+<td><code>actors.reviewers</code></td>
+<td>array</td>
+<td>List of reviewers</td>
+</tr>
+<tr>
+<td><code>context.*</code></td>
+<td>object</td>
+<td>External system links (Jira, Linear, etc.)</td>
+</tr>
+<tr>
+<td><code>links.specs</code></td>
+<td>array</td>
+<td>Related specification IDs</td>
+</tr>
+<tr>
+<td><code>links.decisions</code></td>
+<td>array</td>
+<td>Related decision IDs</td>
+</tr>
+<tr>
+<td><code>links.risks</code></td>
+<td>array</td>
+<td>Related risk acceptance IDs</td>
+</tr>
+<tr>
+<td><code>risk.acceptance</code></td>
+<td>string</td>
+<td>Risk acceptance ID (RA-XXXXXX)</td>
+</tr>
+<tr>
+<td><code>risk.mitigations</code></td>
+<td>array</td>
+<td>Risk mitigation strategies</td>
+</tr>
+<tr>
+<td><code>integrity.*</code></td>
+<td>object</td>
+<td>Cryptographic proof references</td>
+</tr>
+<tr>
+<td><code>attestations</code></td>
+<td>array</td>
+<td>External attestation formats</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td>object</td>
+<td>Custom project-specific fields</td>
+</tr>
+</tbody>
+</table>
+<h2 id="markdown-format">Markdown Format<a class="headerlink" href="#markdown-format" title="Permanent link">&para;</a></h2>
+<p>The <code>decision.md</code> file provides human context. It SHOULD follow this structure:</p>
+<div class="highlight"><pre><span></span><code><span class="gh"># DEC-XXXXXX: [Title]</span>
+
+<span class="gs">**Status:**</span> [State]  
+<span class="gs">**Date:**</span> [YYYY-MM-DD]  
+<span class="gs">**Author:**</span> [Name]  
+<span class="gs">**Approver:**</span> [Name]
+
+<span class="gu">## Context</span>
+
+[Why was this decision needed? What problem are we solving?]
+
+<span class="gu">## Options Considered</span>
+
+<span class="k">1.</span> <span class="gs">**Option A**</span> - [Description and tradeoffs]
+<span class="k">2.</span> <span class="gs">**Option B**</span> - [Description and tradeoffs]
+<span class="k">3.</span> <span class="gs">**Option C**</span> - [Description and tradeoffs]
+
+<span class="gu">## Decision</span>
+
+[What did we decide to do?]
+
+<span class="gu">## Rationale</span>
+
+[Why did we choose this option? What makes it better than alternatives?]
+
+<span class="gu">## Consequences</span>
+
+<span class="gu">### Positive</span>
+<span class="k">-</span><span class="w"> </span>[Benefit 1]
+<span class="k">-</span><span class="w"> </span>[Benefit 2]
+
+<span class="gu">### Negative</span>
+<span class="k">-</span><span class="w"> </span>[Tradeoff 1]
+<span class="k">-</span><span class="w"> </span>[Tradeoff 2]
+
+<span class="gu">## Risk</span>
+
+<span class="gs">**Level:**</span> [low/medium/high/critical]
+
+[Risk description and mitigation plan]
+
+<span class="gu">## Implementation</span>
+
+[How will this be implemented? Any phasing or milestones?]
+
+<span class="gu">## References</span>
+
+<span class="k">-</span><span class="w"> </span>[<span class="nt">SPEC-XXXXXX: Related Specification</span>](<span class="na">../specs/SPEC-XXXXXX/spec.md</span>)
+<span class="k">-</span><span class="w"> </span>[<span class="nt">PR #123</span>](<span class="na">https://github.com/org/repo/pull/123</span>)
+<span class="k">-</span><span class="w"> </span>[<span class="nt">Original Discussion</span>](<span class="na">https://company.slack.com/archives/C123/p123456</span>)
+</code></pre></div>
+<h2 id="lifecycle-states">Lifecycle States<a class="headerlink" href="#lifecycle-states" title="Permanent link">&para;</a></h2>
+<h3 id="state-definitions">State Definitions<a class="headerlink" href="#state-definitions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Description</th>
+<th>Transitions To</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>draft</code></td>
+<td>Initial creation, not yet reviewed</td>
+<td><code>proposed</code>, <code>rejected</code></td>
+</tr>
+<tr>
+<td><code>proposed</code></td>
+<td>Submitted for review</td>
+<td><code>accepted</code>, <code>rejected</code>, <code>draft</code></td>
+</tr>
+<tr>
+<td><code>accepted</code></td>
+<td>Approved and active</td>
+<td><code>superseded</code></td>
+</tr>
+<tr>
+<td><code>rejected</code></td>
+<td>Not approved, will not be implemented</td>
+<td>none (terminal)</td>
+</tr>
+<tr>
+<td><code>superseded</code></td>
+<td>Replaced by a newer decision</td>
+<td>none (terminal)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="state-transition-rules">State Transition Rules<a class="headerlink" href="#state-transition-rules" title="Permanent link">&para;</a></h3>
+<ol>
+<li>New decisions MUST start in <code>draft</code> state</li>
+<li>Decisions can move from <code>draft</code> to <code>proposed</code> when ready for review</li>
+<li>Only <code>proposed</code> decisions can become <code>accepted</code></li>
+<li><code>accepted</code> decisions MUST NOT be edited; create new decision and mark old as <code>superseded</code></li>
+<li><code>rejected</code> and <code>superseded</code> are terminal states</li>
+</ol>
+<h3 id="supersession">Supersession<a class="headerlink" href="#supersession" title="Permanent link">&para;</a></h3>
+<p>When superseding a decision:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Old decision DEC-000010</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000010&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;superseded&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;superseded_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// New decision DEC-000042</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accepted&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;supersedes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000010&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="optional-extensions">Optional Extensions<a class="headerlink" href="#optional-extensions" title="Permanent link">&para;</a></h2>
+<h3 id="acceptance-receipts">Acceptance Receipts<a class="headerlink" href="#acceptance-receipts" title="Permanent link">&para;</a></h3>
+<p>File: <code>acceptance.receipt.json</code></p>
+<p>Provides cryptographic proof of approval:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenancecode.receipt.v1&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;decision_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;approved_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user:bob&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;approved_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-12T09:15:00Z&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;commit_sha&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a1b2c3d4e5f6&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;signature&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;base64-encoded-signature&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;certificate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;base64-encoded-cert&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="w3c-prov-format">W3C PROV Format<a class="headerlink" href="#w3c-prov-format" title="Permanent link">&para;</a></h3>
+<p>File: <code>prov.jsonld</code></p>
+<p>Provides provenance chain in W3C standard format for interoperability.</p>
+<h3 id="c2pa-content-credentials">C2PA Content Credentials<a class="headerlink" href="#c2pa-content-credentials" title="Permanent link">&para;</a></h3>
+<p>File: <code>c2pa.manifest.json</code></p>
+<p>Tamper-evident credentials following C2PA standard.</p>
+<h2 id="validation-rules">Validation Rules<a class="headerlink" href="#validation-rules" title="Permanent link">&para;</a></h2>
+<h3 id="structural-validation">Structural Validation<a class="headerlink" href="#structural-validation" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Decision folder name MUST match <code>id</code> field</li>
+<li><code>decision.json</code> MUST exist and be valid JSON</li>
+<li><code>decision.json</code> MUST validate against schema</li>
+<li><code>schema</code> field MUST be <code>"provenancecode.decision.v1"</code></li>
+<li>All required fields MUST be present</li>
+</ol>
+<h3 id="semantic-validation">Semantic Validation<a class="headerlink" href="#semantic-validation" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>id</code> MUST match format <code>DEC-XXXXXX</code> with 6 digits</li>
+<li><code>lifecycle.state</code> MUST be valid state name</li>
+<li><code>timestamps.created_at</code> MUST be valid ISO 8601</li>
+<li><code>risk.level</code> MUST be <code>low</code>, <code>medium</code>, <code>high</code>, or <code>critical</code></li>
+<li>If <code>lifecycle.supersedes</code> is present, that decision MUST exist</li>
+<li>If <code>links.specs</code> is present, referenced specs SHOULD exist</li>
+<li>If <code>links.pr</code> is present and enforcement requires it, PR MUST match current PR</li>
+</ol>
+<h3 id="link-validation">Link Validation<a class="headerlink" href="#link-validation" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>links.pr</code> entries MUST be valid PR numbers or URLs</li>
+<li><code>links.decisions</code> entries MUST reference existing decisions</li>
+<li><code>links.risks</code> entries MUST reference existing risk acceptances</li>
+<li><code>links.specs</code> entries MUST reference existing specifications</li>
+</ol>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<p>See <code>/examples/example-decision/</code> for complete working examples including:
+- Minimal decision
+- Architectural decision with multiple options
+- Security decision with risk acceptance
+- Decision with cryptographic receipt</p>
+<h2 id="non-normative-guidance">Non-Normative Guidance<a class="headerlink" href="#non-normative-guidance" title="Permanent link">&para;</a></h2>
+<h3 id="when-to-create-a-decision">When to Create a Decision<a class="headerlink" href="#when-to-create-a-decision" title="Permanent link">&para;</a></h3>
+<p>Create a decision record when:
+- Making architectural or cross-cutting changes
+- Accepting technical debt or risks
+- Choosing between significant alternatives
+- Making security or compliance-related choices
+- Establishing patterns or conventions
+- Making irreversible changes (migrations, API contracts)</p>
+<h3 id="when-not-to-create-a-decision">When NOT to Create a Decision<a class="headerlink" href="#when-not-to-create-a-decision" title="Permanent link">&para;</a></h3>
+<p>Skip decision records for:
+- Routine bug fixes
+- Documentation updates
+- Code formatting or style changes
+- Dependency version bumps (unless breaking)
+- Test additions</p>
+<h3 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Write drafts early</strong> - Create draft while evaluating options</li>
+<li><strong>Be concise</strong> - Keep outcome and rationale focused</li>
+<li><strong>List alternatives</strong> - Show what was considered</li>
+<li><strong>Link everything</strong> - Connect to PRs, specs, and related decisions</li>
+<li><strong>Update state</strong> - Mark as accepted when merged</li>
+<li><strong>Never edit accepted</strong> - Supersede instead of modifying</li>
+</ol>
+<hr />
+<p><strong>Next:</strong> <a href="../enforcement/">Enforcement Policies</a> - Learn how decisions are validated</p>
 
 
 

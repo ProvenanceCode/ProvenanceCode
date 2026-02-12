@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://provenancecode.github.io/ProvenanceCode/standard/versioning/">
+        <link rel="canonical" href="https://provenancecode.github.io/provenancecode/standard/versioning/">
       
       
         <link rel="prev" href="../repo-layout/">
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#versioning" class="md-skip">
+        <a href="#versioning-and-lifecycle-specification" class="md-skip">
           Skip to content
         </a>
       
@@ -248,6 +248,33 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../../implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -266,10 +293,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -287,8 +314,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -426,6 +453,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Versioning
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -442,6 +487,557 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lifecycle-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lifecycle States
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lifecycle States">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decision-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision States
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specification-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specification States
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-acceptance-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Acceptance States
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-record-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake Record States
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-transitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Transitions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="State Transitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decision-lifecycle-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Lifecycle Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valid-transitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valid Transitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invalid-transitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Invalid Transitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versioning-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versioning Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Versioning Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Numbers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-increment-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Increment Version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version History
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supersession" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supersession
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supersession">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supersession-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supersession Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supersession-chains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supersession Chains
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-supersede-vs-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Supersede vs. Update
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expiration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expiration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Expiration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expiration-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expiration Field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-expiration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handling Expiration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expiration-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expiration Notifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#artifact-specific-lifecycles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Artifact-Specific Lifecycles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Artifact-Specific Lifecycles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decision-lifecycle-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Lifecycle Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specification-lifecycle-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specification Lifecycle Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-acceptance-lifecycle-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Acceptance Lifecycle Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-record-lifecycle-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake Record Lifecycle Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-start-in-draft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Start in Draft
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-update-timestamps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Update Timestamps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-record-actors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Record Actors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-use-supersession-chains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Use Supersession Chains
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-document-state-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Document State Changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-handle-expiration-proactively" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Handle Expiration Proactively
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-decision-evolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Decision Evolution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-supersession" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Supersession
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-risk-expiration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Risk Expiration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4-mistake-record-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 4: Mistake Record Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -475,17 +1071,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Implementation
+    Implementation Guides
   
 
     
@@ -496,12 +1092,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Implementation
+    Implementation Guides
   
 
           </label>
@@ -521,7 +1117,7 @@
   <span class="md-ellipsis">
     
   
-    GitHub Action
+    GitHub Actions
   
 
     
@@ -563,6 +1159,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building-implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building Your Own
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -590,6 +1214,546 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lifecycle-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lifecycle States
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lifecycle States">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decision-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision States
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specification-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specification States
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-acceptance-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Acceptance States
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-record-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake Record States
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-transitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Transitions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="State Transitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decision-lifecycle-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Lifecycle Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valid-transitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valid Transitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invalid-transitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Invalid Transitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versioning-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versioning Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Versioning Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Numbers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-increment-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Increment Version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version History
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supersession" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supersession
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supersession">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supersession-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supersession Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supersession-chains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supersession Chains
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-supersede-vs-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Supersede vs. Update
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expiration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expiration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Expiration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expiration-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expiration Field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-expiration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handling Expiration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expiration-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expiration Notifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#artifact-specific-lifecycles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Artifact-Specific Lifecycles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Artifact-Specific Lifecycles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decision-lifecycle-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Lifecycle Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specification-lifecycle-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specification Lifecycle Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-acceptance-lifecycle-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Acceptance Lifecycle Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-record-lifecycle-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake Record Lifecycle Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-start-in-draft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Start in Draft
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-update-timestamps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Update Timestamps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-record-actors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Record Actors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-use-supersession-chains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Use Supersession Chains
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-document-state-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Document State Changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-handle-expiration-proactively" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Handle Expiration Proactively
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-decision-evolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Decision Evolution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-supersession" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Supersession
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-risk-expiration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Risk Expiration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4-mistake-record-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 4: Mistake Record Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -608,12 +1772,754 @@
   
 
 
-<h1 id="versioning">Versioning<a class="headerlink" href="#versioning" title="Permanent link">&para;</a></h1>
+<h1 id="versioning-and-lifecycle-specification">Versioning and Lifecycle Specification<a class="headerlink" href="#versioning-and-lifecycle-specification" title="Permanent link">&para;</a></h1>
+<p><strong>Version:</strong> 1.0.0<br />
+<strong>Status:</strong> Draft<br />
+<strong>Part of:</strong> ProvenanceCode Open Standard</p>
+<h2 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
+<p>This document defines how ProvenanceCode artifacts progress through lifecycle states, how versions are managed, and how decisions evolve or become superseded over time.</p>
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#lifecycle-states">Lifecycle States</a></li>
+<li><a href="#state-transitions">State Transitions</a></li>
+<li><a href="#versioning-rules">Versioning Rules</a></li>
+<li><a href="#supersession">Supersession</a></li>
+<li><a href="#expiration">Expiration</a></li>
+<li><a href="#artifact-specific-lifecycles">Artifact-Specific Lifecycles</a></li>
+<li><a href="#best-practices">Best Practices</a></li>
+<li><a href="#examples">Examples</a></li>
+</ol>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>ProvenanceCode artifacts (decisions, specs, risks, mistakes) follow defined lifecycles that track their progression from initial draft to final state. This ensures:</p>
 <ul>
-<li>Standard versions are tagged (v1.0, v1.1, …)</li>
-<li>Backwards-incompatible changes require a major bump</li>
-<li>The GitHub App/Action should declare supported standard versions</li>
+<li><strong>Clarity</strong> - Everyone knows the current status</li>
+<li><strong>Auditability</strong> - State changes are tracked</li>
+<li><strong>Immutability</strong> - Accepted artifacts are never edited, only superseded</li>
+<li><strong>Traceability</strong> - History is preserved through supersession chains</li>
 </ul>
+<h2 id="lifecycle-states">Lifecycle States<a class="headerlink" href="#lifecycle-states" title="Permanent link">&para;</a></h2>
+<h3 id="decision-states">Decision States<a class="headerlink" href="#decision-states" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Description</th>
+<th>Can Edit?</th>
+<th>Terminal?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>draft</code></td>
+<td>Initial creation, work in progress</td>
+<td>✅ Yes</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>proposed</code></td>
+<td>Ready for review, awaiting approval</td>
+<td>⚠️ Minor edits</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>accepted</code></td>
+<td>Approved and active</td>
+<td>❌ No</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>rejected</code></td>
+<td>Not approved, will not implement</td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><code>superseded</code></td>
+<td>Replaced by newer decision</td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="specification-states">Specification States<a class="headerlink" href="#specification-states" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Description</th>
+<th>Can Edit?</th>
+<th>Terminal?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>draft</code></td>
+<td>Initial requirements, under discussion</td>
+<td>✅ Yes</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>review</code></td>
+<td>Ready for stakeholder review</td>
+<td>⚠️ Minor edits</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>approved</code></td>
+<td>Accepted, ready for implementation</td>
+<td>❌ No</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>implemented</code></td>
+<td>Completed and deployed</td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><code>rejected</code></td>
+<td>Not moving forward</td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><code>superseded</code></td>
+<td>Replaced by newer spec</td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="risk-acceptance-states">Risk Acceptance States<a class="headerlink" href="#risk-acceptance-states" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Description</th>
+<th>Can Edit?</th>
+<th>Terminal?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>active</code></td>
+<td>Risk is currently accepted</td>
+<td>⚠️ Update mitigations</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>expired</code></td>
+<td>Acceptance period ended</td>
+<td>❌ No</td>
+<td>⚠️ Review needed</td>
+</tr>
+<tr>
+<td><code>mitigated</code></td>
+<td>Risk has been eliminated</td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><code>rejected</code></td>
+<td>Risk not accepted</td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mistake-record-states">Mistake Record States<a class="headerlink" href="#mistake-record-states" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Description</th>
+<th>Can Edit?</th>
+<th>Terminal?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>open</code></td>
+<td>Identified, not yet fixed</td>
+<td>⚠️ Add details</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>mitigated</code></td>
+<td>Prevention rules in place</td>
+<td>⚠️ Add learnings</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>closed</code></td>
+<td>Fully resolved, guardrails active</td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="state-transitions">State Transitions<a class="headerlink" href="#state-transitions" title="Permanent link">&para;</a></h2>
+<h3 id="decision-lifecycle-flow">Decision Lifecycle Flow<a class="headerlink" href="#decision-lifecycle-flow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>   draft
+     ↓
+  proposed
+   ↙   ↘
+accepted  rejected
+   ↓         (terminal)
+superseded
+ (terminal)
+</code></pre></div>
+<h3 id="valid-transitions">Valid Transitions<a class="headerlink" href="#valid-transitions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>From</th>
+<th>To</th>
+<th>Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>draft</code></td>
+<td><code>proposed</code></td>
+<td>Ready for review</td>
+</tr>
+<tr>
+<td><code>draft</code></td>
+<td><code>rejected</code></td>
+<td>Decided not to proceed</td>
+</tr>
+<tr>
+<td><code>proposed</code></td>
+<td><code>accepted</code></td>
+<td>Approval granted</td>
+</tr>
+<tr>
+<td><code>proposed</code></td>
+<td><code>rejected</code></td>
+<td>Approval denied</td>
+</tr>
+<tr>
+<td><code>proposed</code></td>
+<td><code>draft</code></td>
+<td>Needs more work</td>
+</tr>
+<tr>
+<td><code>accepted</code></td>
+<td><code>superseded</code></td>
+<td>New decision replaces this</td>
+</tr>
+</tbody>
+</table>
+<h3 id="invalid-transitions">Invalid Transitions<a class="headerlink" href="#invalid-transitions" title="Permanent link">&para;</a></h3>
+<p>❌ <strong>Cannot</strong> transition:
+- From <code>accepted</code> back to <code>draft</code> or <code>proposed</code> (must supersede instead)
+- From <code>rejected</code> to any other state (terminal)
+- From <code>superseded</code> to any other state (terminal)</p>
+<h2 id="versioning-rules">Versioning Rules<a class="headerlink" href="#versioning-rules" title="Permanent link">&para;</a></h2>
+<h3 id="version-numbers">Version Numbers<a class="headerlink" href="#version-numbers" title="Permanent link">&para;</a></h3>
+<p>Each artifact has a <code>version</code> field (integer starting at 1):</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="when-to-increment-version">When to Increment Version<a class="headerlink" href="#when-to-increment-version" title="Permanent link">&para;</a></h3>
+<p>Increment the version number when making <strong>substantive changes</strong> to:
+- Outcome or decision
+- Risk level
+- Acceptance criteria (specs)
+- Mitigations (risks)</p>
+<p>Do NOT increment for:
+- Typo fixes
+- Formatting changes
+- Adding links or tags
+- Updating timestamps</p>
+<h3 id="version-history">Version History<a class="headerlink" href="#version-history" title="Permanent link">&para;</a></h3>
+<p>Store version history in <code>timestamps.updated_at</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;timestamps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-01T10:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;accepted_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-02T14:30:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;updated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-10T09:15:00Z&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>For detailed history, optionally create:
+<div class="highlight"><pre><span></span><code>provenance/decisions/DEC-000042/
+├── decision.json           (current version)
+├── decision.v1.json        (previous version)
+├── decision.v2.json        (previous version)
+└── CHANGELOG.md            (version history)
+</code></pre></div></p>
+<h2 id="supersession">Supersession<a class="headerlink" href="#supersession" title="Permanent link">&para;</a></h2>
+<h3 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h3>
+<p>When an accepted decision needs substantial changes, <strong>supersede</strong> it instead of editing:</p>
+<ol>
+<li>Create a new decision with new ID</li>
+<li>Mark old decision as <code>superseded</code></li>
+<li>Link old ↔ new with <code>lifecycle.supersedes</code> and <code>lifecycle.superseded_by</code></li>
+</ol>
+<h3 id="supersession-fields">Supersession Fields<a class="headerlink" href="#supersession-fields" title="Permanent link">&para;</a></h3>
+<p><strong>Old Decision (DEC-000010):</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000010&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;superseded&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;superseded_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>New Decision (DEC-000042):</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accepted&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;supersedes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000010&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="supersession-chains">Supersession Chains<a class="headerlink" href="#supersession-chains" title="Permanent link">&para;</a></h3>
+<p>Decisions can form chains:</p>
+<div class="highlight"><pre><span></span><code>DEC-000010 (superseded)
+    ↓
+DEC-000042 (superseded)
+    ↓
+DEC-000081 (accepted) — current
+</code></pre></div>
+<p><strong>DEC-000081:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accepted&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;supersedes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;supersession_chain&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;DEC-000010&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="when-to-supersede-vs-update">When to Supersede vs. Update<a class="headerlink" href="#when-to-supersede-vs-update" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Typo in rationale</td>
+<td>✏️ Edit and increment version</td>
+</tr>
+<tr>
+<td>Add missing link</td>
+<td>✏️ Edit without version increment</td>
+</tr>
+<tr>
+<td>Change outcome</td>
+<td>🔄 Supersede with new decision</td>
+</tr>
+<tr>
+<td>Change risk level</td>
+<td>🔄 Supersede with new decision</td>
+</tr>
+<tr>
+<td>Reverse decision</td>
+<td>🔄 Supersede with new decision</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rule of thumb:</strong> If it changes <em>what</em> was decided or <em>why</em>, supersede. If it's just clarification, update.</p>
+<h2 id="expiration">Expiration<a class="headerlink" href="#expiration" title="Permanent link">&para;</a></h2>
+<h3 id="purpose_1">Purpose<a class="headerlink" href="#purpose_1" title="Permanent link">&para;</a></h3>
+<p>Some decisions and risk acceptances have time limits:
+- Temporary workarounds
+- Trial periods
+- Time-boxed experiments
+- Compliance waivers</p>
+<h3 id="expiration-field">Expiration Field<a class="headerlink" href="#expiration-field" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;timestamps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-01T00:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;accepted_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-01T00:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;expires_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-08-01T00:00:00Z&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="handling-expiration">Handling Expiration<a class="headerlink" href="#handling-expiration" title="Permanent link">&para;</a></h3>
+<p>When <code>expires_at</code> is in the past:</p>
+<ol>
+<li><strong>Validator behavior:</strong></li>
+<li>Light preset: warn</li>
+<li>Standard preset: warn</li>
+<li>
+<p>Regulated preset: block</p>
+</li>
+<li>
+<p><strong>Team action:</strong></p>
+</li>
+<li>Review the decision/risk</li>
+<li>Either:<ul>
+<li>Extend expiration (update <code>expires_at</code>)</li>
+<li>Make permanent (remove <code>expires_at</code>)</li>
+<li>Supersede with new decision</li>
+<li>Mark as <code>expired</code> (for risks)</li>
+</ul>
+</li>
+</ol>
+<h3 id="expiration-notifications">Expiration Notifications<a class="headerlink" href="#expiration-notifications" title="Permanent link">&para;</a></h3>
+<p>Optional: Create automation to notify teams of upcoming expirations:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example: Find decisions expiring in next 30 days</span>
+jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;select(.timestamps.expires_at and </span>
+<span class="s1">  (.timestamps.expires_at | fromdateiso8601) &lt; (now + 30*24*60*60)) | </span>
+<span class="s1">  .id&#39;</span><span class="w"> </span>provenance/decisions/*/decision.json
+</code></pre></div>
+<h2 id="artifact-specific-lifecycles">Artifact-Specific Lifecycles<a class="headerlink" href="#artifact-specific-lifecycles" title="Permanent link">&para;</a></h2>
+<h3 id="decision-lifecycle-details">Decision Lifecycle Details<a class="headerlink" href="#decision-lifecycle-details" title="Permanent link">&para;</a></h3>
+<p><strong>Draft State:</strong>
+- Use for exploring options
+- AI assistants create drafts automatically
+- Can be freely edited
+- Not enforced by validation</p>
+<p><strong>Proposed State:</strong>
+- Submitted for review
+- Minor edits allowed (typos, clarifications)
+- Substantive changes → back to draft
+- Reviewers provide feedback</p>
+<p><strong>Accepted State:</strong>
+- Approval granted
+- No longer editable
+- Active and enforced
+- Can only be superseded</p>
+<p><strong>Best Practices:</strong>
+- Keep decisions in draft until implementation starts
+- Move to proposed when PR is ready
+- Accept only after human approval
+- Supersede if decision changes after acceptance</p>
+<h3 id="specification-lifecycle-details">Specification Lifecycle Details<a class="headerlink" href="#specification-lifecycle-details" title="Permanent link">&para;</a></h3>
+<p><strong>Draft State:</strong>
+- Requirements gathering
+- Stakeholder input
+- Can change freely</p>
+<p><strong>Review State:</strong>
+- Ready for approval
+- Stakeholders confirm requirements
+- Minor adjustments allowed</p>
+<p><strong>Approved State:</strong>
+- Ready for implementation
+- No changes without new spec
+- Linked to implementing decision</p>
+<p><strong>Implemented State:</strong>
+- Code deployed to production
+- Terminal state
+- Serves as historical record</p>
+<p><strong>Best Practices:</strong>
+- Create spec before starting work
+- Move to review when complete
+- Approve before significant implementation
+- Mark implemented when deployed</p>
+<h3 id="risk-acceptance-lifecycle-details">Risk Acceptance Lifecycle Details<a class="headerlink" href="#risk-acceptance-lifecycle-details" title="Permanent link">&para;</a></h3>
+<p><strong>Active State:</strong>
+- Risk is currently accepted
+- Mitigations are in place
+- Monitor regularly
+- Update mitigations as needed</p>
+<p><strong>Expired State:</strong>
+- Acceptance period ended
+- Requires review
+- Either renew or mitigate</p>
+<p><strong>Mitigated State:</strong>
+- Risk eliminated
+- Successful outcome
+- Document lessons learned</p>
+<p><strong>Best Practices:</strong>
+- Set expiration dates for all non-permanent risks
+- Review active risks monthly
+- Document mitigation strategies
+- Link to implementing decisions</p>
+<h3 id="mistake-record-lifecycle-details">Mistake Record Lifecycle Details<a class="headerlink" href="#mistake-record-lifecycle-details" title="Permanent link">&para;</a></h3>
+<p><strong>Open State:</strong>
+- Incident documented
+- Root cause identified
+- Prevention rule drafted</p>
+<p><strong>Mitigated State:</strong>
+- Guardrails in place
+- Enforcement active
+- Monitoring impact</p>
+<p><strong>Closed State:</strong>
+- Fully resolved
+- No recurrence
+- Lessons captured</p>
+<p><strong>Best Practices:</strong>
+- Create mistake records for all significant incidents
+- Define clear prevention rules
+- Link to enforcement policy
+- Review quarterly for effectiveness</p>
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
+<h3 id="1-start-in-draft">1. Start in Draft<a class="headerlink" href="#1-start-in-draft" title="Permanent link">&para;</a></h3>
+<p>Always create new artifacts in draft state:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;draft&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;timestamps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-12T10:00:00Z&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="2-update-timestamps">2. Update Timestamps<a class="headerlink" href="#2-update-timestamps" title="Permanent link">&para;</a></h3>
+<p>Set timestamps when changing states:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accepted&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;timestamps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-12T10:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;accepted_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-14T15:30:00Z&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="3-record-actors">3. Record Actors<a class="headerlink" href="#3-record-actors" title="Permanent link">&para;</a></h3>
+<p>Track who made state transitions:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accepted&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;actors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user:alice&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;approver&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user:bob&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="4-use-supersession-chains">4. Use Supersession Chains<a class="headerlink" href="#4-use-supersession-chains" title="Permanent link">&para;</a></h3>
+<p>When superseding, maintain full chain:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;supersedes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;supersession_chain&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;DEC-000010&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;rationale&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Updated authentication approach based on new security requirements. Previous decisions (DEC-000010, DEC-000042) are superseded.&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="5-document-state-changes">5. Document State Changes<a class="headerlink" href="#5-document-state-changes" title="Permanent link">&para;</a></h3>
+<p>In <code>decision.md</code>, document major state changes:</p>
+<div class="highlight"><pre><span></span><code><span class="gu">## Version History</span>
+
+<span class="gu">### Version 2 (2026-02-14)</span>
+<span class="k">-</span><span class="w"> </span><span class="gs">**State Change:**</span> draft → accepted
+<span class="k">-</span><span class="w"> </span><span class="gs">**Reason:**</span> Team approved GraphQL migration approach
+<span class="k">-</span><span class="w"> </span><span class="gs">**Approver:**</span> <span class="ni">@bob</span>
+
+<span class="gu">### Version 1 (2026-02-12)</span>
+<span class="k">-</span><span class="w"> </span><span class="gs">**Created:**</span> Initial draft
+<span class="k">-</span><span class="w"> </span><span class="gs">**Author:**</span> <span class="ni">@alice</span>
+</code></pre></div>
+<h3 id="6-handle-expiration-proactively">6. Handle Expiration Proactively<a class="headerlink" href="#6-handle-expiration-proactively" title="Permanent link">&para;</a></h3>
+<p>For expiring decisions:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;timestamps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;expires_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-06-01T00:00:00Z&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;expiration_note&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Temporary workaround for payment provider migration. Review before June 1, 2026.&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="example-1-decision-evolution">Example 1: Decision Evolution<a class="headerlink" href="#example-1-decision-evolution" title="Permanent link">&para;</a></h3>
+<p><strong>Initial Draft:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;draft&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;timestamps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-10T10:00:00Z&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>After Review:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;proposed&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;timestamps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-10T10:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;updated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-12T14:30:00Z&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>After Acceptance:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accepted&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;timestamps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-10T10:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;accepted_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-13T09:15:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;updated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-12T14:30:00Z&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;actors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user:alice&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;approver&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user:bob&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="example-2-supersession">Example 2: Supersession<a class="headerlink" href="#example-2-supersession" title="Permanent link">&para;</a></h3>
+<p><strong>Old Decision Marked as Superseded:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000010&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Use JWT for authentication&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;superseded&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;superseded_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;timestamps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-06-01T10:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;accepted_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-06-05T14:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;superseded_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-13T09:15:00Z&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>New Decision:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Migrate from JWT to OAuth2 with session tokens&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accepted&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;supersedes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000010&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;timestamps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-10T10:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;accepted_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-13T09:15:00Z&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;rationale&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OAuth2 provides better security and refresh token support. Supersedes DEC-000010 which used simpler JWT approach.&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="example-3-risk-expiration">Example 3: Risk Expiration<a class="headerlink" href="#example-3-risk-expiration" title="Permanent link">&para;</a></h3>
+<p><strong>Active Risk with Expiration:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;ra_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RA-000015&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;active&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;timestamps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-01T00:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;expires_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-05-01T00:00:00Z&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;risk_statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Temporary use of deprecated API until migration complete&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;acceptance&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;accepted_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;team-lead&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;accepted_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-01T00:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;expires_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-05-01T00:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Migration in progress, target completion April 2026&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>After Expiration (needs review):</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;ra_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RA-000015&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;expired&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;timestamps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-01T00:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;expires_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-05-01T00:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;expired_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-05-01T00:00:00Z&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;review_note&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Migration delayed, need to extend acceptance or expedite migration&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="example-4-mistake-record-lifecycle">Example 4: Mistake Record Lifecycle<a class="headerlink" href="#example-4-mistake-record-lifecycle" title="Permanent link">&para;</a></h3>
+<p><strong>Open Mistake:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;mr_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MR-000003&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;open&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;timestamps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-12T10:00:00Z&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;root_cause&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;summary&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Missing input validation allowed SQL injection&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;prevent_rule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;rule_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PRV-MR-000003-validate-all-inputs&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;All user inputs must be validated and sanitized before database queries&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>After Fix:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;mr_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MR-000003&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mitigated&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;timestamps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-12T10:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;mitigated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-14T15:00:00Z&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;fix&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;pr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://github.com/org/repo/pull/456&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;commit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;abc123&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;summary&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Added input validation library and updated all query builders&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;enforcement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;linter&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eslint-plugin-security&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;must_exist&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Fully Resolved:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;mr_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MR-000003&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;closed&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;timestamps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-12T10:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;mitigated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-14T15:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;closed_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-01T10:00:00Z&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;closure_note&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Validation in place for 2 weeks, no recurrence, enforcement automated&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="validation-requirements">Validation Requirements<a class="headerlink" href="#validation-requirements" title="Permanent link">&para;</a></h2>
+<p>Validators SHOULD check:</p>
+<ol>
+<li><strong>Valid States:</strong></li>
+<li>
+<p><code>lifecycle.state</code> is one of the defined states for the artifact type</p>
+</li>
+<li>
+<p><strong>Timestamp Consistency:</strong></p>
+</li>
+<li><code>created_at</code> ≤ <code>accepted_at</code> ≤ <code>updated_at</code></li>
+<li>
+<p><code>expires_at</code> (if present) &gt; <code>accepted_at</code></p>
+</li>
+<li>
+<p><strong>Supersession Integrity:</strong></p>
+</li>
+<li>If <code>supersedes</code> is present, referenced artifact exists</li>
+<li>
+<p>If <code>superseded_by</code> is present, that artifact references this one</p>
+</li>
+<li>
+<p><strong>Terminal States:</strong></p>
+</li>
+<li>Artifacts in terminal states cannot transition further</li>
+<li>
+<p>Terminal artifacts should not be edited</p>
+</li>
+<li>
+<p><strong>Expiration Warnings:</strong></p>
+</li>
+<li>Warn or block if <code>expires_at</code> is past and state is still <code>active</code>/<code>accepted</code></li>
+</ol>
+<hr />
+<p><strong>Next:</strong> <a href="../guides/">Implementation Guides</a> - How to use ProvenanceCode<br />
+<strong>See Also:</strong> <a href="../deo/">Decision Evidence Objects (DEO)</a> - Decision format details</p>
 
 
 

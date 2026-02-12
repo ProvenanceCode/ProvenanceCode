@@ -10,11 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://provenancecode.github.io/ProvenanceCode/implementation/github-app/">
+        <link rel="canonical" href="https://provenancecode.github.io/provenancecode/implementation/github-app/">
       
       
         <link rel="prev" href="../github-action/">
       
+      
+        <link rel="next" href="../../building-implementations/">
       
       
         
@@ -248,6 +250,33 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
     
@@ -262,10 +291,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -283,8 +312,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -463,17 +492,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Implementation
+    Implementation Guides
   
 
     
@@ -484,12 +513,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Implementation
+    Implementation Guides
   
 
           </label>
@@ -509,7 +538,7 @@
   <span class="md-ellipsis">
     
   
-    GitHub Action
+    GitHub Actions
   
 
     
@@ -539,6 +568,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub App
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -556,6 +603,598 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commercial-implementation-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commercial Implementation Available
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-app-vs-github-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub App vs GitHub Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-github-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use GitHub App
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-app-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub App Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GitHub App Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-github-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Create GitHub App
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-generate-private-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Generate Private Key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-install-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Install App
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-note-app-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Note App Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server Implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Server Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-server-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Server Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhook-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook Handling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Webhook Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pull-request-handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pull Request Handler
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetch-decision-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fetch Decision Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Logic
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation Logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-validator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Validator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-changed-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get Changed Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post Results
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Post Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pr-comment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PR Comment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#status-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status Check
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UI Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UI Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decision-viewer-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Viewer (Optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oauth-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OAuth Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Control
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Access Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#team-based-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Team-Based Permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-heroku" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 1: Heroku
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2: Docker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-3-cloud-run-gcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 3: Cloud Run (GCP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auto-create-decision-drafts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto-Create Decision Drafts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building-implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building Your Own
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -588,6 +1227,559 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commercial-implementation-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commercial Implementation Available
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-app-vs-github-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub App vs GitHub Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-github-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use GitHub App
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-app-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub App Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GitHub App Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-github-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Create GitHub App
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-generate-private-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Generate Private Key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-install-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Install App
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-note-app-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Note App Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server Implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Server Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-server-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Server Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhook-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook Handling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Webhook Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pull-request-handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pull Request Handler
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetch-decision-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fetch Decision Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Logic
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation Logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-validator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Validator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-changed-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get Changed Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post Results
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Post Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pr-comment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PR Comment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#status-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status Check
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UI Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UI Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decision-viewer-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Viewer (Optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oauth-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OAuth Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Control
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Access Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#team-based-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Team-Based Permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-heroku" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 1: Heroku
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2: Docker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-3-cloud-run-gcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 3: Cloud Run (GCP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auto-create-decision-drafts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto-Create Decision Drafts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -607,11 +1799,749 @@
 
 
 <h1 id="github-app-implementation">GitHub App Implementation<a class="headerlink" href="#github-app-implementation" title="Permanent link">&para;</a></h1>
-<p>This page will document:
-- Installation &amp; permissions
-- PR comment UX
-- Decision gating behavior
-- Subscription model (per repo)</p>
+<p><strong>Version:</strong> 1.0.0<br />
+<strong>Status:</strong> Draft<br />
+<strong>Part of:</strong> ProvenanceCode Open Standard</p>
+<h2 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
+<p>This document describes how to build a GitHub App that implements ProvenanceCode validation. This is a <strong>more advanced implementation path</strong> compared to GitHub Actions, providing features like proactive decision draft creation, team-based access control, and cross-repository validation.</p>
+<h2 id="commercial-implementation-available">Commercial Implementation Available<a class="headerlink" href="#commercial-implementation-available" title="Permanent link">&para;</a></h2>
+<p><strong><a href="https://embank.ai/provenancecode">ProvenanceCode App by EmbankAI</a></strong> is a fully-managed commercial GitHub App that implements this specification. It provides:</p>
+<ul>
+<li>✅ Zero-setup installation</li>
+<li>✅ Automatic decision draft creation</li>
+<li>✅ Team-based access controls</li>
+<li>✅ Cross-repository validation</li>
+<li>✅ Web UI for decision management</li>
+<li>✅ Enterprise support</li>
+<li>✅ SOC 2 compliant hosting</li>
+</ul>
+<p><strong>Pricing:</strong> Free for open source, paid plans for private repos.</p>
+<p>If you prefer to <strong>build your own implementation</strong>, this guide provides the technical details.</p>
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#architecture">Architecture</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#github-app-setup">GitHub App Setup</a></li>
+<li><a href="#server-implementation">Server Implementation</a></li>
+<li><a href="#webhook-handling">Webhook Handling</a></li>
+<li><a href="#validation-logic">Validation Logic</a></li>
+<li><a href="#ui-integration">UI Integration</a></li>
+<li><a href="#access-control">Access Control</a></li>
+<li><a href="#deployment">Deployment</a></li>
+<li><a href="#advanced-features">Advanced Features</a></li>
+</ol>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>A GitHub App provides a more integrated ProvenanceCode experience compared to GitHub Actions:</p>
+<h3 id="github-app-vs-github-actions">GitHub App vs GitHub Actions<a class="headerlink" href="#github-app-vs-github-actions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>GitHub Actions</th>
+<th>GitHub App</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Validation on PR</strong></td>
+<td>✅ Yes</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>PR Comments</strong></td>
+<td>✅ Yes</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>Status Checks</strong></td>
+<td>✅ Yes</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>Auto-draft Creation</strong></td>
+<td>⚠️ Limited</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>Cross-repo Validation</strong></td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>Web UI for Decisions</strong></td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>Team-based Access</strong></td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>OAuth Integration</strong></td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>Real-time Notifications</strong></td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>Setup Complexity</strong></td>
+<td>Low</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Hosting Required</strong></td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="when-to-use-github-app">When to Use GitHub App<a class="headerlink" href="#when-to-use-github-app" title="Permanent link">&para;</a></h3>
+<p>Choose a GitHub App when you need:
+- <strong>Proactive assistance</strong> - Auto-create decision drafts
+- <strong>Cross-repository</strong> - Validate decisions across multiple repos
+- <strong>Web UI</strong> - Browse and edit decisions in a web interface
+- <strong>Advanced access control</strong> - Team-based permissions
+- <strong>Real-time features</strong> - Live validation feedback</p>
+<h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
+<h3 id="components">Components<a class="headerlink" href="#components" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────────┐
+│                        GitHub                               │
+│  ┌──────────────┐         ┌──────────────┐                │
+│  │  Repository  │◄────────┤  GitHub App  │                │
+│  │              │         │              │                │
+│  │  - PRs       │         │  - Installed │                │
+│  │  - Webhooks  │         │  - Permissions│               │
+│  └──────┬───────┘         └──────────────┘                │
+│         │                                                   │
+└─────────┼───────────────────────────────────────────────────┘
+          │ Webhooks
+          ↓
+┌─────────────────────────────────────────────────────────────┐
+│                   ProvenanceCode Server                     │
+│                                                             │
+│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐ │
+│  │   Webhook    │───→│  Validator   │───→│   GitHub     │ │
+│  │   Handler    │    │   Engine     │    │   API        │ │
+│  └──────────────┘    └──────────────┘    └──────────────┘ │
+│                                                             │
+│  ┌──────────────┐    ┌──────────────┐                     │
+│  │   Web UI     │    │   Database   │                     │
+│  │  (Optional)  │    │  (Optional)  │                     │
+│  └──────────────┘    └──────────────┘                     │
+└─────────────────────────────────────────────────────────────┘
+</code></pre></div>
+<h3 id="data-flow">Data Flow<a class="headerlink" href="#data-flow" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>PR Created</strong> → GitHub sends webhook to server</li>
+<li><strong>Server receives</strong> webhook → Extracts PR data</li>
+<li><strong>Validator runs</strong> → Checks for required decisions/specs/risks</li>
+<li><strong>Results returned</strong> → Posted as PR comment and status check</li>
+<li><strong>User updates</strong> PR → Process repeats</li>
+</ol>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h3 id="required">Required<a class="headerlink" href="#required" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Hosting Environment</strong></li>
+<li>Node.js 18+ server</li>
+<li>Public HTTPS endpoint</li>
+<li>
+<p>Port 443 or custom port</p>
+</li>
+<li>
+<p><strong>GitHub Account</strong></p>
+</li>
+<li>Admin access to organization/repo</li>
+<li>
+<p>Ability to create GitHub Apps</p>
+</li>
+<li>
+<p><strong>ProvenanceCode Setup</strong></p>
+</li>
+<li>Repository with provenance structure</li>
+<li>Configuration files in place</li>
+</ol>
+<h3 id="recommended">Recommended<a class="headerlink" href="#recommended" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Domain name</strong> with SSL certificate</li>
+<li><strong>Monitoring</strong> and logging system</li>
+<li><strong>Database</strong> for caching (optional)</li>
+<li><strong>Redis</strong> for session management (optional)</li>
+</ul>
+<h2 id="github-app-setup">GitHub App Setup<a class="headerlink" href="#github-app-setup" title="Permanent link">&para;</a></h2>
+<h3 id="step-1-create-github-app">Step 1: Create GitHub App<a class="headerlink" href="#step-1-create-github-app" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Go to <strong>Settings</strong> → <strong>Developer settings</strong> → <strong>GitHub Apps</strong> → <strong>New GitHub App</strong></p>
+</li>
+<li>
+<p><strong>Basic Information:</strong></p>
+</li>
+<li><strong>Name:</strong> <code>ProvenanceCode Validator</code></li>
+<li><strong>Homepage URL:</strong> <code>https://your-domain.com</code></li>
+<li><strong>Webhook URL:</strong> <code>https://your-domain.com/webhooks</code></li>
+<li>
+<p><strong>Webhook secret:</strong> Generate a random secret (save it)</p>
+</li>
+<li>
+<p><strong>Permissions:</strong></p>
+</li>
+</ol>
+<p><strong>Repository permissions:</strong>
+   - Contents: <code>Read-only</code> (read decision files)
+   - Pull requests: <code>Read &amp; write</code> (comment and status)
+   - Checks: <code>Read &amp; write</code> (create check runs)
+   - Metadata: <code>Read-only</code> (repo info)</p>
+<p><strong>Organization permissions (optional):</strong>
+   - Members: <code>Read-only</code> (for team-based access)</p>
+<ol>
+<li><strong>Subscribe to events:</strong></li>
+<li>✅ Pull request</li>
+<li>✅ Pull request review</li>
+<li>
+<p>✅ Push (for decision file changes)</p>
+</li>
+<li>
+<p><strong>Where can this GitHub App be installed?</strong></p>
+</li>
+<li>
+<p>Choose <strong>Only on this account</strong> or <strong>Any account</strong></p>
+</li>
+<li>
+<p><strong>Create GitHub App</strong></p>
+</li>
+</ol>
+<h3 id="step-2-generate-private-key">Step 2: Generate Private Key<a class="headerlink" href="#step-2-generate-private-key" title="Permanent link">&para;</a></h3>
+<ol>
+<li>After creation, scroll to <strong>Private keys</strong></li>
+<li>Click <strong>Generate a private key</strong></li>
+<li>Download the <code>.pem</code> file (save securely)</li>
+</ol>
+<h3 id="step-3-install-app">Step 3: Install App<a class="headerlink" href="#step-3-install-app" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Go to <strong>Install App</strong> tab</li>
+<li>Select your organization/repository</li>
+<li>Choose <strong>All repositories</strong> or <strong>Select repositories</strong></li>
+<li>Click <strong>Install</strong></li>
+</ol>
+<h3 id="step-4-note-app-details">Step 4: Note App Details<a class="headerlink" href="#step-4-note-app-details" title="Permanent link">&para;</a></h3>
+<p>Save these values for server configuration:
+- <strong>App ID</strong> (from General tab)
+- <strong>Installation ID</strong> (from installation URL)
+- <strong>Webhook secret</strong> (you generated earlier)
+- <strong>Private key</strong> (the <code>.pem</code> file)</p>
+<h2 id="server-implementation">Server Implementation<a class="headerlink" href="#server-implementation" title="Permanent link">&para;</a></h2>
+<h3 id="basic-server-setup">Basic Server Setup<a class="headerlink" href="#basic-server-setup" title="Permanent link">&para;</a></h3>
+<p><strong>File: <code>server.js</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@octokit/app&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Octokit</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@octokit/rest&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">crypto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;crypto&#39;</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">express</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">3000</span><span class="p">;</span>
+
+<span class="c1">// GitHub App configuration</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">APP_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">GITHUB_APP_ID</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">PRIVATE_KEY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">GITHUB_PRIVATE_KEY</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">WEBHOOK_SECRET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">GITHUB_WEBHOOK_SECRET</span><span class="p">;</span>
+
+<span class="c1">// Initialize Octokit App</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">githubApp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">App</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">appId</span><span class="o">:</span><span class="w"> </span><span class="nx">APP_ID</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">privateKey</span><span class="o">:</span><span class="w"> </span><span class="nx">PRIVATE_KEY</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="c1">// Middleware</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
+
+<span class="c1">// Webhook verification middleware</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">verifyWebhook</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">,</span><span class="w"> </span><span class="nx">next</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">signature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s1">&#39;x-hub-signature-256&#39;</span><span class="p">];</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">payload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">hmac</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">crypto</span><span class="p">.</span><span class="nx">createHmac</span><span class="p">(</span><span class="s1">&#39;sha256&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">WEBHOOK_SECRET</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">digest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;sha256=&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">hmac</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">payload</span><span class="p">).</span><span class="nx">digest</span><span class="p">(</span><span class="s1">&#39;hex&#39;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">signature</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">digest</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">next</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">401</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;Invalid signature&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Webhook endpoint</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/webhooks&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">verifyWebhook</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s1">&#39;x-github-event&#39;</span><span class="p">];</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">payload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">;</span>
+
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Received </span><span class="si">${</span><span class="nx">event</span><span class="si">}</span><span class="sb"> event`</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;pull_request&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">await</span><span class="w"> </span><span class="nx">handlePullRequest</span><span class="p">(</span><span class="nx">payload</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">200</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;OK&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Error handling webhook:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">500</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// Health check</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/health&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">200</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ok&#39;</span><span class="w"> </span><span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`ProvenanceCode server listening on port </span><span class="si">${</span><span class="nx">port</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>init<span class="w"> </span>-y
+npm<span class="w"> </span>install<span class="w"> </span>express<span class="w"> </span>@octokit/app<span class="w"> </span>@octokit/rest<span class="w"> </span>dotenv
+</code></pre></div>
+<h3 id="environment-variables">Environment Variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h3>
+<p>Create <code>.env</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">GITHUB_APP_ID</span><span class="o">=</span><span class="m">123456</span>
+<span class="nv">GITHUB_PRIVATE_KEY</span><span class="o">=</span><span class="s2">&quot;-----BEGIN RSA PRIVATE KEY-----\n...\n-----END RSA PRIVATE KEY-----&quot;</span>
+<span class="nv">GITHUB_WEBHOOK_SECRET</span><span class="o">=</span>your-webhook-secret
+<span class="nv">PORT</span><span class="o">=</span><span class="m">3000</span>
+</code></pre></div>
+<p><strong>Load in server:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;dotenv&#39;</span><span class="p">).</span><span class="nx">config</span><span class="p">();</span>
+</code></pre></div>
+<h2 id="webhook-handling">Webhook Handling<a class="headerlink" href="#webhook-handling" title="Permanent link">&para;</a></h2>
+<h3 id="pull-request-handler">Pull Request Handler<a class="headerlink" href="#pull-request-handler" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">handlePullRequest</span><span class="p">(</span><span class="nx">payload</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">action</span><span class="p">,</span><span class="w"> </span><span class="nx">pull_request</span><span class="p">,</span><span class="w"> </span><span class="nx">repository</span><span class="p">,</span><span class="w"> </span><span class="nx">installation</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">payload</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Only process opened, synchronize, reopened</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="p">[</span><span class="s1">&#39;opened&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;synchronize&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;reopened&#39;</span><span class="p">].</span><span class="nx">includes</span><span class="p">(</span><span class="nx">action</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Processing PR #</span><span class="si">${</span><span class="nx">pull_request</span><span class="p">.</span><span class="nx">number</span><span class="si">}</span><span class="sb"> in </span><span class="si">${</span><span class="nx">repository</span><span class="p">.</span><span class="nx">full_name</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Get installation client</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">octokit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">githubApp</span><span class="p">.</span><span class="nx">getInstallationOctokit</span><span class="p">(</span><span class="nx">installation</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Fetch decision files from repo</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">decisions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetchDecisions</span><span class="p">(</span><span class="nx">octokit</span><span class="p">,</span><span class="w"> </span><span class="nx">repository</span><span class="p">,</span><span class="w"> </span><span class="nx">pull_request</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Run validation</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">validateProvenanceCode</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">octokit</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">repository</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">pull_request</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">decisions</span>
+<span class="w">  </span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Post results</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">postValidationResults</span><span class="p">(</span><span class="nx">octokit</span><span class="p">,</span><span class="w"> </span><span class="nx">repository</span><span class="p">,</span><span class="w"> </span><span class="nx">pull_request</span><span class="p">,</span><span class="w"> </span><span class="nx">results</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Create status check</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">createStatusCheck</span><span class="p">(</span><span class="nx">octokit</span><span class="p">,</span><span class="w"> </span><span class="nx">repository</span><span class="p">,</span><span class="w"> </span><span class="nx">pull_request</span><span class="p">,</span><span class="w"> </span><span class="nx">results</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="fetch-decision-files">Fetch Decision Files<a class="headerlink" href="#fetch-decision-files" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">fetchDecisions</span><span class="p">(</span><span class="nx">octokit</span><span class="p">,</span><span class="w"> </span><span class="nx">repository</span><span class="p">,</span><span class="w"> </span><span class="nx">pull_request</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">owner</span><span class="p">,</span><span class="w"> </span><span class="nx">repo</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">repository</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">pull_request</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">ref</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// List decisions directory</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="nx">contents</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">octokit</span><span class="p">.</span><span class="nx">rest</span><span class="p">.</span><span class="nx">repos</span><span class="p">.</span><span class="nx">getContent</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">owner</span><span class="o">:</span><span class="w"> </span><span class="nx">owner</span><span class="p">.</span><span class="nx">login</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">repo</span><span class="o">:</span><span class="w"> </span><span class="nx">repo</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;provenance/decisions&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">ref</span><span class="o">:</span><span class="w"> </span><span class="nx">ref</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">decisions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">contents</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;dir&#39;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="sr">/^DEC-\d{6}$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Fetch decision.json</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="nx">file</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">octokit</span><span class="p">.</span><span class="nx">rest</span><span class="p">.</span><span class="nx">repos</span><span class="p">.</span><span class="nx">getContent</span><span class="p">({</span>
+<span class="w">            </span><span class="nx">owner</span><span class="o">:</span><span class="w"> </span><span class="nx">owner</span><span class="p">.</span><span class="nx">login</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">repo</span><span class="o">:</span><span class="w"> </span><span class="nx">repo</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">path</span><span class="si">}</span><span class="sb">/decision.json`</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">ref</span><span class="o">:</span><span class="w"> </span><span class="nx">ref</span>
+<span class="w">          </span><span class="p">});</span>
+
+<span class="w">          </span><span class="kd">const</span><span class="w"> </span><span class="nx">content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">file</span><span class="p">.</span><span class="nx">content</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;base64&#39;</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">);</span>
+<span class="w">          </span><span class="kd">const</span><span class="w"> </span><span class="nx">decision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">content</span><span class="p">);</span>
+
+<span class="w">          </span><span class="nx">decisions</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">path</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="nx">decision</span>
+<span class="w">          </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="sb">`Failed to fetch </span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">/decision.json:`</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">decisions</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Error fetching decisions:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">[];</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="validation-logic">Validation Logic<a class="headerlink" href="#validation-logic" title="Permanent link">&para;</a></h2>
+<h3 id="core-validator">Core Validator<a class="headerlink" href="#core-validator" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">validateProvenanceCode</span><span class="p">(</span><span class="nx">octokit</span><span class="p">,</span><span class="w"> </span><span class="nx">repository</span><span class="p">,</span><span class="w"> </span><span class="nx">pull_request</span><span class="p">,</span><span class="w"> </span><span class="nx">decisions</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">valid</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">errors</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nx">warnings</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nx">decisions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">found</span><span class="o">:</span><span class="w"> </span><span class="nx">decisions</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">required</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">list</span><span class="o">:</span><span class="w"> </span><span class="nx">decisions</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">specs</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">found</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">required</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">list</span><span class="o">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">risks</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">found</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">required</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">list</span><span class="o">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">};</span>
+
+<span class="w">  </span><span class="c1">// Load config</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">loadConfig</span><span class="p">(</span><span class="nx">octokit</span><span class="p">,</span><span class="w"> </span><span class="nx">repository</span><span class="p">,</span><span class="w"> </span><span class="nx">pull_request</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Get changed files</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">changedFiles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getChangedFiles</span><span class="p">(</span><span class="nx">octokit</span><span class="p">,</span><span class="w"> </span><span class="nx">repository</span><span class="p">,</span><span class="w"> </span><span class="nx">pull_request</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Check if decision required</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">requiresDecision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">checkDecisionRequired</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="nx">changedFiles</span><span class="p">,</span><span class="w"> </span><span class="nx">pull_request</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">requiresDecision</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">results</span><span class="p">.</span><span class="nx">decisions</span><span class="p">.</span><span class="nx">required</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">decisions</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">results</span><span class="p">.</span><span class="nx">valid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">      </span><span class="nx">results</span><span class="p">.</span><span class="nx">errors</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">&#39;Decision required but none found&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// Validate decision format</span>
+<span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">decision</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">decisions</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">validation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">validateDecisionFormat</span><span class="p">(</span><span class="nx">decision</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">validation</span><span class="p">.</span><span class="nx">valid</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nx">results</span><span class="p">.</span><span class="nx">valid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">          </span><span class="nx">results</span><span class="p">.</span><span class="nx">errors</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">decision</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">: </span><span class="si">${</span><span class="nx">validation</span><span class="p">.</span><span class="nx">error</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+
+<span class="w">      </span><span class="c1">// Check PR link</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">hasValidPRLink</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">decisions</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="nx">dec</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span>
+<span class="w">        </span><span class="nx">dec</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">links</span><span class="o">?</span><span class="p">.</span><span class="nx">pr</span><span class="o">?</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="nx">pull_request</span><span class="p">.</span><span class="nx">number</span><span class="p">))</span><span class="w"> </span><span class="o">||</span>
+<span class="w">        </span><span class="nx">dec</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">links</span><span class="o">?</span><span class="p">.</span><span class="nx">pr</span><span class="o">?</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">pull_request</span><span class="p">.</span><span class="nx">html_url</span><span class="p">)</span>
+<span class="w">      </span><span class="p">);</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">hasValidPRLink</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">results</span><span class="p">.</span><span class="nx">warnings</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">&#39;Decision should reference this PR in links.pr&#39;</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Similar checks for specs and risks...</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">results</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">checkDecisionRequired</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span><span class="w"> </span><span class="nx">changedFiles</span><span class="p">,</span><span class="w"> </span><span class="nx">pull_request</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Check paths</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">file</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">changedFiles</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">config</span><span class="p">.</span><span class="nx">requireDecisionOnPaths</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">file</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="nx">path</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Check labels</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">pull_request</span><span class="p">.</span><span class="nx">labels</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">l</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">l</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">label</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">labels</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">requireDecisionOnLabels</span><span class="o">?</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">label</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">validateDecisionFormat</span><span class="p">(</span><span class="nx">decision</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">required</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;schema&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;id&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;title&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;version&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;lifecycle&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;timestamps&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;actors&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;outcome&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;rationale&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;risk&#39;</span><span class="p">];</span>
+
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">field</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">required</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">decision</span><span class="p">[</span><span class="nx">field</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">valid</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="sb">`Missing required field: </span><span class="si">${</span><span class="nx">field</span><span class="si">}</span><span class="sb">`</span><span class="w"> </span><span class="p">};</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Validate ID format</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="sr">/^DEC-\d{6}$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">decision</span><span class="p">.</span><span class="nx">id</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">valid</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Invalid ID format (must be DEC-XXXXXX)&#39;</span><span class="w"> </span><span class="p">};</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">valid</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="get-changed-files">Get Changed Files<a class="headerlink" href="#get-changed-files" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">getChangedFiles</span><span class="p">(</span><span class="nx">octokit</span><span class="p">,</span><span class="w"> </span><span class="nx">repository</span><span class="p">,</span><span class="w"> </span><span class="nx">pull_request</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">owner</span><span class="p">,</span><span class="w"> </span><span class="nx">repo</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">repository</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="nx">files</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">octokit</span><span class="p">.</span><span class="nx">rest</span><span class="p">.</span><span class="nx">pulls</span><span class="p">.</span><span class="nx">listFiles</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">owner</span><span class="o">:</span><span class="w"> </span><span class="nx">owner</span><span class="p">.</span><span class="nx">login</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">repo</span><span class="o">:</span><span class="w"> </span><span class="nx">repo</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">pull_number</span><span class="o">:</span><span class="w"> </span><span class="nx">pull_request</span><span class="p">.</span><span class="nx">number</span>
+<span class="w">  </span><span class="p">});</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">files</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">f</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">f</span><span class="p">.</span><span class="nx">filename</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="post-results">Post Results<a class="headerlink" href="#post-results" title="Permanent link">&para;</a></h2>
+<h3 id="pr-comment">PR Comment<a class="headerlink" href="#pr-comment" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">postValidationResults</span><span class="p">(</span><span class="nx">octokit</span><span class="p">,</span><span class="w"> </span><span class="nx">repository</span><span class="p">,</span><span class="w"> </span><span class="nx">pull_request</span><span class="p">,</span><span class="w"> </span><span class="nx">results</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">owner</span><span class="p">,</span><span class="w"> </span><span class="nx">repo</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">repository</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;## ProvenanceCode Validation Results\n\n&#39;</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">results</span><span class="p">.</span><span class="nx">valid</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">body</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;✅ **All checks passed**\n\n&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">body</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;❌ **Validation failed**\n\n&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nx">body</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;### Summary\n\n&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">body</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="sb">`- **Decisions:** </span><span class="si">${</span><span class="nx">results</span><span class="p">.</span><span class="nx">decisions</span><span class="p">.</span><span class="nx">found</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">results</span><span class="p">.</span><span class="nx">decisions</span><span class="p">.</span><span class="nx">required</span><span class="si">}</span><span class="sb">\n`</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">body</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="sb">`- **Specs:** </span><span class="si">${</span><span class="nx">results</span><span class="p">.</span><span class="nx">specs</span><span class="p">.</span><span class="nx">found</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">results</span><span class="p">.</span><span class="nx">specs</span><span class="p">.</span><span class="nx">required</span><span class="si">}</span><span class="sb">\n`</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">body</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="sb">`- **Risks:** </span><span class="si">${</span><span class="nx">results</span><span class="p">.</span><span class="nx">risks</span><span class="p">.</span><span class="nx">found</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">results</span><span class="p">.</span><span class="nx">risks</span><span class="p">.</span><span class="nx">required</span><span class="si">}</span><span class="sb">\n\n`</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">results</span><span class="p">.</span><span class="nx">decisions</span><span class="p">.</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">body</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;### Decisions Found\n\n&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">results</span><span class="p">.</span><span class="nx">decisions</span><span class="p">.</span><span class="nx">list</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">dec</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">body</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="sb">`- [</span><span class="si">${</span><span class="nx">dec</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">](https://github.com/</span><span class="si">${</span><span class="nx">owner</span><span class="p">.</span><span class="nx">login</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">repo</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">/blob/</span><span class="si">${</span><span class="nx">pull_request</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">ref</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">dec</span><span class="p">.</span><span class="nx">path</span><span class="si">}</span><span class="sb">/decision.json) - </span><span class="si">${</span><span class="nx">dec</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="sb">\n`</span><span class="p">;</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="nx">body</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">results</span><span class="p">.</span><span class="nx">errors</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">body</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;### Errors\n\n&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">results</span><span class="p">.</span><span class="nx">errors</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">err</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="sb">`- ❌ </span><span class="si">${</span><span class="nx">err</span><span class="si">}</span><span class="sb">\n`</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">body</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">results</span><span class="p">.</span><span class="nx">warnings</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">body</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;### Warnings\n\n&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">results</span><span class="p">.</span><span class="nx">warnings</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">warn</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="sb">`- ⚠️ </span><span class="si">${</span><span class="nx">warn</span><span class="si">}</span><span class="sb">\n`</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">body</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nx">body</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;---\n&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">body</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;*Validated by [ProvenanceCode](https://provenancecode.org)*&#39;</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Find or create comment</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="nx">comments</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">octokit</span><span class="p">.</span><span class="nx">rest</span><span class="p">.</span><span class="nx">issues</span><span class="p">.</span><span class="nx">listComments</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">owner</span><span class="o">:</span><span class="w"> </span><span class="nx">owner</span><span class="p">.</span><span class="nx">login</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">repo</span><span class="o">:</span><span class="w"> </span><span class="nx">repo</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">issue_number</span><span class="o">:</span><span class="w"> </span><span class="nx">pull_request</span><span class="p">.</span><span class="nx">number</span>
+<span class="w">  </span><span class="p">});</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">existingComment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">comments</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span>
+<span class="w">    </span><span class="nx">c</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;Bot&#39;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>
+<span class="w">    </span><span class="nx">c</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;ProvenanceCode Validation Results&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">existingComment</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">octokit</span><span class="p">.</span><span class="nx">rest</span><span class="p">.</span><span class="nx">issues</span><span class="p">.</span><span class="nx">updateComment</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">owner</span><span class="o">:</span><span class="w"> </span><span class="nx">owner</span><span class="p">.</span><span class="nx">login</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">repo</span><span class="o">:</span><span class="w"> </span><span class="nx">repo</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">comment_id</span><span class="o">:</span><span class="w"> </span><span class="nx">existingComment</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">body</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">octokit</span><span class="p">.</span><span class="nx">rest</span><span class="p">.</span><span class="nx">issues</span><span class="p">.</span><span class="nx">createComment</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">owner</span><span class="o">:</span><span class="w"> </span><span class="nx">owner</span><span class="p">.</span><span class="nx">login</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">repo</span><span class="o">:</span><span class="w"> </span><span class="nx">repo</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">issue_number</span><span class="o">:</span><span class="w"> </span><span class="nx">pull_request</span><span class="p">.</span><span class="nx">number</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">body</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="status-check">Status Check<a class="headerlink" href="#status-check" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">createStatusCheck</span><span class="p">(</span><span class="nx">octokit</span><span class="p">,</span><span class="w"> </span><span class="nx">repository</span><span class="p">,</span><span class="w"> </span><span class="nx">pull_request</span><span class="p">,</span><span class="w"> </span><span class="nx">results</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">owner</span><span class="p">,</span><span class="w"> </span><span class="nx">repo</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">repository</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">octokit</span><span class="p">.</span><span class="nx">rest</span><span class="p">.</span><span class="nx">repos</span><span class="p">.</span><span class="nx">createCommitStatus</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">owner</span><span class="o">:</span><span class="w"> </span><span class="nx">owner</span><span class="p">.</span><span class="nx">login</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">repo</span><span class="o">:</span><span class="w"> </span><span class="nx">repo</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">sha</span><span class="o">:</span><span class="w"> </span><span class="nx">pull_request</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">sha</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="nx">results</span><span class="p">.</span><span class="nx">valid</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;success&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;failure&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">context</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ProvenanceCode&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="nx">results</span><span class="p">.</span><span class="nx">valid</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;All checks passed&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Validation failed&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">target_url</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://your-domain.com/results&#39;</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="ui-integration">UI Integration<a class="headerlink" href="#ui-integration" title="Permanent link">&para;</a></h2>
+<h3 id="decision-viewer-optional">Decision Viewer (Optional)<a class="headerlink" href="#decision-viewer-optional" title="Permanent link">&para;</a></h3>
+<p>Provide a web UI to browse decisions:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/decisions/:owner/:repo&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">owner</span><span class="p">,</span><span class="w"> </span><span class="nx">repo</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Fetch decisions from GitHub</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">decisions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetchAllDecisions</span><span class="p">(</span><span class="nx">owner</span><span class="p">,</span><span class="w"> </span><span class="nx">repo</span><span class="p">);</span>
+
+<span class="w">  </span><span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;decisions&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">decisions</span><span class="p">,</span><span class="w"> </span><span class="nx">owner</span><span class="p">,</span><span class="w"> </span><span class="nx">repo</span><span class="w"> </span><span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div>
+<h3 id="oauth-authentication">OAuth Authentication<a class="headerlink" href="#oauth-authentication" title="Permanent link">&para;</a></h3>
+<p>For secure access:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createOAuthAppAuth</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@octokit/auth-oauth-app&#39;</span><span class="p">);</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/auth/login&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`https://github.com/login/oauth/authorize?client_id=</span><span class="si">${</span><span class="nx">CLIENT_ID</span><span class="si">}</span><span class="sb">&amp;redirect_uri=</span><span class="si">${</span><span class="nx">CALLBACK_URL</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/auth/callback&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">code</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Exchange code for token</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">auth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createOAuthAppAuth</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">clientId</span><span class="o">:</span><span class="w"> </span><span class="nx">CLIENT_ID</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">clientSecret</span><span class="o">:</span><span class="w"> </span><span class="nx">CLIENT_SECRET</span>
+<span class="w">  </span><span class="p">});</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">auth</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;oauth-user&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">code</span>
+<span class="w">  </span><span class="p">});</span>
+
+<span class="w">  </span><span class="c1">// Store token in session</span>
+<span class="w">  </span><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">token</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s1">&#39;/dashboard&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<h2 id="access-control">Access Control<a class="headerlink" href="#access-control" title="Permanent link">&para;</a></h2>
+<h3 id="team-based-permissions">Team-Based Permissions<a class="headerlink" href="#team-based-permissions" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">checkAccess</span><span class="p">(</span><span class="nx">octokit</span><span class="p">,</span><span class="w"> </span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">repository</span><span class="p">,</span><span class="w"> </span><span class="nx">action</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">loadConfig</span><span class="p">(</span><span class="nx">octokit</span><span class="p">,</span><span class="w"> </span><span class="nx">repository</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;edit&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Check if user is in editorTeams</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">team</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">config</span><span class="p">.</span><span class="nx">access</span><span class="p">.</span><span class="nx">editorTeams</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">isMember</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">checkTeamMembership</span><span class="p">(</span><span class="nx">octokit</span><span class="p">,</span><span class="w"> </span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">team</span><span class="p">);</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isMember</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;view&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Check if user is in viewerTeams</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">team</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">config</span><span class="p">.</span><span class="nx">access</span><span class="p">.</span><span class="nx">viewerTeams</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">isMember</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">checkTeamMembership</span><span class="p">(</span><span class="nx">octokit</span><span class="p">,</span><span class="w"> </span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">team</span><span class="p">);</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isMember</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
+<h3 id="option-1-heroku">Option 1: Heroku<a class="headerlink" href="#option-1-heroku" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>heroku<span class="w"> </span>create<span class="w"> </span>provenance<span class="w"> </span>code-validator
+heroku<span class="w"> </span>config:set<span class="w"> </span><span class="nv">GITHUB_APP_ID</span><span class="o">=</span><span class="m">123456</span>
+heroku<span class="w"> </span>config:set<span class="w"> </span><span class="nv">GITHUB_PRIVATE_KEY</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>cat<span class="w"> </span>private-key.pem<span class="k">)</span><span class="s2">&quot;</span>
+heroku<span class="w"> </span>config:set<span class="w"> </span><span class="nv">GITHUB_WEBHOOK_SECRET</span><span class="o">=</span>your-secret
+git<span class="w"> </span>push<span class="w"> </span>heroku<span class="w"> </span>main
+</code></pre></div>
+<h3 id="option-2-docker">Option 2: Docker<a class="headerlink" href="#option-2-docker" title="Permanent link">&para;</a></h3>
+<p><strong>Dockerfile:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">node:18-alpine</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<span class="k">COPY</span><span class="w"> </span>package*.json<span class="w"> </span>./
+<span class="k">RUN</span><span class="w"> </span>npm<span class="w"> </span>install<span class="w"> </span>--production
+<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">3000</span>
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;node&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;server.js&quot;</span><span class="p">]</span>
+</code></pre></div>
+<p><strong>Deploy:</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>provenancecode-validator<span class="w"> </span>.
+docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:3000<span class="w"> </span>--env-file<span class="w"> </span>.env<span class="w"> </span>provenancecode-validator
+</code></pre></div>
+<h3 id="option-3-cloud-run-gcp">Option 3: Cloud Run (GCP)<a class="headerlink" href="#option-3-cloud-run-gcp" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>gcloud<span class="w"> </span>run<span class="w"> </span>deploy<span class="w"> </span>provenancecode-validator<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--source<span class="w"> </span>.<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--platform<span class="w"> </span>managed<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--region<span class="w"> </span>us-central1<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--allow-unauthenticated
+</code></pre></div>
+<h2 id="advanced-features">Advanced Features<a class="headerlink" href="#advanced-features" title="Permanent link">&para;</a></h2>
+<h3 id="auto-create-decision-drafts">Auto-Create Decision Drafts<a class="headerlink" href="#auto-create-decision-drafts" title="Permanent link">&para;</a></h3>
+<p>When validation fails, automatically create a draft:</p>
+<div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">createDecisionDraft</span><span class="p">(</span><span class="nx">octokit</span><span class="p">,</span><span class="w"> </span><span class="nx">repository</span><span class="p">,</span><span class="w"> </span><span class="nx">pull_request</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">nextId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getNextDecisionId</span><span class="p">(</span><span class="nx">octokit</span><span class="p">,</span><span class="w"> </span><span class="nx">repository</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">draft</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">schema</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;provenancecode.decision.v1&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="nx">nextId</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="nx">pull_request</span><span class="p">.</span><span class="nx">title</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">version</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">lifecycle</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;draft&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">timestamps</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">created_at</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">().</span><span class="nx">toISOString</span><span class="p">()</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">actors</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">author</span><span class="o">:</span><span class="w"> </span><span class="nx">pull_request</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">login</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">outcome</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TODO: Document decision&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">rationale</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TODO: Explain rationale&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">risk</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">level</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;low&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">links</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">pr</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nb">String</span><span class="p">(</span><span class="nx">pull_request</span><span class="p">.</span><span class="nx">number</span><span class="p">)]</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">};</span>
+
+<span class="w">  </span><span class="c1">// Create PR with draft</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">octokit</span><span class="p">.</span><span class="nx">rest</span><span class="p">.</span><span class="nx">pulls</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">owner</span><span class="o">:</span><span class="w"> </span><span class="nx">repository</span><span class="p">.</span><span class="nx">owner</span><span class="p">.</span><span class="nx">login</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">repo</span><span class="o">:</span><span class="w"> </span><span class="nx">repository</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="sb">`Add decision draft </span><span class="si">${</span><span class="nx">nextId</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">head</span><span class="o">:</span><span class="w"> </span><span class="sb">`decision-draft-</span><span class="si">${</span><span class="nx">nextId</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">base</span><span class="o">:</span><span class="w"> </span><span class="nx">repository</span><span class="p">.</span><span class="nx">default_branch</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="sb">`Auto-generated decision draft for PR #</span><span class="si">${</span><span class="nx">pull_request</span><span class="p">.</span><span class="nx">number</span><span class="si">}</span><span class="sb">`</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Set up GitHub App</strong> following the setup section</li>
+<li><strong>Deploy server</strong> to your hosting environment</li>
+<li><strong>Install app</strong> on your repositories</li>
+<li><strong>Test with PR</strong> that requires decisions</li>
+<li><strong>Monitor logs</strong> and iterate</li>
+</ol>
+<h2 id="related-documentation">Related Documentation<a class="headerlink" href="#related-documentation" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../github-action/">GitHub Actions Implementation</a> - Simpler alternative</li>
+<li><a href="../../standard/enforcement/">Enforcement Policies</a> - Configure validation</li>
+<li><a href="../guides/01-Getting-Started.md">Getting Started</a> - Initial setup</li>
+</ul>
+<hr />
+<p><strong>References:</strong>
+- <a href="https://docs.github.com/en/apps">GitHub Apps Documentation</a>
+- <a href="https://octokit.github.io/rest.js/">Octokit.js</a>
+- <a href="https://probot.github.io/">Probot Framework</a> - Alternative app framework</p>
 
 
 

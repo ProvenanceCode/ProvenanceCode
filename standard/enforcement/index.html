@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://provenancecode.github.io/ProvenanceCode/standard/enforcement/">
+        <link rel="canonical" href="https://provenancecode.github.io/provenancecode/standard/enforcement/">
       
       
         <link rel="prev" href="../deo/">
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enforcement-presets" class="md-skip">
+        <a href="#enforcement-policies-specification" class="md-skip">
           Skip to content
         </a>
       
@@ -248,6 +248,33 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../../implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -266,10 +293,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -287,8 +314,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -421,10 +448,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#light" class="md-nav__link">
+  <a href="#abstract" class="md-nav__link">
     <span class="md-ellipsis">
       
-        light
+        Abstract
       
     </span>
   </a>
@@ -432,10 +459,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#standard" class="md-nav__link">
+  <a href="#table-of-contents" class="md-nav__link">
     <span class="md-ellipsis">
       
-        standard
+        Table of Contents
       
     </span>
   </a>
@@ -443,13 +470,485 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#regulated" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        regulated
+        Overview
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enforcement-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enforcement Philosophy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enforcement Philosophy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#three-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-enforcement-runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When Enforcement Runs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary-provenanceconfigjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary: provenance/config.json
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#policy-provenancepoliciesenforcementyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Policy: provenance/policies/enforcement.yml
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constitution-provenancepoliciesconstitutionmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constitution: provenance/policies/constitution.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enforcement-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enforcement Presets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enforcement Presets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#light-preset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Light Preset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-preset-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard Preset (Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regulated-preset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regulated Preset
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decision-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spec-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spec Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drift-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drift Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#path-and-label-triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path and Label Triggers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Path and Label Triggers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Matching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#label-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Label Matching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docs-only-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docs-Only Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blocking-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blocking Modes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Blocking Modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#never-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Never Block
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selective-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selective Block
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#always-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Always Block
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-attribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Attribution
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI Attribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decision-bot-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Bot Field
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-light-enforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Light Enforcement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-standard-enforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Standard Enforcement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-regulated-enforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Regulated Enforcement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migration-between-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration Between Presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validator-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validator Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validator-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validator Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -545,17 +1044,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Implementation
+    Implementation Guides
   
 
     
@@ -566,12 +1065,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Implementation
+    Implementation Guides
   
 
           </label>
@@ -591,7 +1090,7 @@
   <span class="md-ellipsis">
     
   
-    GitHub Action
+    GitHub Actions
   
 
     
@@ -620,6 +1119,34 @@
     
   
     GitHub App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building-implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building Your Own
   
 
     
@@ -667,10 +1194,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#light" class="md-nav__link">
+  <a href="#abstract" class="md-nav__link">
     <span class="md-ellipsis">
       
-        light
+        Abstract
       
     </span>
   </a>
@@ -678,10 +1205,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#standard" class="md-nav__link">
+  <a href="#table-of-contents" class="md-nav__link">
     <span class="md-ellipsis">
       
-        standard
+        Table of Contents
       
     </span>
   </a>
@@ -689,13 +1216,485 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#regulated" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        regulated
+        Overview
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enforcement-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enforcement Philosophy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enforcement Philosophy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#three-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-enforcement-runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When Enforcement Runs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary-provenanceconfigjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary: provenance/config.json
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#policy-provenancepoliciesenforcementyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Policy: provenance/policies/enforcement.yml
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constitution-provenancepoliciesconstitutionmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constitution: provenance/policies/constitution.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enforcement-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enforcement Presets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enforcement Presets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#light-preset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Light Preset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-preset-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard Preset (Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regulated-preset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regulated Preset
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decision-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spec-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spec Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drift-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drift Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#path-and-label-triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path and Label Triggers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Path and Label Triggers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Matching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#label-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Label Matching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docs-only-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docs-Only Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blocking-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blocking Modes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Blocking Modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#never-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Never Block
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selective-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selective Block
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#always-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Always Block
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-attribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Attribution
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI Attribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decision-bot-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Bot Field
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-light-enforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Light Enforcement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-standard-enforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Standard Enforcement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-regulated-enforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Regulated Enforcement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migration-between-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration Between Presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validator-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validator Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validator-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validator Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -719,21 +1718,612 @@
   
 
 
-<h1 id="enforcement-presets">Enforcement Presets<a class="headerlink" href="#enforcement-presets" title="Permanent link">&para;</a></h1>
-<h2 id="light">light<a class="headerlink" href="#light" title="Permanent link">&para;</a></h2>
+<h1 id="enforcement-policies-specification">Enforcement Policies Specification<a class="headerlink" href="#enforcement-policies-specification" title="Permanent link">&para;</a></h1>
+<p><strong>Version:</strong> 1.0.0<br />
+<strong>Status:</strong> Draft<br />
+<strong>Part of:</strong> ProvenanceCode Open Standard</p>
+<h2 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
+<p>This document defines how ProvenanceCode validates decision evidence, specifications, and risk acceptances through configurable enforcement policies. Three presets (Light, Standard, Regulated) provide flexibility for different team needs.</p>
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#enforcement-philosophy">Enforcement Philosophy</a></li>
+<li><a href="#configuration-files">Configuration Files</a></li>
+<li><a href="#enforcement-presets">Enforcement Presets</a></li>
+<li><a href="#validation-rules">Validation Rules</a></li>
+<li><a href="#path-and-label-triggers">Path and Label Triggers</a></li>
+<li><a href="#blocking-modes">Blocking Modes</a></li>
+<li><a href="#drift-detection">Drift Detection</a></li>
+<li><a href="#ai-attribution">AI Attribution</a></li>
+<li><a href="#examples">Examples</a></li>
+</ol>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Enforcement policies determine:
+- <strong>When</strong> validation occurs (which paths, labels trigger requirements)
+- <strong>What</strong> is required (decisions, specs, risks, or mistake references)
+- <strong>How strictly</strong> rules are applied (warn, block selectively, or block always)
+- <strong>What state</strong> artifacts must be in (draft, review, accepted)</p>
+<h2 id="enforcement-philosophy">Enforcement Philosophy<a class="headerlink" href="#enforcement-philosophy" title="Permanent link">&para;</a></h2>
+<h3 id="three-principles">Three Principles<a class="headerlink" href="#three-principles" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Flexibility</strong> - Teams choose their governance level</li>
+<li><strong>Progressive Adoption</strong> - Start light, increase rigor as needed</li>
+<li><strong>Context-Aware</strong> - Different rules for different paths and change types</li>
+</ol>
+<h3 id="when-enforcement-runs">When Enforcement Runs<a class="headerlink" href="#when-enforcement-runs" title="Permanent link">&para;</a></h3>
+<p>Enforcement validation SHOULD run:
+- On pull request creation
+- On pull request updates (new commits)
+- Before merge (CI/CD gate)
+- (Optional) As pre-commit hook</p>
+<p>Enforcement MAY be skipped for:
+- Documentation-only changes (when <code>allowNoDecisionForDocsOnly: true</code>)
+- Automated dependency updates (configurable)
+- Hotfix branches (policy decision)</p>
+<h2 id="configuration-files">Configuration Files<a class="headerlink" href="#configuration-files" title="Permanent link">&para;</a></h2>
+<h3 id="primary-provenanceconfigjson">Primary: <code>provenance/config.json</code><a class="headerlink" href="#primary-provenanceconfigjson" title="Permanent link">&para;</a></h3>
+<p>This file defines paths, thresholds, and basic requirements:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;decisionPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenance/decisions&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;riskPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenance/risks&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;mistakePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenance/mistakes&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;specPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenance/specs&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;indexesPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenance/indexes&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;enforcementPolicyPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenance/policies/enforcement.yml&quot;</span><span class="p">,</span>
+
+<span class="w">  </span><span class="nt">&quot;requireDecisionOnPaths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;src/&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;infra/&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;security/&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;requireDecisionOnLabels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;security&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;breaking-change&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;architecture&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;allowNoDecisionForDocsOnly&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+
+<span class="w">  </span><span class="nt">&quot;requireRiskOnPaths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;**/auth/**&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;**/security/**&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;**/permissions/**&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;**/crypto/**&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;requireRiskOnLabels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;risk-accepted&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;security-waiver&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;allowNoRiskForDocsOnly&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+
+<span class="w">  </span><span class="nt">&quot;requireSpecOnPaths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;src/&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;requireSpecOnLabels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;feature&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;enhancement&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;allowNoSpecForDocsOnly&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+
+<span class="w">  </span><span class="nt">&quot;riskApprovalThreshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;medium&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;specRiskDecisionThreshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;medium&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="policy-provenancepoliciesenforcementyml">Policy: <code>provenance/policies/enforcement.yml</code><a class="headerlink" href="#policy-provenancepoliciesenforcementyml" title="Permanent link">&para;</a></h3>
+<p>This file defines the enforcement preset and detailed rules:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="nt">preset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">standard</span>
+<span class="nt">blocking</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">selective</span>
+
+<span class="nt">specs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">requireOnLabels</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">feature</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">enhancement</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">breaking-change</span>
+<span class="w">  </span><span class="nt">requireOnPaths</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">src/api/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">src/core/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">frontend/state/</span>
+<span class="w">  </span><span class="nt">allowNoSpecForDocsOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">requiredStatus</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">review</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">approved</span>
+<span class="w">  </span><span class="nt">acceptanceCriteriaRequired</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">driftDetection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">warn</span>
+
+<span class="nt">decisions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">requireOnLabels</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">security</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">breaking-change</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">risk-high</span>
+<span class="w">  </span><span class="nt">requireOnPaths</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auth/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">payments/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">infra/</span>
+<span class="w">  </span><span class="nt">allowNoDecisionForDocsOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">requireOnSpecRisk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">medium</span>
+<span class="w">  </span><span class="nt">statusByRisk</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">low</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">draft</span>
+<span class="w">    </span><span class="nt">medium</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">draft</span>
+<span class="w">    </span><span class="nt">high</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accepted</span>
+
+<span class="nt">risks</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">requireOnLabels</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">risk-accepted</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">security-waiver</span>
+<span class="w">  </span><span class="nt">requireOnPaths</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;**/auth/**&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;**/security/**&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;**/permissions/**&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;**/crypto/**&quot;</span>
+<span class="w">  </span><span class="nt">allowNoRiskForDocsOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="nt">coherence</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">requireDecisionSpecLink</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="nt">ai</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">attributionRequired</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">attributionPattern</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;AI</span><span class="nv"> </span><span class="s">Attribution&quot;</span>
+</code></pre></div>
+<h3 id="constitution-provenancepoliciesconstitutionmd">Constitution: <code>provenance/policies/constitution.md</code><a class="headerlink" href="#constitution-provenancepoliciesconstitutionmd" title="Permanent link">&para;</a></h3>
+<p>Human-readable explanation of the three presets. Not parsed, but documents intent.</p>
+<h2 id="enforcement-presets">Enforcement Presets<a class="headerlink" href="#enforcement-presets" title="Permanent link">&para;</a></h2>
+<h3 id="light-preset">Light Preset<a class="headerlink" href="#light-preset" title="Permanent link">&para;</a></h3>
+<p><strong>Philosophy:</strong> Move fast with advisory governance</p>
+<p><strong>Characteristics:</strong>
+- Blocking: <code>never</code> by default
+- Missing items produce warnings only
+- Bot role: advisor
+- Suitable for: Startups, MVPs, early-stage projects</p>
+<p><strong>Behavior:</strong>
+<div class="highlight"><pre><span></span><code><span class="nt">preset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">light</span>
+<span class="nt">blocking</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">never</span>
+
+<span class="nt">specs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">requireOnLabels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">feature</span><span class="p p-Indicator">]</span><span class="w">  </span><span class="c1"># recommended, not required</span>
+<span class="w">  </span><span class="nt">requiredStatus</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">draft</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">review</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">approved</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">driftDetection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">off</span>
+
+<span class="nt">decisions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">requireOnLabels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">security</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">breaking-change</span><span class="p p-Indicator">]</span><span class="w">  </span><span class="c1"># warn only</span>
+<span class="w">  </span><span class="nt">statusByRisk</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">low</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">draft</span>
+<span class="w">    </span><span class="nt">medium</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">draft</span>
+<span class="w">    </span><span class="nt">high</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">draft</span><span class="w">  </span><span class="c1"># acceptance not required</span>
+
+<span class="nt">ai</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">attributionRequired</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</code></pre></div></p>
+<p><strong>What Gets Validated:</strong>
+- Decision format (if present)
+- Spec format (if present)
+- Links (if present)</p>
+<p><strong>What Doesn't Block:</strong>
+- Missing decisions
+- Missing specs
+- Missing risk acceptances
+- Draft-state decisions</p>
+<h3 id="standard-preset-recommended">Standard Preset (Recommended)<a class="headerlink" href="#standard-preset-recommended" title="Permanent link">&para;</a></h3>
+<p><strong>Philosophy:</strong> Specs drive work, decisions guard risk</p>
+<p><strong>Characteristics:</strong>
+- Blocking: <code>selective</code> (missing required items blocks)
+- Bot role: gatekeeper
+- Suitable for: Production teams, scale-ups, SaaS products</p>
+<p><strong>Behavior:</strong>
+<div class="highlight"><pre><span></span><code><span class="nt">preset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">standard</span>
+<span class="nt">blocking</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">selective</span>
+
+<span class="nt">specs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">requireOnLabels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">feature</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">enhancement</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">breaking-change</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">requireOnPaths</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">src/api/</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">src/core/</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">frontend/state/</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">requiredStatus</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">review</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">approved</span><span class="p p-Indicator">]</span><span class="w">  </span><span class="c1"># no drafts</span>
+<span class="w">  </span><span class="nt">acceptanceCriteriaRequired</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">driftDetection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">warn</span>
+
+<span class="nt">decisions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">requireOnLabels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">security</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">breaking-change</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">risk-high</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">requireOnPaths</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">auth/</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">payments/</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">infra/</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">requireOnSpecRisk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">medium</span><span class="w">  </span><span class="c1"># specs with medium+ risk need decision</span>
+<span class="w">  </span><span class="nt">statusByRisk</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">low</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">draft</span><span class="w">        </span><span class="c1"># low risk: draft OK</span>
+<span class="w">    </span><span class="nt">medium</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">draft</span><span class="w">     </span><span class="c1"># medium risk: draft OK (but review recommended)</span>
+<span class="w">    </span><span class="nt">high</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accepted</span><span class="w">    </span><span class="c1"># high risk: must be accepted</span>
+
+<span class="nt">risks</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">requireOnLabels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">risk-accepted</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">security-waiver</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">requireOnPaths</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;**/auth/**&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;**/security/**&quot;</span><span class="p p-Indicator">]</span>
+
+<span class="nt">coherence</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">requireDecisionSpecLink</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">  </span><span class="c1"># decisions must reference specs</span>
+
+<span class="nt">ai</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">attributionRequired</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</code></pre></div></p>
+<p><strong>What Gets Blocked:</strong>
+- Changes to sensitive paths without decisions
+- Feature PRs without specs
+- High-risk decisions not in <code>accepted</code> state
+- Invalid decision/spec links</p>
+<p><strong>What Still Allows Merge:</strong>
+- Draft decisions for low/medium risk
+- Documentation-only changes
+- Changes to non-sensitive paths</p>
+<h3 id="regulated-preset">Regulated Preset<a class="headerlink" href="#regulated-preset" title="Permanent link">&para;</a></h3>
+<p><strong>Philosophy:</strong> Nothing ships without provenance</p>
+<p><strong>Characteristics:</strong>
+- Blocking: <code>always</code> (missing required items blocks)
+- Bot role: authority
+- Suitable for: Enterprise, safety-critical, regulated industries (healthcare, finance)</p>
+<p><strong>Behavior:</strong>
+<div class="highlight"><pre><span></span><code><span class="nt">preset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">regulated</span>
+<span class="nt">blocking</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+
+<span class="nt">specs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">requireOnLabels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;*&quot;</span><span class="p p-Indicator">]</span><span class="w">  </span><span class="c1"># all labeled PRs</span>
+<span class="w">  </span><span class="nt">requireOnPaths</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;src/&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;infra/&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;config/&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">allowNoSpecForDocsOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">  </span><span class="c1"># only exception</span>
+<span class="w">  </span><span class="nt">requiredStatus</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">approved</span><span class="p p-Indicator">]</span><span class="w">  </span><span class="c1"># must be fully approved</span>
+<span class="w">  </span><span class="nt">acceptanceCriteriaRequired</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">  </span><span class="c1"># specs must have acceptance criteria</span>
+<span class="w">  </span><span class="nt">driftDetection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">block</span><span class="w">  </span><span class="c1"># block if diff doesn&#39;t match spec scope</span>
+
+<span class="nt">decisions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">requireOnLabels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">security</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">breaking-change</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">risk-high</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">architecture</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">compliance</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">requireOnPaths</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">src/</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">infra/</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">security/</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">models/</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">requireOnSpecRisk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">low</span><span class="w">  </span><span class="c1"># any spec with risk needs decision</span>
+<span class="w">  </span><span class="nt">statusByRisk</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">low</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accepted</span><span class="w">     </span><span class="c1"># even low risk needs acceptance</span>
+<span class="w">    </span><span class="nt">medium</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accepted</span>
+<span class="w">    </span><span class="nt">high</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accepted</span>
+<span class="w">    </span><span class="nt">critical</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accepted</span>
+
+<span class="nt">risks</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">requireOnLabels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">risk-accepted</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">security-waiver</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">compliance-exception</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">requireOnPaths</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;**/auth/**&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;**/security/**&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;**/permissions/**&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;**/crypto/**&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;**/data/**&quot;</span><span class="p p-Indicator">]</span>
+
+<span class="nt">coherence</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">requireDecisionSpecLink</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">requireSpecAcceptanceCriteria</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">requireReceiptForDecisions</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">  </span><span class="c1"># cryptographic receipt required</span>
+
+<span class="nt">ai</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">attributionRequired</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">  </span><span class="c1"># must declare AI involvement</span>
+<span class="w">  </span><span class="nt">attributionPattern</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;AI</span><span class="nv"> </span><span class="s">Attribution&quot;</span>
+</code></pre></div></p>
+<p><strong>What Gets Blocked:</strong>
+- Any non-doc PR without a spec
+- Any decision not in <code>accepted</code> state
+- Specs without acceptance criteria
+- Changes to spec scope without updating spec
+- Missing AI attribution when AI was involved</p>
+<p><strong>No Exceptions Except:</strong>
+- Pure documentation changes (README, comments)</p>
+<h2 id="validation-rules">Validation Rules<a class="headerlink" href="#validation-rules" title="Permanent link">&para;</a></h2>
+<h3 id="decision-validation">Decision Validation<a class="headerlink" href="#decision-validation" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Format Validation</strong></li>
+<li><code>decision.json</code> exists and is valid JSON</li>
+<li>Matches JSON schema</li>
+<li>
+<p>Required fields present</p>
+</li>
+<li>
+<p><strong>ID Validation</strong></p>
+</li>
+<li>Folder name matches <code>id</code> field</li>
+<li>ID format is <code>DEC-XXXXXX</code></li>
+<li>
+<p>ID is unique</p>
+</li>
+<li>
+<p><strong>State Validation</strong></p>
+</li>
+<li><code>lifecycle.state</code> is valid</li>
+<li>
+<p>State meets policy requirements</p>
 <ul>
-<li>Never blocks merges</li>
-<li>Warn on missing decisions</li>
+<li>Light: any state allowed</li>
+<li>Standard: <code>draft</code> or higher for low/medium risk, <code>accepted</code> for high risk</li>
+<li>Regulated: <code>accepted</code> required</li>
 </ul>
-<h2 id="standard">standard<a class="headerlink" href="#standard" title="Permanent link">&para;</a></h2>
+</li>
+<li>
+<p><strong>Link Validation</strong></p>
+</li>
+<li>If <code>requireDecisionSpecLink: true</code>, decision MUST reference a spec</li>
+<li>Referenced specs MUST exist</li>
+<li>
+<p>PR number/URL MUST match current PR (if configured)</p>
+</li>
+<li>
+<p><strong>Timestamp Validation</strong></p>
+</li>
+<li><code>created_at</code> is valid ISO 8601</li>
+<li><code>accepted_at</code> present if state is <code>accepted</code></li>
+<li><code>accepted_at</code> is after <code>created_at</code></li>
+</ol>
+<h3 id="spec-validation">Spec Validation<a class="headerlink" href="#spec-validation" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Format Validation</strong></li>
+<li><code>spec.json</code> exists and is valid JSON</li>
+<li>
+<p>Matches JSON schema</p>
+</li>
+<li>
+<p><strong>Status Validation</strong></p>
+</li>
+<li>
+<p>Status meets preset requirements:</p>
 <ul>
-<li>Selective blocking for high-risk areas/labels</li>
+<li>Light: any status</li>
+<li>Standard: <code>review</code> or <code>approved</code></li>
+<li>Regulated: <code>approved</code> only</li>
 </ul>
-<h2 id="regulated">regulated<a class="headerlink" href="#regulated" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Blocks merges when required decisions/specs are missing or unapproved</li>
-<li>Strong drift detection (future)</li>
-</ul>
+</li>
+<li>
+<p><strong>Acceptance Criteria</strong></p>
+</li>
+<li>
+<p>If <code>acceptanceCriteriaRequired: true</code>, spec MUST have acceptance criteria</p>
+</li>
+<li>
+<p><strong>Risk-Decision Coherence</strong></p>
+</li>
+<li>If spec risk level ≥ <code>specRiskDecisionThreshold</code>, a decision MUST be linked</li>
+</ol>
+<h3 id="risk-validation">Risk Validation<a class="headerlink" href="#risk-validation" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Format Validation</strong></li>
+<li><code>risk.json</code> exists and is valid JSON</li>
+<li>
+<p>Matches JSON schema</p>
+</li>
+<li>
+<p><strong>Expiration Check</strong></p>
+</li>
+<li>
+<p>If <code>expires_at</code> is present and past, validation SHOULD warn or block</p>
+</li>
+<li>
+<p><strong>Decision Link</strong></p>
+</li>
+<li>Risk SHOULD be referenced by at least one decision</li>
+</ol>
+<h3 id="drift-detection">Drift Detection<a class="headerlink" href="#drift-detection" title="Permanent link">&para;</a></h3>
+<p>Drift occurs when the PR diff doesn't match the spec's <code>affectedPaths</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">driftDetection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">off</span><span class="w">     </span><span class="c1"># Don&#39;t check</span>
+<span class="nt">driftDetection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">warn</span><span class="w">    </span><span class="c1"># Log warning, allow merge</span>
+<span class="nt">driftDetection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">block</span><span class="w">   </span><span class="c1"># Block merge</span>
+</code></pre></div>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// spec.json</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;affectedPaths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;src/api/&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;src/models/&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>If PR changes <code>src/database/</code> but spec doesn't mention it, drift is detected.</p>
+<h2 id="path-and-label-triggers">Path and Label Triggers<a class="headerlink" href="#path-and-label-triggers" title="Permanent link">&para;</a></h2>
+<h3 id="path-matching">Path Matching<a class="headerlink" href="#path-matching" title="Permanent link">&para;</a></h3>
+<p>Paths support glob patterns:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;requireDecisionOnPaths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;src/&quot;</span><span class="p">,</span><span class="w">              </span><span class="c1">// exact prefix</span>
+<span class="w">  </span><span class="s2">&quot;**/auth/**&quot;</span><span class="p">,</span><span class="w">        </span><span class="c1">// any depth</span>
+<span class="w">  </span><span class="s2">&quot;infra/*.tf&quot;</span><span class="p">,</span><span class="w">        </span><span class="c1">// specific file types</span>
+<span class="w">  </span><span class="s2">&quot;!docs/**&quot;</span><span class="w">           </span><span class="c1">// exclusion</span>
+<span class="p">]</span>
+</code></pre></div>
+<h3 id="label-matching">Label Matching<a class="headerlink" href="#label-matching" title="Permanent link">&para;</a></h3>
+<p>Labels are exact string matches:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;requireDecisionOnLabels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;security&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;breaking-change&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;architecture&quot;</span>
+<span class="p">]</span>
+</code></pre></div>
+<h3 id="docs-only-detection">Docs-Only Detection<a class="headerlink" href="#docs-only-detection" title="Permanent link">&para;</a></h3>
+<p>If <code>allowNoDecisionForDocsOnly: true</code>, enforcement is skipped when ALL changed files match:</p>
+<div class="highlight"><pre><span></span><code>**/*.md
+**/docs/**
+**/README*
+**/LICENSE
+</code></pre></div>
+<h2 id="blocking-modes">Blocking Modes<a class="headerlink" href="#blocking-modes" title="Permanent link">&para;</a></h2>
+<h3 id="never-block">Never Block<a class="headerlink" href="#never-block" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">blocking</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">never</span>
+</code></pre></div>
+<p>All validation failures produce warnings in PR comments, but never block merge.</p>
+<h3 id="selective-block">Selective Block<a class="headerlink" href="#selective-block" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">blocking</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">selective</span>
+</code></pre></div>
+<p>Block merge only when:
+- A required decision/spec/risk is missing
+- A decision/spec is in invalid state for the risk level
+- Links are broken or invalid</p>
+<p>Warnings are produced for:
+- Drift detection (unless <code>block</code> mode)
+- Recommendations (e.g., "consider adding risk acceptance")</p>
+<h3 id="always-block">Always Block<a class="headerlink" href="#always-block" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">blocking</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+</code></pre></div>
+<p>Any validation failure blocks merge. Used in regulated environments.</p>
+<h2 id="ai-attribution">AI Attribution<a class="headerlink" href="#ai-attribution" title="Permanent link">&para;</a></h2>
+<h3 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h3>
+<p>Track when AI assistants contributed to decisions or implementation.</p>
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">ai</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">attributionRequired</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">attributionPattern</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;AI</span><span class="nv"> </span><span class="s">Attribution&quot;</span>
+</code></pre></div>
+<h3 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h3>
+<p>When <code>attributionRequired: true</code>, the PR body or commit messages MUST contain the <code>attributionPattern</code> string.</p>
+<p><strong>Example PR Body:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gu">## Summary</span>
+
+Implement GraphQL migration as per DEC-000042.
+
+<span class="gu">## AI Attribution</span>
+
+Cursor AI assisted with:
+<span class="k">-</span><span class="w"> </span>Initial decision draft
+<span class="k">-</span><span class="w"> </span>Schema design
+<span class="k">-</span><span class="w"> </span>Migration script generation
+</code></pre></div>
+<h3 id="decision-bot-field">Decision Bot Field<a class="headerlink" href="#decision-bot-field" title="Permanent link">&para;</a></h3>
+<p>AI assistants SHOULD populate the <code>bot</code> field in decisions they create:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;actors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user:alice&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cursor-ai&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;approver&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user:bob&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="example-1-light-enforcement">Example 1: Light Enforcement<a class="headerlink" href="#example-1-light-enforcement" title="Permanent link">&para;</a></h3>
+<p>A startup wants decision tracking but no blocking:</p>
+<p><strong>provenance/config.json:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;requireDecisionOnPaths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;src/&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;requireDecisionOnLabels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;security&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;allowNoDecisionForDocsOnly&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>provenance/policies/enforcement.yml:</strong>
+<div class="highlight"><pre><span></span><code><span class="nt">preset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">light</span>
+<span class="nt">blocking</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">never</span>
+<span class="nt">decisions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">requireOnLabels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">security</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">statusByRisk</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">low</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">draft</span>
+<span class="w">    </span><span class="nt">medium</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">draft</span>
+<span class="w">    </span><span class="nt">high</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">draft</span>
+</code></pre></div></p>
+<p><strong>Result:</strong> All PRs produce warnings if missing decisions, but never block.</p>
+<h3 id="example-2-standard-enforcement">Example 2: Standard Enforcement<a class="headerlink" href="#example-2-standard-enforcement" title="Permanent link">&para;</a></h3>
+<p>A SaaS company wants governance on API and security changes:</p>
+<p><strong>provenance/config.json:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;requireDecisionOnPaths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;src/api/&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;auth/&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;payments/&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;requireDecisionOnLabels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;security&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;breaking-change&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;requireSpecOnLabels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;feature&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;enhancement&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>provenance/policies/enforcement.yml:</strong>
+<div class="highlight"><pre><span></span><code><span class="nt">preset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">standard</span>
+<span class="nt">blocking</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">selective</span>
+<span class="nt">specs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">requireOnLabels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">feature</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">enhancement</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">requiredStatus</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">review</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">approved</span><span class="p p-Indicator">]</span>
+<span class="nt">decisions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">requireOnPaths</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">auth/</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">payments/</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">requireOnLabels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">security</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">breaking-change</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">statusByRisk</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">low</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">draft</span>
+<span class="w">    </span><span class="nt">medium</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">draft</span>
+<span class="w">    </span><span class="nt">high</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accepted</span>
+</code></pre></div></p>
+<p><strong>Result:</strong>
+- Feature PRs need specs in review/approved state
+- Changes to auth/ or payments/ need decisions
+- High-risk decisions must be accepted
+- Other PRs pass through</p>
+<h3 id="example-3-regulated-enforcement">Example 3: Regulated Enforcement<a class="headerlink" href="#example-3-regulated-enforcement" title="Permanent link">&para;</a></h3>
+<p>A healthcare company needs strict compliance:</p>
+<p><strong>provenance/policies/enforcement.yml:</strong>
+<div class="highlight"><pre><span></span><code><span class="nt">preset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">regulated</span>
+<span class="nt">blocking</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<span class="nt">specs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">requireOnPaths</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;src/&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">allowNoSpecForDocsOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">requiredStatus</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">approved</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">acceptanceCriteriaRequired</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">decisions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">requireOnPaths</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;src/&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;infra/&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">statusByRisk</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">low</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accepted</span>
+<span class="w">    </span><span class="nt">medium</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accepted</span>
+<span class="w">    </span><span class="nt">high</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accepted</span>
+<span class="nt">coherence</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">requireDecisionSpecLink</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">requireReceiptForDecisions</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">ai</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">attributionRequired</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div></p>
+<p><strong>Result:</strong>
+- Every code change needs an approved spec
+- Every spec needs an accepted decision
+- Acceptance receipts required
+- AI usage must be declared
+- Documentation is the only exception</p>
+<h2 id="migration-between-presets">Migration Between Presets<a class="headerlink" href="#migration-between-presets" title="Permanent link">&para;</a></h2>
+<p>Teams can graduate from Light → Standard → Regulated:</p>
+<ol>
+<li><strong>Start Light</strong></li>
+<li>Install ProvenanceCode</li>
+<li>Create decisions for major changes</li>
+<li>
+<p>Get comfortable with workflow</p>
+</li>
+<li>
+<p><strong>Move to Standard</strong></p>
+</li>
+<li>Add spec requirements for features</li>
+<li>Require accepted state for high-risk decisions</li>
+<li>
+<p>Enable selective blocking</p>
+</li>
+<li>
+<p><strong>Adopt Regulated</strong></p>
+</li>
+<li>Require acceptance for all decisions</li>
+<li>Add cryptographic receipts</li>
+<li>Enable AI attribution</li>
+<li>Block on drift detection</li>
+</ol>
+<h2 id="custom-presets">Custom Presets<a class="headerlink" href="#custom-presets" title="Permanent link">&para;</a></h2>
+<p>Teams MAY define custom presets by:</p>
+<ol>
+<li>Choosing a base preset (<code>light</code>, <code>standard</code>, or <code>regulated</code>)</li>
+<li>Overriding specific rules</li>
+<li>Documenting the custom preset in <code>constitution.md</code></li>
+</ol>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">preset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">standard-plus</span>
+<span class="nt">extends</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">standard</span>
+<span class="nt">blocking</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">selective</span>
+<span class="nt">specs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">acceptanceCriteriaRequired</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">  </span><span class="c1"># stricter than standard</span>
+<span class="nt">decisions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">statusByRisk</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">medium</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">accepted</span><span class="w">  </span><span class="c1"># stricter than standard</span>
+</code></pre></div>
+<h2 id="validation-implementation">Validation Implementation<a class="headerlink" href="#validation-implementation" title="Permanent link">&para;</a></h2>
+<h3 id="validator-requirements">Validator Requirements<a class="headerlink" href="#validator-requirements" title="Permanent link">&para;</a></h3>
+<p>A compliant validator MUST:
+1. Read <code>provenance/config.json</code> and <code>provenance/policies/enforcement.yml</code>
+2. Apply rules based on preset
+3. Check path and label triggers
+4. Validate artifact formats and states
+5. Report results as warnings or errors
+6. Return exit code 0 (pass) or non-zero (fail)</p>
+<h3 id="validator-outputs">Validator Outputs<a class="headerlink" href="#validator-outputs" title="Permanent link">&para;</a></h3>
+<p>Validators SHOULD produce:
+- <strong>Console output</strong> for CI/CD logs
+- <strong>PR comments</strong> with validation results
+- <strong>Check run annotations</strong> (GitHub, GitLab)
+- <strong>Structured JSON</strong> for tooling integration</p>
+<hr />
+<p><strong>Next:</strong> <a href="../repo-layout/">Repository Layout</a> - Required directory structure<br />
+<strong>See Also:</strong> <a href="../versioning/">Versioning</a> - Lifecycle state management</p>
 
 
 
