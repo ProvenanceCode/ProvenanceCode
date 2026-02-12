@@ -1,8 +1,8 @@
 site_name: ProvenanceCode
 site_description: Decision-Driven Development for the AI Era
-site_url: https://provenancecode.github.io/Provenancecode/
-repo_url: https://github.com/ProvenanceCode/Provenancecode
-repo_name: ProvenanceCode/Provenancecode
+site_url: https://provenancecode.github.io/ProvenanceCode/
+repo_url: https://github.com/ProvenanceCode/ProvenanceCode
+repo_name: ProvenanceCode/ProvenanceCode
 
 theme:
   name: material
