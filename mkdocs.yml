@@ -1,0 +1,31 @@
+site_name: ProvenanceCode
+site_description: Decision-Driven Development for the AI Era
+site_url: https://provenancecode.github.io/Provenancecode/
+repo_url: https://github.com/ProvenanceCode/Provenancecode
+repo_name: ProvenanceCode/Provenancecode
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.sections
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Standard:
+      - Overview: standard/index.md
+      - Decision Evidence Objects: standard/deo.md
+      - Enforcement Presets: standard/enforcement.md
+      - Repository Layout: standard/repo-layout.md
+      - Versioning: standard/versioning.md
+  - Implementation:
+      - GitHub Action: implementation/github-action.md
+      - GitHub App: implementation/github-app.md
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.details
