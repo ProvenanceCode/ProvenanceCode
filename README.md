@@ -221,5 +221,5 @@ See [TRADEMARK.md](TRADEMARK.md) for usage guidelines.
 
 ---
 
-**ProvenanceCode** is stewarded by **KDDLC AI Solutions SL** (operating as EmbankAI).
+**ProvenanceCode** is stewarded by **EmbankAI (KDDLC AI Solutions SL)**.
 

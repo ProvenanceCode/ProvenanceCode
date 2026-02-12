@@ -490,7 +490,7 @@ Choose an appropriate license:
 
 ### 3. Respect the Trademark
 
-**ProvenanceCode™** is a trademark of KDDLC AI Solutions SL.
+**ProvenanceCode™** is a trademark of EmbankAI (KDDLC AI Solutions SL).
 
 When naming your implementation:
 - ✅ **Good:** "GitLab ProvenanceCode Validator", "ProvenanceCode Tools for Jenkins"

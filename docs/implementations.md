@@ -89,7 +89,7 @@ Vendor Neutrality
 
 The ProvenanceCode Standard is vendor-neutral.
 
-KDDLC AI Solutions SL (operating as EmbankAI) acts as the initial steward and maintains official implementations.
+EmbankAI (KDDLC AI Solutions SL) acts as the initial steward and maintains official implementations.
 The specification remains open and portable.
 
 No implementation receives preferential treatment in the specification.

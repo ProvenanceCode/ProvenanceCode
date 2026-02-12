@@ -225,7 +225,7 @@ You are **free to build** commercial or open-source implementations without rest
 
 ### Stewardship
 
-ProvenanceCode is stewarded by **KDDLC AI Solutions SL** (operating as [EmbankAI](https://embank.ai)) as the initial developer and maintainer.
+ProvenanceCode is stewarded by **[EmbankAI (KDDLC AI Solutions SL)](https://embank.ai)** as the initial developer and maintainer.
 
 ### Trademark
 

@@ -133,7 +133,7 @@ This is a common pattern (also used by Apache™, Kubernetes®, etc.):
 
 ## Certification Program (Future)
 
-KDDLC AI Solutions SL may offer an optional certification program:
+EmbankAI (KDDLC AI Solutions SL) may offer an optional certification program:
 
 - **"ProvenanceCode Certified Implementation"** badge
 - Requires compliance testing
@@ -155,7 +155,7 @@ You **MUST** follow trademark guidelines when naming and marketing these product
 
 ## Enforcement
 
-KDDLC AI Solutions SL reserves the right to:
+EmbankAI (KDDLC AI Solutions SL) reserves the right to:
 
 - Request changes to misleading uses
 - Pursue legal action for serious infringement
