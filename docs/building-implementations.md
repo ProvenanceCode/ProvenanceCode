@@ -488,7 +488,20 @@ Choose an appropriate license:
 - **Commercial:** Your choice
 - **Dual license:** Offer both
 
-### 3. Share It
+### 3. Respect the Trademark
+
+**ProvenanceCode™** is a trademark of KDDLC AI Solutions SL.
+
+When naming your implementation:
+- ✅ **Good:** "GitLab ProvenanceCode Validator", "ProvenanceCode Tools for Jenkins"
+- ❌ **Avoid:** "ProvenanceCode Enterprise", "Official ProvenanceCode"
+
+You MAY use "ProvenanceCode" to describe compatibility.
+You MUST NOT imply official endorsement.
+
+See [Trademark Policy](../TRADEMARK.md) for full guidelines.
+
+### 4. Share It
 
 - Submit PR to add it to [Implementations](implementations.md)
 - Tag it: `provenancecode-implementation`

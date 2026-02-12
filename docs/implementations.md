@@ -1,141 +1,101 @@
-# Implementations
+Implementations
 
-**ProvenanceCode is an open standard.** Multiple implementations exist, and you can build your own.
+ProvenanceCode is an open, vendor-neutral standard.
+Multiple implementations exist. You may build your own.
 
-## Official Implementations
+Official Reference Implementations
+GitHub Actions Validator (Open Source)
 
-### 1. GitHub Actions Validator (Open Source)
+Type: Self-hosted CI/CD implementation
+License: Apache 2.0
+Cost: Free
 
-**Status:** ✅ Available  
-**License:** Apache 2.0  
-**Cost:** Free  
-**Type:** Self-hosted CI/CD
+This implementation validates compliance with the ProvenanceCode Standard at pull request time.
 
-**Features:**
-- Validates decisions, specs, and risks on pull requests
-- Posts validation results as PR comments
-- Creates status checks for branch protection
-- Configurable enforcement presets
-- No external dependencies
+Capabilities:
 
-**Best for:** Teams wanting a simple, free, open-source solution
+Decision presence validation
 
-**Get Started:** [GitHub Actions Guide](implementation/github-action.md)
+Spec alignment checks
 
----
+Risk & enforcement preset evaluation
 
-### 2. ProvenanceCode App (Commercial)
+Status checks compatible with branch protection
 
-**Status:** 🚧 In Development  
-**Provider:** [EmbankAI](https://embank.ai)  
-**License:** Proprietary  
-**Cost:** Free for open source, paid for private repos  
-**Type:** Managed SaaS
+Suitable for teams seeking a minimal, transparent enforcement layer.
 
-**Features:**
-- Everything in GitHub Actions, plus:
-- ✨ Auto-create decision drafts
-- ✨ Web UI for decision management
-- ✨ Cross-repository validation
-- ✨ Team-based access controls
-- ✨ Real-time validation feedback
-- ✨ Enterprise support & SLA
-- ✨ SOC 2 compliant hosting
+➡ See: GitHub Actions Guide
 
-**Best for:** Teams wanting zero-setup managed solution with advanced features
+ProvenanceCode App (Managed)
 
-**Get Started:** [ProvenanceCode App](implementation/github-app.md)
+Provider: EmbankAI
+Type: Managed SaaS implementation
 
----
+The ProvenanceCode App is an official managed implementation of the standard.
 
-## Community Implementations
+It includes:
 
-We encourage the community to build implementations. If you've built one, please submit a PR to add it here!
+Automated decision draft generation
 
-### Build Your Own
+Centralized decision browsing
 
-ProvenanceCode is designed to be implementable by any team or vendor. Possible implementations:
+Cross-repository validation
 
-**CI/CD Integrations:**
-- GitLab CI validator
-- CircleCI orb
-- Jenkins plugin
-- Azure DevOps extension
-- Bitbucket Pipes
+Team-based controls
 
-**IDE Extensions:**
-- VS Code extension for decision drafts
-- JetBrains plugin
-- Cursor rules integration
+Enterprise-grade hosting & support
 
-**CLI Tools:**
-- Standalone validator CLI
-- Pre-commit hooks
-- Git extensions
+Designed for organizations requiring managed infrastructure and operational guarantees.
 
-**Web Services:**
-- Decision browsing UI
-- Analytics dashboards
-- Compliance reporting
+➡ See: GitHub App Documentation
 
-**Want to build an implementation?** See our [Building Implementations Guide](building-implementations.md)
+Community Implementations
 
-## Implementation Compliance
+The ProvenanceCode Standard is intentionally portable.
 
-All implementations should:
+Possible integrations include:
 
-1. **Validate against the spec** - Use the official JSON schemas
-2. **Support enforcement presets** - Light, Standard, Regulated
-3. **Provide clear feedback** - Help users understand validation results
-4. **Link to the standard** - Reference ProvenanceCode.org in output
-5. **Be documented** - Help users get started
+GitLab CI
 
-### Certification (Future)
+Azure DevOps
 
-We may introduce an optional compliance certification program to help users identify fully-compliant implementations.
+Jenkins
 
-## License Compatibility
+Bitbucket
 
-The **ProvenanceCode standard** is licensed under **Apache 2.0**, which permits:
+IDE extensions
 
-- ✅ Open source implementations (any OSI-approved license)
-- ✅ Proprietary/commercial implementations
-- ✅ SaaS offerings
-- ✅ Embedded in other products
-- ✅ Modifications and derivatives
+CLI validators
 
-You do NOT need permission to build an implementation. You SHOULD link back to the standard for clarity.
+Compliance dashboards
 
-## Contributing
+If you have built an implementation, submit a pull request to list it here.
 
-### Report Implementation Issues
+Implementation Requirements
 
-If you encounter issues implementing the standard, please:
-1. Open an issue in the [ProvenanceCode repository](https://github.com/ProvenanceCode/ProvenanceCode)
-2. Describe the ambiguity or difficulty
-3. Suggest clarifications
+To be considered compliant with the ProvenanceCode Standard, an implementation should:
 
-Your feedback helps improve the standard for everyone.
+Validate against the published schemas
 
-### Share Your Implementation
+Support enforcement presets (Light, Standard, Regulated)
 
-Built an implementation? Let us know!
-- Submit a PR adding it to this page
-- Tag it with `provenancecode-implementation`
-- Share on social media with #ProvenanceCode
+Provide clear validation feedback
 
-## Vendor Neutrality
+Link back to the standard
 
-The ProvenanceCode standard is **vendor-neutral**. All implementations are equal in the eyes of the spec.
+Document its behavior transparently
 
-EmbankAI, as the initial steward, may offer commercial services, but:
-- ✅ The standard remains open
-- ✅ Community implementations are welcomed
-- ✅ No preferential treatment in the spec
+Vendor Neutrality
 
-If you believe there's bias in the standard, please raise it via GitHub Issues.
+The ProvenanceCode Standard is vendor-neutral.
+
+KDDLC AI Solutions SL (operating as EmbankAI) acts as the initial steward and maintains official implementations.
+The specification remains open and portable.
+
+No implementation receives preferential treatment in the specification.
+
+Concerns regarding neutrality should be raised via GitHub Issues.
 
 ---
 
-**Ready to adopt ProvenanceCode?** Start with [GitHub Actions](implementation/github-action.md) for a free, open-source implementation.
-
+<small>ProvenanceCode™ is a trademark of KDDLC AI Solutions SL.</small>

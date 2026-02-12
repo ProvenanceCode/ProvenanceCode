@@ -10,7 +10,7 @@ This document describes how to build a GitHub App that implements ProvenanceCode
 
 ## Commercial Implementation Available
 
-**[ProvenanceCode App by EmbankAI](https://embank.ai/provenancecode)** is a fully-managed commercial GitHub App that implements this specification. It provides:
+**[ProvenanceCode App by EmbankAI](https://embank.ai/provenancecode)** (KDDLC AI Solutions SL) is a fully-managed commercial GitHub App that implements this specification. It provides:
 
 - ✅ Zero-setup installation
 - ✅ Automatic decision draft creation

@@ -225,7 +225,31 @@ You are **free to build** commercial or open-source implementations without rest
 
 ### Stewardship
 
-ProvenanceCode is currently stewarded by **[EmbankAI](https://embank.ai)** as the initial developer and maintainer.
+ProvenanceCode is stewarded by **KDDLC AI Solutions SL** (operating as [EmbankAI](https://embank.ai)) as the initial developer and maintainer.
+
+### Trademark
+
+**ProvenanceCode™** is a registered trademark of KDDLC AI Solutions SL. 
+
+The trademark ensures:
+- **Brand consistency** across implementations
+- **Quality assurance** for users
+- **Protection against misuse** or misrepresentation
+
+### Trademark Usage
+
+You may use the ProvenanceCode name when:
+- ✅ Referring to the standard specification
+- ✅ Describing compliance ("implements ProvenanceCode")
+- ✅ Building implementations that follow the spec
+- ✅ Educational and documentation purposes
+
+You should NOT use the name to:
+- ❌ Imply official endorsement without permission
+- ❌ Create confusion about implementation origin
+- ❌ Misrepresent compliance or certification status
+
+For trademark usage questions, contact: legal@embank.ai
 
 ### Decision Process
 

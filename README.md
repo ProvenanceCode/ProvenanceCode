@@ -207,9 +207,19 @@ To contribute to the documentation:
 
 ## 📄 License
 
+The ProvenanceCode standard specification is licensed under [Apache License 2.0](LICENSE).
+
 See [LICENSE](LICENSE) file for details.
+
+## ™ Trademark
+
+**ProvenanceCode™** is a trademark of **KDDLC AI Solutions SL**.
+
+The standard is open (Apache 2.0), but the name is protected to ensure quality and prevent confusion.
+
+See [TRADEMARK.md](TRADEMARK.md) for usage guidelines.
 
 ---
 
-**ProvenanceCode** is developed and maintained by **EmbankAI**.
+**ProvenanceCode** is stewarded by **KDDLC AI Solutions SL** (operating as EmbankAI).
 
