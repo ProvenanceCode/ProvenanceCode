@@ -1,4 +1,4 @@
-name: Docs
+name: Deploy Documentation to GitHub Pages
 
 on:
   push:
@@ -12,9 +12,26 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for proper git info
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.x"
-      - run: pip install mkdocs-material
-      - run: mkdocs gh-deploy --force
+          cache: 'pip'  # Cache pip dependencies
+      
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install mkdocs-material
+      
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      
+      - name: Deploy to GitHub Pages
+        run: mkdocs gh-deploy --force --clean --verbose

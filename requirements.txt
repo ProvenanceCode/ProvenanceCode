@@ -1,0 +1,8 @@
+# MkDocs and theme requirements for building ProvenanceCode documentation
+
+mkdocs>=1.5.3
+mkdocs-material>=9.5.3
+
+# Additional plugins (add as needed)
+# pymdown-extensions>=10.5  # Already included with mkdocs-material
+
