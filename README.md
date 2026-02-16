@@ -97,10 +97,13 @@ python -m http.server 8000
 │   │   ├── deo.md                 # Decision Evidence Objects
 │   │   ├── enforcement.md         # Enforcement Presets
 │   │   ├── repo-layout.md         # Repository Layout
-│   │   └── versioning.md          # Versioning Guide
-│   └── implementation/
-│       ├── github-action.md       # GitHub Action docs
-│       └── github-app.md          # GitHub App docs
+│   │   ├── versioning.md          # Versioning Guide
+│   │   └── provenancecode-v2.md   # v2.0 Naming Convention
+│   ├── implementation/
+│   │   ├── github-action.md       # GitHub Action docs
+│   │   └── github-app.md          # GitHub App docs
+│   └── MIGRATION_GUIDE_V2.md      # v2.0 Migration Guide
+├── PROVENANCECODE_V2_SUMMARY.md    # v2.0 Quick Start
 ├── mkdocs.yml                      # MkDocs configuration
 ├── requirements.txt                # Python dependencies
 └── .github/
