@@ -1,0 +1,44 @@
+{
+  "schema": "provenancecode.codes@1.0",
+  "monorepo": false,
+  "rootWorkspace": ".",
+  "projects": {
+    "PC": {
+      "name": "ProvenanceCode",
+      "description": "ProvenanceCode GitHub integration and standards",
+      "jiraProject": "PC",
+      "subprojects": {
+        "CORE": {
+          "name": "Core",
+          "description": "Core ProvenanceCode system",
+          "workspace": ".",
+          "paths": [
+            "src/**",
+            "scripts/**",
+            "provenance/**"
+          ],
+          "type": "backend"
+        },
+        "UI": {
+          "name": "User Interface",
+          "description": "Decision viewer UI",
+          "workspace": "ui",
+          "paths": [
+            "ui/**"
+          ],
+          "type": "frontend"
+        },
+        "DOC": {
+          "name": "Documentation",
+          "description": "Documentation and guides",
+          "workspace": "docs",
+          "paths": [
+            "docs/**"
+          ],
+          "type": "other"
+        }
+      }
+    }
+  },
+  "customArtifactTypes": {}
+}

@@ -20,6 +20,10 @@ nav:
       - Enforcement Presets: standard/enforcement.md
       - Repository Layout: standard/repo-layout.md
       - Versioning: standard/versioning.md
+      - ProvenanceCode v2.0: standard/provenancecode-v2.md
+  - v2.0 Getting Started:
+      - Quick Start: QUICK_START.md
+      - Migration Guide: MIGRATION_GUIDE_V2.md
   - Implementation Guides:
       - GitHub Actions: implementation/github-action.md
       - GitHub App: implementation/github-app.md

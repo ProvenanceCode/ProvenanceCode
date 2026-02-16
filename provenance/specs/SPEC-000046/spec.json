@@ -1,0 +1,32 @@
+{
+  "id": "SPEC-000046",
+  "repo": {
+    "org": "provenancecode",
+    "name": "provenancecode-github"
+  },
+  "ref": "pc://provenancecode/provenancecode-github/spec/SPEC-000046",
+  "title": "ProvenanceCode Monorepo-Aware Naming Convention Standard v2.0",
+  "status": "draft",
+  "risk": "medium",
+  "acceptanceCriteria": [
+    "New naming convention format is defined and documented",
+    "Backward compatibility with existing DEC-000001 format is maintained",
+    "Schema validation supports both legacy and new formats",
+    "Jira integration patterns are documented",
+    "Monorepo workspace identification is supported",
+    "Migration path from v1 to v2 is defined",
+    "Examples for all artifact types are provided",
+    "Validation tooling supports new format"
+  ],
+  "affectedPaths": [
+    "provenance/schema/",
+    "provenance/decisions/",
+    "provenance/specs/",
+    "provenance/risks/",
+    "provenance/mistakes/",
+    "src/",
+    "scripts/",
+    "docs/"
+  ],
+  "relatedDecisions": []
+}

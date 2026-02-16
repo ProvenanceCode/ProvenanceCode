@@ -73,11 +73,35 @@ It governs them.
 
 ---
 
+## What's New: ProvenanceCode v2.0
+
+**Enhanced naming convention with monorepo and Jira support**
+
+v2.0 introduces:
+
+- 🎯 **Monorepo Support** - Map artifacts to specific workspaces
+- 🔗 **Jira Integration** - Automatic project and component linking
+- 📁 **Hierarchical Organization** - Project/subproject structure
+- ✅ **Backward Compatible** - v1.0 format still fully supported
+
+**Format comparison:**
+```
+v1.0: DEC-000001
+v2.0: DEC-PROJ-CORE-000001
+```
+
+Both formats work together. Migration is optional.
+
+📖 [Learn more about v2.0](standard/provenancecode-v2.md) | [Migration Guide](MIGRATION_GUIDE_V2.md)
+
+---
+
 ## Get Started
 
 - Read the Standard: **Standard → Overview**
 - Implement enforcement: **Implementation → GitHub Action**
 - Product path: **Implementation → GitHub App**
+- **New:** [ProvenanceCode v2.0](standard/provenancecode-v2.md)
 
 ---
 
