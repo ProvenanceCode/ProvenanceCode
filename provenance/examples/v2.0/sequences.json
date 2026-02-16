@@ -1,0 +1,29 @@
+{
+  "schema": "provenancecode.sequences@1.0",
+  "namespaces": {
+    "DEC-GLOBAL": {
+      "current": 125,
+      "next": 126,
+      "lastUpdated": "2026-02-16T10:00:00Z",
+      "updatedBy": "system"
+    },
+    "SPEC-GLOBAL": {
+      "current": 46,
+      "next": 47,
+      "lastUpdated": "2026-02-16T10:00:00Z",
+      "updatedBy": "system"
+    },
+    "RA-GLOBAL": {
+      "current": 1,
+      "next": 2,
+      "lastUpdated": "2026-02-16T10:00:00Z",
+      "updatedBy": "system"
+    },
+    "MR-GLOBAL": {
+      "current": 1,
+      "next": 2,
+      "lastUpdated": "2026-02-16T10:00:00Z",
+      "updatedBy": "system"
+    }
+  }
+}

@@ -2,7 +2,8 @@
 
 **Version:** 2.0  
 **Status:** Active  
-**Part of:** ProvenanceCode Open Standard
+**Part of:** ProvenanceCode Open Standard  
+**Specification:** [SPEC-000046](../../provenance/specs/SPEC-000046/specification.md)
 
 ---
 
@@ -11,6 +12,8 @@
 ProvenanceCode v2.0 introduces an enhanced naming convention that extends the original v1.0 format to support monorepo organizations, Jira integration, and hierarchical project structures.
 
 **Key Principle:** v2.0 is **fully backward compatible** with v1.0. Both formats can coexist in the same repository.
+
+**Note:** This document provides a summary of the v2.0 naming convention. For the complete specification, see [SPEC-000046](../../provenance/specs/SPEC-000046/specification.md).
 
 ## Naming Format
 
