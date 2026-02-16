@@ -1,0 +1,1922 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Decision-Driven Development for the AI Era">
+      
+      
+      
+        <link rel="canonical" href="https://provenancecode.github.io/provenancecode/QUICK_START/">
+      
+      
+        <link rel="prev" href="../standard/provenancecode-v2/">
+      
+      
+        <link rel="next" href="../MIGRATION_GUIDE_V2/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Quick Start - ProvenanceCode</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#provenancecode-migrations-quick-start" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ProvenanceCode" class="md-header__button md-logo" aria-label="ProvenanceCode" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ProvenanceCode
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quick Start
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ProvenanceCode/ProvenanceCode" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ProvenanceCode/ProvenanceCode
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ProvenanceCode" class="md-nav__button md-logo" aria-label="ProvenanceCode" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ProvenanceCode
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ProvenanceCode/ProvenanceCode" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ProvenanceCode/ProvenanceCode
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standard
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Standard
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../standard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../standard/deo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decision Evidence Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../standard/enforcement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enforcement Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../standard/repo-layout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Repository Layout
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../standard/versioning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Versioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../standard/provenancecode-v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ProvenanceCode v2.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    v2.0 Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    v2.0 Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-to-latest-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update to Latest Version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rollback-if-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rollback if Needed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Scenarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-1-keep-v10-format-no-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 1: Keep v1.0 Format (No Changes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-2-add-v20-metadata-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 2: Add v2.0 Metadata Only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-3-full-v20-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 3: Full v2.0 Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-4-migrate-specific-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 4: Migrate Specific Artifacts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migration-from-spec-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration from Spec URL
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safety Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Safety Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automatic-backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic Backups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dry-run-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dry-Run Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-migration-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple Migration Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safe-production-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safe Production Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Managing Backups
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migration-config-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration Config File
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-migration-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Migration Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-wrong-subproject-assigned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Wrong Subproject Assigned
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-references-broken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: References Broken
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-new-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating New Artifacts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migration-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration History
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Help
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MIGRATION_GUIDE_V2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Implementation Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation/github-action/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation/github-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../building-implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building Your Own
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-to-latest-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update to Latest Version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rollback-if-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rollback if Needed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Scenarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-1-keep-v10-format-no-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 1: Keep v1.0 Format (No Changes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-2-add-v20-metadata-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 2: Add v2.0 Metadata Only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-3-full-v20-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 3: Full v2.0 Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-4-migrate-specific-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 4: Migrate Specific Artifacts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migration-from-spec-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration from Spec URL
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safety Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Safety Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automatic-backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic Backups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dry-run-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dry-Run Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-migration-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple Migration Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safe-production-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safe Production Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Managing Backups
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migration-config-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration Config File
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-migration-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Migration Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-wrong-subproject-assigned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Wrong Subproject Assigned
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-references-broken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: References Broken
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-new-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating New Artifacts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migration-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration History
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Help
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="provenancecode-migrations-quick-start">ProvenanceCode Migrations - Quick Start<a class="headerlink" href="#provenancecode-migrations-quick-start" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The ProvenanceCode migration system allows you to automatically update artifacts as the standard evolves.</p>
+<h2 id="basic-usage">Basic Usage<a class="headerlink" href="#basic-usage" title="Permanent link">&para;</a></h2>
+<h3 id="update-to-latest-version">Update to Latest Version<a class="headerlink" href="#update-to-latest-version" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Update all artifacts to latest version (with preview)</span>
+prvc<span class="w"> </span>update-version<span class="w"> </span>--dry-run
+
+<span class="c1"># Apply the migration</span>
+prvc<span class="w"> </span>update-version
+
+<span class="c1"># Update with specific strategy</span>
+prvc<span class="w"> </span>update-version<span class="w"> </span>--strategy<span class="w"> </span>full-v2<span class="w"> </span>--project<span class="w"> </span>MYAPP
+</code></pre></div>
+<h3 id="rollback-if-needed">Rollback if Needed<a class="headerlink" href="#rollback-if-needed" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Rollback last migration</span>
+prvc<span class="w"> </span>rollback
+
+<span class="c1"># List available backups</span>
+prvc<span class="w"> </span>backups<span class="w"> </span>list
+
+<span class="c1"># Restore from specific backup</span>
+prvc<span class="w"> </span>backups<span class="w"> </span>restore<span class="w"> </span>--backup<span class="w"> </span>.backups/2026-02-16-100000
+</code></pre></div>
+<h2 id="common-scenarios">Common Scenarios<a class="headerlink" href="#common-scenarios" title="Permanent link">&para;</a></h2>
+<h3 id="scenario-1-keep-v10-format-no-changes">Scenario 1: Keep v1.0 Format (No Changes)<a class="headerlink" href="#scenario-1-keep-v10-format-no-changes" title="Permanent link">&para;</a></h3>
+<p>Just continue using ProvenanceCode as you have been. No migration needed!</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Your artifacts stay as-is</span>
+DEC-000001
+SPEC-000045
+</code></pre></div>
+<h3 id="scenario-2-add-v20-metadata-only">Scenario 2: Add v2.0 Metadata Only<a class="headerlink" href="#scenario-2-add-v20-metadata-only" title="Permanent link">&para;</a></h3>
+<p>Add new metadata fields without changing IDs:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Preview changes</span>
+prvc<span class="w"> </span>update-version<span class="w"> </span>--strategy<span class="w"> </span>metadata-only<span class="w"> </span>--dry-run
+
+<span class="c1"># Apply migration</span>
+prvc<span class="w"> </span>update-version<span class="w"> </span>--strategy<span class="w"> </span>metadata-only
+</code></pre></div>
+<p><strong>Result:</strong>
+- IDs remain: <code>DEC-000001</code>, <code>SPEC-000045</code>
+- Added: <code>metadata</code> fields with version info</p>
+<h3 id="scenario-3-full-v20-migration">Scenario 3: Full v2.0 Migration<a class="headerlink" href="#scenario-3-full-v20-migration" title="Permanent link">&para;</a></h3>
+<p>Convert to project/subproject format:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># For single project</span>
+prvc<span class="w"> </span>update-version<span class="w"> </span>--strategy<span class="w"> </span>full-v2<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--project<span class="w"> </span>MYAPP<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--subproject<span class="w"> </span>CORE<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dry-run
+
+<span class="c1"># For monorepo (interactive)</span>
+prvc<span class="w"> </span>update-version<span class="w"> </span>--strategy<span class="w"> </span>interactive
+</code></pre></div>
+<p><strong>Result:</strong>
+- <code>DEC-000001</code> → <code>DEC-MYAPP-CORE-000001</code>
+- Added: <code>project</code> and <code>subproject</code> metadata
+- Directory renamed</p>
+<h3 id="scenario-4-migrate-specific-artifacts">Scenario 4: Migrate Specific Artifacts<a class="headerlink" href="#scenario-4-migrate-specific-artifacts" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Migrate single decision</span>
+prvc<span class="w"> </span>update-version<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--artifact<span class="w"> </span>DEC-000001<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--project<span class="w"> </span>MYAPP<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--subproject<span class="w"> </span>FE
+
+<span class="c1"># Migrate all specs only</span>
+prvc<span class="w"> </span>update-version<span class="w"> </span>--type<span class="w"> </span>spec
+</code></pre></div>
+<h2 id="migration-from-spec-url">Migration from Spec URL<a class="headerlink" href="#migration-from-spec-url" title="Permanent link">&para;</a></h2>
+<p>When a new ProvenanceCode version is released, you can migrate using the spec URL:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Migrate to version specified in spec</span>
+prvc<span class="w"> </span>update-version<span class="w"> </span>https://provenancecode.org/specs/SPEC-000046
+
+<span class="c1"># This automatically:</span>
+<span class="c1"># 1. Downloads the spec</span>
+<span class="c1"># 2. Determines target version (e.g., 2.0)</span>
+<span class="c1"># 3. Finds appropriate migration (1.0-to-2.0)</span>
+<span class="c1"># 4. Runs the migration</span>
+</code></pre></div>
+<h2 id="safety-features">Safety Features<a class="headerlink" href="#safety-features" title="Permanent link">&para;</a></h2>
+<h3 id="automatic-backups">Automatic Backups<a class="headerlink" href="#automatic-backups" title="Permanent link">&para;</a></h3>
+<p>Every migration creates a backup:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Backups stored in .backups/</span>
+.backups/
+<span class="w">  </span>└──<span class="w"> </span><span class="m">2026</span>-02-16-100000/
+<span class="w">      </span>└──<span class="w"> </span>provenance/
+<span class="w">          </span>└──<span class="w"> </span><span class="o">[</span>original<span class="w"> </span>artifacts<span class="o">]</span>
+
+<span class="c1"># Rollback anytime</span>
+prvc<span class="w"> </span>rollback
+</code></pre></div>
+<h3 id="dry-run-mode">Dry-Run Mode<a class="headerlink" href="#dry-run-mode" title="Permanent link">&para;</a></h3>
+<p>Always preview before applying:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Preview changes</span>
+prvc<span class="w"> </span>update-version<span class="w"> </span>--dry-run
+
+<span class="c1"># Shows what will change without modifying files</span>
+</code></pre></div>
+<h3 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">&para;</a></h3>
+<p>Automatic validation after migration:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Migration automatically validates</span>
+prvc<span class="w"> </span>update-version
+
+<span class="c1"># Manual validation</span>
+prvc<span class="w"> </span>validate
+</code></pre></div>
+<h2 id="example-workflow">Example Workflow<a class="headerlink" href="#example-workflow" title="Permanent link">&para;</a></h2>
+<h3 id="simple-migration-workflow">Simple Migration Workflow<a class="headerlink" href="#simple-migration-workflow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1. Check current status</span>
+prvc<span class="w"> </span>validate
+
+<span class="c1"># 2. Preview migration</span>
+prvc<span class="w"> </span>update-version<span class="w"> </span>--dry-run
+
+<span class="c1"># 3. Create backup (automatic)</span>
+<span class="c1"># 4. Apply migration</span>
+prvc<span class="w"> </span>update-version
+
+<span class="c1"># 5. Verify results</span>
+prvc<span class="w"> </span>validate
+
+<span class="c1"># 6. View history</span>
+prvc<span class="w"> </span><span class="nb">history</span>
+</code></pre></div>
+<h3 id="safe-production-migration">Safe Production Migration<a class="headerlink" href="#safe-production-migration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1. Test on development branch</span>
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>migration-test
+prvc<span class="w"> </span>update-version<span class="w"> </span>--dry-run
+
+<span class="c1"># 2. Review changes</span>
+git<span class="w"> </span>diff
+
+<span class="c1"># 3. Apply migration</span>
+prvc<span class="w"> </span>update-version
+
+<span class="c1"># 4. Run tests</span>
+npm<span class="w"> </span><span class="nb">test</span>
+
+<span class="c1"># 5. Commit if successful</span>
+git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;chore: Migrate to ProvenanceCode v2.0&quot;</span>
+
+<span class="c1"># 6. Or rollback if issues</span>
+prvc<span class="w"> </span>rollback
+git<span class="w"> </span>checkout<span class="w"> </span>main
+</code></pre></div>
+<h2 id="managing-backups">Managing Backups<a class="headerlink" href="#managing-backups" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># List all backups</span>
+prvc<span class="w"> </span>backups<span class="w"> </span>list
+
+<span class="c1"># Output:</span>
+<span class="c1"># Available backups:</span>
+<span class="c1"># 1. 2026-02-16-100000</span>
+<span class="c1">#    Created: 2026-02-16T10:00:00Z</span>
+<span class="c1">#    Size: 245678 bytes</span>
+
+<span class="c1"># Clean old backups (keep last 5)</span>
+prvc<span class="w"> </span>backups<span class="w"> </span>clean<span class="w"> </span>--keep<span class="w"> </span><span class="m">5</span>
+
+<span class="c1"># Restore from backup</span>
+prvc<span class="w"> </span>backups<span class="w"> </span>restore<span class="w"> </span>--backup<span class="w"> </span>.backups/2026-02-16-100000
+</code></pre></div>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<h3 id="create-configuration">Create Configuration<a class="headerlink" href="#create-configuration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Initialize config</span>
+prvc<span class="w"> </span>config<span class="w"> </span>init
+
+<span class="c1"># Set values</span>
+prvc<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--key<span class="w"> </span>defaultProject<span class="w"> </span>--value<span class="w"> </span>MYAPP
+prvc<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--key<span class="w"> </span>defaultSubproject<span class="w"> </span>--value<span class="w"> </span>CORE
+
+<span class="c1"># View config</span>
+prvc<span class="w"> </span>config<span class="w"> </span>show
+</code></pre></div>
+<h3 id="migration-config-file">Migration Config File<a class="headerlink" href="#migration-config-file" title="Permanent link">&para;</a></h3>
+<p>Create <code>migration-config.json</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;strategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;metadata-only&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;defaultProject&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MYAPP&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Application&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;pathMapping&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;frontend/**&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;subproject&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FE&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;backend/**&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;subproject&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BE&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Then run:</p>
+<div class="highlight"><pre><span></span><code>prvc<span class="w"> </span>update-version<span class="w"> </span>--config<span class="w"> </span>migration-config.json
+</code></pre></div>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="issue-migration-fails">Issue: Migration Fails<a class="headerlink" href="#issue-migration-fails" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check validation</span>
+prvc<span class="w"> </span>validate
+
+<span class="c1"># View detailed errors</span>
+prvc<span class="w"> </span>validate<span class="w"> </span>--verbose
+
+<span class="c1"># Attempt auto-fix</span>
+prvc<span class="w"> </span>validate<span class="w"> </span>--fix
+</code></pre></div>
+<h3 id="issue-wrong-subproject-assigned">Issue: Wrong Subproject Assigned<a class="headerlink" href="#issue-wrong-subproject-assigned" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Rollback</span>
+prvc<span class="w"> </span>rollback
+
+<span class="c1"># Try with explicit mapping</span>
+prvc<span class="w"> </span>update-version<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--strategy<span class="w"> </span>full-v2<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--project<span class="w"> </span>MYAPP<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--config<span class="w"> </span>custom-mapping.json
+</code></pre></div>
+<h3 id="issue-references-broken">Issue: References Broken<a class="headerlink" href="#issue-references-broken" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Migration should auto-update references</span>
+<span class="c1"># If not, check migration log</span>
+
+<span class="c1"># Manual validation</span>
+prvc<span class="w"> </span>validate
+
+<span class="c1"># Re-run with reference update</span>
+prvc<span class="w"> </span>update-version<span class="w"> </span>--force
+</code></pre></div>
+<h2 id="advanced-usage">Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permanent link">&para;</a></h2>
+<h3 id="creating-new-artifacts">Creating New Artifacts<a class="headerlink" href="#creating-new-artifacts" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create v2.0 decision</span>
+prvc<span class="w"> </span>create<span class="w"> </span>decision<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--project<span class="w"> </span>MYAPP<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--subproject<span class="w"> </span>FE<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--title<span class="w"> </span><span class="s2">&quot;Adopt React 18&quot;</span>
+
+<span class="c1"># Output: Created DEC-MYAPP-FE-000001</span>
+
+<span class="c1"># Create v1.0 decision</span>
+prvc<span class="w"> </span>create<span class="w"> </span>decision<span class="w"> </span>--title<span class="w"> </span><span class="s2">&quot;Legacy Format&quot;</span>
+
+<span class="c1"># Output: Created DEC-000002</span>
+</code></pre></div>
+<h3 id="migration-history">Migration History<a class="headerlink" href="#migration-history" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># View all migrations</span>
+prvc<span class="w"> </span><span class="nb">history</span>
+
+<span class="c1"># Output:</span>
+<span class="c1"># 1. 1.0-to-2.0</span>
+<span class="c1">#    Applied: 2026-02-16T10:00:00Z</span>
+<span class="c1">#    By: user@example.com</span>
+<span class="c1">#    Artifacts: 42</span>
+<span class="c1">#    Status: completed</span>
+
+<span class="c1"># Export as JSON</span>
+prvc<span class="w"> </span><span class="nb">history</span><span class="w"> </span>--json<span class="w"> </span>&gt;<span class="w"> </span>migration-history.json
+</code></pre></div>
+<h2 id="getting-help">Getting Help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># General help</span>
+prvc<span class="w"> </span>--help
+
+<span class="c1"># Command-specific help</span>
+prvc<span class="w"> </span>update-version<span class="w"> </span>--help
+prvc<span class="w"> </span>rollback<span class="w"> </span>--help
+prvc<span class="w"> </span>validate<span class="w"> </span>--help
+</code></pre></div>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Read Full Documentation:</strong> See <a href="./README.md">migrations/README.md</a></li>
+<li><strong>Review Migration Guide:</strong> See <a href="../docs/MIGRATION_GUIDE_V2.md">docs/MIGRATION_GUIDE_V2.md</a></li>
+<li><strong>Check Specific Migration:</strong> See <a href="./versions/1.0-to-2.0/README.md">migrations/versions/1.0-to-2.0/README.md</a></li>
+<li><strong>Try Dry-Run:</strong> <code>prvc update-version --dry-run</code></li>
+</ol>
+<hr />
+<p><strong>Remember:</strong> Always use <code>--dry-run</code> first to preview changes!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.sections", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

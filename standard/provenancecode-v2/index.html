@@ -1,0 +1,2696 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Decision-Driven Development for the AI Era">
+      
+      
+      
+        <link rel="canonical" href="https://provenancecode.github.io/provenancecode/standard/provenancecode-v2/">
+      
+      
+        <link rel="prev" href="../versioning/">
+      
+      
+        <link rel="next" href="../../QUICK_START/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>ProvenanceCode v2.0 - ProvenanceCode</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#provenancecode-v20-naming-convention" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ProvenanceCode" class="md-header__button md-logo" aria-label="ProvenanceCode" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ProvenanceCode
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ProvenanceCode v2.0
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ProvenanceCode/ProvenanceCode" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ProvenanceCode/ProvenanceCode
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ProvenanceCode" class="md-nav__button md-logo" aria-label="ProvenanceCode" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ProvenanceCode
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ProvenanceCode/ProvenanceCode" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ProvenanceCode/ProvenanceCode
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standard
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Standard
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decision Evidence Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enforcement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enforcement Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../repo-layout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Repository Layout
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../versioning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Versioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ProvenanceCode v2.0
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ProvenanceCode v2.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naming-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naming Format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Naming Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v10-format-legacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.0 Format (Legacy)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v20-format-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v2.0 Format (New)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format Specification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Format Specification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#artifact-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Artifact Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subproject-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subproject Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequence-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequence Number
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#valid-v20-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valid v2.0 IDs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backward-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backward Compatibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Registry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Registry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-single-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Single Repository
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-monorepo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Monorepo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequence-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequence Tracking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sequence Tracking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directory Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Directory Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v10-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.0 Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v20-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v2.0 Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixed-v10-and-v20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixed v1.0 and v2.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#artifact-schema-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Artifact Schema Updates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Artifact Schema Updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decision-schema-v20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Schema (v2.0)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monorepo-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monorepo Support
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monorepo Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workspace-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workspace Mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-based-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path-Based Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jira-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jira Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Jira Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic-linking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic Linking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jira-ticket-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jira Ticket Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-case-1-monorepo-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 1: Monorepo Organization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case-2-microservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 2: Microservices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case-3-team-based-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 3: Team-Based Organization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migration-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration Path
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Guidelines
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Guidelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-validator-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Validator Implementations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-tool-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Tool Implementations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changelog
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Changelog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-20-2026-02-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.0 (2026-02-16)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-10-2024-01-01" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 1.0 (2024-01-01)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    v2.0 Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    v2.0 Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../QUICK_START/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MIGRATION_GUIDE_V2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Implementation Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../implementation/github-action/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../implementation/github-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building-implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building Your Own
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naming-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naming Format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Naming Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v10-format-legacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.0 Format (Legacy)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v20-format-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v2.0 Format (New)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format Specification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Format Specification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#artifact-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Artifact Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subproject-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subproject Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequence-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequence Number
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#valid-v20-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valid v2.0 IDs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backward-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backward Compatibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Registry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Registry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-single-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Single Repository
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-monorepo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Monorepo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequence-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequence Tracking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sequence Tracking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directory Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Directory Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v10-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.0 Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v20-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v2.0 Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixed-v10-and-v20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixed v1.0 and v2.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#artifact-schema-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Artifact Schema Updates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Artifact Schema Updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decision-schema-v20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Schema (v2.0)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monorepo-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monorepo Support
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monorepo Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workspace-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workspace Mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-based-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path-Based Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jira-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jira Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Jira Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic-linking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic Linking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jira-ticket-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jira Ticket Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-case-1-monorepo-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 1: Monorepo Organization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case-2-microservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 2: Microservices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case-3-team-based-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 3: Team-Based Organization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migration-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration Path
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Guidelines
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Guidelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-validator-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Validator Implementations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-tool-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Tool Implementations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changelog
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Changelog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-20-2026-02-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 2.0 (2026-02-16)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-10-2024-01-01" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version 1.0 (2024-01-01)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="provenancecode-v20-naming-convention">ProvenanceCode v2.0 Naming Convention<a class="headerlink" href="#provenancecode-v20-naming-convention" title="Permanent link">&para;</a></h1>
+<p><strong>Version:</strong> 2.0<br />
+<strong>Status:</strong> Active<br />
+<strong>Part of:</strong> ProvenanceCode Open Standard<br />
+<strong>Specification:</strong> <a href="../../provenance/specs/SPEC-000046/specification.md">SPEC-000046</a></p>
+<hr />
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>ProvenanceCode v2.0 introduces an enhanced naming convention that extends the original v1.0 format to support monorepo organizations, Jira integration, and hierarchical project structures.</p>
+<p><strong>Key Principle:</strong> v2.0 is <strong>fully backward compatible</strong> with v1.0. Both formats can coexist in the same repository.</p>
+<p><strong>Note:</strong> This document provides a summary of the v2.0 naming convention. For the complete specification, see <a href="../../provenance/specs/SPEC-000046/specification.md">SPEC-000046</a>.</p>
+<h2 id="naming-format">Naming Format<a class="headerlink" href="#naming-format" title="Permanent link">&para;</a></h2>
+<h3 id="v10-format-legacy">v1.0 Format (Legacy)<a class="headerlink" href="#v10-format-legacy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>{ARTIFACT_TYPE}-{SEQUENCE}
+</code></pre></div>
+<p><strong>Examples:</strong>
+<div class="highlight"><pre><span></span><code>DEC-000001
+SPEC-000042
+RA-000007
+MR-000003
+</code></pre></div></p>
+<p><strong>Components:</strong>
+- <code>ARTIFACT_TYPE</code>: DEC, SPEC, RA, MR
+- <code>SEQUENCE</code>: 6-digit zero-padded number</p>
+<h3 id="v20-format-new">v2.0 Format (New)<a class="headerlink" href="#v20-format-new" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>{ARTIFACT_TYPE}-{PROJECT_CODE}-{SUBPROJECT_CODE}-{SEQUENCE}
+</code></pre></div>
+<p><strong>Examples:</strong>
+<div class="highlight"><pre><span></span><code>DEC-PROJ-CORE-000001
+SPEC-AUTH-API-000042
+RA-PAY-SEC-000007
+MR-SHOP-FE-000003
+</code></pre></div></p>
+<p><strong>Components:</strong>
+- <code>ARTIFACT_TYPE</code>: DEC, SPEC, RA, MR (same as v1.0)
+- <code>PROJECT_CODE</code>: 2-4 uppercase letters/numbers
+- <code>SUBPROJECT_CODE</code>: 2-4 uppercase letters/numbers
+- <code>SEQUENCE</code>: 6-digit zero-padded number</p>
+<h2 id="format-specification">Format Specification<a class="headerlink" href="#format-specification" title="Permanent link">&para;</a></h2>
+<h3 id="artifact-types">Artifact Types<a class="headerlink" href="#artifact-types" title="Permanent link">&para;</a></h3>
+<p>Same as v1.0:</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Full Name</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DEC</code></td>
+<td>Decision</td>
+<td>Architectural and technical decisions</td>
+</tr>
+<tr>
+<td><code>SPEC</code></td>
+<td>Specification</td>
+<td>Requirements and feature specifications</td>
+</tr>
+<tr>
+<td><code>RA</code></td>
+<td>Risk Acceptance</td>
+<td>Documented risk acceptances</td>
+</tr>
+<tr>
+<td><code>MR</code></td>
+<td>Mistake Record</td>
+<td>Post-incident learning records</td>
+</tr>
+</tbody>
+</table>
+<h3 id="project-code">Project Code<a class="headerlink" href="#project-code" title="Permanent link">&para;</a></h3>
+<p><strong>Format:</strong> 2-4 uppercase characters (A-Z, 0-9)</p>
+<p><strong>Purpose:</strong> Identifies the primary project or product</p>
+<p><strong>Examples:</strong>
+- <code>SHOP</code> - E-commerce shop
+- <code>AUTH</code> - Authentication service
+- <code>PAY</code> - Payment service
+- <code>PROJ</code> - Generic project name
+- <code>API</code> - API layer</p>
+<p><strong>Rules:</strong>
+- Minimum 2 characters
+- Maximum 4 characters
+- Uppercase letters (A-Z) only
+- Numbers (0-9) allowed
+- No special characters
+- Should be memorable and meaningful</p>
+<h3 id="subproject-code">Subproject Code<a class="headerlink" href="#subproject-code" title="Permanent link">&para;</a></h3>
+<p><strong>Format:</strong> 2-4 uppercase characters (A-Z, 0-9)</p>
+<p><strong>Purpose:</strong> Identifies a component, workspace, or team within the project</p>
+<p><strong>Examples:</strong>
+- <code>FE</code> - Frontend
+- <code>BE</code> - Backend
+- <code>API</code> - API layer
+- <code>CORE</code> - Core functionality
+- <code>SEC</code> - Security
+- <code>INFRA</code> - Infrastructure
+- <code>MOB</code> - Mobile</p>
+<p><strong>Rules:</strong>
+- Same format rules as PROJECT_CODE
+- Should map to a logical division in your codebase
+- In monorepos, typically maps to a workspace
+- Can represent teams, components, or modules</p>
+<h3 id="sequence-number">Sequence Number<a class="headerlink" href="#sequence-number" title="Permanent link">&para;</a></h3>
+<p><strong>Format:</strong> 6-digit zero-padded number</p>
+<p><strong>Purpose:</strong> Unique sequential identifier within PROJECT-SUBPROJECT scope</p>
+<p><strong>Examples:</strong>
+- <code>000001</code> - First artifact
+- <code>000042</code> - Forty-second artifact
+- <code>123456</code> - Large sequence number</p>
+<p><strong>Rules:</strong>
+- Always 6 digits
+- Zero-padded (e.g., <code>000001</code> not <code>1</code>)
+- Increments per artifact type per subproject
+- Starts at <code>000001</code></p>
+<h2 id="validation-rules">Validation Rules<a class="headerlink" href="#validation-rules" title="Permanent link">&para;</a></h2>
+<h3 id="valid-v20-ids">Valid v2.0 IDs<a class="headerlink" href="#valid-v20-ids" title="Permanent link">&para;</a></h3>
+<p>Pattern: <code>^(DEC|SPEC|RA|MR)-[A-Z0-9]{2,4}-[A-Z0-9]{2,4}-\d{6}$</code></p>
+<p><strong>Valid Examples:</strong>
+<div class="highlight"><pre><span></span><code>DEC-SHOP-FE-000001      ✅ Standard format
+SPEC-AUTH-API-000042    ✅ Different types
+RA-PAY-SEC-000007       ✅ Different artifact
+MR-PROJ-BE-000123       ✅ Three-letter codes
+DEC-AB-CD-000001        ✅ Minimum length (2 chars)
+SPEC-ABCD-EFGH-000001   ✅ Maximum length (4 chars)
+</code></pre></div></p>
+<p><strong>Invalid Examples:</strong>
+<div class="highlight"><pre><span></span><code>DEC-project-core-000001 ❌ Lowercase
+DEC-PROJ-000001         ❌ Missing subproject
+DEC-PROJ_CORE-000001    ❌ Special characters
+DEC-P-CORE-000001       ❌ Project too short
+DEC-TOOLONG-CORE-000001 ❌ Project too long
+DEC-PROJ-CORE-1         ❌ Sequence not padded
+</code></pre></div></p>
+<h3 id="backward-compatibility">Backward Compatibility<a class="headerlink" href="#backward-compatibility" title="Permanent link">&para;</a></h3>
+<p>Pattern: <code>^(DEC|SPEC|RA|MR)-\d{6}$</code></p>
+<p><strong>Valid v1.0 Examples:</strong>
+<div class="highlight"><pre><span></span><code>DEC-000001              ✅ Valid v1.0 format
+SPEC-000042             ✅ Still supported
+RA-000007               ✅ Always valid
+MR-000003               ✅ No migration required
+</code></pre></div></p>
+<h2 id="code-registry">Code Registry<a class="headerlink" href="#code-registry" title="Permanent link">&para;</a></h2>
+<p>The code registry (<code>codes.json</code>) defines available projects and subprojects.</p>
+<h3 id="schema">Schema<a class="headerlink" href="#schema" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenancecode.codes@1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;monorepo&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">boolea</span><span class="kc">n</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;projects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;{PROJECT_CODE}&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">(op</span><span class="kc">t</span><span class="err">io</span><span class="kc">nal</span><span class="err">)</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;jiraProject&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">(op</span><span class="kc">t</span><span class="err">io</span><span class="kc">nal</span><span class="err">)</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;jiraUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">(op</span><span class="kc">t</span><span class="err">io</span><span class="kc">nal</span><span class="err">)</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;subprojects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;{SUBPROJECT_CODE}&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">(op</span><span class="kc">t</span><span class="err">io</span><span class="kc">nal</span><span class="err">)</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="p">]</span><span class="w"> </span><span class="err">(op</span><span class="kc">t</span><span class="err">io</span><span class="kc">nal</span><span class="p">,</span><span class="w"> </span><span class="kc">f</span><span class="err">or</span><span class="w"> </span><span class="err">mo</span><span class="kc">n</span><span class="err">orepo)</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;jiraComponent&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">(op</span><span class="kc">t</span><span class="err">io</span><span class="kc">nal</span><span class="err">)</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="example-single-repository">Example: Single Repository<a class="headerlink" href="#example-single-repository" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenancecode.codes@1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;monorepo&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;projects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;MYAPP&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Application&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Main application project&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;jiraProject&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MYAPP&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;subprojects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;CORE&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Core&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Core application logic&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;jiraComponent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Core&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="example-monorepo">Example: Monorepo<a class="headerlink" href="#example-monorepo" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenancecode.codes@1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;monorepo&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;projects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;SHOP&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;E-Commerce Shop&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Online shopping platform&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;jiraProject&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SHOP&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;jiraUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://company.atlassian.net&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;subprojects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;FE&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Frontend&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;React-based web frontend&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;apps/frontend&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;apps/frontend/**&quot;</span><span class="p">],</span>
+<span class="w">          </span><span class="nt">&quot;jiraComponent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Frontend&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;BE&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Backend&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Node.js API backend&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;apps/backend&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;apps/backend/**&quot;</span><span class="p">],</span>
+<span class="w">          </span><span class="nt">&quot;jiraComponent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Backend&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;MOBILE&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mobile App&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;React Native mobile app&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;apps/mobile&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;apps/mobile/**&quot;</span><span class="p">],</span>
+<span class="w">          </span><span class="nt">&quot;jiraComponent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mobile&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="sequence-tracking">Sequence Tracking<a class="headerlink" href="#sequence-tracking" title="Permanent link">&para;</a></h2>
+<p>The sequences file (<code>sequences.json</code>) tracks the next available sequence number for each artifact type within each subproject.</p>
+<h3 id="schema_1">Schema<a class="headerlink" href="#schema_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenancecode.sequences@1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;sequences&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;{PROJECT_CODE}-{SUBPROJECT_CODE}&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;DEC&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">nu</span><span class="err">mber</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;SPEC&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">nu</span><span class="err">mber</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;RA&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">nu</span><span class="err">mber</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;MR&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">nu</span><span class="err">mber</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenancecode.sequences@1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;sequences&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;SHOP-FE&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;DEC&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;SPEC&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;RA&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;MR&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;SHOP-BE&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;DEC&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;SPEC&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;RA&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;MR&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Next IDs would be:</strong>
+- <code>DEC-SHOP-FE-000005</code>
+- <code>SPEC-SHOP-FE-000012</code>
+- <code>DEC-SHOP-BE-000008</code></p>
+<h2 id="directory-structure">Directory Structure<a class="headerlink" href="#directory-structure" title="Permanent link">&para;</a></h2>
+<h3 id="v10-structure">v1.0 Structure<a class="headerlink" href="#v10-structure" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>/provenance/
+  /decisions/
+    /DEC-000001/
+      decision.json
+      decision.md
+  /specs/
+    /SPEC-000001/
+  /risks/
+    /RA-000001/
+  /mistakes/
+    /MR-000001/
+</code></pre></div>
+<h3 id="v20-structure">v2.0 Structure<a class="headerlink" href="#v20-structure" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>/provenance/
+  codes.json              ← Project registry
+  sequences.json          ← Sequence tracking
+  /decisions/
+    /DEC-PROJ-CORE-000001/
+      decision.json
+      decision.md
+    /DEC-PROJ-API-000001/
+  /specs/
+    /SPEC-PROJ-CORE-000001/
+  /risks/
+    /RA-PROJ-SEC-000001/
+  /mistakes/
+    /MR-PROJ-FE-000001/
+</code></pre></div>
+<h3 id="mixed-v10-and-v20">Mixed v1.0 and v2.0<a class="headerlink" href="#mixed-v10-and-v20" title="Permanent link">&para;</a></h3>
+<p>Both formats can coexist:</p>
+<div class="highlight"><pre><span></span><code>/provenance/
+  codes.json
+  sequences.json
+  /decisions/
+    /DEC-000001/              ← v1.0 format
+    /DEC-000002/              ← v1.0 format
+    /DEC-PROJ-CORE-000001/    ← v2.0 format
+    /DEC-PROJ-API-000001/     ← v2.0 format
+</code></pre></div>
+<h2 id="artifact-schema-updates">Artifact Schema Updates<a class="headerlink" href="#artifact-schema-updates" title="Permanent link">&para;</a></h2>
+<h3 id="decision-schema-v20">Decision Schema (v2.0)<a class="headerlink" href="#decision-schema-v20" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenancecode.decision.v2&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;decision_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-PROJ-CORE-000001&quot;</span><span class="p">,</span>
+
+<span class="w">  </span><span class="nt">&quot;project&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PROJ&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Project Name&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jiraProject&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PROJ&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+
+<span class="w">  </span><span class="nt">&quot;subproject&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CORE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Core&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jiraComponent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Core&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+
+<span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Decision title&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;draft&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;problem&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;What problem are we solving?&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;constraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Technical constraints&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;decision&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;What we decided&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;consequences&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Impact of the decision&quot;</span><span class="p">,</span>
+
+<span class="w">  </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;pr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://github.com/org/repo/pull/123&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jira&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://company.atlassian.net/browse/PROJ-123&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+
+<span class="w">  </span><span class="nt">&quot;timestamps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-16T00:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;updated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-16T00:00:00Z&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="key-additions">Key Additions<a class="headerlink" href="#key-additions" title="Permanent link">&para;</a></h3>
+<p><strong>v2.0 adds these optional fields:</strong></p>
+<ul>
+<li><code>project</code> (object) - Project information</li>
+<li><code>code</code> (string) - Project code</li>
+<li><code>name</code> (string) - Project name</li>
+<li>
+<p><code>jiraProject</code> (string, optional) - Jira project key</p>
+</li>
+<li>
+<p><code>subproject</code> (object) - Subproject information</p>
+</li>
+<li><code>code</code> (string) - Subproject code</li>
+<li><code>name</code> (string) - Subproject name</li>
+<li><code>workspace</code> (string) - Workspace path</li>
+<li><code>jiraComponent</code> (string, optional) - Jira component name</li>
+</ul>
+<p><strong>v1.0 format remains valid:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenancecode.decision.v2&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;decision_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000001&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Decision title&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;draft&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="monorepo-support">Monorepo Support<a class="headerlink" href="#monorepo-support" title="Permanent link">&para;</a></h2>
+<p>v2.0 provides native monorepo support through workspace mapping.</p>
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenancecode.codes@1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;monorepo&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;projects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;SHOP&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;subprojects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;FE&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;apps/frontend&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;apps/frontend/**&quot;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="workspace-mapping">Workspace Mapping<a class="headerlink" href="#workspace-mapping" title="Permanent link">&para;</a></h3>
+<p>Artifacts map to specific workspaces:</p>
+<div class="highlight"><pre><span></span><code>DEC-SHOP-FE-000001  → apps/frontend/
+DEC-SHOP-BE-000001  → apps/backend/
+DEC-SHOP-MOB-000001 → apps/mobile/
+</code></pre></div>
+<h3 id="path-based-validation">Path-Based Validation<a class="headerlink" href="#path-based-validation" title="Permanent link">&para;</a></h3>
+<p>When <code>paths</code> are specified, validators can:</p>
+<ul>
+<li>Detect which subproject changed files belong to</li>
+<li>Require decisions from the correct subproject</li>
+<li>Auto-suggest subproject based on PR file changes</li>
+</ul>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code>PR changes: apps/frontend/src/Login.tsx
+Validator suggests: DEC-SHOP-FE-XXXXXX
+</code></pre></div></p>
+<h2 id="jira-integration">Jira Integration<a class="headerlink" href="#jira-integration" title="Permanent link">&para;</a></h2>
+<p>v2.0 enables automatic Jira integration.</p>
+<h3 id="configuration_1">Configuration<a class="headerlink" href="#configuration_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;projects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;SHOP&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;jiraProject&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SHOP&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;jiraUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://company.atlassian.net&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;subprojects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;FE&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;jiraComponent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Frontend&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="automatic-linking">Automatic Linking<a class="headerlink" href="#automatic-linking" title="Permanent link">&para;</a></h3>
+<p>When a decision is created:</p>
+<div class="highlight"><pre><span></span><code>DEC-SHOP-FE-000001
+</code></pre></div>
+<p>The validator can automatically:</p>
+<ol>
+<li><strong>Create Jira ticket</strong> in project <code>SHOP</code></li>
+<li><strong>Assign component</strong> <code>Frontend</code></li>
+<li><strong>Link PR</strong> to Jira ticket</li>
+<li><strong>Update decision</strong> with Jira link</li>
+</ol>
+<h3 id="jira-ticket-structure">Jira Ticket Structure<a class="headerlink" href="#jira-ticket-structure" title="Permanent link">&para;</a></h3>
+<p><strong>Example Jira ticket created from decision:</strong></p>
+<div class="highlight"><pre><span></span><code>Project: SHOP
+Type: Technical Decision
+Component: Frontend
+Summary: [DEC-SHOP-FE-000001] Decision Title
+Description: Decision context and details
+Labels: provenancecode, decision
+</code></pre></div>
+<h2 id="use-cases">Use Cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
+<h3 id="use-case-1-monorepo-organization">Use Case 1: Monorepo Organization<a class="headerlink" href="#use-case-1-monorepo-organization" title="Permanent link">&para;</a></h3>
+<p><strong>Scenario:</strong> Monorepo with 3 apps</p>
+<p><strong>Setup:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;projects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;PLATFORM&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;subprojects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;WEB&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;apps/web&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;API&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;apps/api&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;ADMIN&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;apps/admin&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Artifacts:</strong>
+<div class="highlight"><pre><span></span><code>DEC-PLATFORM-WEB-000001   → Web app decision
+DEC-PLATFORM-API-000001   → API decision
+DEC-PLATFORM-ADMIN-000001 → Admin panel decision
+</code></pre></div></p>
+<h3 id="use-case-2-microservices">Use Case 2: Microservices<a class="headerlink" href="#use-case-2-microservices" title="Permanent link">&para;</a></h3>
+<p><strong>Scenario:</strong> Microservices architecture</p>
+<p><strong>Setup:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;projects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;SVC&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;subprojects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;AUTH&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;services/auth&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;PAY&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;services/payment&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;USER&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;services/user&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Artifacts:</strong>
+<div class="highlight"><pre><span></span><code>DEC-SVC-AUTH-000001  → Auth service decision
+DEC-SVC-PAY-000001   → Payment service decision
+DEC-SVC-USER-000001  → User service decision
+</code></pre></div></p>
+<h3 id="use-case-3-team-based-organization">Use Case 3: Team-Based Organization<a class="headerlink" href="#use-case-3-team-based-organization" title="Permanent link">&para;</a></h3>
+<p><strong>Scenario:</strong> Multiple teams in one repo</p>
+<p><strong>Setup:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;projects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;PROD&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;subprojects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;FE&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Frontend Team&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;BE&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Backend Team&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;INFRA&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Infrastructure Team&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Artifacts:</strong>
+<div class="highlight"><pre><span></span><code>DEC-PROD-FE-000001     → Frontend team decision
+DEC-PROD-BE-000001     → Backend team decision
+DEC-PROD-INFRA-000001  → Infrastructure team decision
+</code></pre></div></p>
+<h2 id="migration-path">Migration Path<a class="headerlink" href="#migration-path" title="Permanent link">&para;</a></h2>
+<p>See <a href="../../MIGRATION_GUIDE_V2/">Migration Guide</a> for detailed migration instructions.</p>
+<p><strong>Summary:</strong>
+1. ✅ v1.0 continues to work indefinitely
+2. ✅ Both formats can coexist
+3. ✅ No breaking changes
+4. ✅ Gradual migration supported
+5. ✅ No forced migration</p>
+<h2 id="implementation-guidelines">Implementation Guidelines<a class="headerlink" href="#implementation-guidelines" title="Permanent link">&para;</a></h2>
+<h3 id="for-validator-implementations">For Validator Implementations<a class="headerlink" href="#for-validator-implementations" title="Permanent link">&para;</a></h3>
+<p>Validators MUST:</p>
+<ol>
+<li>✅ Support both v1.0 and v2.0 formats</li>
+<li>✅ Validate v2.0 format against regex pattern</li>
+<li>✅ Validate project/subproject codes exist in <code>codes.json</code></li>
+<li>✅ Track sequences in <code>sequences.json</code></li>
+<li>✅ Handle missing <code>codes.json</code> (v1.0 fallback)</li>
+</ol>
+<p>Validators MAY:</p>
+<ul>
+<li>Auto-suggest subproject based on file paths</li>
+<li>Create Jira tickets automatically</li>
+<li>Link PRs to Jira</li>
+<li>Generate next sequence number</li>
+</ul>
+<h3 id="for-tool-implementations">For Tool Implementations<a class="headerlink" href="#for-tool-implementations" title="Permanent link">&para;</a></h3>
+<p>Tools SHOULD:</p>
+<ol>
+<li>✅ Read <code>codes.json</code> for available projects</li>
+<li>✅ Update <code>sequences.json</code> when creating artifacts</li>
+<li>✅ Validate format before creating artifacts</li>
+<li>✅ Provide v1.0 fallback if <code>codes.json</code> missing</li>
+</ol>
+<h3 id="configuration-detection">Configuration Detection<a class="headerlink" href="#configuration-detection" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// Detect v2.0 support</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">codesPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/provenance/codes.json&#39;</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">hasV2Support</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fs</span><span class="p">.</span><span class="nx">existsSync</span><span class="p">(</span><span class="nx">codesPath</span><span class="p">);</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">hasV2Support</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Use v2.0 format</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">codes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="nx">codesPath</span><span class="p">));</span>
+<span class="w">  </span><span class="c1">// ...</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Use v1.0 format</span>
+<span class="w">  </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
+<p><strong>Q: Is v2.0 required?</strong><br />
+A: No, v1.0 is still fully supported. v2.0 is optional.</p>
+<p><strong>Q: Can I mix v1.0 and v2.0?</strong><br />
+A: Yes, both formats work together in the same repository.</p>
+<p><strong>Q: What if I don't have <code>codes.json</code>?</strong><br />
+A: Validators fall back to v1.0 format validation.</p>
+<p><strong>Q: How do sequences work across formats?</strong><br />
+A: v1.0 and v2.0 use independent sequences. No conflicts.</p>
+<p><strong>Q: Can I change project codes later?</strong><br />
+A: Not recommended. Choose codes carefully as they become part of artifact IDs.</p>
+<p><strong>Q: Do all subprojects need Jira?</strong><br />
+A: No, Jira integration is optional.</p>
+<h2 id="related-documentation">Related Documentation<a class="headerlink" href="#related-documentation" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../MIGRATION_GUIDE_V2/">Migration Guide</a> - How to migrate to v2.0</li>
+<li><a href="../repo-layout/">Repository Layout</a> - Directory structure</li>
+<li><a href="../versioning/">Versioning</a> - Artifact versioning</li>
+<li><a href="../deo/">Decision Evidence Objects</a> - Decision format</li>
+</ul>
+<h2 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h2>
+<h3 id="version-20-2026-02-16">Version 2.0 (2026-02-16)<a class="headerlink" href="#version-20-2026-02-16" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✨ Added hierarchical naming convention</li>
+<li>✨ Added monorepo support</li>
+<li>✨ Added Jira integration</li>
+<li>✨ Added <code>codes.json</code> registry</li>
+<li>✨ Added <code>sequences.json</code> tracking</li>
+<li>✅ Maintained full v1.0 backward compatibility</li>
+</ul>
+<h3 id="version-10-2024-01-01">Version 1.0 (2024-01-01)<a class="headerlink" href="#version-10-2024-01-01" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Initial release</li>
+<li>Basic naming convention: <code>{TYPE}-{SEQUENCE}</code></li>
+</ul>
+<hr />
+<p><strong>ProvenanceCode™</strong> is a trademark of <strong>KDDLC AI Solutions SL</strong>.</p>
+<p>The ProvenanceCode standard specification is licensed under <a href="../../LICENSE">Apache License 2.0</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.sections", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2481 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Decision-Driven Development for the AI Era">
+      
+      
+      
+        <link rel="canonical" href="https://provenancecode.github.io/provenancecode/MIGRATION_GUIDE_V2/">
+      
+      
+        <link rel="prev" href="../QUICK_START/">
+      
+      
+        <link rel="next" href="../implementation/github-action/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Migration Guide - ProvenanceCode</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#provenancecode-v20-migration-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ProvenanceCode" class="md-header__button md-logo" aria-label="ProvenanceCode" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ProvenanceCode
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Migration Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ProvenanceCode/ProvenanceCode" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ProvenanceCode/ProvenanceCode
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ProvenanceCode" class="md-nav__button md-logo" aria-label="ProvenanceCode" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ProvenanceCode
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ProvenanceCode/ProvenanceCode" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ProvenanceCode/ProvenanceCode
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standard
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Standard
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../standard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../standard/deo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decision Evidence Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../standard/enforcement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enforcement Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../standard/repo-layout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Repository Layout
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../standard/versioning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Versioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../standard/provenancecode-v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ProvenanceCode v2.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    v2.0 Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    v2.0 Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../QUICK_START/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Breaking Changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migration-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration Strategies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Migration Strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strategy-1-gradual-migration-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strategy 1: Gradual Migration (Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategy-2-bulk-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strategy 2: Bulk Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategy-3-hybrid-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strategy 3: Hybrid Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-migration-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Migration Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step-by-Step Migration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-Step Migration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-define-project-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Define Project Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-define-subproject-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Define Subproject Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-code-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Create Code Registry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-initialize-sequence-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Initialize Sequence Registry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-update-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Update Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-create-new-artifacts-gradual-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Create New Artifacts (Gradual Migration)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-migrate-existing-artifacts-bulk-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Migrate Existing Artifacts (Bulk Migration)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-update-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8: Update References
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-9-update-tooling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 9: Update Tooling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-10-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 10: Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migration-script-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration Script Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Migration Script Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bulk-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bulk Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interactive Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-issues-and-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Issues and Solutions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Issues and Solutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-1-duplicate-sequence-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 1: Duplicate Sequence Numbers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-2-broken-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 2: Broken References
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-3-jira-sync-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 3: Jira Sync Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-4-cicd-validation-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 4: CI/CD Validation Failures
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-migration-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-Migration Tasks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rollback-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rollback Plan
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-small-project-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Small Project Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-monorepo-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Monorepo Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faqs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q-do-i-have-to-migrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Do I have to migrate?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-can-i-mix-v10-and-v20-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Can I mix v1.0 and v2.0 artifacts?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-will-v10-artifacts-stop-working" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Will v1.0 artifacts stop working?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-how-do-i-choose-project-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: How do I choose project codes?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-what-if-i-dont-use-jira" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: What if I don't use Jira?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-can-i-change-codes-after-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Can I change codes after migration?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-do-sequence-numbers-restart-for-each-subproject" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Do sequence numbers restart for each subproject?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-how-do-i-handle-cross-project-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: How do I handle cross-project references?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Implementation Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation/github-action/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation/github-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../building-implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building Your Own
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Breaking Changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migration-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration Strategies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Migration Strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strategy-1-gradual-migration-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strategy 1: Gradual Migration (Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategy-2-bulk-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strategy 2: Bulk Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategy-3-hybrid-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strategy 3: Hybrid Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-migration-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Migration Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step-by-Step Migration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-Step Migration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-define-project-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Define Project Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-define-subproject-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Define Subproject Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-code-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Create Code Registry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-initialize-sequence-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Initialize Sequence Registry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-update-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Update Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-create-new-artifacts-gradual-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Create New Artifacts (Gradual Migration)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-migrate-existing-artifacts-bulk-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Migrate Existing Artifacts (Bulk Migration)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-update-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8: Update References
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-9-update-tooling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 9: Update Tooling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-10-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 10: Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migration-script-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration Script Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Migration Script Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bulk-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bulk Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interactive Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-issues-and-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Issues and Solutions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Issues and Solutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-1-duplicate-sequence-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 1: Duplicate Sequence Numbers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-2-broken-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 2: Broken References
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-3-jira-sync-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 3: Jira Sync Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-4-cicd-validation-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 4: CI/CD Validation Failures
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-migration-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-Migration Tasks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rollback-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rollback Plan
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-small-project-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Small Project Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-monorepo-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Monorepo Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faqs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q-do-i-have-to-migrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Do I have to migrate?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-can-i-mix-v10-and-v20-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Can I mix v1.0 and v2.0 artifacts?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-will-v10-artifacts-stop-working" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Will v1.0 artifacts stop working?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-how-do-i-choose-project-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: How do I choose project codes?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-what-if-i-dont-use-jira" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: What if I don't use Jira?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-can-i-change-codes-after-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Can I change codes after migration?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-do-sequence-numbers-restart-for-each-subproject" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Do sequence numbers restart for each subproject?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-how-do-i-handle-cross-project-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: How do I handle cross-project references?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="provenancecode-v20-migration-guide">ProvenanceCode v2.0 Migration Guide<a class="headerlink" href="#provenancecode-v20-migration-guide" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>This guide helps you migrate from ProvenanceCode v1.0 naming convention to v2.0, which introduces project and subproject codes for better monorepo support and Jira integration.</p>
+<h2 id="quick-reference">Quick Reference<a class="headerlink" href="#quick-reference" title="Permanent link">&para;</a></h2>
+<h3 id="format-comparison">Format Comparison<a class="headerlink" href="#format-comparison" title="Permanent link">&para;</a></h3>
+<p><strong>v1.0 (Legacy):</strong>
+<div class="highlight"><pre><span></span><code>DEC-000001
+SPEC-000045
+RA-000001
+MR-000001
+</code></pre></div></p>
+<p><strong>v2.0 (New):</strong>
+<div class="highlight"><pre><span></span><code>DEC-SDO-FND-000001
+SPEC-PQS-API-000042
+RA-AUTH-SEC-000007
+MR-PQS-FE-000003
+</code></pre></div></p>
+<h3 id="breaking-changes">Breaking Changes<a class="headerlink" href="#breaking-changes" title="Permanent link">&para;</a></h3>
+<p><strong>None!</strong> v2.0 is fully backward compatible. You can:
+- Continue using v1.0 format indefinitely
+- Mix v1.0 and v2.0 artifacts in the same repository
+- Reference v1.0 artifacts from v2.0 artifacts and vice versa</p>
+<h2 id="migration-strategies">Migration Strategies<a class="headerlink" href="#migration-strategies" title="Permanent link">&para;</a></h2>
+<h3 id="strategy-1-gradual-migration-recommended">Strategy 1: Gradual Migration (Recommended)<a class="headerlink" href="#strategy-1-gradual-migration-recommended" title="Permanent link">&para;</a></h3>
+<p><strong>Best for:</strong> Most projects, especially those with existing artifacts</p>
+<p><strong>Approach:</strong>
+1. Keep all existing v1.0 artifacts as-is
+2. Create all new artifacts using v2.0 format
+3. Update v1.0 artifacts only when they need changes</p>
+<p><strong>Advantages:</strong>
+- Zero immediate work required
+- No risk of breaking existing references
+- Natural transition over time</p>
+<p><strong>Steps:</strong>
+1. Define your project and subproject codes
+2. Create <code>/provenance/codes.json</code>
+3. Update documentation and templates
+4. Train team on new format
+5. Start using v2.0 for new artifacts</p>
+<h3 id="strategy-2-bulk-migration">Strategy 2: Bulk Migration<a class="headerlink" href="#strategy-2-bulk-migration" title="Permanent link">&para;</a></h3>
+<p><strong>Best for:</strong> Small projects or greenfield migrations</p>
+<p><strong>Approach:</strong>
+1. Convert all existing artifacts to v2.0 format
+2. Update all references throughout the codebase
+3. Create redirect mapping (optional)</p>
+<p><strong>Advantages:</strong>
+- Clean, consistent naming across all artifacts
+- Easier to understand for new team members
+- Better organization from day one</p>
+<p><strong>Disadvantages:</strong>
+- Requires upfront work
+- Risk of breaking external references
+- Need to update documentation</p>
+<p><strong>Steps:</strong>
+1. Audit all existing artifacts
+2. Define project/subproject codes
+3. Run migration script
+4. Update all references
+5. Test thoroughly
+6. Deploy all at once</p>
+<h3 id="strategy-3-hybrid-approach">Strategy 3: Hybrid Approach<a class="headerlink" href="#strategy-3-hybrid-approach" title="Permanent link">&para;</a></h3>
+<p><strong>Best for:</strong> Active projects with some legacy content</p>
+<p><strong>Approach:</strong>
+1. Keep closed/archived v1.0 artifacts unchanged
+2. Migrate active artifacts to v2.0
+3. Use v2.0 for all new artifacts</p>
+<p><strong>Advantages:</strong>
+- Preserves historical records
+- Improves active artifact organization
+- Balances work and benefits</p>
+<h2 id="pre-migration-checklist">Pre-Migration Checklist<a class="headerlink" href="#pre-migration-checklist" title="Permanent link">&para;</a></h2>
+<p>Before starting migration, ensure you have:</p>
+<ul>
+<li>[ ] Read and understood SPEC-000046 specification</li>
+<li>[ ] Defined your project codes (2-4 uppercase letters)</li>
+<li>[ ] Defined your subproject codes (2-4 uppercase letters/numbers)</li>
+<li>[ ] Mapped subprojects to workspaces (if monorepo)</li>
+<li>[ ] Documented your naming conventions</li>
+<li>[ ] Backed up your repository</li>
+<li>[ ] Informed your team about the change</li>
+<li>[ ] Updated CI/CD to support v2.0 format</li>
+</ul>
+<h2 id="step-by-step-migration">Step-by-Step Migration<a class="headerlink" href="#step-by-step-migration" title="Permanent link">&para;</a></h2>
+<h3 id="step-1-define-project-codes">Step 1: Define Project Codes<a class="headerlink" href="#step-1-define-project-codes" title="Permanent link">&para;</a></h3>
+<p>Choose meaningful, memorable codes for your projects.</p>
+<p><strong>Examples:</strong>
+<div class="highlight"><pre><span></span><code>SDO  = System Demo
+PQS  = PlantQuest System
+AUTH = Authentication Service
+PAY  = Payment Gateway
+</code></pre></div></p>
+<p><strong>Best Practices:</strong>
+- Use acronyms when possible
+- Keep it short (2-4 letters)
+- Make it pronounceable
+- Align with Jira project keys if possible</p>
+<h3 id="step-2-define-subproject-codes">Step 2: Define Subproject Codes<a class="headerlink" href="#step-2-define-subproject-codes" title="Permanent link">&para;</a></h3>
+<p>Map subprojects to workspaces or components.</p>
+<p><strong>Examples:</strong>
+<div class="highlight"><pre><span></span><code>FE   = Frontend
+BE   = Backend
+API  = API Service
+CLI  = CLI Tools
+CORE = Core Library
+</code></pre></div></p>
+<p><strong>Best Practices:</strong>
+- Use component names for monorepos
+- Use layer names for modular projects
+- Keep consistent within project
+- Document the mapping</p>
+<h3 id="step-3-create-code-registry">Step 3: Create Code Registry<a class="headerlink" href="#step-3-create-code-registry" title="Permanent link">&para;</a></h3>
+<p>Create <code>/provenance/codes.json</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenancecode.codes@1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;monorepo&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;projects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;PQS&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PlantQuest System&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;jiraProject&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PQS&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;subprojects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;FE&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Frontend&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pqs-frontend&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;pqs-frontend/**&quot;</span><span class="p">],</span>
+<span class="w">          </span><span class="nt">&quot;jiraComponent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Frontend&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;BE&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Backend&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pqs-backend&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;pqs-backend/**&quot;</span><span class="p">],</span>
+<span class="w">          </span><span class="nt">&quot;jiraComponent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Backend&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="step-4-initialize-sequence-registry">Step 4: Initialize Sequence Registry<a class="headerlink" href="#step-4-initialize-sequence-registry" title="Permanent link">&para;</a></h3>
+<p>Create <code>/provenance/sequences.json</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenancecode.sequences@1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;namespaces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;DEC-PQS-FE&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;current&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;next&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;lastUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-16T10:00:00Z&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;DEC-PQS-BE&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;current&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;next&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;lastUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-16T10:00:00Z&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="step-5-update-configuration">Step 5: Update Configuration<a class="headerlink" href="#step-5-update-configuration" title="Permanent link">&para;</a></h3>
+<p>Update <code>/provenance/config.json</code> to enable v2.0 features:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;namingConvention&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;v2.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;enforceCodeRegistry&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;requireProjectMetadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;jiraIntegration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;syncEnabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="step-6-create-new-artifacts-gradual-migration">Step 6: Create New Artifacts (Gradual Migration)<a class="headerlink" href="#step-6-create-new-artifacts-gradual-migration" title="Permanent link">&para;</a></h3>
+<p>For gradual migration, just start creating new artifacts with v2.0 format:</p>
+<p><strong>Example: New Decision</strong></p>
+<p>Directory: <code>/provenance/decisions/DEC-PQS-FE-000001/</code></p>
+<p>File: <code>decision.json</code>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenancecode.decision.v2&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;decision_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-PQS-FE-000001&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;repo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;org&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;plantquest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pqs-platform&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pc://plantquest/pqs-platform/decision/DEC-PQS-FE-000001&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;project&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PQS&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PlantQuest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jiraProject&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PQS&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;subproject&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Frontend&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pqs-frontend&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jiraComponent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Frontend&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Your decision title&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;draft&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;problem&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Description of the problem&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;decision&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;What was decided&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;consequences&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Impact of the decision&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;pr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://github.com/org/repo/pull/123&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;risk&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;rationale&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Low risk&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;review&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;human&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@reviewer&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="step-7-migrate-existing-artifacts-bulk-migration">Step 7: Migrate Existing Artifacts (Bulk Migration)<a class="headerlink" href="#step-7-migrate-existing-artifacts-bulk-migration" title="Permanent link">&para;</a></h3>
+<p>For bulk migration, use the migration script:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Migrate single artifact</span>
+npm<span class="w"> </span>run<span class="w"> </span>provenance:migrate<span class="w"> </span>DEC-000001<span class="w"> </span>--project<span class="w"> </span>PQS<span class="w"> </span>--subproject<span class="w"> </span>FE
+
+<span class="c1"># Output:</span>
+<span class="c1"># Migrating DEC-000001 to DEC-PQS-FE-000001</span>
+<span class="c1"># - Moving directory</span>
+<span class="c1"># - Updating decision.json</span>
+<span class="c1"># - Creating redirect</span>
+<span class="c1"># ✓ Migration complete</span>
+
+<span class="c1"># Bulk migrate by type</span>
+npm<span class="w"> </span>run<span class="w"> </span>provenance:migrate-all<span class="w"> </span>--type<span class="w"> </span>decision<span class="w"> </span>--project<span class="w"> </span>PQS
+
+<span class="c1"># Interactive migration</span>
+npm<span class="w"> </span>run<span class="w"> </span>provenance:migrate-interactive
+</code></pre></div>
+<h3 id="step-8-update-references">Step 8: Update References<a class="headerlink" href="#step-8-update-references" title="Permanent link">&para;</a></h3>
+<p>After migrating artifacts, update references in:</p>
+<ol>
+<li><strong>Other Artifacts</strong></li>
+<li>Decision records referencing the migrated artifact</li>
+<li>Spec documents</li>
+<li>Risk acceptances</li>
+<li>
+<p>Mistake records</p>
+</li>
+<li>
+<p><strong>Documentation</strong></p>
+</li>
+<li>README files</li>
+<li>Architecture docs</li>
+<li>
+<p>Runbooks</p>
+</li>
+<li>
+<p><strong>Code Comments</strong></p>
+</li>
+<li>Source code comments</li>
+<li>TODO items</li>
+<li>
+<p>Commit messages (historical, optional)</p>
+</li>
+<li>
+<p><strong>CI/CD</strong></p>
+</li>
+<li>Workflow files</li>
+<li>Scripts</li>
+<li>Configuration</li>
+</ol>
+<p><strong>Example Reference Update:</strong></p>
+<p>Before:
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;relatedDecisions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;DEC-000001&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>After (v2.0 references, v1.0 still valid):
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;relatedDecisions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;DEC-000001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;DEC-PQS-FE-000042&quot;</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="step-9-update-tooling">Step 9: Update Tooling<a class="headerlink" href="#step-9-update-tooling" title="Permanent link">&para;</a></h3>
+<p>Update any custom tooling to support v2.0 format:</p>
+<p><strong>Validation Scripts:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1">// Update ID pattern matching</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">v1Pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/^(DEC|SPEC|RA|MR)-\d{6}$/</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">v2Pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/^(DEC|SPEC|RA|MR)-[A-Z]{2,4}-[A-Z0-9]{2,4}-\d{6}$/</span><span class="p">;</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">isValidArtifactId</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">v1Pattern</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">v2Pattern</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Directory Scanning:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1">// Support both formats when scanning</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">artifactDirs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fs</span><span class="p">.</span><span class="nx">readdirSync</span><span class="p">(</span><span class="s1">&#39;/provenance/decisions&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">dir</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">isValidArtifactId</span><span class="p">(</span><span class="nx">dir</span><span class="p">));</span>
+</code></pre></div></p>
+<h3 id="step-10-test">Step 10: Test<a class="headerlink" href="#step-10-test" title="Permanent link">&para;</a></h3>
+<p>Test the migration thoroughly:</p>
+<ul>
+<li>[ ] All artifact IDs validate correctly</li>
+<li>[ ] Directory names match artifact IDs</li>
+<li>[ ] References resolve correctly</li>
+<li>[ ] CI/CD pipelines pass</li>
+<li>[ ] Jira integration works (if enabled)</li>
+<li>[ ] Search and indexing work</li>
+<li>[ ] Documentation is accurate</li>
+</ul>
+<h2 id="migration-script-usage">Migration Script Usage<a class="headerlink" href="#migration-script-usage" title="Permanent link">&para;</a></h2>
+<h3 id="basic-migration">Basic Migration<a class="headerlink" href="#basic-migration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Single artifact migration</span>
+npm<span class="w"> </span>run<span class="w"> </span>provenance:migrate<span class="w"> </span>&lt;artifact-id&gt;<span class="w"> </span>--project<span class="w"> </span>&lt;PROJECT&gt;<span class="w"> </span>--subproject<span class="w"> </span>&lt;SUBPROJECT&gt;
+
+<span class="c1"># Examples</span>
+npm<span class="w"> </span>run<span class="w"> </span>provenance:migrate<span class="w"> </span>DEC-000001<span class="w"> </span>--project<span class="w"> </span>PQS<span class="w"> </span>--subproject<span class="w"> </span>FE
+npm<span class="w"> </span>run<span class="w"> </span>provenance:migrate<span class="w"> </span>SPEC-000045<span class="w"> </span>--project<span class="w"> </span>PQS<span class="w"> </span>--subproject<span class="w"> </span>API
+</code></pre></div>
+<h3 id="bulk-migration">Bulk Migration<a class="headerlink" href="#bulk-migration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Migrate all decisions</span>
+npm<span class="w"> </span>run<span class="w"> </span>provenance:migrate-all<span class="w"> </span>--type<span class="w"> </span>decision<span class="w"> </span>--project<span class="w"> </span>PQS<span class="w"> </span>--prompt
+
+<span class="c1"># Migrate all artifacts</span>
+npm<span class="w"> </span>run<span class="w"> </span>provenance:migrate-all<span class="w"> </span>--project<span class="w"> </span>PQS<span class="w"> </span>--prompt
+
+<span class="c1"># Dry run (preview changes)</span>
+npm<span class="w"> </span>run<span class="w"> </span>provenance:migrate-all<span class="w"> </span>--type<span class="w"> </span>decision<span class="w"> </span>--project<span class="w"> </span>PQS<span class="w"> </span>--dry-run
+</code></pre></div>
+<h3 id="interactive-migration">Interactive Migration<a class="headerlink" href="#interactive-migration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>provenance:migrate-interactive
+
+<span class="c1"># The script will:</span>
+<span class="c1"># 1. Scan for v1.0 artifacts</span>
+<span class="c1"># 2. Prompt for project/subproject for each</span>
+<span class="c1"># 3. Show preview</span>
+<span class="c1"># 4. Ask for confirmation</span>
+<span class="c1"># 5. Migrate and update references</span>
+</code></pre></div>
+<h2 id="common-issues-and-solutions">Common Issues and Solutions<a class="headerlink" href="#common-issues-and-solutions" title="Permanent link">&para;</a></h2>
+<h3 id="issue-1-duplicate-sequence-numbers">Issue 1: Duplicate Sequence Numbers<a class="headerlink" href="#issue-1-duplicate-sequence-numbers" title="Permanent link">&para;</a></h3>
+<p><strong>Problem:</strong> After migration, sequence numbers collide</p>
+<p><strong>Solution:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Renumber sequences</span>
+npm<span class="w"> </span>run<span class="w"> </span>provenance:renumber<span class="w"> </span>--namespace<span class="w"> </span>DEC-PQS-FE
+
+<span class="c1"># Or manually update sequences.json</span>
+</code></pre></div></p>
+<h3 id="issue-2-broken-references">Issue 2: Broken References<a class="headerlink" href="#issue-2-broken-references" title="Permanent link">&para;</a></h3>
+<p><strong>Problem:</strong> References to migrated artifacts break</p>
+<p><strong>Solution:</strong>
+- Create redirect mapping in <code>/provenance/redirects.json</code>
+- Update validation to check redirects
+- Eventually update all references</p>
+<p>Example redirect:
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;DEC-000001&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-PQS-FE-000001&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="issue-3-jira-sync-issues">Issue 3: Jira Sync Issues<a class="headerlink" href="#issue-3-jira-sync-issues" title="Permanent link">&para;</a></h3>
+<p><strong>Problem:</strong> Jira custom fields not updating</p>
+<p><strong>Solution:</strong>
+1. Verify Jira custom fields exist
+2. Check project/component mapping
+3. Verify API credentials
+4. Test sync manually:
+   <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>provenance:jira-sync<span class="w"> </span>--artifact<span class="w"> </span>DEC-PQS-FE-000001
+</code></pre></div></p>
+<h3 id="issue-4-cicd-validation-failures">Issue 4: CI/CD Validation Failures<a class="headerlink" href="#issue-4-cicd-validation-failures" title="Permanent link">&para;</a></h3>
+<p><strong>Problem:</strong> CI fails after migration</p>
+<p><strong>Solution:</strong>
+1. Update schema validation to accept v2.0 format
+2. Update regex patterns in scripts
+3. Check artifact directory names match IDs
+4. Verify all required fields are present</p>
+<h2 id="post-migration-tasks">Post-Migration Tasks<a class="headerlink" href="#post-migration-tasks" title="Permanent link">&para;</a></h2>
+<p>After migration is complete:</p>
+<ul>
+<li>[ ] Update team documentation</li>
+<li>[ ] Update onboarding materials</li>
+<li>[ ] Update PR templates</li>
+<li>[ ] Update AI assistant rules</li>
+<li>[ ] Archive migration scripts</li>
+<li>[ ] Document lessons learned</li>
+<li>[ ] Celebrate! 🎉</li>
+</ul>
+<h2 id="rollback-plan">Rollback Plan<a class="headerlink" href="#rollback-plan" title="Permanent link">&para;</a></h2>
+<p>If you need to rollback a bulk migration:</p>
+<ol>
+<li>
+<p><strong>Restore from Backup:</strong>
+   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>&lt;pre-migration-commit&gt;
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Selective Rollback:</strong>
+   <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>provenance:rollback<span class="w"> </span>--artifact<span class="w"> </span>DEC-PQS-FE-000001
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Keep Both:</strong></p>
+</li>
+<li>Keep v2.0 artifacts</li>
+<li>Restore v1.0 artifacts</li>
+<li>Update references to use v1.0</li>
+</ol>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="example-1-small-project-migration">Example 1: Small Project Migration<a class="headerlink" href="#example-1-small-project-migration" title="Permanent link">&para;</a></h3>
+<p><strong>Before (v1.0):</strong>
+<div class="highlight"><pre><span></span><code>/provenance/
+  /decisions/
+    /DEC-000001/
+    /DEC-000002/
+  /specs/
+    /SPEC-000001/
+</code></pre></div></p>
+<p><strong>After (v2.0):</strong>
+<div class="highlight"><pre><span></span><code>/provenance/
+  /codes.json
+  /sequences.json
+  /decisions/
+    /DEC-MYAPP-CORE-000001/
+    /DEC-MYAPP-CORE-000002/
+  /specs/
+    /SPEC-MYAPP-CORE-000001/
+</code></pre></div></p>
+<h3 id="example-2-monorepo-migration">Example 2: Monorepo Migration<a class="headerlink" href="#example-2-monorepo-migration" title="Permanent link">&para;</a></h3>
+<p><strong>Before (v1.0):</strong>
+<div class="highlight"><pre><span></span><code>/
+├── frontend/
+├── backend/
+└── provenance/
+    └── decisions/
+        ├── DEC-000001/
+        └── DEC-000002/
+</code></pre></div></p>
+<p><strong>After (v2.0):</strong>
+<div class="highlight"><pre><span></span><code>/
+├── frontend/
+├── backend/
+└── provenance/
+    ├── codes.json
+    ├── sequences.json
+    └── decisions/
+        ├── DEC-SHOP-FE-000001/
+        └── DEC-SHOP-BE-000001/
+</code></pre></div></p>
+<p><strong>codes.json:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenancecode.codes@1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;monorepo&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;projects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;SHOP&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;E-Commerce Shop&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;subprojects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;FE&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Frontend&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;frontend&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;frontend/**&quot;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;BE&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Backend&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;backend&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;backend/**&quot;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="faqs">FAQs<a class="headerlink" href="#faqs" title="Permanent link">&para;</a></h2>
+<h3 id="q-do-i-have-to-migrate">Q: Do I have to migrate?<a class="headerlink" href="#q-do-i-have-to-migrate" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> No. v1.0 format is supported indefinitely. Migration is optional.</p>
+<h3 id="q-can-i-mix-v10-and-v20-artifacts">Q: Can I mix v1.0 and v2.0 artifacts?<a class="headerlink" href="#q-can-i-mix-v10-and-v20-artifacts" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> Yes. Both formats can coexist in the same repository.</p>
+<h3 id="q-will-v10-artifacts-stop-working">Q: Will v1.0 artifacts stop working?<a class="headerlink" href="#q-will-v10-artifacts-stop-working" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> No. All tooling supports both formats.</p>
+<h3 id="q-how-do-i-choose-project-codes">Q: How do I choose project codes?<a class="headerlink" href="#q-how-do-i-choose-project-codes" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> Use meaningful acronyms, align with Jira project keys if possible, keep it 2-4 letters.</p>
+<h3 id="q-what-if-i-dont-use-jira">Q: What if I don't use Jira?<a class="headerlink" href="#q-what-if-i-dont-use-jira" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> You can still use v2.0 format. Jira integration is optional.</p>
+<h3 id="q-can-i-change-codes-after-migration">Q: Can I change codes after migration?<a class="headerlink" href="#q-can-i-change-codes-after-migration" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> Yes, but it requires renaming artifacts. Better to choose carefully upfront.</p>
+<h3 id="q-do-sequence-numbers-restart-for-each-subproject">Q: Do sequence numbers restart for each subproject?<a class="headerlink" href="#q-do-sequence-numbers-restart-for-each-subproject" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> Yes, in v2.0 format. Each <code>{TYPE}-{PROJECT}-{SUBPROJECT}</code> namespace has independent sequences.</p>
+<h3 id="q-how-do-i-handle-cross-project-references">Q: How do I handle cross-project references?<a class="headerlink" href="#q-how-do-i-handle-cross-project-references" title="Permanent link">&para;</a></h3>
+<p><strong>A:</strong> Use the full artifact ID (e.g., <code>DEC-OTHER-API-000001</code>) or ProvenanceCode URI for cross-repo.</p>
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../provenance/specs/SPEC-000046/specification.md">SPEC-000046: ProvenanceCode v2.0 Specification</a></li>
+<li><a href="../provenance/schema/codes.schema.json">Code Registry Schema</a></li>
+<li><a href="../provenance/schema/sequences.schema.json">Sequence Registry Schema</a></li>
+<li><a href="../scripts/provenance/migrate.js">Migration Scripts</a></li>
+<li><a href="./JIRA_INTEGRATION.md">Jira Integration Guide</a></li>
+</ul>
+<h2 id="support">Support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h2>
+<p>For help with migration:
+- Open an issue on GitHub
+- Contact ProvenanceCode support
+- Join the community Discord
+- Review the examples in <code>/provenance/examples/</code></p>
+<hr />
+<p><strong>Last Updated:</strong> 2026-02-16<br />
+<strong>Version:</strong> 2.0.0<br />
+<strong>Status:</strong> Active</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.sections", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
