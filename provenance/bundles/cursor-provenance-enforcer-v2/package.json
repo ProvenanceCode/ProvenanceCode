@@ -1,0 +1,17 @@
+{
+  "name": "cursor-provenance-enforcer-v2",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Cursor task start/end provenance enforcement bundle",
+  "type": "commonjs",
+  "scripts": {
+    "provenance:hook:start": "node scripts/provenance/on-task-start.js",
+    "provenance:hook:end": "node scripts/provenance/on-task-end.js",
+    "provenance:validate": "node scripts/provenance/validate-provenance.js",
+    "provenance:check": "node scripts/provenance/check-pr-provenance.js"
+  },
+  "devDependencies": {
+    "ajv": "^8.18.0",
+    "ajv-formats": "^3.0.1"
+  }
+}

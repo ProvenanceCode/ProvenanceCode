@@ -1,0 +1,50 @@
+# Provenance Enforcement Rule (ProvenanceCode v2)
+
+You must create and validate provenance artifacts at task start and task end.
+
+## Task start requirements (mandatory)
+
+Before implementation work:
+
+1. Review this rule file:
+   - `.cursor/rules/00-provenance.mdc`
+2. Review prior provenance to avoid repeated mistakes:
+   - Recent `.cursor/provenance/tasks/*.json`
+   - Open or unresolved risks from `.cursor/provenance/risks/*.json`
+3. Create task artifacts:
+   - `.cursor/provenance/reviews/<taskId>.md`
+   - `.cursor/provenance/decisions/<taskId>.md`
+   - `.cursor/provenance/risks/<taskId>.json`
+4. Log expected risks and safeguards before code edits.
+
+## During task requirements
+
+1. Record major decisions in the decisions artifact.
+2. Record discovered risks in the risk artifact with:
+   - `id`
+   - `title`
+   - `severity` (`low|medium|high|critical`)
+   - `status` (`open|mitigated|closed`)
+   - `mitigation`
+   - `needsHumanReview` (`true|false`)
+3. Keep risks current as implementation changes.
+
+## Task end requirements (mandatory)
+
+Before completion:
+
+1. Generate `.cursor/provenance/tasks/<taskId>.json`.
+2. Validate against:
+   - `.cursor/provenance/schema/provenance.task.v2.schema.json`
+3. If open high or critical risks exist, write:
+   - `.cursor/provenance/flags/<taskId>.json`
+4. Do not mark task complete if schema validation fails.
+
+## ProvenanceCode v2 compatibility
+
+- Use v2-style artifact IDs when available:
+  - `DEC-<PROJECT>-<SUBPROJECT>-<SEQUENCE>`
+  - `RA-<PROJECT>-<SUBPROJECT>-<SEQUENCE>`
+- Legacy v1 IDs remain valid:
+  - `DEC-000001`
+  - `RA-000001`
