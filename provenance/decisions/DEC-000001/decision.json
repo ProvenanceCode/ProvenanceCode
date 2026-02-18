@@ -1,0 +1,71 @@
+{
+  "schema": "provenancecode.decision.v1",
+  "id": "DEC-000001",
+  "title": "Adopt enforced task-start and task-end provenance artifacts for Cursor agents",
+  "version": 1,
+  "lifecycle": {
+    "state": "accepted",
+    "supersedes": null,
+    "superseded_by": null
+  },
+  "timestamps": {
+    "created_at": "2026-02-18T00:00:00Z",
+    "accepted_at": "2026-02-18T00:00:00Z",
+    "updated_at": null,
+    "expires_at": null
+  },
+  "actors": {
+    "author": "cursor-agent",
+    "approver": "repo-owner",
+    "bot": "gpt-5.3-codex-high",
+    "reviewers": [
+      "human-review"
+    ]
+  },
+  "context": {
+    "repo": "provenancecode-github",
+    "component": "provenance-governance",
+    "links": [
+      "provenance/specs/SPEC-000047/spec.json",
+      "provenance/bundles/cursor-provenance-enforcer-v2/README.md"
+    ]
+  },
+  "problem": "Agent task completions were not consistently producing machine-verifiable provenance artifacts and risk flags.",
+  "options": [
+    "Rely on prompt instructions only with no hard checks",
+    "Use rules and manual review with no automated hooks",
+    "Use a bundled rules + hooks + schema + CI enforcement approach"
+  ],
+  "outcome": "Adopt a provenance enforcement bundle that requires task-start review artifacts, task-end provenance objects, schema validation, and CI checks.",
+  "rationale": "Combining runtime hooks with schema validation and CI provides fail-closed behavior and auditable outputs while still allowing optional hard-fail controls for unresolved high-risk items.",
+  "risk": {
+    "level": "medium",
+    "description": "Strict enforcement can block delivery if hooks are misconfigured or risk logs are incomplete.",
+    "mitigations": [
+      "Provide documented bundle setup and local simulation scripts",
+      "Validate artifacts in CI with explicit error messages",
+      "Allow staged rollout with optional hard-fail toggle"
+    ]
+  },
+  "scope": [
+    "provenance",
+    "automation",
+    "ci"
+  ],
+  "tags": [
+    "cursor",
+    "hooks",
+    "task-start",
+    "task-end",
+    "provenance"
+  ],
+  "links": {
+    "pr": [],
+    "issues": [],
+    "specs": [
+      "SPEC-000047"
+    ],
+    "decisions": [],
+    "risks": []
+  }
+}
