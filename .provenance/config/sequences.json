@@ -1,0 +1,10 @@
+{
+  "schema": "provenancecode.sequences@1.0",
+  "sequences": {
+    "PROV-CORE": {
+      "GEN": 2,
+      "DEC": 2,
+      "SPEC": 2
+    }
+  }
+}

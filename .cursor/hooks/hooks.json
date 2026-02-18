@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "hooks": {
+    "afterMCPExecution": [
+      {
+        "command": "node ./.provenance/bin/prvc gen record --trigger cursor.afterMCPExecution --adapter-id provenancecode.adapter.cursor.v1"
+      }
+    ],
+    "afterShellExecution": [
+      {
+        "command": "node ./.provenance/bin/prvc gen record --trigger cursor.afterShellExecution --adapter-id provenancecode.adapter.cursor.v1"
+      }
+    ],
+    "afterFileEdit": [
+      {
+        "command": "node ./.provenance/bin/prvc gen record --trigger cursor.afterFileEdit --adapter-id provenancecode.adapter.cursor.v1"
+      }
+    ],
+    "stop": [
+      {
+        "command": "node ./.provenance/bin/prvc session finalize --trigger cursor.stop --adapter-id provenancecode.adapter.cursor.v1 --reason complete"
+      }
+    ]
+  }
+}

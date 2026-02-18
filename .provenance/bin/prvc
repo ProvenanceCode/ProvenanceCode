@@ -1,0 +1,1074 @@
+#!/usr/bin/env node
+'use strict';
+
+const crypto = require('node:crypto');
+const fs = require('node:fs');
+const path = require('node:path');
+const childProcess = require('node:child_process');
+
+const DECISION_ID_PATTERN = /DEC-(?:[A-Z0-9]{2,4}-[A-Z0-9]{2,4}-\d{6}|\d{6})/g;
+const SPEC_ID_PATTERN = /SPEC-(?:[A-Z0-9]{2,4}-[A-Z0-9]{2,4}-\d{6}|\d{6})/g;
+const VERSION = '1.0.0';
+
+const DEFAULT_CONFIG = {
+  schema: 'provenancecode.enforcement.bundle.v1',
+  bundle_id: 'provenancecode.bundle.github.copilot.v1',
+  cursor_adapter_id: 'provenancecode.adapter.cursor.v1',
+  copilot_adapter_id: 'provenancecode.adapter.github.copilot.v1',
+  defaults: {
+    project: 'PROV',
+    subproject: 'CORE',
+  },
+  paths: {
+    events: '.provenance/events',
+    decisions: '.provenance/decisions',
+    specs: '.provenance/specs',
+    sessions: '.provenance/sessions',
+    schemas: '.provenance/config/schemas',
+    sequences: '.provenance/config/sequences.json',
+  },
+  validation: {
+    requireGenForMeaningfulChanges: true,
+    requireDecisionForRisk: true,
+    meaningfulChangeIncludes: ['**/*'],
+    meaningfulChangeExcludes: [
+      '**/*.md',
+      'docs/**',
+      'README*',
+      'LICENSE',
+      '.provenance/events/**',
+      '.provenance/sessions/**',
+    ],
+    riskPathTriggers: [
+      'auth/**',
+      'security/**',
+      'infra/**',
+      '.github/workflows/**',
+      '.provenance/config/**',
+    ],
+    riskLabelTriggers: ['security', 'risk-high', 'breaking-change', 'compliance'],
+  },
+};
+
+function parseOptions(argv) {
+  const parsed = { _: [] };
+  for (let i = 0; i < argv.length; i += 1) {
+    const token = argv[i];
+    if (!token.startsWith('--')) {
+      parsed._.push(token);
+      continue;
+    }
+
+    const stripped = token.slice(2);
+    if (stripped.includes('=')) {
+      const [key, ...valueParts] = stripped.split('=');
+      parsed[key] = valueParts.join('=');
+      continue;
+    }
+
+    const next = argv[i + 1];
+    if (next && !next.startsWith('--')) {
+      parsed[stripped] = next;
+      i += 1;
+      continue;
+    }
+
+    parsed[stripped] = true;
+  }
+  return parsed;
+}
+
+function uniq(values) {
+  return Array.from(new Set(values.filter(Boolean)));
+}
+
+function splitList(value) {
+  if (!value || typeof value !== 'string') {
+    return [];
+  }
+  return value
+    .split(/[\n,]/g)
+    .map((entry) => entry.trim())
+    .filter(Boolean);
+}
+
+function normalizePath(value) {
+  return String(value || '')
+    .replace(/\\/g, '/')
+    .replace(/^\.\//, '');
+}
+
+function toAbsolutePath(filePath) {
+  if (path.isAbsolute(filePath)) {
+    return filePath;
+  }
+  return path.resolve(process.cwd(), filePath);
+}
+
+function ensureDir(dirPath) {
+  fs.mkdirSync(dirPath, { recursive: true });
+}
+
+function readTextSafe(filePath) {
+  try {
+    return fs.readFileSync(filePath, 'utf8');
+  } catch (_error) {
+    return null;
+  }
+}
+
+function readJsonSafe(filePath, fallback) {
+  const raw = readTextSafe(filePath);
+  if (raw === null) {
+    return fallback;
+  }
+  try {
+    return JSON.parse(raw);
+  } catch (_error) {
+    return fallback;
+  }
+}
+
+function writeJson(filePath, content) {
+  ensureDir(path.dirname(filePath));
+  fs.writeFileSync(filePath, `${JSON.stringify(content, null, 2)}\n`, 'utf8');
+}
+
+function mergeDeep(base, override) {
+  if (!isPlainObject(base)) {
+    return override;
+  }
+  if (!isPlainObject(override)) {
+    return base;
+  }
+
+  const merged = { ...base };
+  Object.keys(override).forEach((key) => {
+    const baseValue = merged[key];
+    const overrideValue = override[key];
+    if (isPlainObject(baseValue) && isPlainObject(overrideValue)) {
+      merged[key] = mergeDeep(baseValue, overrideValue);
+    } else {
+      merged[key] = overrideValue;
+    }
+  });
+  return merged;
+}
+
+function isPlainObject(value) {
+  return Boolean(value) && typeof value === 'object' && !Array.isArray(value);
+}
+
+function hashContent(value) {
+  const data = normalizeForHash(value);
+  return crypto.createHash('sha256').update(data).digest('hex');
+}
+
+function normalizeForHash(value) {
+  if (value === undefined || value === null) {
+    return '';
+  }
+  if (typeof value === 'string') {
+    return value;
+  }
+  return stableStringify(value);
+}
+
+function stableStringify(value) {
+  if (value === undefined) {
+    return 'null';
+  }
+  if (value === null || typeof value !== 'object') {
+    return JSON.stringify(value);
+  }
+  if (Array.isArray(value)) {
+    return `[${value.map((entry) => stableStringify(entry)).join(',')}]`;
+  }
+  const keys = Object.keys(value).sort();
+  return `{${keys
+    .map((key) => `${JSON.stringify(key)}:${stableStringify(value[key])}`)
+    .join(',')}}`;
+}
+
+async function readHookInput() {
+  if (process.stdin.isTTY) {
+    return {};
+  }
+
+  const initialTimeoutMs = Number(process.env.PRVC_STDIN_TIMEOUT_MS || 80);
+  const maxTimeoutMs = Number(process.env.PRVC_STDIN_MAX_TIMEOUT_MS || 2000);
+
+  return new Promise((resolve) => {
+    const chunks = [];
+    let settled = false;
+
+    function parseChunks() {
+      const text = Buffer.concat(chunks).toString('utf8').trim();
+      if (!text) {
+        return {};
+      }
+      try {
+        return JSON.parse(text);
+      } catch (_error) {
+        return { raw_input: text };
+      }
+    }
+
+    function finish(value) {
+      if (settled) {
+        return;
+      }
+      settled = true;
+      clearTimeout(initialTimer);
+      clearTimeout(maxTimer);
+      process.stdin.off('data', onData);
+      process.stdin.off('end', onEnd);
+      process.stdin.off('error', onError);
+      process.stdin.pause();
+      resolve(value);
+    }
+
+    function onData(chunk) {
+      chunks.push(Buffer.from(chunk));
+    }
+
+    function onEnd() {
+      finish(parseChunks());
+    }
+
+    function onError() {
+      finish({});
+    }
+
+    const initialTimer = setTimeout(() => {
+      if (chunks.length === 0) {
+        finish({});
+      }
+    }, initialTimeoutMs);
+
+    const maxTimer = setTimeout(() => {
+      finish(parseChunks());
+    }, maxTimeoutMs);
+
+    process.stdin.on('data', onData);
+    process.stdin.on('end', onEnd);
+    process.stdin.on('error', onError);
+    process.stdin.resume();
+  });
+}
+
+function loadConfig(configPath) {
+  const absolutePath = toAbsolutePath(configPath || '.provenance/config/enforcement.json');
+  const userConfig = readJsonSafe(absolutePath, {});
+  return mergeDeep(DEFAULT_CONFIG, userConfig);
+}
+
+function resolvePaths(config) {
+  return {
+    eventsDir: toAbsolutePath(config.paths.events),
+    decisionsDir: toAbsolutePath(config.paths.decisions),
+    specsDir: toAbsolutePath(config.paths.specs),
+    sessionsDir: toAbsolutePath(config.paths.sessions),
+    schemasDir: toAbsolutePath(config.paths.schemas),
+    sequencesPath: toAbsolutePath(config.paths.sequences),
+    activeSessionPath: toAbsolutePath(path.join(config.paths.sessions, '.active-session.json')),
+  };
+}
+
+function loadSequences(sequencesPath) {
+  const fallback = { schema: 'provenancecode.sequences@1.0', sequences: {} };
+  return readJsonSafe(sequencesPath, fallback);
+}
+
+function nextArtifactId(sequencesDoc, type, project, subproject) {
+  if (!sequencesDoc.sequences || typeof sequencesDoc.sequences !== 'object') {
+    sequencesDoc.sequences = {};
+  }
+  const namespace = `${project}-${subproject}`;
+  if (!isPlainObject(sequencesDoc.sequences[namespace])) {
+    sequencesDoc.sequences[namespace] = {
+      GEN: 1,
+      DEC: 1,
+      SPEC: 1,
+    };
+  }
+  const current = sequencesDoc.sequences[namespace];
+  const sequence = Number(current[type] || 1);
+  current[type] = sequence + 1;
+  return `${type}-${project}-${subproject}-${String(sequence).padStart(6, '0')}`;
+}
+
+function nowIsoString() {
+  return new Date().toISOString();
+}
+
+function buildSessionId(project, subproject) {
+  const iso = nowIsoString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
+  const random = crypto.randomBytes(2).toString('hex').toUpperCase();
+  return `SES-${project}-${subproject}-${iso}-${random}`;
+}
+
+function getAdapterId(options, config, trigger) {
+  if (options['adapter-id']) {
+    return options['adapter-id'];
+  }
+  if (String(trigger || '').startsWith('cursor')) {
+    return config.cursor_adapter_id;
+  }
+  return config.copilot_adapter_id;
+}
+
+function boolFromOption(value, fallback) {
+  if (value === undefined) {
+    return fallback;
+  }
+  if (typeof value === 'boolean') {
+    return value;
+  }
+  if (typeof value === 'string') {
+    const normalized = value.trim().toLowerCase();
+    if (['1', 'true', 'yes', 'on'].includes(normalized)) {
+      return true;
+    }
+    if (['0', 'false', 'no', 'off'].includes(normalized)) {
+      return false;
+    }
+  }
+  return fallback;
+}
+
+function extractIds(text, pattern) {
+  if (!text || typeof text !== 'string') {
+    return [];
+  }
+  const regex = new RegExp(pattern.source, 'g');
+  const found = [];
+  let match;
+  while ((match = regex.exec(text)) !== null) {
+    found.push(match[0]);
+  }
+  return uniq(found);
+}
+
+function listJsonFiles(rootDir) {
+  if (!fs.existsSync(rootDir)) {
+    return [];
+  }
+
+  const queue = [rootDir];
+  const files = [];
+  while (queue.length > 0) {
+    const current = queue.pop();
+    const entries = fs.readdirSync(current, { withFileTypes: true });
+    entries.forEach((entry) => {
+      const entryPath = path.join(current, entry.name);
+      if (entry.isDirectory()) {
+        queue.push(entryPath);
+      } else if (entry.isFile() && entry.name.endsWith('.json')) {
+        files.push(entryPath);
+      }
+    });
+  }
+  return files;
+}
+
+function typeMatches(value, expectedType) {
+  switch (expectedType) {
+    case 'object':
+      return isPlainObject(value);
+    case 'array':
+      return Array.isArray(value);
+    case 'string':
+      return typeof value === 'string';
+    case 'integer':
+      return Number.isInteger(value);
+    case 'number':
+      return typeof value === 'number' && Number.isFinite(value);
+    case 'boolean':
+      return typeof value === 'boolean';
+    case 'null':
+      return value === null;
+    default:
+      return true;
+  }
+}
+
+function isValidDateTime(value) {
+  if (typeof value !== 'string' || !value.includes('T')) {
+    return false;
+  }
+  const parsed = Date.parse(value);
+  return !Number.isNaN(parsed);
+}
+
+function validateAgainstSchema(value, schema, location) {
+  const errors = [];
+  const pointer = location || '$';
+  if (!isPlainObject(schema)) {
+    return errors;
+  }
+
+  const expectedType = schema.type;
+  if (expectedType) {
+    if (Array.isArray(expectedType)) {
+      const match = expectedType.some((entry) => typeMatches(value, entry));
+      if (!match) {
+        errors.push(`${pointer}: expected one of types ${expectedType.join(', ')}`);
+        return errors;
+      }
+    } else if (!typeMatches(value, expectedType)) {
+      errors.push(`${pointer}: expected type ${expectedType}`);
+      return errors;
+    }
+  }
+
+  if (schema.const !== undefined && value !== schema.const) {
+    errors.push(`${pointer}: expected const ${JSON.stringify(schema.const)}`);
+  }
+
+  if (Array.isArray(schema.enum) && !schema.enum.includes(value)) {
+    errors.push(`${pointer}: expected one of ${schema.enum.join(', ')}`);
+  }
+
+  if (typeof value === 'string' && typeof schema.pattern === 'string') {
+    const regex = new RegExp(schema.pattern);
+    if (!regex.test(value)) {
+      errors.push(`${pointer}: does not match pattern ${schema.pattern}`);
+    }
+  }
+
+  if (schema.format === 'date-time' && typeof value === 'string' && !isValidDateTime(value)) {
+    errors.push(`${pointer}: expected RFC3339 date-time string`);
+  }
+
+  if (typeof value === 'number') {
+    if (typeof schema.minimum === 'number' && value < schema.minimum) {
+      errors.push(`${pointer}: must be >= ${schema.minimum}`);
+    }
+    if (typeof schema.maximum === 'number' && value > schema.maximum) {
+      errors.push(`${pointer}: must be <= ${schema.maximum}`);
+    }
+  }
+
+  if (isPlainObject(value)) {
+    const required = Array.isArray(schema.required) ? schema.required : [];
+    required.forEach((requiredKey) => {
+      if (!Object.prototype.hasOwnProperty.call(value, requiredKey)) {
+        errors.push(`${pointer}: missing required property "${requiredKey}"`);
+      }
+    });
+
+    const properties = isPlainObject(schema.properties) ? schema.properties : {};
+    Object.keys(properties).forEach((propertyName) => {
+      if (Object.prototype.hasOwnProperty.call(value, propertyName)) {
+        errors.push(...validateAgainstSchema(value[propertyName], properties[propertyName], `${pointer}.${propertyName}`));
+      }
+    });
+
+    if (schema.additionalProperties === false) {
+      Object.keys(value).forEach((key) => {
+        if (!Object.prototype.hasOwnProperty.call(properties, key)) {
+          errors.push(`${pointer}: unexpected property "${key}"`);
+        }
+      });
+    }
+  }
+
+  if (Array.isArray(value) && schema.items) {
+    value.forEach((entry, index) => {
+      errors.push(...validateAgainstSchema(entry, schema.items, `${pointer}[${index}]`));
+    });
+  }
+
+  return errors;
+}
+
+function validateArtifact(artifactPath, schema) {
+  const content = readTextSafe(artifactPath);
+  if (content === null) {
+    return { ok: false, errors: [`${artifactPath}: file is missing`] };
+  }
+
+  let parsed;
+  try {
+    parsed = JSON.parse(content);
+  } catch (error) {
+    return { ok: false, errors: [`${artifactPath}: invalid JSON (${error.message})`] };
+  }
+
+  const schemaErrors = validateAgainstSchema(parsed, schema, '$');
+  if (schemaErrors.length > 0) {
+    return { ok: false, parsed, errors: schemaErrors.map((entry) => `${artifactPath}: ${entry}`) };
+  }
+  return { ok: true, parsed, errors: [] };
+}
+
+function fallbackGlobMatch(filePath, pattern) {
+  const normalizedPath = normalizePath(filePath);
+  const normalizedPattern = normalizePath(pattern);
+  const escaped = normalizedPattern.replace(/[.+^${}()|[\]\\]/g, '\\$&');
+  const regexSource = escaped
+    .replace(/\\\*\\\*/g, '::DOUBLE_WILDCARD::')
+    .replace(/\\\*/g, '[^/]*')
+    .replace(/::DOUBLE_WILDCARD::/g, '.*');
+  const regex = new RegExp(`^${regexSource}$`);
+  return regex.test(normalizedPath);
+}
+
+function matchesGlob(filePath, pattern) {
+  const normalizedPath = normalizePath(filePath);
+  const normalizedPattern = normalizePath(pattern);
+  if (typeof path.posix.matchesGlob === 'function') {
+    try {
+      return path.posix.matchesGlob(normalizedPath, normalizedPattern);
+    } catch (_error) {
+      return fallbackGlobMatch(normalizedPath, normalizedPattern);
+    }
+  }
+  return fallbackGlobMatch(normalizedPath, normalizedPattern);
+}
+
+function matchesAny(filePath, patterns) {
+  if (!Array.isArray(patterns) || patterns.length === 0) {
+    return false;
+  }
+  return patterns.some((pattern) => matchesGlob(filePath, pattern));
+}
+
+function isMeaningfulChange(filePath, includePatterns, excludePatterns) {
+  const includeAll =
+    Array.isArray(includePatterns) &&
+    includePatterns.some((pattern) => ['**/*', '*'].includes(normalizePath(pattern)));
+  const include =
+    includeAll ||
+    (includePatterns && includePatterns.length > 0 ? matchesAny(filePath, includePatterns) : true);
+  if (!include) {
+    return false;
+  }
+  return !matchesAny(filePath, excludePatterns || []);
+}
+
+function parseChangedFilesFromFile(filePath) {
+  const content = readTextSafe(filePath);
+  if (!content) {
+    return [];
+  }
+  return uniq(
+    content
+      .split('\n')
+      .map((line) => normalizePath(line.trim()))
+      .filter(Boolean),
+  );
+}
+
+function parseChangedFiles(options) {
+  const explicitFile =
+    options['changed-files-file'] || process.env.PRVC_CHANGED_FILES_FILE || process.env.GITHUB_CHANGED_FILES_FILE;
+  if (explicitFile) {
+    const fromFile = parseChangedFilesFromFile(explicitFile);
+    if (fromFile.length > 0) {
+      return fromFile;
+    }
+  }
+
+  const inlineFiles = splitList(options['changed-files'] || process.env.PRVC_CHANGED_FILES || '');
+  if (inlineFiles.length > 0) {
+    return uniq(inlineFiles.map((entry) => normalizePath(entry)));
+  }
+
+  const baseSha = options['base-sha'] || process.env.PRVC_BASE_SHA;
+  const headSha = options['head-sha'] || process.env.PRVC_HEAD_SHA;
+  if (baseSha && headSha) {
+    const fromGit = runGitDiff(baseSha, headSha);
+    if (fromGit.length > 0) {
+      return fromGit;
+    }
+  }
+
+  return runGitDiff('HEAD~1', 'HEAD');
+}
+
+function runGitDiff(baseRef, headRef) {
+  try {
+    const result = childProcess.spawnSync('git', ['diff', '--name-only', baseRef, headRef], {
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'pipe'],
+    });
+    if (result.status !== 0) {
+      return [];
+    }
+    return uniq(
+      result.stdout
+        .split('\n')
+        .map((line) => normalizePath(line.trim()))
+        .filter(Boolean),
+    );
+  } catch (_error) {
+    return [];
+  }
+}
+
+function loadSchemas(paths) {
+  const genSchema = readJsonSafe(path.join(paths.schemasDir, 'gen-event.v2.schema.json'), null);
+  const decisionSchema = readJsonSafe(path.join(paths.schemasDir, 'decision.v2.schema.json'), null);
+  const specSchema = readJsonSafe(path.join(paths.schemasDir, 'spec.v2.schema.json'), null);
+  return { genSchema, decisionSchema, specSchema };
+}
+
+function printHelp() {
+  process.stdout.write(`prvc ${VERSION}
+
+Usage:
+  prvc gen record [--trigger <name>] [--adapter-id <id>] [--config <path>]
+  prvc session finalize [--reason <reason>] [--config <path>]
+  prvc validate [--changed-files-file <path>] [--labels <csv>] [--report <path>] [--config <path>]
+  prvc version
+
+Notes:
+  - Hook commands consume JSON from stdin when provided.
+  - Validation exits non-zero on failed governance checks.
+`);
+}
+
+function updateActiveSession(activeSessionPath, currentSession) {
+  writeJson(activeSessionPath, currentSession);
+}
+
+function getOrCreateSession(paths, config, options) {
+  const explicitId = options['session-id'] || process.env.PRVC_SESSION_ID;
+  if (explicitId) {
+    return {
+      session_id: explicitId,
+      started_at: nowIsoString(),
+      last_updated_at: nowIsoString(),
+      status: 'active',
+      event_count: 0,
+      event_ids: [],
+      triggers: [],
+    };
+  }
+
+  const existing = readJsonSafe(paths.activeSessionPath, null);
+  if (existing && existing.session_id) {
+    const timestamp = Date.parse(existing.last_updated_at || existing.started_at || '');
+    if (!Number.isNaN(timestamp) && Date.now() - timestamp < 12 * 60 * 60 * 1000) {
+      return existing;
+    }
+  }
+
+  return {
+    session_id: buildSessionId(config.defaults.project, config.defaults.subproject),
+    started_at: nowIsoString(),
+    last_updated_at: nowIsoString(),
+    status: 'active',
+    event_count: 0,
+    event_ids: [],
+    triggers: [],
+  };
+}
+
+async function commandGenRecord(options) {
+  const config = loadConfig(options.config);
+  const paths = resolvePaths(config);
+  const hookInput = await readHookInput();
+
+  const sequencesDoc = loadSequences(paths.sequencesPath);
+  const genId = nextArtifactId(sequencesDoc, 'GEN', config.defaults.project, config.defaults.subproject);
+  writeJson(paths.sequencesPath, sequencesDoc);
+
+  const trigger = options.trigger || hookInput.trigger || 'manual';
+  const adapterId = getAdapterId(options, config, trigger);
+  const session = getOrCreateSession(paths, config, options);
+
+  const toolName =
+    options['tool-name'] ||
+    hookInput.toolName ||
+    hookInput.tool_name ||
+    hookInput.commandName ||
+    hookInput.command ||
+    'unknown';
+
+  const toolArgs = hookInput.toolArgs !== undefined ? hookInput.toolArgs : hookInput.arguments || {};
+  const toolResult = hookInput.toolResult !== undefined ? hookInput.toolResult : hookInput.result || {};
+  const rawForExtraction = `${normalizeForHash(toolArgs)}\n${normalizeForHash(hookInput.raw_input || '')}`;
+
+  const explicitDecisions = splitList(options['decision-ids'] || '');
+  const explicitSpecs = splitList(options['spec-ids'] || '');
+  const decisionIds = uniq([...explicitDecisions, ...extractIds(rawForExtraction, DECISION_ID_PATTERN)]);
+  const specIds = uniq([...explicitSpecs, ...extractIds(rawForExtraction, SPEC_ID_PATTERN)]);
+
+  const riskTriggered = boolFromOption(options['risk-triggered'], false);
+  const now = nowIsoString();
+
+  const event = {
+    schema: 'provenancecode.gen.v2',
+    gen_id: genId,
+    bundle_id: config.bundle_id,
+    adapter_id: adapterId,
+    trigger,
+    timestamp: now,
+    session_id: session.session_id,
+    agent: {
+      platform: adapterId.includes('cursor') ? 'cursor' : 'github-copilot',
+      adapter_id: adapterId,
+    },
+    change: {
+      tool_name: String(toolName),
+      tool_args_hash: hashContent(toolArgs),
+      tool_result_hash: hashContent(toolResult),
+      cwd: String(hookInput.cwd || process.cwd()),
+    },
+    links: {
+      decision_ids: decisionIds,
+      spec_ids: specIds,
+    },
+    risk: {
+      triggered: riskTriggered,
+      rationale: String(options['risk-rationale'] || ''),
+      matched_paths: [],
+    },
+    integrity: {
+      hashing: 'sha256',
+      input_hash: hashContent(hookInput),
+      capture: 'hashes-only',
+    },
+  };
+
+  const eventPath = path.join(paths.eventsDir, `${genId}.json`);
+  writeJson(eventPath, event);
+
+  session.last_updated_at = now;
+  session.status = 'active';
+  session.event_count = Number(session.event_count || 0) + 1;
+  session.event_ids = Array.isArray(session.event_ids) ? session.event_ids : [];
+  session.event_ids.push(genId);
+  if (session.event_ids.length > 100) {
+    session.event_ids = session.event_ids.slice(-100);
+  }
+  session.triggers = uniq([...(Array.isArray(session.triggers) ? session.triggers : []), trigger]);
+  updateActiveSession(paths.activeSessionPath, session);
+
+  process.stdout.write(`Recorded ${genId}\n`);
+}
+
+async function commandSessionFinalize(options) {
+  const config = loadConfig(options.config);
+  const paths = resolvePaths(config);
+  const hookInput = await readHookInput();
+  const existingSession = readJsonSafe(paths.activeSessionPath, null);
+
+  const session =
+    existingSession && existingSession.session_id
+      ? existingSession
+      : {
+          session_id: options['session-id'] || buildSessionId(config.defaults.project, config.defaults.subproject),
+          started_at: nowIsoString(),
+          event_count: 0,
+          event_ids: [],
+          triggers: [],
+        };
+
+  const reason = options.reason || hookInput.reason || 'complete';
+  const endedAt = nowIsoString();
+
+  const eventFiles = listJsonFiles(paths.eventsDir);
+  const sessionEventIds = eventFiles
+    .map((filePath) => readJsonSafe(filePath, null))
+    .filter((record) => record && record.session_id === session.session_id && typeof record.gen_id === 'string')
+    .map((record) => record.gen_id);
+
+  const summary = {
+    schema: 'provenancecode.session.v1',
+    session_id: session.session_id,
+    bundle_id: config.bundle_id,
+    adapter_id: session.adapter_id || getAdapterId(options, config, options.trigger || 'sessionEnd'),
+    started_at: session.started_at || endedAt,
+    ended_at: endedAt,
+    reason: String(reason),
+    status: 'closed',
+    event_count: sessionEventIds.length,
+    event_ids: sessionEventIds,
+    triggers: uniq([...(session.triggers || []), options.trigger || 'sessionEnd']),
+  };
+
+  writeJson(path.join(paths.sessionsDir, `${summary.session_id}.json`), summary);
+  if (fs.existsSync(paths.activeSessionPath)) {
+    fs.unlinkSync(paths.activeSessionPath);
+  }
+
+  process.stdout.write(`Finalized ${summary.session_id}\n`);
+}
+
+function validateDecisionFolderMatch(decisionPath, decisionRecord) {
+  const folderId = path.basename(path.dirname(decisionPath));
+  if (!decisionRecord || typeof decisionRecord.decision_id !== 'string') {
+    return `${decisionPath}: decision_id is missing`;
+  }
+  if (folderId !== decisionRecord.decision_id) {
+    return `${decisionPath}: folder "${folderId}" does not match decision_id "${decisionRecord.decision_id}"`;
+  }
+  return null;
+}
+
+function validateSpecFolderMatch(specPath, specRecord) {
+  const folderId = path.basename(path.dirname(specPath));
+  if (!specRecord || typeof specRecord.spec_id !== 'string') {
+    return `${specPath}: spec_id is missing`;
+  }
+  if (folderId !== specRecord.spec_id) {
+    return `${specPath}: folder "${folderId}" does not match spec_id "${specRecord.spec_id}"`;
+  }
+  return null;
+}
+
+function isGenDiffPath(filePath, eventsRelativePath) {
+  const normalized = normalizePath(filePath);
+  const prefix = `${normalizePath(eventsRelativePath).replace(/\/$/, '')}/`;
+  if (!normalized.startsWith(prefix)) {
+    return false;
+  }
+  return /^GEN-.*\.json$/.test(path.posix.basename(normalized));
+}
+
+function decisionIdFromPath(filePath, decisionsRelativePath) {
+  const normalized = normalizePath(filePath);
+  const prefix = `${normalizePath(decisionsRelativePath).replace(/\/$/, '')}/`;
+  if (!normalized.startsWith(prefix)) {
+    return null;
+  }
+  const remainder = normalized.slice(prefix.length);
+  const parts = remainder.split('/');
+  if (parts.length < 2) {
+    return null;
+  }
+  if (parts[1] !== 'decision.json') {
+    return null;
+  }
+  return parts[0];
+}
+
+function validateAndCollectDecisionId(decisionId, decisionsDir, decisionSchema, errors) {
+  const decisionPath = path.join(decisionsDir, decisionId, 'decision.json');
+  if (!fs.existsSync(decisionPath)) {
+    errors.push(`Missing decision artifact for ${decisionId} at ${decisionPath}`);
+    return false;
+  }
+  const result = validateArtifact(decisionPath, decisionSchema);
+  if (!result.ok) {
+    errors.push(...result.errors);
+    return false;
+  }
+  const folderError = validateDecisionFolderMatch(decisionPath, result.parsed);
+  if (folderError) {
+    errors.push(folderError);
+    return false;
+  }
+  return true;
+}
+
+function commandValidate(options) {
+  const config = loadConfig(options.config);
+  const paths = resolvePaths(config);
+  const schemas = loadSchemas(paths);
+  const errors = [];
+  const warnings = [];
+
+  if (!schemas.genSchema || !schemas.decisionSchema || !schemas.specSchema) {
+    errors.push('Missing one or more schema files under .provenance/config/schemas');
+  }
+
+  const changedFiles = parseChangedFiles(options);
+  const includes = config.validation.meaningfulChangeIncludes || ['**/*'];
+  const excludes = config.validation.meaningfulChangeExcludes || [];
+  const meaningfulChanges = changedFiles.filter((filePath) =>
+    isMeaningfulChange(filePath, includes, excludes),
+  );
+
+  const eventsRelativePath = config.paths.events;
+  const decisionsRelativePath = config.paths.decisions;
+  const specsRelativePath = config.paths.specs;
+
+  const genFilesInDiff = changedFiles.filter((filePath) => isGenDiffPath(filePath, eventsRelativePath));
+
+  if (config.validation.requireGenForMeaningfulChanges && meaningfulChanges.length > 0 && genFilesInDiff.length === 0) {
+    errors.push(
+      'Meaningful changes detected but no GEN-* artifact changed in .provenance/events. Add a generated GEN event.',
+    );
+  }
+
+  const labels = splitList(options.labels || process.env.PRVC_LABELS || '');
+  const riskPathTriggers = config.validation.riskPathTriggers || [];
+  const riskLabelTriggers = config.validation.riskLabelTriggers || [];
+
+  const riskPathsMatched = meaningfulChanges.filter((filePath) => matchesAny(filePath, riskPathTriggers));
+  const riskLabelsMatched = labels.filter((label) => riskLabelTriggers.includes(label));
+  const riskTriggered = riskPathsMatched.length > 0 || riskLabelsMatched.length > 0;
+
+  const textSource = `${options['pr-title'] || process.env.PRVC_PR_TITLE || ''}\n${
+    options['pr-body'] || process.env.PRVC_PR_BODY || ''
+  }\n${options['decision-ids'] || process.env.PRVC_DECISION_IDS || ''}`;
+  const extractedDecisionIds = extractIds(textSource, DECISION_ID_PATTERN);
+  const decisionIdsFromDiff = changedFiles
+    .map((filePath) => decisionIdFromPath(filePath, decisionsRelativePath))
+    .filter(Boolean);
+  const candidateDecisionIds = uniq([...extractedDecisionIds, ...decisionIdsFromDiff]);
+
+  const validDecisionIds = [];
+  if (schemas.decisionSchema) {
+    candidateDecisionIds.forEach((decisionId) => {
+      const valid = validateAndCollectDecisionId(decisionId, paths.decisionsDir, schemas.decisionSchema, errors);
+      if (valid) {
+        validDecisionIds.push(decisionId);
+      }
+    });
+  }
+
+  if (config.validation.requireDecisionForRisk && riskTriggered && validDecisionIds.length === 0) {
+    errors.push(
+      'Risk-triggered changes detected but no valid DEC-* decision artifact was linked or changed in this PR.',
+    );
+  }
+
+  changedFiles.forEach((filePath) => {
+    const absolutePath = toAbsolutePath(filePath);
+    if (!fs.existsSync(absolutePath)) {
+      return;
+    }
+
+    const normalized = normalizePath(filePath);
+    if (
+      normalized.startsWith(`${normalizePath(eventsRelativePath).replace(/\/$/, '')}/`) &&
+      normalized.endsWith('.json') &&
+      schemas.genSchema
+    ) {
+      const result = validateArtifact(absolutePath, schemas.genSchema);
+      if (!result.ok) {
+        errors.push(...result.errors);
+      } else {
+        const expectedId = path.basename(normalized, '.json');
+        if (result.parsed.gen_id !== expectedId) {
+          errors.push(`${filePath}: filename "${expectedId}" does not match gen_id "${result.parsed.gen_id}"`);
+        }
+      }
+    }
+
+    if (normalized.endsWith('/decision.json') && schemas.decisionSchema) {
+      const result = validateArtifact(absolutePath, schemas.decisionSchema);
+      if (!result.ok) {
+        errors.push(...result.errors);
+      } else {
+        const folderError = validateDecisionFolderMatch(absolutePath, result.parsed);
+        if (folderError) {
+          errors.push(folderError);
+        }
+      }
+    }
+
+    if (normalized.endsWith('/spec.json') && schemas.specSchema) {
+      const result = validateArtifact(absolutePath, schemas.specSchema);
+      if (!result.ok) {
+        errors.push(...result.errors);
+      } else {
+        const folderError = validateSpecFolderMatch(absolutePath, result.parsed);
+        if (folderError) {
+          errors.push(folderError);
+        }
+      }
+    }
+  });
+
+  if (changedFiles.length === 0) {
+    warnings.push('No changed files detected; validation ran in best-effort mode.');
+  }
+
+  const report = {
+    valid: errors.length === 0,
+    bundle_id: config.bundle_id,
+    changed_files: changedFiles,
+    meaningful_changes: meaningfulChanges,
+    checks: {
+      require_gen_for_meaningful_changes: Boolean(config.validation.requireGenForMeaningfulChanges),
+      require_decision_for_risk: Boolean(config.validation.requireDecisionForRisk),
+      risk_triggered: riskTriggered,
+      risk_path_matches: riskPathsMatched,
+      risk_label_matches: riskLabelsMatched,
+      candidate_decision_ids: candidateDecisionIds,
+      valid_decision_ids: validDecisionIds,
+      gen_files_in_diff: genFilesInDiff,
+    },
+    warnings,
+    errors,
+  };
+
+  process.stdout.write('ProvenanceCode Governance Validation\n');
+  process.stdout.write(`- Changed files: ${changedFiles.length}\n`);
+  process.stdout.write(`- Meaningful changes: ${meaningfulChanges.length}\n`);
+  process.stdout.write(`- Risk triggered: ${riskTriggered ? 'yes' : 'no'}\n`);
+  process.stdout.write(`- GEN files in diff: ${genFilesInDiff.length}\n`);
+  process.stdout.write(`- Valid linked decisions: ${validDecisionIds.length}\n`);
+
+  if (warnings.length > 0) {
+    process.stdout.write('\nWarnings:\n');
+    warnings.forEach((warning) => process.stdout.write(`  - ${warning}\n`));
+  }
+  if (errors.length > 0) {
+    process.stdout.write('\nErrors:\n');
+    errors.forEach((error) => process.stdout.write(`  - ${error}\n`));
+  }
+
+  const reportPath = options.report || process.env.PRVC_REPORT_PATH;
+  if (reportPath) {
+    writeJson(toAbsolutePath(reportPath), report);
+    process.stdout.write(`\nWrote report to ${reportPath}\n`);
+  }
+
+  if (errors.length > 0) {
+    process.exitCode = 1;
+  }
+}
+
+async function main() {
+  const options = parseOptions(process.argv.slice(2));
+  const command = options._[0] || 'help';
+  const subcommand = options._[1] || '';
+  const strict = boolFromOption(options.strict, command === 'validate');
+
+  try {
+    if (command === 'help' || command === '--help' || command === '-h') {
+      printHelp();
+      return;
+    }
+
+    if (command === 'version' || command === '--version' || command === '-v') {
+      process.stdout.write(`${VERSION}\n`);
+      return;
+    }
+
+    if ((command === 'gen' && (subcommand === 'record' || subcommand === 'create')) || command === 'record-gen') {
+      await commandGenRecord(options);
+      return;
+    }
+
+    if ((command === 'session' && subcommand === 'finalize') || command === 'finalize-session') {
+      await commandSessionFinalize(options);
+      return;
+    }
+
+    if (command === 'validate') {
+      commandValidate(options);
+      return;
+    }
+
+    printHelp();
+    process.exitCode = 1;
+  } catch (error) {
+    process.stderr.write(`prvc error: ${error.message}\n`);
+    if (strict) {
+      process.exitCode = 1;
+    } else {
+      process.exitCode = 0;
+    }
+  }
+}
+
+main();

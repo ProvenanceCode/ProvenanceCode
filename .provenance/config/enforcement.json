@@ -1,0 +1,49 @@
+{
+  "schema": "provenancecode.enforcement.bundle.v1",
+  "bundle_id": "provenancecode.bundle.github.copilot.v1",
+  "cursor_adapter_id": "provenancecode.adapter.cursor.v1",
+  "copilot_adapter_id": "provenancecode.adapter.github.copilot.v1",
+  "defaults": {
+    "project": "PROV",
+    "subproject": "CORE"
+  },
+  "paths": {
+    "events": ".provenance/events",
+    "decisions": ".provenance/decisions",
+    "specs": ".provenance/specs",
+    "sessions": ".provenance/sessions",
+    "schemas": ".provenance/config/schemas",
+    "sequences": ".provenance/config/sequences.json"
+  },
+  "validation": {
+    "requireGenForMeaningfulChanges": true,
+    "requireDecisionForRisk": true,
+    "meaningfulChangeIncludes": [
+      "**/*"
+    ],
+    "meaningfulChangeExcludes": [
+      "**/*.md",
+      "docs/**",
+      "README*",
+      "LICENSE",
+      ".provenance/events/**",
+      ".provenance/sessions/**"
+    ],
+    "riskPathTriggers": [
+      "auth/**",
+      "security/**",
+      "infra/**",
+      ".github/workflows/**",
+      ".provenance/config/**"
+    ],
+    "riskLabelTriggers": [
+      "security",
+      "risk-high",
+      "breaking-change",
+      "compliance"
+    ]
+  },
+  "privacy": {
+    "capture": "hashes-only"
+  }
+}
