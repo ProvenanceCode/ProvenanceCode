@@ -1666,10 +1666,11 @@
 <p>A compliant ProvenanceCode implementation MUST:</p>
 <ol>
 <li><strong>Validate JSON structure</strong> against official schemas</li>
-<li><strong>Check decision ID format</strong> (<code>DEC-XXXXXX</code>)</li>
+<li><strong>Check decision ID format</strong> (hierarchical or legacy, based on config)</li>
 <li><strong>Verify required fields</strong> (see spec)</li>
 <li><strong>Support enforcement presets</strong> (light, standard, regulated)</li>
 <li><strong>Provide clear feedback</strong> to users</li>
+<li><strong>Read and validate config</strong> (<code>provenance/config.json</code>) for ID format settings</li>
 </ol>
 <h3 id="recommended-features">Recommended Features<a class="headerlink" href="#recommended-features" title="Permanent link">&para;</a></h3>
 <p>Your implementation SHOULD:</p>
@@ -1760,14 +1761,15 @@
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="2-scan-for-artifacts">2. Scan for Artifacts<a class="headerlink" href="#2-scan-for-artifacts" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">scanDecisions</span><span class="p">(</span><span class="nx">repoPath</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">scanDecisions</span><span class="p">(</span><span class="nx">repoPath</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">decisionsPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">repoPath</span><span class="si">}</span><span class="sb">/provenance/decisions`</span><span class="p">;</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">dirs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">listDirectories</span><span class="p">(</span><span class="nx">decisionsPath</span><span class="p">);</span>
 
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">decisions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
 
 <span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">dir</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">dirs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="sr">/^DEC-\d{6}$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">dir</span><span class="p">))</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// Validate ID format based on config</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">validateIdFormat</span><span class="p">(</span><span class="nx">dir</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">))</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span>
 
 <span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">jsonPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">decisionsPath</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">dir</span><span class="si">}</span><span class="sb">/decision.json`</span><span class="p">;</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">fileExists</span><span class="p">(</span><span class="nx">jsonPath</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
@@ -1777,6 +1779,29 @@
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">decisions</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">validateIdFormat</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">config</span><span class="p">.</span><span class="nx">id_format</span><span class="o">?</span><span class="p">.</span><span class="nx">style</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;legacy&#39;</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">style</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;legacy&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Legacy format: DEC-000001 (6 digits)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sr">/^DEC-\d{6}$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">style</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;hierarchical&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">requireSubproject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">config</span><span class="p">.</span><span class="nx">id_format</span><span class="o">?</span><span class="p">.</span><span class="nx">require_subproject</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">requireSubproject</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// Full hierarchical: DEC-PROJECT-SUBPROJECT-0000001</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="sr">/^DEC-[A-Z0-9]{2,6}-[A-Z0-9]{2,6}-\d{7}$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// Hierarchical with optional subproject</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="sr">/^DEC-[A-Z0-9]{2,6}-([A-Z0-9]{2,6}-)?(\d{7})$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="3-validate-structure">3. Validate Structure<a class="headerlink" href="#3-validate-structure" title="Permanent link">&para;</a></h3>
@@ -1797,9 +1822,9 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 
-<span class="w">  </span><span class="c1">// ID format</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="sr">/^DEC-\d{6}$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">decision</span><span class="p">.</span><span class="nx">id</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">errors</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">&#39;Invalid ID format (must be DEC-XXXXXX)&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// ID format (validate based on config)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">validateIdFormat</span><span class="p">(</span><span class="nx">decision</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">errors</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">&#39;Invalid ID format (check provenance/config.json for expected format)&#39;</span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="c1">// Schema version</span>
@@ -2010,7 +2035,7 @@
 <ul>
 <li>[ ] Validates against official JSON schema</li>
 <li>[ ] Checks all required fields</li>
-<li>[ ] Validates ID format (DEC-XXXXXX)</li>
+<li>[ ] Validates ID format (hierarchical or legacy based on config)</li>
 <li>[ ] Supports all enforcement presets</li>
 <li>[ ] Handles missing files gracefully</li>
 <li>[ ] Provides clear error messages</li>

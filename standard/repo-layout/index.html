@@ -2281,7 +2281,7 @@
 ├── provenance/
 │   ├── config.json          (REQUIRED)
 │   └── decisions/           (REQUIRED)
-│       └── DEC-000001/
+│       └── DEC-SDM-FRD-0000001/
 │           └── decision.json
 └── (your project files)
 </code></pre></div>
@@ -2314,13 +2314,13 @@
 ├── provenance/
 │   ├── config.json
 │   ├── decisions/
-│   │   ├── DEC-000001/
+│   │   ├── DEC-SDM-FRD-0000001/
 │   │   │   ├── decision.json
 │   │   │   ├── decision.md
 │   │   │   ├── acceptance.receipt.json
 │   │   │   ├── prov.jsonld
 │   │   │   └── c2pa.manifest.json
-│   │   └── DEC-000002/
+│   │   └── DEC-SDM-FRD-0000002/
 │   ├── risks/
 │   │   ├── RA-000001/
 │   │   │   ├── risk.json
@@ -2341,7 +2341,7 @@
 │   │   ├── enforcement.yml
 │   │   └── mistakes-enforcement.json
 │   ├── drafts/
-│   │   ├── DEC-000003-draft.md
+│   │   ├── DEC-SDM-FRD-0000003-draft.md
 │   │   ├── SPEC-000003-draft.md
 │   │   └── README.md
 │   ├── links/
@@ -2423,11 +2423,11 @@
 <h2 id="decision-structure">Decision Structure<a class="headerlink" href="#decision-structure" title="Permanent link">&para;</a></h2>
 <h3 id="directory-pattern">Directory Pattern<a class="headerlink" href="#directory-pattern" title="Permanent link">&para;</a></h3>
 <p>Each decision MUST have its own directory:</p>
-<div class="highlight"><pre><span></span><code>provenance/decisions/DEC-XXXXXX/
+<div class="highlight"><pre><span></span><code>provenance/decisions/{DEC-ID}/
 </code></pre></div>
 <p>Where <code>XXXXXX</code> is a zero-padded 6-digit number (000001–999999).</p>
 <h3 id="decision-files">Decision Files<a class="headerlink" href="#decision-files" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>provenance/decisions/DEC-000042/
+<div class="highlight"><pre><span></span><code>provenance/decisions/DEC-SDM-FRD-0000042/
 ├── decision.json               (REQUIRED - source of truth)
 ├── decision.md                 (RECOMMENDED - human narrative)
 ├── acceptance.receipt.json     (OPTIONAL - cryptographic proof)
@@ -2483,16 +2483,16 @@
 </table>
 <h3 id="example-layout">Example Layout<a class="headerlink" href="#example-layout" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>provenance/decisions/
-├── DEC-000001/
+├── DEC-SDM-FRD-0000001/
 │   ├── decision.json
 │   └── decision.md
-├── DEC-000002/
+├── DEC-SDM-FRD-0000002/
 │   ├── decision.json
 │   ├── decision.md
 │   ├── acceptance.receipt.json
 │   └── evidence/
 │       └── architecture-diagram.png
-├── DEC-000003/
+├── DEC-SDM-FRD-0000003/
 │   ├── decision.json
 │   └── decision.md
 └── README.md                  (Optional - index of decisions)
@@ -2668,7 +2668,7 @@ We use the <span class="gs">**Standard**</span> preset because...
 <p><strong>Purpose:</strong> Work-in-progress artifacts not yet finalized</p>
 <p><strong>Contents:</strong>
 <div class="highlight"><pre><span></span><code>provenance/drafts/
-├── DEC-000005-draft.md
+├── DEC-SDM-FRD-0000005-draft.md
 ├── SPEC-000010-draft.md
 ├── RA-000003-draft.json
 └── README.md              (Template instructions)
@@ -2707,57 +2707,144 @@ We use the <span class="gs">**Standard**</span> preset because...
 <span class="w">      </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Missing input validation&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;category&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;security&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;prevent_rule&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;All user input must be validated&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;linked_decisions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;DEC-000025&quot;</span><span class="p">]</span>
+<span class="w">      </span><span class="nt">&quot;linked_decisions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;DEC-SDM-FRD-0000025&quot;</span><span class="p">]</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div></p>
 <h2 id="file-naming-conventions">File Naming Conventions<a class="headerlink" href="#file-naming-conventions" title="Permanent link">&para;</a></h2>
 <h3 id="id-formats">ID Formats<a class="headerlink" href="#id-formats" title="Permanent link">&para;</a></h3>
+<p>ProvenanceCode supports hierarchical ID formats to enable monorepo organization and cross-system referencing (dashboards, JIRA, etc.). The format is configurable via <code>provenance/config.json</code>.</p>
+<p><strong>Hierarchical Format:</strong>
+<div class="highlight"><pre><span></span><code>{TYPE}-{PROJECT}-[{SUBPROJECT}-]{NUMBER}
+</code></pre></div></p>
+<p><strong>Components:</strong>
+- <strong>TYPE</strong>: Artifact type prefix (DEC, RA, MR, SPEC)
+- <strong>PROJECT</strong>: Project identifier (2-6 uppercase alphanumeric chars)
+- <strong>SUBPROJECT</strong>: (OPTIONAL) Sub-project/module identifier (2-6 uppercase alphanumeric chars)
+- <strong>NUMBER</strong>: Zero-padded 7-digit number (0000001-9999999)</p>
 <table>
 <thead>
 <tr>
 <th>Artifact Type</th>
-<th>ID Format</th>
+<th>Full Format</th>
+<th>Example</th>
+<th>Without Subproject</th>
 <th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Decision</td>
-<td><code>DEC-XXXXXX</code></td>
+<td><code>DEC-{PROJECT}-{SUBPROJECT}-{NUMBER}</code></td>
+<td><code>DEC-SDM-FRD-0000019</code></td>
+<td><code>DEC-{PROJECT}-{NUMBER}</code></td>
+<td><code>DEC-CORE-0000042</code></td>
+</tr>
+<tr>
+<td>Risk</td>
+<td><code>RA-{PROJECT}-{SUBPROJECT}-{NUMBER}</code></td>
+<td><code>RA-CORE-API-0000042</code></td>
+<td><code>RA-{PROJECT}-{NUMBER}</code></td>
+<td><code>RA-PLT-0000015</code></td>
+</tr>
+<tr>
+<td>Mistake</td>
+<td><code>MR-{PROJECT}-{SUBPROJECT}-{NUMBER}</code></td>
+<td><code>MR-PLT-AUTH-0000003</code></td>
+<td><code>MR-{PROJECT}-{NUMBER}</code></td>
+<td><code>MR-WEB-0000007</code></td>
+</tr>
+<tr>
+<td>Specification</td>
+<td><code>SPEC-{PROJECT}-{SUBPROJECT}-{NUMBER}</code></td>
+<td><code>SPEC-WEB-UI-0000128</code></td>
+<td><code>SPEC-{PROJECT}-{NUMBER}</code></td>
+<td><code>SPEC-API-0000050</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Legacy Format Support:</strong></p>
+<p>For backward compatibility, the simple format is still supported:</p>
+<table>
+<thead>
+<tr>
+<th>Artifact Type</th>
+<th>Legacy Format</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Decision</td>
+<td><code>DEC-{NUMBER}</code></td>
 <td><code>DEC-000042</code></td>
 </tr>
 <tr>
 <td>Risk</td>
-<td><code>RA-XXXXXX</code></td>
+<td><code>RA-{NUMBER}</code></td>
 <td><code>RA-000015</code></td>
 </tr>
 <tr>
 <td>Mistake</td>
-<td><code>MR-XXXXXX</code></td>
+<td><code>MR-{NUMBER}</code></td>
 <td><code>MR-000003</code></td>
 </tr>
 <tr>
 <td>Specification</td>
-<td><code>SPEC-XXXXXX</code></td>
+<td><code>SPEC-{NUMBER}</code></td>
 <td><code>SPEC-000028</code></td>
 </tr>
 </tbody>
 </table>
+<p><strong>Format Rules:</strong>
+- PROJECT and SUBPROJECT identifiers:
+  - MUST be 2-6 uppercase alphanumeric characters
+  - SHOULD use meaningful abbreviations (SDM=system-demo, FRD=frontend, CORE=core-services)
+  - SHOULD be consistent within a repository
+  - SUBPROJECT is OPTIONAL (can use <code>DEC-{PROJECT}-{NUMBER}</code> format)
+- NUMBER component:
+  - MUST be zero-padded to 7 digits in hierarchical format
+  - MUST be zero-padded to 6 digits in legacy format
+  - SHOULD be assigned sequentially within scope (PROJECT-SUBPROJECT or PROJECT or global)</p>
+<p><strong>Configuration:</strong></p>
+<p>The ID format is configured in <code>provenance/config.json</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id_format&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;style&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hierarchical&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;project&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SDM&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;subproject&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FRD&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;require_subproject&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Configuration options:
+- <code>style</code>: <code>"hierarchical"</code> or <code>"legacy"</code> (default: <code>"legacy"</code>)
+- <code>project</code>: Project identifier (required if style is hierarchical)
+- <code>subproject</code>: Default subproject identifier (optional)
+- <code>require_subproject</code>: If true, all IDs must include subproject (default: <code>false</code>)</p>
 <h3 id="directory-names">Directory Names<a class="headerlink" href="#directory-names" title="Permanent link">&para;</a></h3>
 <ul>
 <li>MUST match the ID exactly</li>
 <li>MUST be uppercase</li>
 <li>MUST include leading zeros</li>
+<li>PROJECT and SUBPROJECT identifiers MUST match exactly</li>
 </ul>
-<p>✅ Good:
+<p>✅ Good (Hierarchical):
+<div class="highlight"><pre><span></span><code>provenance/decisions/DEC-SDM-FRD-0000019/
+provenance/risks/RA-CORE-API-0000042/
+provenance/mistakes/MR-PLT-AUTH-0000003/
+provenance/specs/SPEC-WEB-UI-0000128/
+</code></pre></div></p>
+<p>✅ Good (Legacy):
 <div class="highlight"><pre><span></span><code>provenance/decisions/DEC-000001/
 provenance/risks/RA-000042/
 </code></pre></div></p>
 <p>❌ Bad:
-<div class="highlight"><pre><span></span><code>provenance/decisions/dec-1/           # Wrong case, missing zeros
-provenance/decisions/DEC-000001-foo/  # Extra suffix
+<div class="highlight"><pre><span></span><code>provenance/decisions/dec-sdm-frd-1/           # Wrong case, missing zeros
+provenance/decisions/DEC-SDM-FRD-0000001-foo/ # Extra suffix
+provenance/decisions/DEC-SDM-frd-0000001/     # Lowercase subproject
 </code></pre></div></p>
 <h3 id="file-names">File Names<a class="headerlink" href="#file-names" title="Permanent link">&para;</a></h3>
 <table>
@@ -2797,7 +2884,7 @@ provenance/decisions/DEC-000001-foo/  # Extra suffix
 <tr>
 <td>Draft</td>
 <td><code>{ID}-draft.{ext}</code></td>
-<td><code>DEC-000005-draft.md</code></td>
+<td><code>DEC-SDM-FRD-0000005-draft.md</code> or <code>DEC-000005-draft.md</code></td>
 </tr>
 <tr>
 <td>Evidence</td>
@@ -2812,13 +2899,13 @@ provenance/decisions/DEC-000001-foo/  # Extra suffix
 - <code>/provenance/</code> directory at root
 - <code>/provenance/config.json</code> file
 - <code>/provenance/decisions/</code> directory
-- At least one valid decision: <code>/provenance/decisions/DEC-000001/decision.json</code></p>
+- At least one valid decision: <code>/provenance/decisions/{DEC-ID}/decision.json</code></p>
 <p><strong>Example:</strong>
 <div class="highlight"><pre><span></span><code>repo-root/
 ├── provenance/
 │   ├── config.json
 │   └── decisions/
-│       └── DEC-000001/
+│       └── DEC-SDM-FRD-0000001/
 │           └── decision.json
 └── src/
 </code></pre></div></p>

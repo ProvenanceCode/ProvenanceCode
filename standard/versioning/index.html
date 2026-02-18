@@ -2164,7 +2164,7 @@ superseded
 <h3 id="version-numbers">Version Numbers<a class="headerlink" href="#version-numbers" title="Permanent link">&para;</a></h3>
 <p>Each artifact has a <code>version</code> field (integer starting at 1):</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000042&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -2191,7 +2191,7 @@ superseded
 <span class="p">}</span>
 </code></pre></div>
 <p>For detailed history, optionally create:
-<div class="highlight"><pre><span></span><code>provenance/decisions/DEC-000042/
+<div class="highlight"><pre><span></span><code>provenance/decisions/DEC-SDM-FRD-0000042/
 ├── decision.json           (current version)
 ├── decision.v1.json        (previous version)
 ├── decision.v2.json        (previous version)
@@ -2208,39 +2208,39 @@ superseded
 <h3 id="supersession-fields">Supersession Fields<a class="headerlink" href="#supersession-fields" title="Permanent link">&para;</a></h3>
 <p><strong>Old Decision (DEC-000010):</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000010&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000010&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;superseded&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;superseded_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span>
+<span class="w">    </span><span class="nt">&quot;superseded_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000042&quot;</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></p>
 <p><strong>New Decision (DEC-000042):</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000042&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accepted&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;supersedes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000010&quot;</span>
+<span class="w">    </span><span class="nt">&quot;supersedes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000010&quot;</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></p>
 <h3 id="supersession-chains">Supersession Chains<a class="headerlink" href="#supersession-chains" title="Permanent link">&para;</a></h3>
 <p>Decisions can form chains:</p>
-<div class="highlight"><pre><span></span><code>DEC-000010 (superseded)
+<div class="highlight"><pre><span></span><code>DEC-SDM-FRD-0000010 (superseded)
     ↓
-DEC-000042 (superseded)
+DEC-SDM-FRD-0000042 (superseded)
     ↓
-DEC-000081 (accepted) — current
+DEC-SDM-FRD-0000081 (accepted) — current
 </code></pre></div>
-<p><strong>DEC-000081:</strong>
+<p><strong>DEC-SDM-FRD-0000081:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accepted&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;supersedes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span>
+<span class="w">    </span><span class="nt">&quot;supersedes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000042&quot;</span>
 <span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;supersession_chain&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;DEC-000010&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="nt">&quot;supersession_chain&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;DEC-SDM-FRD-0000010&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000042&quot;</span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div></p>
 <h3 id="when-to-supersede-vs-update">When to Supersede vs. Update<a class="headerlink" href="#when-to-supersede-vs-update" title="Permanent link">&para;</a></h3>
@@ -2440,10 +2440,10 @@ jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;select
 <p>When superseding, maintain full chain:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;supersedes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span>
+<span class="w">    </span><span class="nt">&quot;supersedes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000042&quot;</span>
 <span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;supersession_chain&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;DEC-000010&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;rationale&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Updated authentication approach based on new security requirements. Previous decisions (DEC-000010, DEC-000042) are superseded.&quot;</span>
+<span class="w">  </span><span class="nt">&quot;supersession_chain&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;DEC-SDM-FRD-0000010&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000042&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;rationale&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Updated authentication approach based on new security requirements. Previous decisions (DEC-SDM-FRD-0000010, DEC-SDM-FRD-0000042) are superseded.&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="5-document-state-changes">5. Document State Changes<a class="headerlink" href="#5-document-state-changes" title="Permanent link">&para;</a></h3>
@@ -2472,7 +2472,7 @@ jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;select
 <h3 id="example-1-decision-evolution">Example 1: Decision Evolution<a class="headerlink" href="#example-1-decision-evolution" title="Permanent link">&para;</a></h3>
 <p><strong>Initial Draft:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000042&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;draft&quot;</span>
@@ -2484,7 +2484,7 @@ jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;select
 </code></pre></div></p>
 <p><strong>After Review:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000042&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;proposed&quot;</span>
@@ -2497,7 +2497,7 @@ jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;select
 </code></pre></div></p>
 <p><strong>After Acceptance:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000042&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accepted&quot;</span>
@@ -2516,12 +2516,12 @@ jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;select
 <h3 id="example-2-supersession">Example 2: Supersession<a class="headerlink" href="#example-2-supersession" title="Permanent link">&para;</a></h3>
 <p><strong>Old Decision Marked as Superseded:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000010&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000010&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Use JWT for authentication&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;superseded&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;superseded_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span>
+<span class="w">    </span><span class="nt">&quot;superseded_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000042&quot;</span>
 <span class="w">  </span><span class="p">},</span>
 <span class="w">  </span><span class="nt">&quot;timestamps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-06-01T10:00:00Z&quot;</span><span class="p">,</span>
@@ -2532,18 +2532,18 @@ jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;select
 </code></pre></div></p>
 <p><strong>New Decision:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000042&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Migrate from JWT to OAuth2 with session tokens&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accepted&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;supersedes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000010&quot;</span>
+<span class="w">    </span><span class="nt">&quot;supersedes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000010&quot;</span>
 <span class="w">  </span><span class="p">},</span>
 <span class="w">  </span><span class="nt">&quot;timestamps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-10T10:00:00Z&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;accepted_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-13T09:15:00Z&quot;</span>
 <span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;rationale&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OAuth2 provides better security and refresh token support. Supersedes DEC-000010 which used simpler JWT approach.&quot;</span>
+<span class="w">  </span><span class="nt">&quot;rationale&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OAuth2 provides better security and refresh token support. Supersedes DEC-SDM-FRD-0000010 which used simpler JWT approach.&quot;</span>
 <span class="p">}</span>
 </code></pre></div></p>
 <h3 id="example-3-risk-expiration">Example 3: Risk Expiration<a class="headerlink" href="#example-3-risk-expiration" title="Permanent link">&para;</a></h3>

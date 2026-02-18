@@ -1,0 +1,1540 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Decision-Driven Development for the AI Era">
+      
+      
+      
+        <link rel="canonical" href="https://provenancecode.github.io/provenancecode/hierarchical-ids/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Hierarchical ID Format Guide - ProvenanceCode</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hierarchical-id-format-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ProvenanceCode" class="md-header__button md-logo" aria-label="ProvenanceCode" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ProvenanceCode
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Hierarchical ID Format Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ProvenanceCode/ProvenanceCode" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ProvenanceCode/ProvenanceCode
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ProvenanceCode" class="md-nav__button md-logo" aria-label="ProvenanceCode" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ProvenanceCode
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ProvenanceCode/ProvenanceCode" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ProvenanceCode/ProvenanceCode
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standard
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Standard
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../standard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../standard/deo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decision Evidence Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../standard/enforcement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enforcement Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../standard/repo-layout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Repository Layout
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../standard/versioning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Versioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../standard/provenancecode-v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ProvenanceCode v2.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    v2.0 Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    v2.0 Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../QUICK_START/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MIGRATION_GUIDE_V2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Implementation Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation/github-action/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation/github-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../building-implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building Your Own
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format Options
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Format Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hierarchical-format-recommended-for-monorepos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hierarchical Format (Recommended for Monorepos)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy-format-simple-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legacy Format (Simple Projects)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-hierarchical-with-required-subproject" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Hierarchical with Required Subproject
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-hierarchical-with-optional-subproject" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Hierarchical with Optional Subproject
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-legacy-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Legacy Format
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Options
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monorepo-with-multiple-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monorepo with Multiple Projects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-project-with-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single Project with Modules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simple-project-legacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple Project (Legacy)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migration-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Migration Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-legacy-to-hierarchical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Legacy to Hierarchical
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jira-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JIRA Integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dashboard-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard Integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hierarchical-format-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hierarchical Format Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy-format-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legacy Format Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naming-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naming Conventions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequential-numbering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequential Numbering
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-repository-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Repository Structures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Repository Structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monorepo-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monorepo Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-project-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single Project Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simple-project-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple Project Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support-and-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Support and Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="hierarchical-id-format-guide">Hierarchical ID Format Guide<a class="headerlink" href="#hierarchical-id-format-guide" title="Permanent link">&para;</a></h1>
+<p><strong>Version:</strong> 1.0.0<br />
+<strong>Status:</strong> Active<br />
+<strong>Part of:</strong> ProvenanceCode Open Standard</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>ProvenanceCode supports hierarchical ID formats to enable better organization in monorepos, improved cross-system referencing (dashboards, JIRA), and flexible project structure management.</p>
+<h2 id="format-options">Format Options<a class="headerlink" href="#format-options" title="Permanent link">&para;</a></h2>
+<h3 id="hierarchical-format-recommended-for-monorepos">Hierarchical Format (Recommended for Monorepos)<a class="headerlink" href="#hierarchical-format-recommended-for-monorepos" title="Permanent link">&para;</a></h3>
+<p><strong>Full Format (with subproject):</strong>
+<div class="highlight"><pre><span></span><code>{TYPE}-{PROJECT}-{SUBPROJECT}-{NUMBER}
+</code></pre></div></p>
+<p><strong>Simplified Format (without subproject):</strong>
+<div class="highlight"><pre><span></span><code>{TYPE}-{PROJECT}-{NUMBER}
+</code></pre></div></p>
+<p><strong>Examples:</strong>
+- <code>DEC-SDM-FRD-0000019</code> - System Demo, Frontend, Decision 19
+- <code>DEC-CORE-API-0000042</code> - Core, API, Decision 42
+- <code>DEC-WEB-0000015</code> - Web project (no subproject), Decision 15
+- <code>RA-PLT-AUTH-0000007</code> - Platform, Auth, Risk Acceptance 7
+- <code>SPEC-API-0000128</code> - API project (no subproject), Specification 128</p>
+<h3 id="legacy-format-simple-projects">Legacy Format (Simple Projects)<a class="headerlink" href="#legacy-format-simple-projects" title="Permanent link">&para;</a></h3>
+<p><strong>Format:</strong>
+<div class="highlight"><pre><span></span><code>{TYPE}-{NUMBER}
+</code></pre></div></p>
+<p><strong>Examples:</strong>
+- <code>DEC-000042</code> - Decision 42
+- <code>RA-000015</code> - Risk Acceptance 15
+- <code>MR-000003</code> - Mistake Record 3
+- <code>SPEC-000028</code> - Specification 28</p>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<p>The ID format is configured in <code>provenance/config.json</code>:</p>
+<h3 id="example-hierarchical-with-required-subproject">Example: Hierarchical with Required Subproject<a class="headerlink" href="#example-hierarchical-with-required-subproject" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id_format&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;style&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hierarchical&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;project&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SDM&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;subproject&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FRD&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;require_subproject&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Result:</strong> All IDs must use format <code>DEC-SDM-FRD-0000001</code></p>
+<h3 id="example-hierarchical-with-optional-subproject">Example: Hierarchical with Optional Subproject<a class="headerlink" href="#example-hierarchical-with-optional-subproject" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id_format&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;style&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hierarchical&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;project&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CORE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;require_subproject&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Result:</strong> IDs can use either:
+- <code>DEC-CORE-API-0000001</code> (with subproject)
+- <code>DEC-CORE-0000001</code> (without subproject)</p>
+<h3 id="example-legacy-format">Example: Legacy Format<a class="headerlink" href="#example-legacy-format" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id_format&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;style&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;legacy&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Result:</strong> All IDs must use format <code>DEC-000001</code></p>
+<h2 id="configuration-options">Configuration Options<a class="headerlink" href="#configuration-options" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>style</code></td>
+<td>string</td>
+<td>Yes</td>
+<td><code>"hierarchical"</code> or <code>"legacy"</code></td>
+</tr>
+<tr>
+<td><code>project</code></td>
+<td>string</td>
+<td>If hierarchical</td>
+<td>2-6 uppercase alphanumeric characters</td>
+</tr>
+<tr>
+<td><code>subproject</code></td>
+<td>string</td>
+<td>No</td>
+<td>Default subproject identifier (2-6 uppercase alphanumeric chars)</td>
+</tr>
+<tr>
+<td><code>require_subproject</code></td>
+<td>boolean</td>
+<td>No</td>
+<td>If <code>true</code>, all IDs must include subproject (default: <code>false</code>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="use-cases">Use Cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
+<h3 id="monorepo-with-multiple-projects">Monorepo with Multiple Projects<a class="headerlink" href="#monorepo-with-multiple-projects" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id_format&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;style&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hierarchical&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;project&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MAIN&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;require_subproject&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Structure:</strong>
+<div class="highlight"><pre><span></span><code>provenance/decisions/
+├── DEC-MAIN-WEB-0000001/
+├── DEC-MAIN-API-0000001/
+├── DEC-MAIN-MOBILE-0000001/
+└── DEC-MAIN-INFRA-0000001/
+</code></pre></div></p>
+<p><strong>Benefits:</strong>
+- Clear separation by subproject
+- Easy filtering: "Show me all API decisions"
+- Scoped numbering per subproject</p>
+<h3 id="single-project-with-modules">Single Project with Modules<a class="headerlink" href="#single-project-with-modules" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id_format&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;style&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hierarchical&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;project&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WEBAPP&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;require_subproject&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Structure:</strong>
+<div class="highlight"><pre><span></span><code>provenance/decisions/
+├── DEC-WEBAPP-AUTH-0000001/
+├── DEC-WEBAPP-UI-0000001/
+├── DEC-WEBAPP-0000001/        # General decisions
+└── DEC-WEBAPP-0000002/
+</code></pre></div></p>
+<p><strong>Benefits:</strong>
+- Flexible organization
+- Can group by module when needed
+- General decisions don't need subproject</p>
+<h3 id="simple-project-legacy">Simple Project (Legacy)<a class="headerlink" href="#simple-project-legacy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id_format&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;style&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;legacy&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Structure:</strong>
+<div class="highlight"><pre><span></span><code>provenance/decisions/
+├── DEC-000001/
+├── DEC-000002/
+└── DEC-000003/
+</code></pre></div></p>
+<p><strong>Benefits:</strong>
+- Simple numbering
+- No complexity overhead
+- Perfect for small projects</p>
+<h2 id="migration-guide">Migration Guide<a class="headerlink" href="#migration-guide" title="Permanent link">&para;</a></h2>
+<h3 id="from-legacy-to-hierarchical">From Legacy to Hierarchical<a class="headerlink" href="#from-legacy-to-hierarchical" title="Permanent link">&para;</a></h3>
+<p><strong>Step 1:</strong> Update <code>provenance/config.json</code></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id_format&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;style&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hierarchical&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;project&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CORE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;require_subproject&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Step 2:</strong> Choose migration strategy</p>
+<p><strong>Option A: Gradual Migration</strong>
+- Keep existing legacy IDs
+- Create new decisions with hierarchical format
+- Both formats coexist (validators support mixed formats)</p>
+<p><strong>Option B: Full Migration</strong>
+- Rename all decision directories
+- Update all <code>id</code> fields in <code>decision.json</code>
+- Update all cross-references
+- Use script or manual process</p>
+<p><strong>Step 3:</strong> Update CI/CD validation
+- Ensure validators read config
+- Update documentation
+- Communicate to team</p>
+<h2 id="jira-integration">JIRA Integration<a class="headerlink" href="#jira-integration" title="Permanent link">&para;</a></h2>
+<p>Hierarchical IDs map naturally to JIRA:</p>
+<p><strong>ProvenanceCode:</strong> <code>DEC-SDM-FRD-0000019</code><br />
+<strong>JIRA:</strong> <code>SDM-FRD-19</code> or custom field mapping</p>
+<p><strong>Example mapping in <code>provenance/links/jira-mapping.json</code>:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;mappings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;decision_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000019&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;jira_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SDM-19&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;jira_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://company.atlassian.net/browse/SDM-19&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="dashboard-integration">Dashboard Integration<a class="headerlink" href="#dashboard-integration" title="Permanent link">&para;</a></h2>
+<p>Hierarchical IDs enable powerful filtering and reporting:</p>
+<p><strong>Query Examples:</strong>
+- All decisions in project SDM: <code>DEC-SDM-*</code>
+- All frontend decisions: <code>DEC-*-FRD-*</code>
+- All API decisions across projects: <code>DEC-*-API-*</code>
+- Specific project + subproject: <code>DEC-CORE-AUTH-*</code></p>
+<h2 id="validation-rules">Validation Rules<a class="headerlink" href="#validation-rules" title="Permanent link">&para;</a></h2>
+<h3 id="hierarchical-format-validation">Hierarchical Format Validation<a class="headerlink" href="#hierarchical-format-validation" title="Permanent link">&para;</a></h3>
+<p><strong>With subproject:</strong>
+<div class="highlight"><pre><span></span><code>^(DEC|RA|MR|SPEC)-[A-Z0-9]{2,6}-[A-Z0-9]{2,6}-\d{7}$
+</code></pre></div></p>
+<p><strong>Without subproject:</strong>
+<div class="highlight"><pre><span></span><code>^(DEC|RA|MR|SPEC)-[A-Z0-9]{2,6}-\d{7}$
+</code></pre></div></p>
+<h3 id="legacy-format-validation">Legacy Format Validation<a class="headerlink" href="#legacy-format-validation" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>^(DEC|RA|MR|SPEC)-\d{6}$
+</code></pre></div>
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
+<h3 id="naming-conventions">Naming Conventions<a class="headerlink" href="#naming-conventions" title="Permanent link">&para;</a></h3>
+<p><strong>PROJECT identifiers:</strong>
+- Use 2-6 uppercase characters
+- Meaningful abbreviations (CORE, WEB, API, MOBILE)
+- Consistent across organization
+- Avoid special characters</p>
+<p><strong>SUBPROJECT identifiers:</strong>
+- Use 2-6 uppercase characters
+- Module or feature area (AUTH, UI, DB, INFRA)
+- Scoped to project
+- Optional but recommended for large codebases</p>
+<p><strong>Examples of good identifiers:</strong>
+- ✅ CORE, API, WEB, MOBILE, PLT (platform)
+- ✅ AUTH, UI, DB, INFRA, DEPLOY
+- ❌ VeryLongProjectName (too long)
+- ❌ api (lowercase not allowed)
+- ❌ P1 (too short, not descriptive)</p>
+<h3 id="sequential-numbering">Sequential Numbering<a class="headerlink" href="#sequential-numbering" title="Permanent link">&para;</a></h3>
+<p><strong>Hierarchical with subproject:</strong>
+- Number sequentially per PROJECT-SUBPROJECT
+- <code>DEC-WEB-UI-0000001</code>, <code>DEC-WEB-UI-0000002</code>, etc.
+- <code>DEC-WEB-API-0000001</code> starts independently</p>
+<p><strong>Hierarchical without subproject:</strong>
+- Number sequentially per PROJECT
+- <code>DEC-CORE-0000001</code>, <code>DEC-CORE-0000002</code>, etc.</p>
+<p><strong>Legacy:</strong>
+- Number sequentially globally
+- <code>DEC-000001</code>, <code>DEC-000002</code>, etc.</p>
+<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
+<p><strong>Q: Can I mix legacy and hierarchical formats?</strong><br />
+A: Yes, during migration. Validators support both formats simultaneously.</p>
+<p><strong>Q: What if I don't have subprojects?</strong><br />
+A: Set <code>require_subproject: false</code> and use <code>DEC-{PROJECT}-{NUMBER}</code> format.</p>
+<p><strong>Q: Can I change PROJECT identifier later?</strong><br />
+A: Yes, but requires renaming directories and updating references. Plan carefully.</p>
+<p><strong>Q: Do I need to zero-pad to 7 digits?</strong><br />
+A: Yes for hierarchical format (0000001-9999999), 6 digits for legacy (000001-999999).</p>
+<p><strong>Q: What about other artifact types (RA, MR, SPEC)?</strong><br />
+A: Same format rules apply to all artifact types.</p>
+<h2 id="example-repository-structures">Example Repository Structures<a class="headerlink" href="#example-repository-structures" title="Permanent link">&para;</a></h2>
+<h3 id="monorepo-example">Monorepo Example<a class="headerlink" href="#monorepo-example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>my-monorepo/
+├── provenance/
+│   ├── config.json                     # style: hierarchical, project: MAIN
+│   ├── decisions/
+│   │   ├── DEC-MAIN-WEB-0000001/
+│   │   ├── DEC-MAIN-API-0000001/
+│   │   ├── DEC-MAIN-MOBILE-0000001/
+│   │   └── DEC-MAIN-INFRA-0000001/
+│   ├── risks/
+│   │   ├── RA-MAIN-WEB-0000001/
+│   │   └── RA-MAIN-API-0000001/
+│   └── specs/
+│       ├── SPEC-MAIN-WEB-0000001/
+│       └── SPEC-MAIN-API-0000001/
+├── packages/
+│   ├── web/
+│   ├── api/
+│   └── mobile/
+└── infrastructure/
+</code></pre></div>
+<h3 id="single-project-example">Single Project Example<a class="headerlink" href="#single-project-example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>my-project/
+├── provenance/
+│   ├── config.json                     # style: hierarchical, project: APP
+│   ├── decisions/
+│   │   ├── DEC-APP-0000001/            # General decision
+│   │   ├── DEC-APP-AUTH-0000001/       # Auth-specific
+│   │   └── DEC-APP-UI-0000001/         # UI-specific
+│   └── specs/
+│       ├── SPEC-APP-0000001/
+│       └── SPEC-APP-AUTH-0000001/
+├── src/
+│   ├── auth/
+│   └── ui/
+└── tests/
+</code></pre></div>
+<h3 id="simple-project-example">Simple Project Example<a class="headerlink" href="#simple-project-example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>my-simple-project/
+├── provenance/
+│   ├── config.json                     # style: legacy
+│   ├── decisions/
+│   │   ├── DEC-000001/
+│   │   ├── DEC-000002/
+│   │   └── DEC-000003/
+│   └── specs/
+│       └── SPEC-000001/
+└── src/
+</code></pre></div>
+<h2 id="support-and-resources">Support and Resources<a class="headerlink" href="#support-and-resources" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../standard/repo-layout/">Repository Layout Specification</a></li>
+<li><a href="../standard/deo/">Decision Evidence Object Spec</a></li>
+<li><a href="../building-implementations/">Building Implementations</a></li>
+<li><a href="../standard/">ProvenanceCode Standard</a></li>
+</ul>
+<hr />
+<p><small>ProvenanceCode™ is a trademark of KDDLC AI Solutions SL.</small></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.sections", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

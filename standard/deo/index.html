@@ -493,6 +493,39 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#hierarchical-format-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hierarchical Format (Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legacy Format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#format-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#id-assignment" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1305,6 +1338,39 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#hierarchical-format-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hierarchical Format (Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legacy Format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#format-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#id-assignment" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1680,7 +1746,7 @@
 - <strong>Links:</strong> Connections to specs, PRs, issues, and other decisions</p>
 <h2 id="file-structure">File Structure<a class="headerlink" href="#file-structure" title="Permanent link">&para;</a></h2>
 <p>Each decision MUST be stored in its own directory:</p>
-<div class="highlight"><pre><span></span><code>/provenance/decisions/DEC-XXXXXX/
+<div class="highlight"><pre><span></span><code>/provenance/decisions/{DEC-ID}/
   decision.json          (REQUIRED - source of truth)
   decision.md            (RECOMMENDED - human narrative)
   acceptance.receipt.json (OPTIONAL - cryptographic proof)
@@ -1698,25 +1764,85 @@
 <li><strong>/evidence/</strong> - Screenshots, diagrams, logs, or other supporting files</li>
 </ul>
 <h2 id="decision-id-format">Decision ID Format<a class="headerlink" href="#decision-id-format" title="Permanent link">&para;</a></h2>
-<p>Decision IDs MUST follow this format:</p>
-<div class="highlight"><pre><span></span><code>DEC-XXXXXX
-</code></pre></div>
-<p>Where:
-- <code>DEC-</code> is the required prefix
-- <code>XXXXXX</code> is a 6-digit zero-padded number (000001 through 999999)</p>
+<p>Decision IDs support two formats: <strong>Hierarchical</strong> (recommended for monorepos) and <strong>Legacy</strong> (simple format).</p>
+<h3 id="hierarchical-format-recommended">Hierarchical Format (Recommended)<a class="headerlink" href="#hierarchical-format-recommended" title="Permanent link">&para;</a></h3>
+<p><strong>Format:</strong>
+<div class="highlight"><pre><span></span><code>DEC-{PROJECT}-[{SUBPROJECT}-]{NUMBER}
+</code></pre></div></p>
+<p><strong>Components:</strong>
+- <code>DEC-</code> - Required prefix for decisions
+- <code>{PROJECT}</code> - 2-6 uppercase alphanumeric characters identifying the project (e.g., SDM for system-demo, CORE for core-services)
+- <code>{SUBPROJECT}</code> - (OPTIONAL) 2-6 uppercase alphanumeric characters identifying the sub-project/module (e.g., FRD for frontend, API for api-layer)
+- <code>{NUMBER}</code> - 7-digit zero-padded number (0000001 through 9999999)</p>
+<p><strong>Examples with subproject:</strong>
+- ✅ <code>DEC-SDM-FRD-0000019</code> (system-demo, frontend, decision 19)
+- ✅ <code>DEC-CORE-API-0000042</code> (core, api, decision 42)
+- ✅ <code>DEC-PLT-AUTH-0000128</code> (platform, auth, decision 128)</p>
+<p><strong>Examples without subproject:</strong>
+- ✅ <code>DEC-CORE-0000042</code> (core project, decision 42)
+- ✅ <code>DEC-WEB-0000015</code> (web project, decision 15)
+- ✅ <code>DEC-API-0000007</code> (api project, decision 7)</p>
+<p><strong>Invalid examples:</strong>
+- ❌ <code>DEC-sdm-frd-0000019</code> (lowercase not allowed)
+- ❌ <code>DEC-SDM-FRD-19</code> (must be zero-padded to 7 digits)
+- ❌ <code>DEC-VERYLONGPROJECT-FRD-0000019</code> (project identifier too long)</p>
+<p><strong>Benefits:</strong>
+- Flexible organization for both monorepos and simple structures
+- Easy filtering in dashboards and JIRA
+- Scoped sequential numbering per project or project-subproject
+- Better cross-repository referencing
+- Optional subproject allows simpler structure when not needed</p>
+<h3 id="legacy-format">Legacy Format<a class="headerlink" href="#legacy-format" title="Permanent link">&para;</a></h3>
+<p><strong>Format:</strong>
+<div class="highlight"><pre><span></span><code>DEC-{NUMBER}
+</code></pre></div></p>
+<p><strong>Components:</strong>
+- <code>DEC-</code> - Required prefix
+- <code>{NUMBER}</code> - 6-digit zero-padded number (000001 through 999999)</p>
 <p><strong>Examples:</strong>
 - ✅ <code>DEC-000001</code>
 - ✅ <code>DEC-042815</code>
 - ❌ <code>DEC-1</code> (must be zero-padded)
 - ❌ <code>DECISION-000001</code> (wrong prefix)
-- ❌ <code>DEC-0000001</code> (too many digits)</p>
-<h3 id="id-assignment">ID Assignment<a class="headerlink" href="#id-assignment" title="Permanent link">&para;</a></h3>
-<p>Decision IDs SHOULD be assigned sequentially. The folder name MUST match the <code>id</code> field in <code>decision.json</code>.</p>
-<div class="highlight"><pre><span></span><code>/provenance/decisions/DEC-000042/decision.json
+- ❌ <code>DEC-0000001</code> (wrong digit count for legacy format)</p>
+<h3 id="format-configuration">Format Configuration<a class="headerlink" href="#format-configuration" title="Permanent link">&para;</a></h3>
+<p>The ID format is configured in <code>provenance/config.json</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id_format&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;style&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hierarchical&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;project&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SDM&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;subproject&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FRD&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;require_subproject&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
+<p><strong>Configuration Options:</strong>
+- <code>style</code>: <code>"hierarchical"</code> or <code>"legacy"</code> (default: <code>"legacy"</code>)
+- <code>project</code>: Project identifier, required if style is <code>"hierarchical"</code>
+- <code>subproject</code>: Default subproject identifier (optional)
+- <code>require_subproject</code>: If <code>true</code>, all IDs must include subproject (default: <code>false</code>)</p>
+<h3 id="id-assignment">ID Assignment<a class="headerlink" href="#id-assignment" title="Permanent link">&para;</a></h3>
+<p>Decision IDs SHOULD be assigned sequentially within their scope:
+- <strong>Hierarchical with subproject</strong>: Sequential within each PROJECT-SUBPROJECT combination
+- <strong>Hierarchical without subproject</strong>: Sequential within each PROJECT
+- <strong>Legacy</strong>: Sequential globally</p>
+<p>The folder name MUST match the <code>id</code> field in <code>decision.json</code>.</p>
+<p><strong>Hierarchical Example:</strong>
+<div class="highlight"><pre><span></span><code>/provenance/decisions/DEC-SDM-FRD-0000042/decision.json
+</code></pre></div></p>
 <p>Contains:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000042&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="err">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Legacy Example:</strong>
+<div class="highlight"><pre><span></span><code>/provenance/decisions/DEC-000042/decision.json
+</code></pre></div></p>
+<p>Contains:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000042&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="err">...</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -1724,7 +1850,7 @@
 <h3 id="minimal-required-decision">Minimal Required Decision<a class="headerlink" href="#minimal-required-decision" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenancecode.decision.v1&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000001&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000001&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Brief decision title&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -1746,7 +1872,7 @@
 <h3 id="complete-decision-schema">Complete Decision Schema<a class="headerlink" href="#complete-decision-schema" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenancecode.decision.v1&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000042&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Migrate from REST to GraphQL for API layer&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 
@@ -1820,7 +1946,7 @@
 <span class="w">    </span><span class="nt">&quot;pr&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;142&quot;</span><span class="p">],</span>
 <span class="w">    </span><span class="nt">&quot;issues&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;https://github.com/org/repo/issues/98&quot;</span><span class="p">],</span>
 <span class="w">    </span><span class="nt">&quot;specs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;SPEC-000028&quot;</span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;decisions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;DEC-000015&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;decisions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;DEC-SDM-FRD-0000015&quot;</span><span class="p">],</span>
 <span class="w">    </span><span class="nt">&quot;risks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;RA-000015&quot;</span><span class="p">]</span>
 <span class="w">  </span><span class="p">},</span>
 
@@ -1863,7 +1989,7 @@
 <tr>
 <td><code>id</code></td>
 <td>string</td>
-<td>Decision ID in format <code>DEC-XXXXXX</code></td>
+<td>Decision ID in hierarchical format <code>DEC-{PROJECT}-[{SUBPROJECT}-]{NUMBER}</code> or legacy format <code>DEC-{NUMBER}</code></td>
 </tr>
 <tr>
 <td><code>title</code></td>
@@ -2048,7 +2174,7 @@
 </table>
 <h2 id="markdown-format">Markdown Format<a class="headerlink" href="#markdown-format" title="Permanent link">&para;</a></h2>
 <p>The <code>decision.md</code> file provides human context. It SHOULD follow this structure:</p>
-<div class="highlight"><pre><span></span><code><span class="gh"># DEC-XXXXXX: [Title]</span>
+<div class="highlight"><pre><span></span><code><span class="gh"># {DEC-ID}: [Title]</span>
 
 <span class="gs">**Status:**</span> [State]  
 <span class="gs">**Date:**</span> [YYYY-MM-DD]  
@@ -2149,19 +2275,19 @@
 <p>When superseding a decision:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Old decision DEC-000010</span>
 <span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000010&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000010&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;superseded&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;superseded_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span>
+<span class="w">    </span><span class="nt">&quot;superseded_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000042&quot;</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 
 <span class="c1">// New decision DEC-000042</span>
 <span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000042&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accepted&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;supersedes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000010&quot;</span>
+<span class="w">    </span><span class="nt">&quot;supersedes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000010&quot;</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -2171,7 +2297,7 @@
 <p>Provides cryptographic proof of approval:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;provenancecode.receipt.v1&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;decision_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-000042&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;decision_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DEC-SDM-FRD-0000042&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;approved_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user:bob&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;approved_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-12T09:15:00Z&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;commit_sha&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a1b2c3d4e5f6&quot;</span><span class="p">,</span>
@@ -2196,7 +2322,7 @@
 </ol>
 <h3 id="semantic-validation">Semantic Validation<a class="headerlink" href="#semantic-validation" title="Permanent link">&para;</a></h3>
 <ol>
-<li><code>id</code> MUST match format <code>DEC-XXXXXX</code> with 6 digits</li>
+<li><code>id</code> MUST match hierarchical format <code>DEC-{PROJECT}-[{SUBPROJECT}-]{NUMBER}</code> or legacy format <code>DEC-{NUMBER}</code> based on config</li>
 <li><code>lifecycle.state</code> MUST be valid state name</li>
 <li><code>timestamps.created_at</code> MUST be valid ISO 8601</li>
 <li><code>risk.level</code> MUST be <code>low</code>, <code>medium</code>, <code>high</code>, or <code>critical</code></li>

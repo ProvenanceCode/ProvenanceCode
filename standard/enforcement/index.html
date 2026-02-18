@@ -2156,9 +2156,16 @@
 <p><strong>ID Validation</strong></p>
 </li>
 <li>Folder name matches <code>id</code> field</li>
-<li>ID format is <code>DEC-XXXXXX</code></li>
+<li>ID format matches configured style:<ul>
+<li>Hierarchical with subproject: <code>DEC-{PROJECT}-{SUBPROJECT}-{NUMBER}</code> (7-digit number)</li>
+<li>Hierarchical without subproject: <code>DEC-{PROJECT}-{NUMBER}</code> (7-digit number)</li>
+<li>Legacy: <code>DEC-{NUMBER}</code> (6-digit number)</li>
+</ul>
+</li>
+<li>PROJECT and SUBPROJECT (if present) are 2-6 uppercase alphanumeric characters</li>
+<li>ID is unique within repository</li>
 <li>
-<p>ID is unique</p>
+<p>If config requires subproject, all IDs must include it</p>
 </li>
 <li>
 <p><strong>State Validation</strong></p>

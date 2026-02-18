@@ -2,54 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://provenancecode.github.io/provenancecode/</loc>
-         <lastmod>2026-02-16</lastmod>
+         <lastmod>2026-02-18</lastmod>
+    </url>
+    <url>
+         <loc>https://provenancecode.github.io/provenancecode/CHANGELOG-hierarchical-ids/</loc>
+         <lastmod>2026-02-18</lastmod>
     </url>
     <url>
          <loc>https://provenancecode.github.io/provenancecode/MIGRATION_GUIDE_V2/</loc>
-         <lastmod>2026-02-16</lastmod>
+         <lastmod>2026-02-18</lastmod>
     </url>
     <url>
          <loc>https://provenancecode.github.io/provenancecode/QUICK_START/</loc>
-         <lastmod>2026-02-16</lastmod>
+         <lastmod>2026-02-18</lastmod>
     </url>
     <url>
          <loc>https://provenancecode.github.io/provenancecode/building-implementations/</loc>
-         <lastmod>2026-02-16</lastmod>
+         <lastmod>2026-02-18</lastmod>
+    </url>
+    <url>
+         <loc>https://provenancecode.github.io/provenancecode/hierarchical-ids/</loc>
+         <lastmod>2026-02-18</lastmod>
     </url>
     <url>
          <loc>https://provenancecode.github.io/provenancecode/implementations/</loc>
-         <lastmod>2026-02-16</lastmod>
+         <lastmod>2026-02-18</lastmod>
     </url>
     <url>
          <loc>https://provenancecode.github.io/provenancecode/implementation/github-action/</loc>
-         <lastmod>2026-02-16</lastmod>
+         <lastmod>2026-02-18</lastmod>
     </url>
     <url>
          <loc>https://provenancecode.github.io/provenancecode/implementation/github-app/</loc>
-         <lastmod>2026-02-16</lastmod>
+         <lastmod>2026-02-18</lastmod>
     </url>
     <url>
          <loc>https://provenancecode.github.io/provenancecode/standard/</loc>
-         <lastmod>2026-02-16</lastmod>
+         <lastmod>2026-02-18</lastmod>
     </url>
     <url>
          <loc>https://provenancecode.github.io/provenancecode/standard/deo/</loc>
-         <lastmod>2026-02-16</lastmod>
+         <lastmod>2026-02-18</lastmod>
     </url>
     <url>
          <loc>https://provenancecode.github.io/provenancecode/standard/enforcement/</loc>
-         <lastmod>2026-02-16</lastmod>
+         <lastmod>2026-02-18</lastmod>
     </url>
     <url>
          <loc>https://provenancecode.github.io/provenancecode/standard/provenancecode-v2/</loc>
-         <lastmod>2026-02-16</lastmod>
+         <lastmod>2026-02-18</lastmod>
     </url>
     <url>
          <loc>https://provenancecode.github.io/provenancecode/standard/repo-layout/</loc>
-         <lastmod>2026-02-16</lastmod>
+         <lastmod>2026-02-18</lastmod>
     </url>
     <url>
          <loc>https://provenancecode.github.io/provenancecode/standard/versioning/</loc>
-         <lastmod>2026-02-16</lastmod>
+         <lastmod>2026-02-18</lastmod>
     </url>
 </urlset>

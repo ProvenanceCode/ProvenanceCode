@@ -1963,7 +1963,7 @@
 - Directory structure: <code>/provenance/decisions/</code>
 - Config file: <code>provenance/config.json</code>
 - At least one decision record in valid format
-- Decision IDs follow format: <code>DEC-XXXXXX</code> (6 digits)</p>
+- Decision IDs follow configured format (hierarchical or legacy)</p>
 <p><strong>Suitable for:</strong> Teams starting with lightweight decision tracking</p>
 <h3 id="level-2-standard-compliance">Level 2: Standard Compliance<a class="headerlink" href="#level-2-standard-compliance" title="Permanent link">&para;</a></h3>
 <p><strong>Requirements:</strong>
@@ -1987,10 +1987,10 @@
 <h3 id="key-terms">Key Terms<a class="headerlink" href="#key-terms" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Decision Evidence Object (DEO)</strong> - A structured record of a technical decision including context, options, outcome, and rationale</li>
-<li><strong>Decision ID</strong> - Unique identifier following format <code>DEC-XXXXXX</code> where X is a digit</li>
-<li><strong>Risk Acceptance (RA)</strong> - Formal acknowledgment of a known risk with severity, mitigations, and expiration</li>
-<li><strong>Mistake Record (MR)</strong> - Post-mortem documenting an error, root cause, and prevention rule</li>
-<li><strong>Specification (SPEC)</strong> - Requirements document with acceptance criteria</li>
+<li><strong>Decision ID</strong> - Unique identifier following format <code>DEC-{PROJECT}-[{SUBPROJECT}-]{NUMBER}</code> (hierarchical) or <code>DEC-{NUMBER}</code> (legacy)</li>
+<li><strong>Risk Acceptance (RA)</strong> - Formal acknowledgment of a known risk with severity, mitigations, and expiration (format: <code>RA-{PROJECT}-[{SUBPROJECT}-]{NUMBER}</code> or legacy)</li>
+<li><strong>Mistake Record (MR)</strong> - Post-mortem documenting an error, root cause, and prevention rule (format: <code>MR-{PROJECT}-[{SUBPROJECT}-]{NUMBER}</code> or legacy)</li>
+<li><strong>Specification (SPEC)</strong> - Requirements document with acceptance criteria (format: <code>SPEC-{PROJECT}-[{SUBPROJECT}-]{NUMBER}</code> or legacy)</li>
 <li><strong>Lifecycle State</strong> - Current status of a record (draft, proposed, accepted, rejected, superseded)</li>
 <li><strong>Enforcement Preset</strong> - Pre-configured policy level (light, standard, regulated)</li>
 <li><strong>Provenance Path</strong> - Root directory containing all provenance artifacts (<code>/provenance/</code>)</li>
