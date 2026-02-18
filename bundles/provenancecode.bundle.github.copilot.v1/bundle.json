@@ -1,0 +1,58 @@
+{
+  "schema": "provenancecode.bundle.definition.v1",
+  "bundle_id": "provenancecode.bundle.github.copilot.v1",
+  "name": "ProvenanceCode Governance Bundle v1 (Copilot + Cursor)",
+  "version": "1.0.0",
+  "cursor_adapter_id": "provenancecode.adapter.cursor.v1",
+  "copilot_adapter_id": "provenancecode.adapter.github.copilot.v1",
+  "standard": "ProvenanceCode v2 primitives + schemas (DEC / GEN / optional SPEC)",
+  "enforcement": {
+    "primary": "github-pr-check-hard-gate",
+    "secondary": [
+      "copilot-agent-hooks-best-effort",
+      "cursor-agent-hooks-best-effort"
+    ]
+  },
+  "invariants": [
+    "Meaningful agent-driven changes require GEN-* artifacts",
+    "Risk-triggered changes require linked DEC-* artifacts",
+    "GEN/DEC/SPEC artifacts validate against local schema files"
+  ],
+  "installed_paths": {
+    "copilot_instructions": ".github/copilot-instructions.md",
+    "copilot_hooks": [
+      ".github/hooks/post-tool.json",
+      ".github/hooks/agent-stop.json"
+    ],
+    "cursor_rules": [
+      ".cursor/rules/provenancecode-governance.mdc"
+    ],
+    "cursor_hooks": [
+      ".cursor/hooks/hooks.json"
+    ],
+    "provenance": {
+      "config": ".provenance/config/enforcement.json",
+      "schemas": [
+        ".provenance/config/schemas/gen-event.v2.schema.json",
+        ".provenance/config/schemas/decision.v2.schema.json",
+        ".provenance/config/schemas/spec.v2.schema.json"
+      ],
+      "events_dir": ".provenance/events",
+      "decisions_dir": ".provenance/decisions",
+      "specs_dir": ".provenance/specs",
+      "sessions_dir": ".provenance/sessions"
+    },
+    "workflow_gate": ".github/workflows/provenance-governance-gate.yml",
+    "cli": ".provenance/bin/prvc"
+  },
+  "required_repository_layout": [
+    ".github/copilot-instructions.md",
+    ".github/hooks/post-tool.json",
+    ".github/hooks/agent-stop.json",
+    ".provenance/config/enforcement.json",
+    ".provenance/sessions/",
+    ".provenance/events/",
+    ".provenance/decisions/",
+    ".provenance/specs/"
+  ]
+}

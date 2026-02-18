@@ -1,0 +1,37 @@
+{
+  "schema": "provenancecode.gen.v2",
+  "gen_id": "GEN-PROV-CORE-000002",
+  "bundle_id": "provenancecode.bundle.github.copilot.v1",
+  "adapter_id": "provenancecode.adapter.github.copilot.v1",
+  "trigger": "manual.bundles.add",
+  "timestamp": "2026-02-18T06:19:50.786Z",
+  "session_id": "SES-PROV-CORE-BUNDLES",
+  "agent": {
+    "platform": "github-copilot",
+    "adapter_id": "provenancecode.adapter.github.copilot.v1"
+  },
+  "change": {
+    "tool_name": "unknown",
+    "tool_args_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "tool_result_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "cwd": "/workspace"
+  },
+  "links": {
+    "decision_ids": [
+      "DEC-PROV-CORE-000001"
+    ],
+    "spec_ids": [
+      "SPEC-PROV-CORE-000001"
+    ]
+  },
+  "risk": {
+    "triggered": false,
+    "rationale": "",
+    "matched_paths": []
+  },
+  "integrity": {
+    "hashing": "sha256",
+    "input_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "capture": "hashes-only"
+  }
+}

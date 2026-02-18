@@ -911,7 +911,22 @@ function commandValidate(options) {
   const decisionIdsFromDiff = changedFiles
     .map((filePath) => decisionIdFromPath(filePath, decisionsRelativePath))
     .filter(Boolean);
-  const candidateDecisionIds = uniq([...extractedDecisionIds, ...decisionIdsFromDiff]);
+  const decisionIdsFromGenLinks = uniq(
+    genFilesInDiff
+      .map((filePath) => readJsonSafe(toAbsolutePath(filePath), null))
+      .filter((eventRecord) => isPlainObject(eventRecord))
+      .flatMap((eventRecord) =>
+        isPlainObject(eventRecord.links) && Array.isArray(eventRecord.links.decision_ids)
+          ? eventRecord.links.decision_ids
+          : [],
+      )
+      .filter((decisionId) => typeof decisionId === 'string'),
+  );
+  const candidateDecisionIds = uniq([
+    ...extractedDecisionIds,
+    ...decisionIdsFromDiff,
+    ...decisionIdsFromGenLinks,
+  ]);
 
   const validDecisionIds = [];
   if (schemas.decisionSchema) {
@@ -993,6 +1008,7 @@ function commandValidate(options) {
       risk_path_matches: riskPathsMatched,
       risk_label_matches: riskLabelsMatched,
       candidate_decision_ids: candidateDecisionIds,
+      decision_ids_from_gen_links: decisionIdsFromGenLinks,
       valid_decision_ids: validDecisionIds,
       gen_files_in_diff: genFilesInDiff,
     },
