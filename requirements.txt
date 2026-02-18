@@ -6,3 +6,5 @@ mkdocs-material>=9.5.3
 # Additional plugins (add as needed)
 # pymdown-extensions>=10.5  # Already included with mkdocs-material
 
+
+

@@ -109,7 +109,7 @@ This standard consists of the following normative documents:
 - Directory structure: `/provenance/decisions/`
 - Config file: `provenance/config.json`
 - At least one decision record in valid format
-- Decision IDs follow format: `DEC-XXXXXX` (6 digits)
+- Decision IDs follow configured format (hierarchical or legacy)
 
 **Suitable for:** Teams starting with lightweight decision tracking
 
@@ -143,10 +143,10 @@ This standard consists of the following normative documents:
 ### Key Terms
 
 - **Decision Evidence Object (DEO)** - A structured record of a technical decision including context, options, outcome, and rationale
-- **Decision ID** - Unique identifier following format `DEC-XXXXXX` where X is a digit
-- **Risk Acceptance (RA)** - Formal acknowledgment of a known risk with severity, mitigations, and expiration
-- **Mistake Record (MR)** - Post-mortem documenting an error, root cause, and prevention rule
-- **Specification (SPEC)** - Requirements document with acceptance criteria
+- **Decision ID** - Unique identifier following format `DEC-{PROJECT}-[{SUBPROJECT}-]{NUMBER}` (hierarchical) or `DEC-{NUMBER}` (legacy)
+- **Risk Acceptance (RA)** - Formal acknowledgment of a known risk with severity, mitigations, and expiration (format: `RA-{PROJECT}-[{SUBPROJECT}-]{NUMBER}` or legacy)
+- **Mistake Record (MR)** - Post-mortem documenting an error, root cause, and prevention rule (format: `MR-{PROJECT}-[{SUBPROJECT}-]{NUMBER}` or legacy)
+- **Specification (SPEC)** - Requirements document with acceptance criteria (format: `SPEC-{PROJECT}-[{SUBPROJECT}-]{NUMBER}` or legacy)
 - **Lifecycle State** - Current status of a record (draft, proposed, accepted, rejected, superseded)
 - **Enforcement Preset** - Pre-configured policy level (light, standard, regulated)
 - **Provenance Path** - Root directory containing all provenance artifacts (`/provenance/`)

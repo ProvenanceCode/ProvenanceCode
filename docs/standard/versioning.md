@@ -110,7 +110,7 @@ Each artifact has a `version` field (integer starting at 1):
 
 ```json
 {
-  "id": "DEC-000042",
+  "id": "DEC-SDM-FRD-0000042",
   "version": 1
 }
 ```
@@ -146,7 +146,7 @@ Store version history in `timestamps.updated_at`:
 
 For detailed history, optionally create:
 ```
-provenance/decisions/DEC-000042/
+provenance/decisions/DEC-SDM-FRD-0000042/
 ├── decision.json           (current version)
 ├── decision.v1.json        (previous version)
 ├── decision.v2.json        (previous version)
@@ -168,11 +168,11 @@ When an accepted decision needs substantial changes, **supersede** it instead of
 **Old Decision (DEC-000010):**
 ```json
 {
-  "id": "DEC-000010",
+  "id": "DEC-SDM-FRD-0000010",
   "version": 1,
   "lifecycle": {
     "state": "superseded",
-    "superseded_by": "DEC-000042"
+    "superseded_by": "DEC-SDM-FRD-0000042"
   }
 }
 ```
@@ -180,11 +180,11 @@ When an accepted decision needs substantial changes, **supersede** it instead of
 **New Decision (DEC-000042):**
 ```json
 {
-  "id": "DEC-000042",
+  "id": "DEC-SDM-FRD-0000042",
   "version": 1,
   "lifecycle": {
     "state": "accepted",
-    "supersedes": "DEC-000010"
+    "supersedes": "DEC-SDM-FRD-0000010"
   }
 }
 ```
@@ -194,21 +194,21 @@ When an accepted decision needs substantial changes, **supersede** it instead of
 Decisions can form chains:
 
 ```
-DEC-000010 (superseded)
+DEC-SDM-FRD-0000010 (superseded)
     ↓
-DEC-000042 (superseded)
+DEC-SDM-FRD-0000042 (superseded)
     ↓
-DEC-000081 (accepted) — current
+DEC-SDM-FRD-0000081 (accepted) — current
 ```
 
-**DEC-000081:**
+**DEC-SDM-FRD-0000081:**
 ```json
 {
   "lifecycle": {
     "state": "accepted",
-    "supersedes": "DEC-000042"
+    "supersedes": "DEC-SDM-FRD-0000042"
   },
-  "supersession_chain": ["DEC-000010", "DEC-000042"]
+  "supersession_chain": ["DEC-SDM-FRD-0000010", "DEC-SDM-FRD-0000042"]
 }
 ```
 
@@ -433,10 +433,10 @@ When superseding, maintain full chain:
 ```json
 {
   "lifecycle": {
-    "supersedes": "DEC-000042"
+    "supersedes": "DEC-SDM-FRD-0000042"
   },
-  "supersession_chain": ["DEC-000010", "DEC-000042"],
-  "rationale": "Updated authentication approach based on new security requirements. Previous decisions (DEC-000010, DEC-000042) are superseded."
+  "supersession_chain": ["DEC-SDM-FRD-0000010", "DEC-SDM-FRD-0000042"],
+  "rationale": "Updated authentication approach based on new security requirements. Previous decisions (DEC-SDM-FRD-0000010, DEC-SDM-FRD-0000042) are superseded."
 }
 ```
 
@@ -477,7 +477,7 @@ For expiring decisions:
 **Initial Draft:**
 ```json
 {
-  "id": "DEC-000042",
+  "id": "DEC-SDM-FRD-0000042",
   "version": 1,
   "lifecycle": {
     "state": "draft"
@@ -491,7 +491,7 @@ For expiring decisions:
 **After Review:**
 ```json
 {
-  "id": "DEC-000042",
+  "id": "DEC-SDM-FRD-0000042",
   "version": 2,
   "lifecycle": {
     "state": "proposed"
@@ -506,7 +506,7 @@ For expiring decisions:
 **After Acceptance:**
 ```json
 {
-  "id": "DEC-000042",
+  "id": "DEC-SDM-FRD-0000042",
   "version": 2,
   "lifecycle": {
     "state": "accepted"
@@ -528,12 +528,12 @@ For expiring decisions:
 **Old Decision Marked as Superseded:**
 ```json
 {
-  "id": "DEC-000010",
+  "id": "DEC-SDM-FRD-0000010",
   "title": "Use JWT for authentication",
   "version": 1,
   "lifecycle": {
     "state": "superseded",
-    "superseded_by": "DEC-000042"
+    "superseded_by": "DEC-SDM-FRD-0000042"
   },
   "timestamps": {
     "created_at": "2025-06-01T10:00:00Z",
@@ -546,18 +546,18 @@ For expiring decisions:
 **New Decision:**
 ```json
 {
-  "id": "DEC-000042",
+  "id": "DEC-SDM-FRD-0000042",
   "title": "Migrate from JWT to OAuth2 with session tokens",
   "version": 1,
   "lifecycle": {
     "state": "accepted",
-    "supersedes": "DEC-000010"
+    "supersedes": "DEC-SDM-FRD-0000010"
   },
   "timestamps": {
     "created_at": "2026-02-10T10:00:00Z",
     "accepted_at": "2026-02-13T09:15:00Z"
   },
-  "rationale": "OAuth2 provides better security and refresh token support. Supersedes DEC-000010 which used simpler JWT approach."
+  "rationale": "OAuth2 provides better security and refresh token support. Supersedes DEC-SDM-FRD-0000010 which used simpler JWT approach."
 }
 ```
 

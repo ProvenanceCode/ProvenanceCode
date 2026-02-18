@@ -39,7 +39,7 @@ repository-root/
 ├── provenance/
 │   ├── config.json          (REQUIRED)
 │   └── decisions/           (REQUIRED)
-│       └── DEC-000001/
+│       └── DEC-SDM-FRD-0000001/
 │           └── decision.json
 └── (your project files)
 ```
@@ -78,13 +78,13 @@ repository-root/
 ├── provenance/
 │   ├── config.json
 │   ├── decisions/
-│   │   ├── DEC-000001/
+│   │   ├── DEC-SDM-FRD-0000001/
 │   │   │   ├── decision.json
 │   │   │   ├── decision.md
 │   │   │   ├── acceptance.receipt.json
 │   │   │   ├── prov.jsonld
 │   │   │   └── c2pa.manifest.json
-│   │   └── DEC-000002/
+│   │   └── DEC-SDM-FRD-0000002/
 │   ├── risks/
 │   │   ├── RA-000001/
 │   │   │   ├── risk.json
@@ -105,7 +105,7 @@ repository-root/
 │   │   ├── enforcement.yml
 │   │   └── mistakes-enforcement.json
 │   ├── drafts/
-│   │   ├── DEC-000003-draft.md
+│   │   ├── DEC-SDM-FRD-0000003-draft.md
 │   │   ├── SPEC-000003-draft.md
 │   │   └── README.md
 │   ├── links/
@@ -157,7 +157,7 @@ Central location for all decision evidence, risks, mistakes, and specifications.
 Each decision MUST have its own directory:
 
 ```
-provenance/decisions/DEC-XXXXXX/
+provenance/decisions/{DEC-ID}/
 ```
 
 Where `XXXXXX` is a zero-padded 6-digit number (000001–999999).
@@ -165,7 +165,7 @@ Where `XXXXXX` is a zero-padded 6-digit number (000001–999999).
 ### Decision Files
 
 ```
-provenance/decisions/DEC-000042/
+provenance/decisions/DEC-SDM-FRD-0000042/
 ├── decision.json               (REQUIRED - source of truth)
 ├── decision.md                 (RECOMMENDED - human narrative)
 ├── acceptance.receipt.json     (OPTIONAL - cryptographic proof)
@@ -191,16 +191,16 @@ provenance/decisions/DEC-000042/
 
 ```
 provenance/decisions/
-├── DEC-000001/
+├── DEC-SDM-FRD-0000001/
 │   ├── decision.json
 │   └── decision.md
-├── DEC-000002/
+├── DEC-SDM-FRD-0000002/
 │   ├── decision.json
 │   ├── decision.md
 │   ├── acceptance.receipt.json
 │   └── evidence/
 │       └── architecture-diagram.png
-├── DEC-000003/
+├── DEC-SDM-FRD-0000003/
 │   ├── decision.json
 │   └── decision.md
 └── README.md                  (Optional - index of decisions)
@@ -415,7 +415,7 @@ decisions:
 **Contents:**
 ```
 provenance/drafts/
-├── DEC-000005-draft.md
+├── DEC-SDM-FRD-0000005-draft.md
 ├── SPEC-000010-draft.md
 ├── RA-000003-draft.json
 └── README.md              (Template instructions)
@@ -467,7 +467,7 @@ provenance/indexes/
       "title": "Missing input validation",
       "category": "security",
       "prevent_rule": "All user input must be validated",
-      "linked_decisions": ["DEC-000025"]
+      "linked_decisions": ["DEC-SDM-FRD-0000025"]
     }
   ]
 }
@@ -477,20 +477,86 @@ provenance/indexes/
 
 ### ID Formats
 
-| Artifact Type | ID Format | Example |
-|--------------|-----------|---------|
-| Decision | `DEC-XXXXXX` | `DEC-000042` |
-| Risk | `RA-XXXXXX` | `RA-000015` |
-| Mistake | `MR-XXXXXX` | `MR-000003` |
-| Specification | `SPEC-XXXXXX` | `SPEC-000028` |
+ProvenanceCode supports hierarchical ID formats to enable monorepo organization and cross-system referencing (dashboards, JIRA, etc.). The format is configurable via `provenance/config.json`.
+
+**Hierarchical Format:**
+```
+{TYPE}-{PROJECT}-[{SUBPROJECT}-]{NUMBER}
+```
+
+**Components:**
+- **TYPE**: Artifact type prefix (DEC, RA, MR, SPEC)
+- **PROJECT**: Project identifier (2-6 uppercase alphanumeric chars)
+- **SUBPROJECT**: (OPTIONAL) Sub-project/module identifier (2-6 uppercase alphanumeric chars)
+- **NUMBER**: Zero-padded 7-digit number (0000001-9999999)
+
+| Artifact Type | Full Format | Example | Without Subproject | Example |
+|--------------|-------------|---------|-------------------|---------|
+| Decision | `DEC-{PROJECT}-{SUBPROJECT}-{NUMBER}` | `DEC-SDM-FRD-0000019` | `DEC-{PROJECT}-{NUMBER}` | `DEC-CORE-0000042` |
+| Risk | `RA-{PROJECT}-{SUBPROJECT}-{NUMBER}` | `RA-CORE-API-0000042` | `RA-{PROJECT}-{NUMBER}` | `RA-PLT-0000015` |
+| Mistake | `MR-{PROJECT}-{SUBPROJECT}-{NUMBER}` | `MR-PLT-AUTH-0000003` | `MR-{PROJECT}-{NUMBER}` | `MR-WEB-0000007` |
+| Specification | `SPEC-{PROJECT}-{SUBPROJECT}-{NUMBER}` | `SPEC-WEB-UI-0000128` | `SPEC-{PROJECT}-{NUMBER}` | `SPEC-API-0000050` |
+
+**Legacy Format Support:**
+
+For backward compatibility, the simple format is still supported:
+
+| Artifact Type | Legacy Format | Example |
+|--------------|---------------|---------|
+| Decision | `DEC-{NUMBER}` | `DEC-000042` |
+| Risk | `RA-{NUMBER}` | `RA-000015` |
+| Mistake | `MR-{NUMBER}` | `MR-000003` |
+| Specification | `SPEC-{NUMBER}` | `SPEC-000028` |
+
+**Format Rules:**
+- PROJECT and SUBPROJECT identifiers:
+  - MUST be 2-6 uppercase alphanumeric characters
+  - SHOULD use meaningful abbreviations (SDM=system-demo, FRD=frontend, CORE=core-services)
+  - SHOULD be consistent within a repository
+  - SUBPROJECT is OPTIONAL (can use `DEC-{PROJECT}-{NUMBER}` format)
+- NUMBER component:
+  - MUST be zero-padded to 7 digits in hierarchical format
+  - MUST be zero-padded to 6 digits in legacy format
+  - SHOULD be assigned sequentially within scope (PROJECT-SUBPROJECT or PROJECT or global)
+
+**Configuration:**
+
+The ID format is configured in `provenance/config.json`:
+
+```json
+{
+  "version": "1.0",
+  "id_format": {
+    "style": "hierarchical",
+    "project": "SDM",
+    "subproject": "FRD",
+    "require_subproject": false
+  }
+}
+```
+
+Configuration options:
+- `style`: `"hierarchical"` or `"legacy"` (default: `"legacy"`)
+- `project`: Project identifier (required if style is hierarchical)
+- `subproject`: Default subproject identifier (optional)
+- `require_subproject`: If true, all IDs must include subproject (default: `false`)
 
 ### Directory Names
 
 - MUST match the ID exactly
 - MUST be uppercase
 - MUST include leading zeros
+- PROJECT and SUBPROJECT identifiers MUST match exactly
 
-✅ Good:
+✅ Good (Hierarchical):
+```
+provenance/decisions/DEC-SDM-FRD-0000019/
+provenance/risks/RA-CORE-API-0000042/
+provenance/mistakes/MR-PLT-AUTH-0000003/
+provenance/specs/SPEC-WEB-UI-0000128/
+```
+
+✅ Good (Legacy):
 ```
 provenance/decisions/DEC-000001/
 provenance/risks/RA-000042/
@@ -498,8 +564,9 @@ provenance/risks/RA-000042/
 
 ❌ Bad:
 ```
-provenance/decisions/dec-1/           # Wrong case, missing zeros
-provenance/decisions/DEC-000001-foo/  # Extra suffix
+provenance/decisions/dec-sdm-frd-1/           # Wrong case, missing zeros
+provenance/decisions/DEC-SDM-FRD-0000001-foo/ # Extra suffix
+provenance/decisions/DEC-SDM-frd-0000001/     # Lowercase subproject
 ```
 
 ### File Names
@@ -511,7 +578,7 @@ provenance/decisions/DEC-000001-foo/  # Extra suffix
 | Acceptance receipt | `acceptance.receipt.json` | (exact name) |
 | W3C PROV | `prov.jsonld` | (exact name) |
 | C2PA manifest | `c2pa.manifest.json` | (exact name) |
-| Draft | `{ID}-draft.{ext}` | `DEC-000005-draft.md` |
+| Draft | `{ID}-draft.{ext}` | `DEC-SDM-FRD-0000005-draft.md` or `DEC-000005-draft.md` |
 | Evidence | (any) | `diagram.png`, `logs.txt` |
 
 ## Conformance Requirements
@@ -522,7 +589,7 @@ provenance/decisions/DEC-000001-foo/  # Extra suffix
 - `/provenance/` directory at root
 - `/provenance/config.json` file
 - `/provenance/decisions/` directory
-- At least one valid decision: `/provenance/decisions/DEC-000001/decision.json`
+- At least one valid decision: `/provenance/decisions/{DEC-ID}/decision.json`
 
 **Example:**
 ```
@@ -530,7 +597,7 @@ repo-root/
 ├── provenance/
 │   ├── config.json
 │   └── decisions/
-│       └── DEC-000001/
+│       └── DEC-SDM-FRD-0000001/
 │           └── decision.json
 └── src/
 ```

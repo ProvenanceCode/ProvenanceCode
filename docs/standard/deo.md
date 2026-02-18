@@ -36,7 +36,7 @@ A Decision Evidence Object (DEO) is a structured record that captures:
 Each decision MUST be stored in its own directory:
 
 ```
-/provenance/decisions/DEC-XXXXXX/
+/provenance/decisions/{DEC-ID}/
   decision.json          (REQUIRED - source of truth)
   decision.md            (RECOMMENDED - human narrative)
   acceptance.receipt.json (OPTIONAL - cryptographic proof)
@@ -56,27 +56,107 @@ Each decision MUST be stored in its own directory:
 
 ## Decision ID Format
 
-Decision IDs MUST follow this format:
+Decision IDs support two formats: **Hierarchical** (recommended for monorepos) and **Legacy** (simple format).
 
+### Hierarchical Format (Recommended)
+
+**Format:**
 ```
-DEC-XXXXXX
+DEC-{PROJECT}-[{SUBPROJECT}-]{NUMBER}
 ```
 
-Where:
-- `DEC-` is the required prefix
-- `XXXXXX` is a 6-digit zero-padded number (000001 through 999999)
+**Components:**
+- `DEC-` - Required prefix for decisions
+- `{PROJECT}` - 2-6 uppercase alphanumeric characters identifying the project (e.g., SDM for system-demo, CORE for core-services)
+- `{SUBPROJECT}` - (OPTIONAL) 2-6 uppercase alphanumeric characters identifying the sub-project/module (e.g., FRD for frontend, API for api-layer)
+- `{NUMBER}` - 7-digit zero-padded number (0000001 through 9999999)
+
+**Examples with subproject:**
+- ✅ `DEC-SDM-FRD-0000019` (system-demo, frontend, decision 19)
+- ✅ `DEC-CORE-API-0000042` (core, api, decision 42)
+- ✅ `DEC-PLT-AUTH-0000128` (platform, auth, decision 128)
+
+**Examples without subproject:**
+- ✅ `DEC-CORE-0000042` (core project, decision 42)
+- ✅ `DEC-WEB-0000015` (web project, decision 15)
+- ✅ `DEC-API-0000007` (api project, decision 7)
+
+**Invalid examples:**
+- ❌ `DEC-sdm-frd-0000019` (lowercase not allowed)
+- ❌ `DEC-SDM-FRD-19` (must be zero-padded to 7 digits)
+- ❌ `DEC-VERYLONGPROJECT-FRD-0000019` (project identifier too long)
+
+**Benefits:**
+- Flexible organization for both monorepos and simple structures
+- Easy filtering in dashboards and JIRA
+- Scoped sequential numbering per project or project-subproject
+- Better cross-repository referencing
+- Optional subproject allows simpler structure when not needed
+
+### Legacy Format
+
+**Format:**
+```
+DEC-{NUMBER}
+```
+
+**Components:**
+- `DEC-` - Required prefix
+- `{NUMBER}` - 6-digit zero-padded number (000001 through 999999)
 
 **Examples:**
 - ✅ `DEC-000001`
 - ✅ `DEC-042815`
 - ❌ `DEC-1` (must be zero-padded)
 - ❌ `DECISION-000001` (wrong prefix)
-- ❌ `DEC-0000001` (too many digits)
+- ❌ `DEC-0000001` (wrong digit count for legacy format)
+
+### Format Configuration
+
+The ID format is configured in `provenance/config.json`:
+
+```json
+{
+  "version": "1.0",
+  "id_format": {
+    "style": "hierarchical",
+    "project": "SDM",
+    "subproject": "FRD",
+    "require_subproject": false
+  }
+}
+```
+
+**Configuration Options:**
+- `style`: `"hierarchical"` or `"legacy"` (default: `"legacy"`)
+- `project`: Project identifier, required if style is `"hierarchical"`
+- `subproject`: Default subproject identifier (optional)
+- `require_subproject`: If `true`, all IDs must include subproject (default: `false`)
 
 ### ID Assignment
 
-Decision IDs SHOULD be assigned sequentially. The folder name MUST match the `id` field in `decision.json`.
+Decision IDs SHOULD be assigned sequentially within their scope:
+- **Hierarchical with subproject**: Sequential within each PROJECT-SUBPROJECT combination
+- **Hierarchical without subproject**: Sequential within each PROJECT
+- **Legacy**: Sequential globally
 
+The folder name MUST match the `id` field in `decision.json`.
+
+**Hierarchical Example:**
+```
+/provenance/decisions/DEC-SDM-FRD-0000042/decision.json
+```
+
+Contains:
+
+```json
+{
+  "id": "DEC-SDM-FRD-0000042",
+  ...
+}
+```
+
+**Legacy Example:**
 ```
 /provenance/decisions/DEC-000042/decision.json
 ```
@@ -85,7 +165,7 @@ Contains:
 
 ```json
 {
-  "id": "DEC-000042",
+  "id": "DEC-SDM-FRD-0000042",
   ...
 }
 ```
@@ -97,7 +177,7 @@ Contains:
 ```json
 {
   "schema": "provenancecode.decision.v1",
-  "id": "DEC-000001",
+  "id": "DEC-SDM-FRD-0000001",
   "title": "Brief decision title",
   "version": 1,
   "lifecycle": {
@@ -122,7 +202,7 @@ Contains:
 ```json
 {
   "schema": "provenancecode.decision.v1",
-  "id": "DEC-000042",
+  "id": "DEC-SDM-FRD-0000042",
   "title": "Migrate from REST to GraphQL for API layer",
   "version": 1,
   
@@ -196,7 +276,7 @@ Contains:
     "pr": ["142"],
     "issues": ["https://github.com/org/repo/issues/98"],
     "specs": ["SPEC-000028"],
-    "decisions": ["DEC-000015"],
+    "decisions": ["DEC-SDM-FRD-0000015"],
     "risks": ["RA-000015"]
   },
   
@@ -228,7 +308,7 @@ Contains:
 | Field | Type | Description |
 |-------|------|-------------|
 | `schema` | string | MUST be `"provenancecode.decision.v1"` |
-| `id` | string | Decision ID in format `DEC-XXXXXX` |
+| `id` | string | Decision ID in hierarchical format `DEC-{PROJECT}-[{SUBPROJECT}-]{NUMBER}` or legacy format `DEC-{NUMBER}` |
 | `title` | string | Brief, descriptive title (max 120 chars recommended) |
 | `version` | integer | Version number (starts at 1, increments on updates) |
 | `lifecycle.state` | string | Current state: `draft`, `proposed`, `accepted`, `rejected`, `superseded` |
@@ -276,7 +356,7 @@ Contains:
 The `decision.md` file provides human context. It SHOULD follow this structure:
 
 ```markdown
-# DEC-XXXXXX: [Title]
+# {DEC-ID}: [Title]
 
 **Status:** [State]  
 **Date:** [YYYY-MM-DD]  
@@ -355,19 +435,19 @@ When superseding a decision:
 ```json
 // Old decision DEC-000010
 {
-  "id": "DEC-000010",
+  "id": "DEC-SDM-FRD-0000010",
   "lifecycle": {
     "state": "superseded",
-    "superseded_by": "DEC-000042"
+    "superseded_by": "DEC-SDM-FRD-0000042"
   }
 }
 
 // New decision DEC-000042
 {
-  "id": "DEC-000042",
+  "id": "DEC-SDM-FRD-0000042",
   "lifecycle": {
     "state": "accepted",
-    "supersedes": "DEC-000010"
+    "supersedes": "DEC-SDM-FRD-0000010"
   }
 }
 ```
@@ -383,7 +463,7 @@ Provides cryptographic proof of approval:
 ```json
 {
   "schema": "provenancecode.receipt.v1",
-  "decision_id": "DEC-000042",
+  "decision_id": "DEC-SDM-FRD-0000042",
   "approved_by": "user:bob",
   "approved_at": "2026-02-12T09:15:00Z",
   "commit_sha": "a1b2c3d4e5f6",
@@ -416,7 +496,7 @@ Tamper-evident credentials following C2PA standard.
 
 ### Semantic Validation
 
-6. `id` MUST match format `DEC-XXXXXX` with 6 digits
+6. `id` MUST match hierarchical format `DEC-{PROJECT}-[{SUBPROJECT}-]{NUMBER}` or legacy format `DEC-{NUMBER}` based on config
 7. `lifecycle.state` MUST be valid state name
 8. `timestamps.created_at` MUST be valid ISO 8601
 9. `risk.level` MUST be `low`, `medium`, `high`, or `critical`

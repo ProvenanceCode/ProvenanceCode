@@ -643,7 +643,7 @@ permissions:
 ### Issue: Can't find decision files
 
 **Check:**
-- Decision folders match ID format: `DEC-XXXXXX`
+- Decision folders match ID format configured in `provenance/config.json`
 - `decision.json` file exists in each folder
 - Checkout includes `fetch-depth: 0` for full history
 - Base branch is checked out for diff comparison

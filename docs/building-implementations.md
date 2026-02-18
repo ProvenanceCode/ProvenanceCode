@@ -9,10 +9,11 @@
 A compliant ProvenanceCode implementation MUST:
 
 1. **Validate JSON structure** against official schemas
-2. **Check decision ID format** (`DEC-XXXXXX`)
+2. **Check decision ID format** (hierarchical or legacy, based on config)
 3. **Verify required fields** (see spec)
 4. **Support enforcement presets** (light, standard, regulated)
 5. **Provide clear feedback** to users
+6. **Read and validate config** (`provenance/config.json`) for ID format settings
 
 ### Recommended Features
 
@@ -139,14 +140,15 @@ async function loadConfig(repoPath) {
 ### 2. Scan for Artifacts
 
 ```javascript
-async function scanDecisions(repoPath) {
+async function scanDecisions(repoPath, config) {
   const decisionsPath = `${repoPath}/provenance/decisions`;
   const dirs = await listDirectories(decisionsPath);
   
   const decisions = [];
   
   for (const dir of dirs) {
-    if (!/^DEC-\d{6}$/.test(dir)) continue;
+    // Validate ID format based on config
+    if (!validateIdFormat(dir, config)) continue;
     
     const jsonPath = `${decisionsPath}/${dir}/decision.json`;
     if (await fileExists(jsonPath)) {
@@ -156,6 +158,29 @@ async function scanDecisions(repoPath) {
   }
   
   return decisions;
+}
+
+function validateIdFormat(id, config) {
+  const style = config.id_format?.style || 'legacy';
+  
+  if (style === 'legacy') {
+    // Legacy format: DEC-000001 (6 digits)
+    return /^DEC-\d{6}$/.test(id);
+  }
+  
+  if (style === 'hierarchical') {
+    const requireSubproject = config.id_format?.require_subproject || false;
+    
+    if (requireSubproject) {
+      // Full hierarchical: DEC-PROJECT-SUBPROJECT-0000001
+      return /^DEC-[A-Z0-9]{2,6}-[A-Z0-9]{2,6}-\d{7}$/.test(id);
+    } else {
+      // Hierarchical with optional subproject
+      return /^DEC-[A-Z0-9]{2,6}-([A-Z0-9]{2,6}-)?(\d{7})$/.test(id);
+    }
+  }
+  
+  return false;
 }
 ```
 
@@ -179,9 +204,9 @@ function validateDecision(decision) {
     }
   }
   
-  // ID format
-  if (!/^DEC-\d{6}$/.test(decision.id)) {
-    errors.push('Invalid ID format (must be DEC-XXXXXX)');
+  // ID format (validate based on config)
+  if (!validateIdFormat(decision.id, config)) {
+    errors.push('Invalid ID format (check provenance/config.json for expected format)');
   }
   
   // Schema version
@@ -412,7 +437,7 @@ Before releasing, verify:
 
 - [ ] Validates against official JSON schema
 - [ ] Checks all required fields
-- [ ] Validates ID format (DEC-XXXXXX)
+- [ ] Validates ID format (hierarchical or legacy based on config)
 - [ ] Supports all enforcement presets
 - [ ] Handles missing files gracefully
 - [ ] Provides clear error messages

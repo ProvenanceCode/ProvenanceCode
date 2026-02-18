@@ -469,9 +469,9 @@ function validateDecisionFormat(decision) {
     }
   }
   
-  // Validate ID format
-  if (!/^DEC-\d{6}$/.test(decision.id)) {
-    return { valid: false, error: 'Invalid ID format (must be DEC-XXXXXX)' };
+  // Validate ID format based on config
+  if (!validateIdFormat(decision.id, config)) {
+    return { valid: false, error: 'Invalid ID format (check config.json)' };
   }
   
   return { valid: true };

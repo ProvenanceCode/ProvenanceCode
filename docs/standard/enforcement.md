@@ -334,8 +334,13 @@ ai:
 
 2. **ID Validation**
    - Folder name matches `id` field
-   - ID format is `DEC-XXXXXX`
-   - ID is unique
+   - ID format matches configured style:
+     - Hierarchical with subproject: `DEC-{PROJECT}-{SUBPROJECT}-{NUMBER}` (7-digit number)
+     - Hierarchical without subproject: `DEC-{PROJECT}-{NUMBER}` (7-digit number)
+     - Legacy: `DEC-{NUMBER}` (6-digit number)
+   - PROJECT and SUBPROJECT (if present) are 2-6 uppercase alphanumeric characters
+   - ID is unique within repository
+   - If config requires subproject, all IDs must include it
 
 3. **State Validation**
    - `lifecycle.state` is valid
