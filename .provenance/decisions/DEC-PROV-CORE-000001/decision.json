@@ -1,0 +1,38 @@
+{
+  "schema": "provenancecode.decision.v2",
+  "decision_id": "DEC-PROV-CORE-000001",
+  "project": {
+    "code": "PROV",
+    "name": "ProvenanceCode"
+  },
+  "subproject": {
+    "code": "CORE",
+    "name": "Governance Bundle"
+  },
+  "title": "Adopt governance bundle with hard PR gate for Copilot and Cursor",
+  "status": "approved",
+  "context": {
+    "problem": "Agent-generated changes require deterministic and machine-verifiable provenance artifacts for auditability.",
+    "constraints": [
+      "Primary enforcement must be a CI hard gate",
+      "Hook-level enforcement must remain best effort and low friction"
+    ]
+  },
+  "decision": "Introduce a repository-local governance bundle that records GEN events via hooks and enforces DEC linkage for risk-triggered changes.",
+  "consequences": "PRs touching risk-triggered paths will fail without a valid DEC reference, while meaningful changes require GEN event artifacts.",
+  "links": {
+    "pr": "N/A - repository bootstrap",
+    "events": []
+  },
+  "risk": {
+    "score": 3,
+    "rationale": "Governance policy and CI enforcement changes can affect merge throughput and should be explicitly approved."
+  },
+  "review": {
+    "human": "@repository-maintainers"
+  },
+  "timestamps": {
+    "created_at": "2026-02-18T00:00:00Z",
+    "updated_at": "2026-02-18T00:00:00Z"
+  }
+}

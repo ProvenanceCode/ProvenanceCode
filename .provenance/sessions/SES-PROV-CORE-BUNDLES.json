@@ -1,0 +1,17 @@
+{
+  "schema": "provenancecode.session.v1",
+  "session_id": "SES-PROV-CORE-BUNDLES",
+  "bundle_id": "provenancecode.bundle.github.copilot.v1",
+  "adapter_id": "provenancecode.adapter.github.copilot.v1",
+  "started_at": "2026-02-18T06:19:50.786Z",
+  "ended_at": "2026-02-18T06:19:50.897Z",
+  "reason": "complete",
+  "status": "closed",
+  "event_count": 1,
+  "event_ids": [
+    "GEN-PROV-CORE-000002"
+  ],
+  "triggers": [
+    "manual.bundles.add"
+  ]
+}

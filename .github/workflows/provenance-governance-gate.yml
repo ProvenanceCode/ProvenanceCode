@@ -1,0 +1,46 @@
+name: ProvenanceCode Governance Gate
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited, labeled, unlabeled]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: provenance-governance
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Collect changed files
+        run: |
+          git diff --name-only "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}" > "$RUNNER_TEMP/prvc-changed-files.txt"
+
+      - name: Validate ProvenanceCode governance invariants
+        env:
+          PRVC_LABELS: ${{ join(github.event.pull_request.labels.*.name, ',') }}
+          PRVC_PR_TITLE: ${{ github.event.pull_request.title }}
+          PRVC_PR_BODY: ${{ github.event.pull_request.body }}
+          PRVC_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          PRVC_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PRVC_REPORT_PATH: ${{ runner.temp }}/prvc-report.json
+        run: |
+          ./.provenance/bin/prvc validate --changed-files-file "$RUNNER_TEMP/prvc-changed-files.txt"
+
+      - name: Upload validation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: provenance-governance-report
+          path: ${{ runner.temp }}/prvc-report.json
+          if-no-files-found: ignore

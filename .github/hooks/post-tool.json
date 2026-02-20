@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "hooks": {
+    "postToolUse": [
+      {
+        "type": "command",
+        "bash": "./.provenance/bin/prvc gen record --trigger copilot.postToolUse --adapter-id provenancecode.adapter.github.copilot.v1",
+        "powershell": "node ./.provenance/bin/prvc gen record --trigger copilot.postToolUse --adapter-id provenancecode.adapter.github.copilot.v1",
+        "cwd": ".",
+        "timeoutSec": 20
+      }
+    ]
+  }
+}

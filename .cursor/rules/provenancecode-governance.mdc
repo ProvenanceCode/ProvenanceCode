@@ -1,0 +1,17 @@
+---
+description: ProvenanceCode governance bundle guardrails
+alwaysApply: true
+---
+
+# ProvenanceCode Governance Bundle v1
+
+Follow these rules during Cursor agent work:
+
+1. Generate `GEN-*` artifacts for meaningful changes in `.provenance/events/`.
+2. For risk-triggered changes (`auth/**`, `security/**`, `infra/**`, `.github/workflows/**`, `.provenance/config/**`), include or link a valid `DEC-*` artifact.
+3. Keep provenance capture hash-based by default. Do not store raw prompt contents or secrets in artifacts.
+4. Ensure artifacts validate with:
+   - `./.provenance/bin/prvc validate`
+5. Keep enforcement deterministic:
+   - Hook automation is best-effort local.
+   - CI check is the merge-blocking authority.

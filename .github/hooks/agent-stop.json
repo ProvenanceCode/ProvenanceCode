@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionEnd": [
+      {
+        "type": "command",
+        "bash": "./.provenance/bin/prvc session finalize --trigger copilot.sessionEnd --adapter-id provenancecode.adapter.github.copilot.v1 --reason complete",
+        "powershell": "node ./.provenance/bin/prvc session finalize --trigger copilot.sessionEnd --adapter-id provenancecode.adapter.github.copilot.v1 --reason complete",
+        "cwd": ".",
+        "timeoutSec": 30
+      }
+    ]
+  }
+}
