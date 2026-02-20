@@ -1,0 +1,32 @@
+{
+  "id": "SPEC-000047",
+  "repo": {
+    "org": "provenancecode",
+    "name": "provenancecode-github"
+  },
+  "ref": "pc://provenancecode/provenancecode-github/spec/SPEC-000047",
+  "title": "Cursor provenance enforcement bundle for task start/end governance",
+  "status": "implemented",
+  "risk": "medium",
+  "acceptanceCriteria": [
+    "Task start hook reviews provenance rules and prior task/risk artifacts",
+    "Task start hook creates review, decisions, and risks artifacts for the active task",
+    "Task end hook creates a task provenance object with runtime and git metadata",
+    "Task end hook validates the task provenance object against JSON Schema draft 2020-12",
+    "Open high or critical risks generate a human-review flag artifact",
+    "Validation script verifies schema and artifact cross-references",
+    "PR check script fails substantive changes with no task provenance artifact updates",
+    "Bundle includes setup documentation, workflow, and package scripts"
+  ],
+  "affectedPaths": [
+    "provenance/bundles/cursor-provenance-enforcer-v2/",
+    "provenance/decisions/DEC-000001/",
+    "provenance/specs/SPEC-000047/"
+  ],
+  "relatedDecisions": [
+    "DEC-000001"
+  ],
+  "relatedSpecs": [
+    "SPEC-000046"
+  ]
+}

@@ -1,0 +1,28 @@
+name: Provenance Enforcement
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  provenance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate provenance schema and artifacts
+        run: npm run provenance:validate
+
+      - name: Enforce provenance on changed code
+        run: npm run provenance:check

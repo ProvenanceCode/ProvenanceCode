@@ -1,0 +1,9 @@
+{
+  "name": "provenance-enforcer",
+  "version": "2.0.0",
+  "description": "Task start and end provenance enforcement hooks",
+  "hooks": {
+    "task.start": "node scripts/provenance/on-task-start.js",
+    "task.end": "node scripts/provenance/on-task-end.js"
+  }
+}

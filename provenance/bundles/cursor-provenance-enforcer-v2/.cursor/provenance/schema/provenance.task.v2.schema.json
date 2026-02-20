@@ -1,0 +1,234 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "provenance.task.v2.schema.json",
+  "title": "ProvenanceCode Task Provenance v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "provenanceCodeVersion",
+    "taskId",
+    "status",
+    "timestamps",
+    "runtime",
+    "git",
+    "review",
+    "artifacts",
+    "decisionIds",
+    "riskIds",
+    "riskSummary",
+    "enforcement"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "provenancecode.task-provenance@2.0"
+    },
+    "provenanceCodeVersion": {
+      "type": "string",
+      "const": "2.0"
+    },
+    "taskId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "completed",
+        "blocked",
+        "failed"
+      ]
+    },
+    "timestamps": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "startedAt",
+        "endedAt"
+      ],
+      "properties": {
+        "startedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "endedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "runtime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "agent",
+        "model"
+      ],
+      "properties": {
+        "agent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "git": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "branch",
+        "commitSha",
+        "changedFiles"
+      ],
+      "properties": {
+        "branch": {
+          "type": "string",
+          "minLength": 1
+        },
+        "commitSha": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{7,40}$"
+        },
+        "changedFiles": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ruleFile",
+        "startReviewArtifact",
+        "reviewedTaskArtifacts",
+        "reviewedRiskArtifacts"
+      ],
+      "properties": {
+        "ruleFile": {
+          "type": "string",
+          "minLength": 1
+        },
+        "startReviewArtifact": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewedTaskArtifacts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "reviewedRiskArtifacts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "review",
+        "decisions",
+        "risks"
+      ],
+      "properties": {
+        "review": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decisions": {
+          "type": "string",
+          "minLength": 1
+        },
+        "risks": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "decisionIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(DEC-\\d{6}|DEC-[A-Z]{2,10}-[A-Z0-9]{2,10}-\\d{6})$"
+      }
+    },
+    "riskIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(RA-\\d{6}|RA-[A-Z]{2,10}-[A-Z0-9]{2,10}-\\d{6}|RISK-[0-9]{3,})$"
+      }
+    },
+    "riskSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total",
+        "open",
+        "highOrCriticalOpen",
+        "needsHumanReview"
+      ],
+      "properties": {
+        "total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "open": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "highOrCriticalOpen": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "needsHumanReview": {
+          "type": "boolean"
+        }
+      }
+    },
+    "enforcement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "validated",
+        "validator",
+        "errors"
+      ],
+      "properties": {
+        "validated": {
+          "type": "boolean"
+        },
+        "validator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "meta": {
+      "type": "object"
+    }
+  }
+}
